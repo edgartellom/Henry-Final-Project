@@ -1,12 +1,13 @@
 {
-  "name": "my-vue-app",
+  "name": "henry-final-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": ""
   },
   "dependencies": {
     "react": "^18.2.0",
