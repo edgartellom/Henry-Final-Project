@@ -25,9 +25,10 @@ jobs:
       - name: Install Dependencies
         run: |
           ls
-          ls client
-          npm ci
-        working-directory: client
-      - name: Build
-        run: npm run build
-        working-directory: client
+          pwd
+      #     ls client
+      #     npm ci
+      #   working-directory: client
+      # - name: Build
+      #   run: npm run build
+      #   working-directory: client
