@@ -4,6 +4,7 @@ const { Product, Category } = require("../db");
 require("dotenv").config();
 const API_URL = process.env.API_URL;
 
+
 const getApiInfo = async () => {
   const products = (await axios(`${API_URL}/products`)).data;
   let orderedData = await products.sort((a, b) =>
