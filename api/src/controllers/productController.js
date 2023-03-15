@@ -18,7 +18,7 @@ const getApiInfo = async () => {
     feature: el.feature,
     detail: el.detail,
     price: el.price,
-    image: el.image,
+    image: el.image.map((img) => img),
     category: el.category.map((cat) => cat.name),
   }));
   return apiInfo;
@@ -35,9 +35,9 @@ const getAllProducts = async () => {
           where: {
             brand: productData.brand,
             name: productData.name,
-          },
-          defaults: {
             model: productData.model,
+          },
+          defaults: {            
             feature: productData.feature,
             detail: productData.detail,
             price: productData.price,

@@ -31,10 +31,7 @@ module.exports = (sequelize) => {
         type: DataTypes.DECIMAL(8, 2),
       },
       image: {
-        type: DataTypes.STRING,
-        validate: {
-          isUrl: true,
-        },
+        type: DataTypes.ARRAY(DataTypes.STRING),       
       },
       stock: {
         type: DataTypes.STRING,
