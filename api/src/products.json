@@ -1974,139 +1974,314 @@
     ]
     },
     {    
-        "id": 88,
-        "brand": "WESTERN DIGITAL",
-        "name": "DISCO",
-        "model":"WD10EZEX",
-        "feature":"DISCO HDD 1TB WD BLUE SATA III 3.5",
-        "detail":"Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.",
-        "price": 12395.00,
-        "image":[
-            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
-            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",     
-            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
+    "id": 88,
+    "brand": "WESTERN DIGITAL",
+    "name": "DISCO",
+    "model":"WD10EZEX",
+    "feature":"DISCO HDD 1TB WD BLUE SATA III 3.5",
+    "detail":"Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.",
+    "price": 12395.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",     
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
         ],       
-        "category":[
+    "category":[
             {
-                "name": "Almacenamiento"
+             "name": "Almacenamiento"
     
             },
             {
-                "name": "Oficina"
+            "name": "Oficina"
             }              
         ]
         },
-        {    
-            "id": 49,
-            "brand": "BARRACUDA",
-            "name": "DISCO",
-            "model":"ST1000DM010",
-            "feature":"DISCO HDD 1TB SATA3 SEAGATE BARRACUDA",
-            "detail":"Conexiones SATA a 6 Gb/s, Capacidad formateado 1.000.204 MB, Número de sectores .953.525.169, Formato avanzado (AF) Sí, Formato 3,5 pulgadas, Conforme con RoHS Sí",
-            "price": 14256.00,
-            "image":[
-               "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-0.jpg",
-               "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-1.jpg"
+    {    
+    "id": 49,
+    "brand": "BARRACUDA",
+    "name": "DISCO",
+    "model":"ST1000DM010",
+    "feature":"DISCO HDD 1TB SATA3 SEAGATE BARRACUDA",
+    "detail":"Conexiones SATA a 6 Gb/s, Capacidad formateado 1.000.204 MB, Número de sectores .953.525.169, Formato avanzado (AF) Sí, Formato 3,5 pulgadas, Conforme con RoHS Sí",
+    "price": 14256.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-1.jpg"
             ],       
-            "category":[
+    "category":[
                 {
-                    "name": "Almacenamiento"
+                "name": "Almacenamiento"
         
                 },
                 {
-                    "name": "Oficina"
+                "name": "Oficina"
                 }              
             ]
             },
-            {    
-                "id": 89,
-                "brand": "WESTERN DIGITAL",
-                "name": "DISCO",
-                "model":"WD20EZAZ",
-                "feature":"HD HDD 2TB WD BLUE SATA III 3.5 256MB 7200RPM WD20EZBX",
-                "detail":"Aumenta la capacidad de tu PC con los discos WD Azul, Con la legendaria seguridad WD Blue drivers estan diseñados probados y construidos a la última y se venden con una licencia de protección limitada de 2 años",
-                "price": 16591.00,
-                "image":[
-                   "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-hdd-2tb-wd-blue-sata-iii-35-256mb-7200rpm-wd20ezbx-0.jpg"
+     {    
+    "id": 89,
+    "brand": "WESTERN DIGITAL",
+    "name": "DISCO",
+    "model":"WD20EZAZ",
+    "feature":"HD HDD 2TB WD BLUE SATA III 3.5 256MB 7200RPM WD20EZBX",
+    "detail":"Aumenta la capacidad de tu PC con los discos WD Azul, Con la legendaria seguridad WD Blue drivers estan diseñados probados y construidos a la última y se venden con una licencia de protección limitada de 2 años",
+    "price": 16591.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-hdd-2tb-wd-blue-sata-iii-35-256mb-7200rpm-wd20ezbx-0.jpg"
                 ],       
-                "category":[
-                    {
-                        "name": "Almacenamiento"
+    "category":[
+                {
+               "name": "Almacenamiento"
             
-                    },
-                    {
-                        "name": "Oficina"
-                    }              
+                },
+                {
+                "name": "Oficina"
+                }              
                 ]
                 },
-                {    
-                    "id": 90,
-                    "brand": "MARKVISION",
-                    "name": "DISCO",
-                    "model":"MVSD120G25",
-                    "feature":"HD SSD 120GB MARKVISION SATA III 2.5 BULK",
-                    "detail":"DISCO SSD MARKVISION BULK, VELOCIDAD DE LECTURA SECUENCIAL HASTA 560MBPS, VELOCIDAD DE ESCRITURA SECUENCIAL HASTA 530MBPS,FORMATO 2.5 100X69X9mm,CONEXION SATA 3,CAPACIDAD 120GB SSD",
-                    "price": 5059.00,
-                    "image":[
-                       "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-0.jpg",
-                       "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-1.jpg"
+    {    
+    "id": 90,
+    "brand":"MARKVISION",
+    "name": "DISCO",
+    "model":"MVSD120G25",
+    "feature":"HD SSD 120GB MARKVISION SATA III 2.5 BULK",
+    "detail":"DISCO SSD MARKVISION BULK, VELOCIDAD DE LECTURA SECUENCIAL HASTA 560MBPS, VELOCIDAD DE ESCRITURA SECUENCIAL HASTA 530MBPS,FORMATO 2.5 100X69X9mm,CONEXION SATA 3,CAPACIDAD 120GB SSD",
+    "price": 5059.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-1.jpg"
                     ],       
-                    "category":[
-                        {
-                            "name": "Almacenamiento"
+    "category":[
+                {
+                "name": "Almacenamiento"
                 
-                        },
-                        {
-                            "name": "Gamer"
-                        }              
-                    ]
-                    },
-                    {    
-                        "id": 91,
-                        "brand": "SWORDFISH",
-                        "name": "DISCO",
-                        "model":"M22280",
-                        "feature":"HD SSD 250GB ADATA M.2 2280 SWORDFISH",
-                        "detail":"Saque el máximo provecho a su mente creativa con la unidad de estado sólido ADATA SWORDFISH PCIe Gen3x4 M.2 2280, Construida con una memoria flash 3D NAND y compatible con la interfaz PCIe Gen3x4, ofrece hasta 2 TB de capacidad y un rendimiento de lectura/escritura de hasta 1800/1200 MB por segundo,Tecnología de almacenamiento SSD, Interfaces PCIe 3.0, Aplicaciones PC, Notebook, Ubicación del disco Interno, Tipo de disco externo De escritorio",
-                        "price": 11947.00,
-                        "image":[
-                           "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-250gb-adata-m2-2280-swordfish-0.jpg"
+                },
+                {
+                "name": "Gamer"
+                }              
+                ]
+                },
+    {    
+    "id": 91,
+    "brand":"SWORDFISH",
+    "name": "DISCO",
+    "model":"M22280",
+    "feature":"HD SSD 250GB ADATA M.2 2280 SWORDFISH",
+    "detail":"Saque el máximo provecho a su mente creativa con la unidad de estado sólido ADATA SWORDFISH PCIe Gen3x4 M.2 2280, Construida con una memoria flash 3D NAND y compatible con la interfaz PCIe Gen3x4, ofrece hasta 2 TB de capacidad y un rendimiento de lectura/escritura de hasta 1800/1200 MB por segundo,Tecnología de almacenamiento SSD, Interfaces PCIe 3.0, Aplicaciones PC, Notebook, Ubicación del disco Interno, Tipo de disco externo De escritorio",
+    "price": 11947.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-250gb-adata-m2-2280-swordfish-0.jpg"
                         ],       
-                        "category":[
-                            {
-                                "name": "Almacenamiento"
+    "category":[
+                {
+                "name": "Almacenamiento"
                     
-                            },
-                            {
-                                "name": "Gamer"
-                            }              
-                        ]
-                        },
-                        {    
-                            "id": 92,
-                            "brand": "OVERTECH",
-                            "name": "FUENTE",
-                            "model":"GX-6500",
-                            "feature":"FUENTE 500W OVERTECH GX-6500",
-                            "detail":" Fuente 500W, Linea Entry, Formato ATX, Conexiones: 24 pins, 1x4 pins, 2 SATA, Cooler 8 cm",
-                            "price": 3203.00,
-                            "image":[
+                },
+                {
+                "name": "Gamer"
+                }              
+                ]
+                },
+    {    
+    "id": 92,
+    "brand": "OVERTECH",
+    "name": "FUENTE",
+    "model":"GX-6500",
+    "feature":"FUENTE 500W OVERTECH GX-6500",
+    "detail":" Fuente 500W, Linea Entry, Formato ATX, Conexiones: 24 pins, 1x4 pins, 2 SATA, Cooler 8 cm",
+    "price": 3203.00,
+    "image":[
                                "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-500w-overtech-gx6500-0.jpg"
                             ],       
-                            "category":[
-                                {
-                                    "name": "Hardware"
+    "category":[
+                {
+                "name": "Hardware"
                         
-                                },
-                                {
-                                    "name": "Oficina"
-                                }              
-                            ]
-                            }            
-                    
-                    
-
-
-
-  
+                },
+                {
+                "name": "Oficina"
+                }              
+                ]
+                },
+    {    
+    "id": 93,
+    "brand": "GAMEMAX",
+    "name": "FUENTE",
+    "model":"VP-450",
+    "feature":"FUENTE 450W GAMEMAX VP-450 FAN 12CM",
+    "detail":"CABLES 1x24PIN,12V8pin(4+4), 4xSAT ,2x4PIN 1xPCI-6+2PIN, Nivel de eficiencia > 75%, Nivel de ruido Cero (ECO-ON), <32dBA (al 100% de carga), Factor de forma Intel ATX 12 V 2.31, Dimensiones 140 mm (ancho) x 150 mm (largo) x 86 mm (alto), Información del fan, Tamaño del ventilador 120 mm, Control del ventilador ECO-ON / OFF, Rodamiento del ventilador Rodamiento dinámico fluido, Esperanza de vida 50,000 horas a 40 ° C, 15% - 65% HR",
+    "price": 14491.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-450w-gamemax-vp450-fan-12cm-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-450w-gamemax-vp450-fan-12cm-1.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-450w-gamemax-vp450-fan-12cm-2.jpg"
+                            ],       
+    "category":[
+                {
+                "name": "Hardware"
+                            
+                },
+                {
+                "name": "Gamer"
+                }              
+                ]
+                },  
+    {    
+    "id": 94,
+    "brand":"AEROCOOL",
+    "name": "GABINETE",
+    "model":"DELTA",
+    "feature":"GABINETE AEROCOOL DELTA-G-BK-V1",
+    "detail":"Case Type Mid Tower, Color Blac, Body Material SPCC, Front Panel Material ABS, Steel Thickness 0.5mm, Motherboards ATX/micro ATX/mini-ITX, Case Dimensions (Internal) 188 x 420 x 310mm (W x H x D), Case Dimensions (Overall) 197 x 431 x 357mm (W x H x D), 3.5 Drive Bays 2 Max. (1 x 3.5 and 1 x 3.5/2.5",
+    "price": 16189.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gabinete-aerocool-deltagbkv1-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gabinete-aerocool-deltagbkv1-1.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gabinete-aerocool-deltagbkv1-2.jpg"
+                            ],       
+    "category":[
+                {
+                "name": "Hardware"
+                            
+                },
+                {
+                "name": "Gamer"
+                }              
+                ]
+                },   
+    {    
+    "id": 95,
+    "brand":"AUREOX",
+    "name": "GABINETE",
+    "model":"ARX310G",
+    "feature":"GABINETE AUREOX ALBORYX ARX 310G FAN X2 MID TOWER",
+    "detail":"Ventilador frontal de 120mm con 15 LEDs rojos, Ventilador trasero de 120mm con 15 LEDs rojos, Panel lateral íntegramente de acrílico, Áreas de acrílico en panel frontal y superior destacando iluminación LED, Chasis gamer diseñado con cable management, Compartimiento inferior para la PSU, aislado del resto del hardware, Filtro desmontable inferior (deslizable) anti-polvo",
+    "price": 18091.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gabinete-aureox-alboryx-arx-310g-fan-x2-mid-tower-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gabinete-aureox-alboryx-arx-310g-fan-x2-mid-tower-1.jpg"
+                                ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                
+            },
+            {
+            "name": "Gamer"
+            }              
+                ]
+                },         
+    {    
+    "id": 96,
+    "brand": "TP-LINK",
+    "name": "RED",
+    "model":"TL-WN725N",
+    "feature":"PLACA DE RED USB TP-LINK TL-WN725N NANO",
+    "detail":"Adaptador USB TP-LINK 150Mbps inalámbrico N Nano, TL-WN725N permite al usuario conectar un ordenador de sobremesa o portátil a una red inalámbrica en 150Mbps, Este adaptador miniatura está diseñado para ser lo más cómodo posible y una vez conectado al puerto USB de un ordenador, se puede dejar allí ya sea que viaje o en casa, También cuenta con encriptación inalámbrica avanzada y fácil instalación, Con su tamaño miniatura y elegante diseño, los usuarios pueden conectar el adaptador nano a cualquier puerto USB y dejarlo allí. No hay necesidad de preocuparse por el bloqueo de puertos USB adyacentes o que el adaptador puede caerse cuando se mueve un ordenador portátil conectado de un lugar A a B, con la pequeña ras dispositivo contra el puerto USB",
+    "price": 3040.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn725n-nano-3.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn725n-nano-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn725n-nano-1.jpg"
+                                            ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                        
+            },
+            {
+            "name": "Oficina"
+            }              
+            ]
+            },
+    {    
+    "id": 97,
+    "brand": "TP-LINK",
+    "name": "RED",
+    "model":"TL-WN823N",
+    "feature":"PLACA DE RED USB TP-LINK TL-WN823N MINI 300mbps",
+    "detail":"TL-WN823N de TP-LINK está diseñado para conectar tu ordenador portátil o de escritorio a una red inalámbrica y disfrutar de un rendimiento inalámbrico de alta velocidad, El diseño de la punta del dedo hace que el adaptador conveniente y fácil de llevar a todas partes, Lo que es más el TL-WN823N cuenta con modo SoftAP, configuración de seguridad de un solo botón, software de configuración fácil de usar, por lo que es una excelente opción para disfrutar de la red inalámbrica rápida",
+    "price": 4392.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn823n-mini-300mbps-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn823n-mini-300mbps-1.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-tplink-tlwn823n-mini-300mbps-3.jpg"
+                                            ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                            
+            },
+            {
+            "name": "Oficina"
+            }              
+            ]
+            },
+    {    
+    "id": 98,
+    "brand": "MERCUSYS",
+    "name": "RED",
+    "model":"AC650",
+    "feature":"PLACA DE RED USB MERCUSYS AC650 HIGH GAIN WIRELESS DUAL BAND",
+    "detail":"High-Speed Dual-Band Wi-Fi: 256-QAM support increases the 2.4 GHz data rate from 150 Mbps to 200 Mbps, Enjoy speeds of up to200 Mbps on the 2.4 GHz band and 433 Mbps on the 5 GHz band, to take full advantage of your AC Wi-Fi, High-Gain Antenna: A 5dBi high-gain antenna greatly enhances the reception and transmission strength of the USB adapter, Internal Driver: Smart easy-install for Windows operating system,Supports the Latest Operating Systems: Fully compatible with Windows 10/8.1/8/7/XP",
+    "price": 4405.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-mercusys-ac650-high-gain-wireless-dual-band-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/placa-de-red-usb-mercusys-ac650-high-gain-wireless-dual-band-1.jpg"
+                                                        ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                                            
+            },
+            {
+            "name": "Oficina"
+            }              
+            ]
+            }, 
+    {    
+    "id": 99,
+    "brand": "KAZE",
+    "name": "FAN",
+    "model":"RGB AF-02",
+    "feature":"COOLER FAN XFX RGB AF-02",
+    "detail":"Nuestros Coolers Kaze, como los japoneses llaman al viento, están diseñados específicamente para mantener tu hardware refrigerado a una temperatura óptima para que su funcionamiento se desarrolle con total normalidad, sin contratiempos. Combinados con nuestros gabinetes, estos coolers son la mejor opción para explotar al máximo el rendimiento de tu equipo sin temor al sobrecalentamiento de los componentes.",
+    "price": 2068.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/cooler-fan-xfx-rgb-af02-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/cooler-fan-xfx-rgb-af02-0.jpg"
+                                                                    ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                                                        
+            },
+            {
+            "name": "Gamer"
+            }              
+            ]
+            },
+    {    
+    "id": 100,
+    "brand": "COOLER MASTER",
+    "name": "FAN",
+    "model":"B2DN18NPA-R1",
+    "feature":"FAN COOLERMASTER MASTERFAN MF120 HALO",
+    "detail":"Fan Profile Addressable Gen 2 RGB, Fan Speed 650-1800 RPM ± 10%, Fan Airflow 47.2 CFM ± 10%, Fan Air Pressure 1.6 mmH2O ± 10%, Fan Noise Level 6 - 30 dBA",
+    "price": 13967.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fan-coolermaster-masterfan-mf120-halo-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fan-coolermaster-masterfan-mf120-halo-1.jpg"
+                                                                                ],       
+    "category":[
+            {
+            "name": "Hardware"
+                                                                                    
+            },
+            {
+            "name": "Gamer"
+            }              
+            ]
+            }  
+                      
 ]
