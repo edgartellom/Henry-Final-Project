@@ -1972,6 +1972,141 @@
             "name": "Gamer"
         }              
     ]
-    }
+    },
+    {    
+        "id": 88,
+        "brand": "WESTERN DIGITAL",
+        "name": "DISCO",
+        "model":"WD10EZEX",
+        "feature":"DISCO HDD 1TB WD BLUE SATA III 3.5",
+        "detail":"Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.",
+        "price": 12395.00,
+        "image":[
+            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
+            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",     
+            "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
+        ],       
+        "category":[
+            {
+                "name": "Almacenamiento"
+    
+            },
+            {
+                "name": "Oficina"
+            }              
+        ]
+        },
+        {    
+            "id": 49,
+            "brand": "BARRACUDA",
+            "name": "DISCO",
+            "model":"ST1000DM010",
+            "feature":"DISCO HDD 1TB SATA3 SEAGATE BARRACUDA",
+            "detail":"Conexiones SATA a 6 Gb/s, Capacidad formateado 1.000.204 MB, Número de sectores .953.525.169, Formato avanzado (AF) Sí, Formato 3,5 pulgadas, Conforme con RoHS Sí",
+            "price": 14256.00,
+            "image":[
+               "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-0.jpg",
+               "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-sata3-seagate-barracuda-1.jpg"
+            ],       
+            "category":[
+                {
+                    "name": "Almacenamiento"
+        
+                },
+                {
+                    "name": "Oficina"
+                }              
+            ]
+            },
+            {    
+                "id": 89,
+                "brand": "WESTERN DIGITAL",
+                "name": "DISCO",
+                "model":"WD20EZAZ",
+                "feature":"HD HDD 2TB WD BLUE SATA III 3.5 256MB 7200RPM WD20EZBX",
+                "detail":"Aumenta la capacidad de tu PC con los discos WD Azul, Con la legendaria seguridad WD Blue drivers estan diseñados probados y construidos a la última y se venden con una licencia de protección limitada de 2 años",
+                "price": 16591.00,
+                "image":[
+                   "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-hdd-2tb-wd-blue-sata-iii-35-256mb-7200rpm-wd20ezbx-0.jpg"
+                ],       
+                "category":[
+                    {
+                        "name": "Almacenamiento"
+            
+                    },
+                    {
+                        "name": "Oficina"
+                    }              
+                ]
+                },
+                {    
+                    "id": 90,
+                    "brand": "MARKVISION",
+                    "name": "DISCO",
+                    "model":"MVSD120G25",
+                    "feature":"HD SSD 120GB MARKVISION SATA III 2.5 BULK",
+                    "detail":"DISCO SSD MARKVISION BULK, VELOCIDAD DE LECTURA SECUENCIAL HASTA 560MBPS, VELOCIDAD DE ESCRITURA SECUENCIAL HASTA 530MBPS,FORMATO 2.5 100X69X9mm,CONEXION SATA 3,CAPACIDAD 120GB SSD",
+                    "price": 5059.00,
+                    "image":[
+                       "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-0.jpg",
+                       "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-120gb-markvision-sata-iii-25-bulk-1.jpg"
+                    ],       
+                    "category":[
+                        {
+                            "name": "Almacenamiento"
+                
+                        },
+                        {
+                            "name": "Gamer"
+                        }              
+                    ]
+                    },
+                    {    
+                        "id": 91,
+                        "brand": "SWORDFISH",
+                        "name": "DISCO",
+                        "model":"M22280",
+                        "feature":"HD SSD 250GB ADATA M.2 2280 SWORDFISH",
+                        "detail":"Saque el máximo provecho a su mente creativa con la unidad de estado sólido ADATA SWORDFISH PCIe Gen3x4 M.2 2280, Construida con una memoria flash 3D NAND y compatible con la interfaz PCIe Gen3x4, ofrece hasta 2 TB de capacidad y un rendimiento de lectura/escritura de hasta 1800/1200 MB por segundo,Tecnología de almacenamiento SSD, Interfaces PCIe 3.0, Aplicaciones PC, Notebook, Ubicación del disco Interno, Tipo de disco externo De escritorio",
+                        "price": 11947.00,
+                        "image":[
+                           "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-250gb-adata-m2-2280-swordfish-0.jpg"
+                        ],       
+                        "category":[
+                            {
+                                "name": "Almacenamiento"
+                    
+                            },
+                            {
+                                "name": "Gamer"
+                            }              
+                        ]
+                        },
+                        {    
+                            "id": 92,
+                            "brand": "OVERTECH",
+                            "name": "FUENTE",
+                            "model":"GX-6500",
+                            "feature":"FUENTE 500W OVERTECH GX-6500",
+                            "detail":" Fuente 500W, Linea Entry, Formato ATX, Conexiones: 24 pins, 1x4 pins, 2 SATA, Cooler 8 cm",
+                            "price": 3203.00,
+                            "image":[
+                               "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-500w-overtech-gx6500-0.jpg"
+                            ],       
+                            "category":[
+                                {
+                                    "name": "Hardware"
+                        
+                                },
+                                {
+                                    "name": "Oficina"
+                                }              
+                            ]
+                            }            
+                    
+                    
+
+
+
   
 ]
