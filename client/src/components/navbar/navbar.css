@@ -1,0 +1,3 @@
+.search{
+    height: calc(0.3rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2) !important;
+}

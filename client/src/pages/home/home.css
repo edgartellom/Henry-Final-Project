@@ -19,8 +19,8 @@
   /* Header */
   .hero {
     background-color: #394046;
-    background-image: url("https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg");
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg");
+    background-position: center center;
     background-size: cover;
   }
   
