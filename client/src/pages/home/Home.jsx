@@ -1,8 +1,15 @@
-import React from "react";
 import "./home.css"
 import { Footer, Navbar } from "../../components";
+import useCommonStore from "../../store/commons";
+import { useEffect } from "react";
 
 const Home = () => {
+  const {changeTitle} = useCommonStore()
+
+  useEffect(()=>{
+    changeTitle("Marca | Home")
+  },[])
+
   return (
     <>
     <Navbar></Navbar>

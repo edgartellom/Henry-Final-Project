@@ -13,6 +13,12 @@ img {
 }
 
 .item-list{
-    padding: 1em;
-    margin: 0.5rem;
+    
+    padding: 5%;
+    margin: 3px;
+}
+
+[role=link]:is([aria-current],:hover,:active,:focus), a:is([aria-current],:hover,:active,:focus){
+    -moz-text-decoration-line: none !important;
+    text-decoration: none;
 }
