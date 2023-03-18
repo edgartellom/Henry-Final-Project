@@ -1,10 +1,13 @@
 import {create} from "zustand";
+import {devtools} from "zustand/middleware";
 
-const useCommonStore = create((set)=>({
+const useCommonStore = create(devtools((set)=>({
     theme: false,
     title: "Page",
-    changeTheme: () =>set({theme: !state.theme}),
+    changeTheme: () =>set((state)=>({theme: !state.theme})),
     changeTitle: (title) =>set({title: title}),
-}))
+})))
+
+
 
 export default useCommonStore;

@@ -1,18 +1,20 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header, Footer } from "./components";
-import { Home, Contact } from "./pages";
+import './App.css'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+import useCommonStore from './store/commons';
+import { shallow } from 'zustand/shallow';
 
 function App() {
+
+  const { theme, title } = useCommonStore((state) => ({ theme: state.theme, title: state.title }), shallow)
+
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <HelmetProvider>
+        <Helmet htmlAttributes={theme ? { 'data-theme': 'light' } : { 'data-theme': 'dark' }}>
+          <title>{title}</title>
+        </Helmet>
+      </HelmetProvider>
+
     </>
   );
 }
