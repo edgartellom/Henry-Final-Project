@@ -4,7 +4,6 @@ const { Product, Category } = require("../db");
 require("dotenv").config();
 const API_URL = process.env.API_URL;
 
-
 const getApiInfo = async () => {
   const products = (await axios(`${API_URL}/products`)).data;
   let orderedData = await products.sort((a, b) =>
@@ -37,7 +36,7 @@ const getAllProducts = async () => {
             name: productData.name,
             model: productData.model,
           },
-          defaults: {            
+          defaults: {
             feature: productData.feature,
             detail: productData.detail,
             price: productData.price,
@@ -83,26 +82,12 @@ const updateProduct = async (product) => {
     brand,
     name,
     model,
-    network,
-    launch,
-    dimensions,
-    weight,
-    displaySize,
-    displayResolution,
-    os,
-    ram,
-    internMemory,
-    chipset,
-    cpu,
-    selfieCameraResolution,
-    selfieCameraVideo,
-    mainCameraResolution,
-    mainCameraVideo,
-    battery,
+    feature,
+    detail,
     price,
-    color,
     image,
     category,
+    stock,
     state,
   } = product;
   try {
@@ -113,26 +98,12 @@ const updateProduct = async (product) => {
       brand,
       name,
       model,
-      network,
-      launch,
-      dimensions,
-      weight,
-      displaySize,
-      displayResolution,
-      os,
-      ram,
-      internMemory,
-      chipset,
-      cpu,
-      selfieCameraResolution,
-      selfieCameraVideo,
-      mainCameraResolution,
-      mainCameraVideo,
-      battery,
+      feature,
+      detail,
       price,
-      color,
       image,
       category,
+      stock,
       state,
     });
     return { message: "Product updated succesfully", status: "success" };

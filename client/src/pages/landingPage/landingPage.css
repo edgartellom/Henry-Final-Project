@@ -1,0 +1,54 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.botones button {
+  background-color: #1f2d38;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  justify-content: center;
+}
+
+#boton_prev:hover,
+#boton_next:hover {
+  background-color: #1b4a7c;
+}
+
+#boton_prev:disabled,
+#boton_next:disabled {
+  background-color: #c5c5c5;
+  cursor: default;
+}
+
+@media only screen and (max-width: 768px) {
+  .botones {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

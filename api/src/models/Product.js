@@ -31,12 +31,12 @@ module.exports = (sequelize) => {
         type: DataTypes.DECIMAL(8, 2),
       },
       image: {
-        type: DataTypes.ARRAY(DataTypes.STRING),       
+        type: DataTypes.ARRAY(DataTypes.STRING),
       },
       stock: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: 0,
+        defaultValue: 5,
         validate: {
           min: 0,
           max: 10000,

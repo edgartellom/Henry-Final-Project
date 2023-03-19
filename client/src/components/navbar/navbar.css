@@ -1,0 +1,40 @@
+.search{
+    height: calc(0.3rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2) !important;
+}
+
+@keyframes mymenu {
+    from {transform: translateX(100%);}
+    to { transform: translateX(0%)}
+  }
+
+.side-h{
+    
+    display: none;
+
+}
+
+.side-s{
+    animation-name: mymenu;
+    animation-duration: 0.3s;
+}
+
+
+
+.menu-icon{
+    display: none;
+}
+
+
+
+@media screen and (max-width:600px){
+    .menu-icon{
+        display: flex;
+    }
+    
+    .menu-items{
+        display: none;
+    }
+
+
+
+}
