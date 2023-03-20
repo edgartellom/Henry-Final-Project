@@ -1,13 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Login, Products, Detail, Contact, LandingPage } from "../pages";
+import { Home, Login, Products, Detail, Contact } from "../pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
-  },
-  {
-    path: "/home",
     element: <Home />,
   },
   {
