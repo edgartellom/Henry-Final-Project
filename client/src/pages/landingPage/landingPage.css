@@ -45,6 +45,34 @@
   cursor: default;
 }
 
+.card_div {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr); /* Dos columnas de igual ancho */
+  margin-top: 10px;
+  flex: 1;
+}
+.card {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(235, 235, 230);
+  height: 300px;
+  box-shadow: 0 0 5px rgba(31, 29, 135, 0.3);
+  margin: 20px;
+  height: 300px;
+  width: 400px;
+}
+
+.card img {
+  max-width: 50%;
+  height: auto;
+}
+
 @media only screen and (max-width: 768px) {
   .botones {
     flex-direction: column;

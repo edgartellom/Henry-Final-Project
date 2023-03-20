@@ -2,10 +2,20 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import { Footer } from "../../components";
 import { useState, useEffect } from "react";
+import useStore from "../../store/products";
+import { Link } from "react-router-dom";
 import "./landingPage.css";
 
 const LandingPage = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const fetchProducts = useStore((state) => state.fetchProducts);
+  const products = useStore((state) => state.products);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const sliceProducts = products.slice(0, 3);
 
   const prevImg = () => {
     setCurrentImgIndex(
@@ -49,6 +59,16 @@ const LandingPage = () => {
           Next
         </button>
       </div>
+      <Link to="/detail" className="card_div">
+        {sliceProducts.map((product) => (
+          <div key={product.id} className="card">
+            <img src={product.image[0]} alt={product.name} />
+            <div>
+              {product.feature} {"$" + product.price}
+            </div>
+          </div>
+        ))}
+      </Link>
       <Footer />
     </div>
   );

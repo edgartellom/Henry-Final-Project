@@ -4,11 +4,11 @@ import { Home, Login, Products, Detail, Contact, LandingPage } from "../pages";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <LandingPage />,
   },
   {
-    path: "/landingPage",
-    element: <LandingPage />,
+    path: "/home",
+    element: <Home />,
   },
   {
     path: "/login",
