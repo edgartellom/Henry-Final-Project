@@ -1972,6 +1972,30 @@
             "name": "Gamer"
         }              
     ]
+    },
+    {    
+    "id": 88,
+    "brand": "WESTERN DIGITAL",
+    "name": "SATA III",
+    "model":"WD10EZEX",
+    "feature":"DISCO HDD 1TB WD BLUE SATA III 3.5",
+    "detail":"Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.-Modelo: WD10EZEX. -Factor forma: 3.5. -Velocidad de rotación: 7200RPM. -Cache: 64MB.-Velocidad máxima sostenida: 150MB/s",
+    "price": 12395.00,
+    "image":[
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",
+        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
+               
+    ],       
+    "category":[
+        {
+            "name": "Hardware"
+
+        },
+        {
+            "name": "Oficina"
+        }              
+    ]
     }
   
 ]
