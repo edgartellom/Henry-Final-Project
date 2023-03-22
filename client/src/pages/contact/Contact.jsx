@@ -19,9 +19,9 @@ const Contact = () => {
                 <aside>
                   <summary>Meet us</summary>
                   <ol>
-                    <li><i class="bi bi-geo-alt-fill"></i> Address : Jr. anda la osa 786 Lima - Peru </li>
-                    <li><i class="bi bi-whatsapp"></i> Phones : 5192328522 12354666 316521 </li>
-                    <li><i class="bi bi-envelope-at"></i> Emails: pkito@mail.com</li>
+                    <li><i className="bi bi-geo-alt-fill"></i> Address : Jr. anda la osa 786 Lima - Peru </li>
+                    <li><i className="bi bi-whatsapp"></i> Phones : 5192328522 12354666 316521 </li>
+                    <li><i className="bi bi-envelope-at"></i> Emails: pkito@mail.com</li>
 
                   </ol>
                   
@@ -30,10 +30,10 @@ const Contact = () => {
                 <aside>
                   <summary>Follow us</summary>
                   <ol>
-                    <li> <NavLink><i class="bi bi-facebook"></i></NavLink></li>
-                    <li> <NavLink><i class="bi bi-twitter"></i></NavLink></li>
-                    <li> <NavLink><i class="bi bi-instagram"></i></NavLink></li>
-                    <li> <NavLink><i class="bi bi-linkedin"></i></NavLink></li>
+                    <li> <NavLink><i className="bi bi-facebook"></i></NavLink></li>
+                    <li> <NavLink><i className="bi bi-twitter"></i></NavLink></li>
+                    <li> <NavLink><i className="bi bi-instagram"></i></NavLink></li>
+                    <li> <NavLink><i className="bi bi-linkedin"></i></NavLink></li>
                   </ol>
                   
 

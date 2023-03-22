@@ -17,7 +17,7 @@ const Detail = () => {
                         <h4>SKU: 453532121565</h4>
                     </hgroup>
                     <div className="rate">
-                        <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                        <i className="bi bi-star"></i><i className="bi bi-star"></i><i className="bi bi-star"></i><i className="bi bi-star"></i>
                     </div>
                     <p>desc: Monitor Gamer Curvo TUF Gaming VG27VH1B – 27 pulgadas Full HD (1920×1080), 165Hz (por encima de 144Hz), Extreme Low Motion Blur™, Adaptive-sync, FreeSync™ Premium, 1 ms (MPRT) </p>
                     <details>
