@@ -4,6 +4,17 @@ import {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import useStore from "../../store/products"
 
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+    
+
 const Detail = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
   const products = useStore((state) => state.products);
@@ -22,65 +33,76 @@ var dataRecibe=id?products.filter((el)=>el.id===id):""
 var data=dataRecibe[0]
 console.log(data)
 
+ function categories() {
+   let category = document.querySelector("#category");
 
+   data.categories.forEach((categories) => {
+    
+     const div = document.createElement("div");
+     div.innerHTML = categories.name;;
+     if(category!=null){
+     category.appendChild(div);
+     }
+   });
+ }  
 
   return (
     <>
       <Navbar></Navbar>
-      <main className="container">
-        <div className="row">
-          <div className="col">
-            <div className="images">
-              <img
-                className="img-fluid"
-                src={data.image[0]}
-              />
+      <main className='container'>
+        <div className='row'>
+          <div className='col'>
+            <div className='images'>
+              <img className='img-fluid' src={data.image[0]} />
             </div>
           </div>
-          <div className="col">
+          <div className='col'>
             <hgroup>
               <h3>{data.brand}</h3>
               <h4>{data.model}</h4>
             </hgroup>
-            <div className="rate">
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
+            <div className='rate'>
+              <i className='bi bi-star'></i>
+              <i className='bi bi-star'></i>
+              <i className='bi bi-star'></i>
+              <i className='bi bi-star'></i>
             </div>
-            <p>
-              {data.feature}
-            </p>
+            <p>{data.feature}</p>
             <details>
               <summary>Details</summary>
               <ul>
-                <li>
-                 {data.detail}
-                </li>
+                <li>{data.detail}</li>
               </ul>
             </details>
             <hgroup>
               <h5>Categories</h5>
               <h6></h6>
             </hgroup>
+            {categories()}
+
+            <div id='category'> </div>
+            {/*console.log(data.categories)*/}
             <p>
-              Price: <strong>{data.price}</strong>
+              {/* Price: <strong>{data.price}</strong> */}
+              Price: <strong>{formatter.format(data.price)}</strong>
             </p>
-            <div className="actions">
-              <div className="btn-inline">
+            <div className='actions'>
+              <div className='btn-inline'>
                 <NavLink
-                  to="/detail"
-                  role="button"
-                  className="primary"
-                  data-tooltip="Add to Cart">
-                  <i className="bi bi-cart-plus"></i>
+                  to='/detail'
+                  role='button'
+                  className='primary'
+                  data-tooltip='Add to Cart'
+                >
+                  <i className='bi bi-cart-plus'></i>
                 </NavLink>
                 <NavLink
-                  to="/detail"
-                  role="button"
-                  className="secondary"
-                  data-tooltip="Add to favorites">
-                  <i className="bi bi-heart"></i>
+                  to='/detail'
+                  role='button'
+                  className='secondary'
+                  data-tooltip='Add to favorites'
+                >
+                  <i className='bi bi-heart'></i>
                 </NavLink>
               </div>
             </div>
