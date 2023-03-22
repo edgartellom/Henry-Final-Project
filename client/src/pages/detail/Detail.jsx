@@ -92,6 +92,7 @@ console.log(data)
                   to='/detail'
                   role='button'
                   className='primary'
+                  
                   data-tooltip='Add to Cart'
                 >
                   <i className='bi bi-cart-plus'></i>
