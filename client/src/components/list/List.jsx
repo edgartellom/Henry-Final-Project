@@ -22,7 +22,7 @@ const List = ({ products }) => {
           </section>
           <aside>
             <h3 className="center">
-              {/* <small>Filters</small> */}
+              <small>Filters</small>
             </h3>
             <ul>
               <li>Brands</li>
