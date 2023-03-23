@@ -1,59 +1,76 @@
-import "./home.css"
-import { Footer, Navbar } from "../../components";
-import useCommonStore from "../../store/commons";
-import { useEffect } from "react";
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
+import { Footer } from "../../components";
+import { useState, useEffect } from "react";
+import useStore from "../../store/products";
+import { Link } from "react-router-dom";
+import "./home.css";
 
 const Home = () => {
-  const {changeTitle} = useCommonStore()
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const fetchProducts = useStore((state) => state.fetchProducts);
+  const products = useStore((state) => state.products);
 
-  useEffect(()=>{
-    changeTitle("Marca | Home")
-  },[])
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const sliceProducts = products.slice(0, 3);
+
+  const prevImg = () => {
+    setCurrentImgIndex(
+      currentImgIndex === 0 ? images.length - 1 : currentImgIndex - 1
+    );
+  };
+
+  const nextImg = () => {
+    setCurrentImgIndex(
+      currentImgIndex === images.length - 1 ? 0 : currentImgIndex + 1
+    );
+  };
+
+  const images = [
+    "https://www.fullh4rd.com.ar/adminrgb/img/banner/130.png",
+    "https://www.fullh4rd.com.ar/adminrgb/img/banner/126.png",
+    "https://www.fullh4rd.com.ar/adminrgb/img/banner/137.png",
+    "https://www.fullh4rd.com.ar/adminrgb/img/banner/81.png",
+    "https://www.fullh4rd.com.ar/adminrgb/img/banner/125.png",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImg();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [currentImgIndex]);
 
   return (
-    <>
-    <Navbar></Navbar>
-      <div className="hero" data-theme="dark">
-        
-        
-        <header className="container">
-          <hgroup>
-            <h1>Company</h1>
-            <h2>A classic company or blog layout with a sidebar</h2>
-          </hgroup>
-          <p><a href="#" role="button" >Call to action</a></p>
-        </header>
+    <div>
+      <Navbar />
+      <div className="carousel">
+        <img src={images[currentImgIndex]} alt="carousel-img" />
       </div>
-      <main className="container">
-        <div className="grid">
-
-          <section>
-            <hgroup>
-              <h2>Ut sit amet sem ut velit</h2>
-              <h3>Quisque mi est</h3>
-            </hgroup>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis est vel velit bibendum ultrices. Sed aliquam tortor vel odio fermentum ullamcorper eu vitae neque. Sed non diam at tellus venenatis viverra. Vestibulum et leo laoreet arcu tempor eleifend venenatis ac leo. Pellentesque euismod justo sed nisl sollicitudin varius. Duis venenatis nisl sit amet ante rutrum posuere. Etiam nec ullamcorper leo, sed placerat mauris.</p>
-
-            
-          </section>
-
-          <aside>
-            <a href="/" aria-label="Example" ><img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Architecture"/></a>
-            <p>
-              <a href="/" >Donec sit amet</a><br/>
-                <small>Class aptent taciti sociosqu ad litora torquent per conubia nostra</small>
-            </p>
-           <a href="/" aria-label="Example"><img src="https://images.pexels.com/photos/2115217/pexels-photo-2115217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Architecture"/></a>
-            <p>
-              <a href="/">Nullam lobortis placerat aliquam</a><br/>
-                <small>Maecenas vitae nibh blandit dolor commodo egestas vel eget neque. Praesent semper justo orci, vel imperdiet mi auctor in.</small>
-            </p>
-          </aside> 
-
-        </div>
-      </main>
-      <Footer/>
-    </>
+      <div className="botones">
+        <button id="boton_prev" onClick={prevImg}>
+          Prev
+        </button>
+        <button id="boton_next" onClick={nextImg}>
+          Next
+        </button>
+      </div>
+      <Link to="/detail" className="card_div">
+        {sliceProducts.map((product) => (
+          <div key={product.id} className="card">
+            <img src={product.image[0]} alt={product.name} />
+            <div>
+              {product.feature} {"$" + product.price}
+            </div>
+          </div>
+        ))}
+      </Link>
+      <Footer />
+    </div>
   );
 };
 

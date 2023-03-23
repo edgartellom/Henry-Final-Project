@@ -1,65 +1,82 @@
-/* Global CSS variables */
-:root {
-    --spacing-company: 3rem;
-    --font-weight: 400;
-    --border-radius: 0;
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.botones button {
+  background-color: #1f2d38;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  justify-content: center;
+}
+
+#boton_prev:hover,
+#boton_next:hover {
+  background-color: #1b4a7c;
+}
+
+#boton_prev:disabled,
+#boton_next:disabled {
+  background-color: #c5c5c5;
+  cursor: default;
+}
+
+.card_div {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr); /* Dos columnas de igual ancho */
+  margin-top: 10px;
+  flex: 1;
+}
+.card {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(235, 235, 230);
+  height: 300px;
+  box-shadow: 0 0 5px rgba(31, 29, 135, 0.3);
+  margin: 20px;
+  height: 300px;
+  width: 400px;
+}
+
+.card img {
+  max-width: 50%;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .botones {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  
-  /* Typography */
-  h2,
-  h3,
-  hgroup > :last-child {
-    font-weight: 200;
-  }
-  
-  small {
-    color: var(--muted-color);
-  }
-  
-  /* Header */
-  .hero {
-    background-color: #394046;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg");
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  header {
-    padding: var(--spacing-company) 0;
-  }
-  
-  header hgroup > :last-child {
-    color: var(--h3-color);
-  }
-  
-  header hgroup {
-    margin-bottom: var(--spacing-company);
-  }
-  
-  /* Nav */
-  summary[role="link"].contrast:is([aria-current],:hover,:active,:focus) {
-    background-color: transparent;
-    color: var(--contrast-hover);
-  }
-  
-  /* Main */
-  @media (min-width: 992px) {
-    main .grid {
-      grid-column-gap: var(--spacing-company);
-      grid-template-columns: auto 25%;
-    }
-  }
-  
-  form.grid {
-    grid-row-gap: 0;
-  }
-  
-  /* Aside nav */
-  aside img {
-    margin-bottom: 0.25rem;
-  }
-  
-  aside p {
-    margin-bottom: var(--spacing-company);
-    line-height: 1.25;
-  }
+}
