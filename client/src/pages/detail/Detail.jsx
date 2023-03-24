@@ -3,6 +3,8 @@ import { Footer, Navbar } from "../../components";
 import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import useStore from "../../store/products"
+import ClipLoader from "react-spinners/ClipLoader";
+import "./Detail.css";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -16,6 +18,7 @@ const formatter = new Intl.NumberFormat("en-US", {
     
 
 const Detail=()=> {
+  const [loadingInProgress, setLoading] = useState(false);
   const{filterId,detailProduct}=useStore()
 
 
@@ -23,6 +26,10 @@ const Detail=()=> {
 const{id}=useParams()
 
   useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
     filterId(id)
   }, []);
 
@@ -43,63 +50,75 @@ console.log(detailProduct)
   return (
     <>
       <Navbar></Navbar>
-       <main className="container"> 
-       <div className="row">
-        <div className="col">
-          <div className="images">
-         <img className="img-fluid" src={detailProduct.image}/>
-      </div>
-      </div>
-      <div className="col">
-        <hgroup>
-          <h3>{detailProduct.brand}</h3>
-          <h4>{detailProduct.model}</h4>
-        </hgroup>
-        <div>
-        <i className='bi bi-star'></i>
-        <i className='bi bi-star'></i>
-        <i className='bi bi-star'></i>
-        <i className='bi bi-star'></i> 
-        </div>
-        <p>{detailProduct.feature}</p>
-        <details>
-              <summary>Details</summary>
-              <ul>
-                <li>{detailProduct.detail}</li>
-              </ul>
-        </details>
-        <hgroup>
-              <h5>Categories</h5>
-              <li>{detailProduct.categories}</li>
-        </hgroup>
-        <p>
-            Price: <strong>{formatter.format(detailProduct.price)}</strong>
-        </p>
-        <div className='actions'>
-              <div className='btn-inline'>
-                <NavLink
-                  to='/detail'
-                  role='button'
-                  className='primary'
-                  data-tooltip='Add to Cart'
-                >
-                  <i className='bi bi-cart-plus'></i>
-                </NavLink>
-                <NavLink
-                  to='/detail'
-                  role='button'
-                  className='secondary'
-                  data-tooltip='Add to favorites'
-                >
-                  <i className='bi bi-heart'></i>
-                </NavLink>
+
+      <main className='container'>
+        {loadingInProgress ? (
+          <div className='loader-container'>
+            <ClipLoader
+              color={"#fff"}
+              loading={loadingInProgress}
+              size={150}
+            />
+          </div>
+        ) : (
+          <div className='row'>
+            <div className='col'>
+              <div className='images'>
+                <img className='img-fluid' src={detailProduct.image} />
               </div>
             </div>
-      </div>
-      </div>
+            <div className='col'>
+              <hgroup>
+                <h3>{detailProduct.brand}</h3>
+                <h4>{detailProduct.model}</h4>
+              </hgroup>
+              <div>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+              </div>
+              <p>{detailProduct.feature}</p>
+              <details>
+                <summary>Details</summary>
+                <ul>
+                  <li>{detailProduct.detail}</li>
+                </ul>
+              </details>
+              <hgroup>
+                <h5>Categories</h5>
+                <li>{detailProduct.categories}</li>
+              </hgroup>
+              <p>
+                Price: <strong>{formatter.format(detailProduct.price)}</strong>
+              </p>
+              <div className='actions'>
+                <div className='btn-inline'>
+                  <NavLink
+                    to='/detail'
+                    role='button'
+                    className='primary'
+                    data-tooltip='Add to Cart'
+                  >
+                    <i className='bi bi-cart-plus'></i>
+                  </NavLink>
+                  <NavLink
+                    to='/detail'
+                    role='button'
+                    className='secondary'
+                    data-tooltip='Add to favorites'
+                  >
+                    <i className='bi bi-heart'></i>
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
-  <Footer></Footer>
-  </>
+
+      <Footer></Footer>
+    </>
   );
 };
 
