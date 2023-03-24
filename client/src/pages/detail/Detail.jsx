@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import useStore from "../../store/products"
 
@@ -15,78 +15,67 @@ const formatter = new Intl.NumberFormat("en-US", {
 
     
 
-const Detail = () => {
-  const fetchProducts = useStore((state) => state.fetchProducts);
-  const products = useStore((state) => state.products);
+const Detail=()=> {
+  const{filterId,detailProduct}=useStore()
+
+
+
+const{id}=useParams()
 
   useEffect(() => {
-    fetchProducts();
+    filterId(id)
   }, []);
 
 
-  const{id}=useParams()
-  console.log(id)
 
 
 
-var dataRecibe=id?products.filter((el)=>el.id===id):""
-var data=dataRecibe[0]
-console.log(data)
 
- function categories() {
-   let category = document.querySelector("#category");
 
-   data.categories.forEach((categories) => {
-    
-     const div = document.createElement("div");
-     div.innerHTML = categories.name;;
-     if(category!=null){
-     category.appendChild(div);
-     }
-   });
- }  
+
+console.log(detailProduct)
+
+
+
+//var dataRecibe=id?products.filter((el)=>el.id===id):""
+
 
   return (
     <>
       <Navbar></Navbar>
-      <main className='container'>
-        <div className='row'>
-          <div className='col'>
-            <div className='images'>
-              <img className='img-fluid' src={data.image[0]} />
-            </div>
-          </div>
-          <div className='col'>
-            <hgroup>
-              <h3>{data.brand}</h3>
-              <h4>{data.model}</h4>
-            </hgroup>
-            <div className='rate'>
-              <i className='bi bi-star'></i>
-              <i className='bi bi-star'></i>
-              <i className='bi bi-star'></i>
-              <i className='bi bi-star'></i>
-            </div>
-            <p>{data.feature}</p>
-            <details>
+       <main className="container"> 
+       <div className="row">
+        <div className="col">
+          <div className="images">
+         <img className="img-fluid" src={detailProduct.image}/>
+      </div>
+      </div>
+      <div className="col">
+        <hgroup>
+          <h3>{detailProduct.brand}</h3>
+          <h4>{detailProduct.model}</h4>
+        </hgroup>
+        <div>
+        <i className='bi bi-star'></i>
+        <i className='bi bi-star'></i>
+        <i className='bi bi-star'></i>
+        <i className='bi bi-star'></i> 
+        </div>
+        <p>{detailProduct.feature}</p>
+        <details>
               <summary>Details</summary>
               <ul>
-                <li>{data.detail}</li>
+                <li>{detailProduct.detail}</li>
               </ul>
-            </details>
-            <hgroup>
+        </details>
+        <hgroup>
               <h5>Categories</h5>
-              <h6></h6>
-            </hgroup>
-            {categories()}
-
-            <div id='category'> </div>
-            {/*console.log(data.categories)*/}
-            <p>
-              {/* Price: <strong>{data.price}</strong> */}
-              Price: <strong>{formatter.format(data.price)}</strong>
-            </p>
-            <div className='actions'>
+              <li>{detailProduct.categories}</li>
+        </hgroup>
+        <p>
+            Price: <strong>{formatter.format(detailProduct.price)}</strong>
+        </p>
+        <div className='actions'>
               <div className='btn-inline'>
                 <NavLink
                   to='/detail'
@@ -106,11 +95,11 @@ console.log(data)
                 </NavLink>
               </div>
             </div>
-          </div>
-        </div>
+      </div>
+      </div>
       </main>
-      <Footer></Footer>
-    </>
+  <Footer></Footer>
+  </>
   );
 };
 
