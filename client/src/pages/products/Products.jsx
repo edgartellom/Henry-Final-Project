@@ -14,8 +14,14 @@ const Products = () => {
   const setBrandFilter = useStore((state) => state.setBrandFilter);
   const productByBrands = useStore((state) => state.getFilteredByBrand());
 
+  const setOrderPrice = useStore((state) => state.setOrderPrice);
+  
+  
+
   const [filter, setFilter] = useState("");
   const [filterBrand, setFilterBrand] = useState("");
+
+  const [setOrder] = useState('');
 
   const [page, setPage] = useState(1);
 
@@ -31,6 +37,7 @@ const Products = () => {
     indexOfFirstProduct,
     indexOfLastProduct
   );
+ 
 
   useEffect(() => {
     fetchProducts();
@@ -51,6 +58,15 @@ const Products = () => {
     setFilterBrand(brand);
     setBrandFilter(brand);
   };
+
+  function handleSort(event) {
+    e.preventDefault();
+    const price =event.target.value;
+    setOrderPrice(price);
+    setCurrentPage(1);
+
+    setOrderPrice(`Ordenado ${e.target.value}`)
+  }
 
   return (
     <>
