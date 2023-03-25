@@ -1,7 +1,6 @@
 [
-    {"name":"Perifericos"},
-    {"name":"Gamer"},
-    {"name":"Oficina"},
-    {"name":"Hardware"}
-    
+  { "name": "Perifericos" },
+  { "name": "Gamer" },
+  { "name": "Oficina" },
+  { "name": "Hardware" }
 ]

@@ -3,31 +3,25 @@ import useStore from "../../store/products";
 import { useState, useEffect } from "react";
 import { Pagination, Stack, Typography } from "@mui/material";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { getFilteredByBrand } from "../../tools/filters";
 
 const Products = () => {
-  // const fetchProducts = useStore((state) => state.fetchProducts);
-  // const products = useStore((state) => state.products);
-
   const fetchProducts = useStore((state) => state.fetchProducts);
-  const filteredProducts = useStore((state) => state.getFilteredProducts());
+
+  const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
   const setBrandFilter = useStore((state) => state.setBrandFilter);
-  const productByBrands = useStore((state) => state.getFilteredByBrand());
-
-  const [filter, setFilter] = useState("");
-  const [filterBrand, setFilterBrand] = useState("");
+  const setListProducts = useStore((state) => state.setListProducts);
+  const listProducts = useStore((state) => state.listProducts);
+  const categoryFilter = useStore((state) => state.categoryFilter);
+  const brandFilter = useStore((state) => state.brandFilter);
 
   const [page, setPage] = useState(1);
-
-  // const combinedArray = filteredProducts.concat(productByBrands);
-  // const uniqueArray = combinedArray.filter((value, index) => {
-  //   return combinedArray.indexOf(value) === index;
-  // });
 
   const productsPerPage = 12;
   const indexOfLastProduct = page * productsPerPage; //12
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage; //0
-  const currentProducts = filteredProducts.slice(
+  const currentProducts = listProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -40,16 +34,23 @@ const Products = () => {
     setPage(value);
   };
 
-  const handleFilterChange = (event) => {
+  function handleCategoryChange(event) {
     const category = event.target.value;
-    setFilter(category);
     setCategoryFilter(category);
-  };
+    const filteredProducts = state.products.filter((product) =>
+      product.categories.some((cat) => cat.name === category)
+    );
+    setListProducts(filteredProducts);
+  }
 
-  const handleFilterChangeBrand = (event) => {
+  const handleBrandChange = (event) => {
     const brand = event.target.value;
-    setFilterBrand(brand);
     setBrandFilter(brand);
+    const products = state.products;
+    const filteredProducts = products.filter(
+      (product) => product.brand.toLowerCase() === brand.toLowerCase()
+    );
+    setListProducts(filteredProducts);
   };
 
   return (
@@ -58,7 +59,7 @@ const Products = () => {
       <Stack spacing={2}>
         <Typography>Page: {page}</Typography>
         <Pagination
-          count={parseInt(productByBrands.length / productsPerPage)}
+          count={parseInt(listProducts.length / productsPerPage)}
           page={page}
           onChange={handleChange}
         />
@@ -69,9 +70,9 @@ const Products = () => {
           <Select
             labelId="demo-select-small"
             id="demo-select-small"
-            value={filter}
+            value={state.categoryFilter}
             label="Age"
-            onChange={handleFilterChange}
+            onChange={handleCategoryChange}
           >
             <MenuItem value="Perifericos">Perifericos</MenuItem>
             <MenuItem value="Gamer">Gamer</MenuItem>
@@ -86,9 +87,9 @@ const Products = () => {
           <Select
             labelId="demo-select-small"
             id="demo-select-small"
-            value={filterBrand}
+            value={state.brandFilter}
             label="Age"
-            onChange={handleFilterChangeBrand}
+            onChange={handleBrandChange}
           >
             <MenuItem value="Genius">Genius</MenuItem>
             <MenuItem value="Corsair">Corsair</MenuItem>
