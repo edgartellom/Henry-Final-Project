@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import useStore from "../../components/zustand/CategoryZustand";
+import useStore from "../../store/Category";
 import axios from "axios";
 
 function CreateProduct() {
@@ -69,7 +69,8 @@ function CreateProduct() {
     // }
     e.preventDefault()
     axios.post(`http://localhost:3001/products`, input, {headers: {'content-type': 'application/x-www-form-urlencoded'}} )
-   
+   alert("Product created successfully")
+   setInput({ name: "", brand: "",price:null,model:null,image:null,feature:null,})
   }
 
   const changeHandle = (e) => {
@@ -146,7 +147,7 @@ function CreateProduct() {
           type="textArea"
           autoComplete="off"
           value={input.model}
-          name="summary"
+          name="model"
           placeholder="enter a model (optional)"
           onChange={changeHandle}
         />
@@ -163,6 +164,16 @@ function CreateProduct() {
         />
         
         {errors.price && (<h6>{errors.price}</h6>)}
+
+        <input
+            type="text"
+            autoComplete="off"
+            value={input.image}
+            name="image"
+            id="image"
+            placeholder="enter a url (optional)"
+            onChange={changeHandle}
+          />
         
         
         

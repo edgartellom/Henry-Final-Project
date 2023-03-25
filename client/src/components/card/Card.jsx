@@ -1,7 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useStore from "../../store/ShoppingCart";
 
 const Card = ({ id, feature, price, image, stock }) => {
+const add = useStore((state) => state.addToCart)
+const items = useStore((state) => state.cartItems)
+
+const addHandle = () => {
+    add({id, price, image})
+}
+console.log(add)
+console.log(items)
   return (
     <>
       <div className="col">
@@ -31,7 +40,7 @@ const Card = ({ id, feature, price, image, stock }) => {
 
           <div className="center footer-item">
             <NavLink
-              to="/detail"
+              to="/cart"
               role="button"
               className="primary"
               data-tooltip="Add to Cart">
@@ -45,6 +54,7 @@ const Card = ({ id, feature, price, image, stock }) => {
               <i className="bi bi-card-list"></i>
             </NavLink>
           </div>
+          <button onClick={addHandle}>Add to shopping cart</button>
         </div>
       </div>
     </>
