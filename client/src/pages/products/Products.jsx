@@ -28,6 +28,7 @@ const Products = () => {
   return (
     <>
       <Navbar />
+      <div className="container-fluid">
       <Stack spacing={2}>
         <Typography>Page: {page}</Typography>
         <Pagination
@@ -36,6 +37,7 @@ const Products = () => {
           onChange={handleChange}
         />
       </Stack>
+      </div>
       <List products={currentProducts} />
       <Footer />
     </>

@@ -14,7 +14,8 @@ const Card = ({ id, feature, price, image, stock }) => {
               width="200px"
               height="250px"
             />
-            <sup>
+            <br/>
+            <sup className="center">
               <small>{feature}</small>
             </sup>
             <p className="center">
