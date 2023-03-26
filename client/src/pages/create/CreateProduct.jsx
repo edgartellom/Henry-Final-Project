@@ -73,6 +73,12 @@ function CreateProduct() {
    setInput({ name: "", brand: "",price:null,model:null,image:null,feature:null,})
   }
 
+  const reset = () => {
+    console.log("reseting")
+   
+    setInput({ name: "", brand: "",price:null,model:null,image:null,feature:null, category:[]}) // category should be empty but its not working properly yet
+  }
+
   const changeHandle = (e) => {
     //const nameFixed = e.target.value.replace(/[^a-zA-Z]/, '') //(line58).replace(/[^a-zA-Z]/, '')
     setInput({
@@ -89,7 +95,7 @@ function CreateProduct() {
     // if(input.find(r => r.name.toLowerCase() === e.target.value.toLowerCase()))
     //   setErrors({
     //     ...input,
-    //     [e.target.name]: 'this recipe is already on the API or created'
+    //     [e.target.name]: 'this product is already on the API or created'
     //   })
 
   }
@@ -184,9 +190,8 @@ function CreateProduct() {
 
         <br /><br />
         <button disabled={!input.name || errors.name || !input.brand || errors.brand} type="submit" className="createButton" >Create a product</button>
-       
-
       </form>
+       <button className= "btn btn-danger" onClick={()=> reset()}>Cancel</button>
 
     </div>
   );

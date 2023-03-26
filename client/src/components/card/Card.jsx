@@ -1,16 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import useStore from "../../store/ShoppingCart";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../store/ShoppingCartRedux";
 
 const Card = ({ id, feature, price, image, stock }) => {
-const add = useStore((state) => state.addToCart)
-const items = useStore((state) => state.cartItems)
+const dispatch = useDispatch()
+const select = useSelector(state => state.cart.cartItems)
+
 
 const addHandle = () => {
-    add({id, price, image})
+  console.log(select)
+  dispatch(addToCart({id, price, image}))
 }
-console.log(add)
-console.log(items)
+
+
   return (
     <>
       <div className="col">
