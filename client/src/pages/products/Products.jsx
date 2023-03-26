@@ -2,8 +2,11 @@ import { Footer, List, Navbar } from "../../components";
 import useStore from "../../store/products";
 import { useState, useEffect } from "react";
 import { Pagination, Stack, Typography } from "@mui/material";
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
+import RestoreIcon from "@mui/icons-material/Restore";
 import { getFilteredByBrand } from "../../tools/filters";
+import RefreshIcon from "@mui/icons-material/Refresh";
+import IconButton from "@mui/material/IconButton";
 
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
@@ -41,6 +44,8 @@ const Products = () => {
       product.categories.some((cat) => cat.name === category)
     );
     setListProducts(filteredProducts);
+    setPage(1); // Resetear la página a la 1 cuando se filtra por marca
+    setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
   }
 
   const handleBrandChange = (event) => {
@@ -51,78 +56,171 @@ const Products = () => {
       (product) => product.brand.toLowerCase() === brand.toLowerCase()
     );
     setListProducts(filteredProducts);
+    setPage(1); // Resetear la página a la 1 cuando se filtra por marca
+    setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
+  };
+
+  const handleRefresh = () => {
+    setCategoryFilter("");
+    setBrandFilter("");
+    // Volver a mostrar la lista completa de productos
+    setListProducts(state.products);
   };
 
   return (
     <>
       <Navbar />
-      <Stack spacing={2}>
-        <Typography>Page: {page}</Typography>
-        <Pagination
-          count={parseInt(listProducts.length / productsPerPage)}
-          page={page}
-          onChange={handleChange}
-        />
-      </Stack>
-      <div>
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-          <InputLabel id="demo-select-small">Filter</InputLabel>
-          <Select
-            labelId="demo-select-small"
-            id="demo-select-small"
-            value={state.categoryFilter}
-            label="Age"
-            onChange={handleCategoryChange}
-          >
-            <MenuItem value="Perifericos">Perifericos</MenuItem>
-            <MenuItem value="Gamer">Gamer</MenuItem>
-            <MenuItem value="Oficina">Oficina</MenuItem>
-            <MenuItem value="Hardware">Hardware</MenuItem>
-          </Select>
-        </FormControl>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Stack spacing={2}>
+          <Typography>Page: {page}</Typography>
+          <Pagination
+            count={parseInt(listProducts.length / productsPerPage)}
+            page={page}
+            onChange={handleChange}
+            color="primary"
+          />
+        </Stack>
       </div>
-      <div>
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-          <InputLabel id="demo-select-small">Filter</InputLabel>
-          <Select
-            labelId="demo-select-small"
-            id="demo-select-small"
-            value={state.brandFilter}
-            label="Age"
-            onChange={handleBrandChange}
-          >
-            <MenuItem value="Genius">Genius</MenuItem>
-            <MenuItem value="Corsair">Corsair</MenuItem>
-            <MenuItem value="Logitech">Logitech</MenuItem>
-            <MenuItem value="XFX">XFX</MenuItem>
-            <MenuItem value="Trust">Trust</MenuItem>
-            <MenuItem value="Aureox">Aureox</MenuItem>
-            <MenuItem value="Talon">Talon</MenuItem>
-            <MenuItem value="Master">Master</MenuItem>
-            <MenuItem value="Hyperx">Hyperx</MenuItem>
-            <MenuItem value="Mars">Mars</MenuItem>
-            <MenuItem value="Thermaltake">Thermaltake</MenuItem>
-            <MenuItem value="Belkin">Belkin</MenuItem>
-            <MenuItem value="Lenovo">Lenovo</MenuItem>
-            <MenuItem value="Primus">Primus</MenuItem>
-            <MenuItem value="Xiaomi">Xiaomi</MenuItem>
-            <MenuItem value="JBL">JBL</MenuItem>
-            <MenuItem value="Kelyx">Kelyx</MenuItem>
-            <MenuItem value="Vidlok">Vidlok</MenuItem>
-            <MenuItem value="SYX">SYX</MenuItem>
-            <MenuItem value="Razer">Razer</MenuItem>
-            <MenuItem value="Radeon">Radeon</MenuItem>
-            <MenuItem value="Geforce">Geforce</MenuItem>
-            <MenuItem value="Western Digital">Western Digital</MenuItem>
-            <MenuItem value="Intel">Intel</MenuItem>
-            <MenuItem value="Western Digital">Western Digital</MenuItem>
-            <MenuItem value="Ryzen">Ryzen</MenuItem>
-            <MenuItem value="Asus">Asus</MenuItem>
-            <MenuItem value="Asrock">Asrock</MenuItem>
-            <MenuItem value="MSI">MSI</MenuItem>
-          </Select>
-        </FormControl>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ margin: "0 10px" }}>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
+              Filter
+            </InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={state.categoryFilter}
+              label="Age"
+              onChange={handleCategoryChange}
+            >
+              <MenuItem value="Perifericos" style={{ color: "#2196f3" }}>
+                Perifericos
+              </MenuItem>
+              <MenuItem value="Gamer" style={{ color: "#2196f3" }}>
+                Gamer
+              </MenuItem>
+              <MenuItem value="Oficina" style={{ color: "#2196f3" }}>
+                Oficina
+              </MenuItem>
+              <MenuItem value="Hardware" style={{ color: "#2196f3" }}>
+                Hardware
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+        <div style={{ margin: "0 10px" }}>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
+              Filter
+            </InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={state.brandFilter}
+              label="Age"
+              onChange={handleBrandChange}
+            >
+              <MenuItem value="Genius" style={{ color: "#2196f3" }}>
+                Genius
+              </MenuItem>
+              <MenuItem value="Corsair" style={{ color: "#2196f3" }}>
+                Corsair
+              </MenuItem>
+              <MenuItem value="Logitech" style={{ color: "#2196f3" }}>
+                Logitech
+              </MenuItem>
+              <MenuItem value="XFX" style={{ color: "#2196f3" }}>
+                XFX
+              </MenuItem>
+              <MenuItem value="Trust" style={{ color: "#2196f3" }}>
+                Trust
+              </MenuItem>
+              <MenuItem value="Aureox" style={{ color: "#2196f3" }}>
+                Aureox
+              </MenuItem>
+              <MenuItem value="Talon" style={{ color: "#2196f3" }}>
+                Talon
+              </MenuItem>
+              <MenuItem value="Master" style={{ color: "#2196f3" }}>
+                Master
+              </MenuItem>
+              <MenuItem value="Hyperx" style={{ color: "#2196f3" }}>
+                Hyperx
+              </MenuItem>
+              <MenuItem value="Mars" style={{ color: "#2196f3" }}>
+                Mars
+              </MenuItem>
+              <MenuItem value="Thermaltake" style={{ color: "#2196f3" }}>
+                Thermaltake
+              </MenuItem>
+              <MenuItem value="Belkin" style={{ color: "#2196f3" }}>
+                Belkin
+              </MenuItem>
+              <MenuItem value="Lenovo" style={{ color: "#2196f3" }}>
+                Lenovo
+              </MenuItem>
+              <MenuItem value="Primus" style={{ color: "#2196f3" }}>
+                Primus
+              </MenuItem>
+              <MenuItem value="Xiaomi" style={{ color: "#2196f3" }}>
+                Xiaomi
+              </MenuItem>
+              <MenuItem value="JBL" style={{ color: "#2196f3" }}>
+                JBL
+              </MenuItem>
+              <MenuItem value="Kelyx" style={{ color: "#2196f3" }}>
+                Kelyx
+              </MenuItem>
+              <MenuItem value="Vidlok" style={{ color: "#2196f3" }}>
+                Vidlok
+              </MenuItem>
+              <MenuItem value="SYX" style={{ color: "#2196f3" }}>
+                SYX
+              </MenuItem>
+              <MenuItem value="Razer" style={{ color: "#2196f3" }}>
+                Razer
+              </MenuItem>
+              <MenuItem value="Radeon" style={{ color: "#2196f3" }}>
+                Radeon
+              </MenuItem>
+              <MenuItem value="Geforce" style={{ color: "#2196f3" }}>
+                Geforce
+              </MenuItem>
+              <MenuItem value="Western Digital" style={{ color: "#2196f3" }}>
+                Western Digital
+              </MenuItem>
+              <MenuItem value="Intel" style={{ color: "#2196f3" }}>
+                Intel
+              </MenuItem>
+              <MenuItem value="Western Digital" style={{ color: "#2196f3" }}>
+                Western Digital
+              </MenuItem>
+              <MenuItem value="Ryzen" style={{ color: "#2196f3" }}>
+                Ryzen
+              </MenuItem>
+              <MenuItem value="Asus" style={{ color: "#2196f3" }}>
+                Asus
+              </MenuItem>
+              <MenuItem value="Asrock" style={{ color: "#2196f3" }}>
+                Asrock
+              </MenuItem>
+              <MenuItem value="MSI" style={{ color: "#2196f3" }}>
+                MSI
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </div>
       </div>
+      <IconButton
+        onClick={handleRefresh}
+        size="small"
+        style={{ color: "#2196f3" }}
+      >
+        <RefreshIcon fontSize="small" />
+        <Box mr={3}>Refresh</Box>
+      </IconButton>
       <List products={currentProducts} />
       <Footer />
     </>
