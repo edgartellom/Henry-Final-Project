@@ -55,6 +55,9 @@ const Navbar = () => {
                 <li>
                   <NavLink to="/products">Accesories</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/create">Create a product</NavLink>
+                </li>
               </ul>
             </details>
           </li>

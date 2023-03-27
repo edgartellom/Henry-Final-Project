@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useStore from "../../store/ShoppingCart";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -11,6 +12,14 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 
 const Card = ({ id, feature, price, image, stock }) => {
+const add = useStore((state) => state.addToCart)
+const items = useStore((state) => state.cartItems)
+
+const addHandle = () => {
+    add({id, price, image})
+}
+console.log(add)
+console.log(items)
   return (
     <>
       <div className='col'>
@@ -40,12 +49,12 @@ const Card = ({ id, feature, price, image, stock }) => {
 
           <div className='center footer-item'>
             <NavLink
-              to='/detail'
-              role='button'
-              className='primary'
-              data-tooltip='Add to Cart'
-            >
-              <i className='bi bi-cart-plus'></i>
+              to="/cart"
+              role="button"
+              className="primary"
+              data-tooltip="Add to Cart">
+              <i className="bi bi-cart-plus"></i>
+
             </NavLink>
             <NavLink
               to='/detail'
@@ -56,6 +65,7 @@ const Card = ({ id, feature, price, image, stock }) => {
               <i className='bi bi-card-list'></i>
             </NavLink>
           </div>
+          <button onClick={addHandle}>Add to shopping cart</button>
         </div>
       </div>
     </>

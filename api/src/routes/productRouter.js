@@ -27,10 +27,12 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log("creating")
   //some errors trying to create
   try {
     let { brand, name, model, feature, detail, price, image, stock, category } =
       req.body;
+    console.log(brand + name + category)
     let createdProduct = await Product.create({
       brand,
       name,
@@ -43,9 +45,12 @@ router.post("/", async (req, res) => {
     let categoryDb = await Category.findAll({
       where: { name: category },
     });
-    let newProduct = await createdProduct.addCategory(categoryDb);
+    if(!name) return res.status(404).json({error:'insert a name'})
+    createdProduct.addCategory(categoryDb);
     res.status(200).send(createdProduct);
+    console.log(createdProduct, "createdProduct")
   } catch (error) {
+    console.log(error)
     res.status(404).send({ message: error.message });
   }
 });
