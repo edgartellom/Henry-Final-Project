@@ -8,6 +8,7 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log(cart)
     dispatch(getTotals());
   }, [cart, dispatch]);
 
@@ -61,9 +62,9 @@ const Cart = () => {
               cart.cartItems.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
-                    <img src={cartItem.image} alt={cartItem.name} />
+                    <img src={cartItem.image[0]} alt={cartItem.name} />
                     <div>
-                      <h3>{cartItem.name}</h3>
+                      <h4>{cartItem.name}</h4>
                       <p>{cartItem.desc}</p>
                       <button onClick={() => handleRemoveFromCart(cartItem)}>
                         Remove

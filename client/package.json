@@ -30,6 +30,7 @@
     "react-hot-toast": "^2.4.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
+    "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.6",
     "zustand": "^4.3.6"
