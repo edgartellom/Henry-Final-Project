@@ -54,15 +54,30 @@ router.post("/", async (req, res) => {
     res.status(404).send({ message: error.message });
   }
 });
-
+   
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     let allProducts = (await getAllProducts()).data;
     if (id) {
       let productId = await allProducts.filter((e) => e.id == id);
+      var dato=productId[0]
+      var datos={
+        brand:dato.brand,
+        categories:dato.categories.map(p=>p.name).join(','),
+        createdInDb:dato.createdInDb,
+        detail:dato.detail,
+        feature:dato.feature,
+        id:dato.id,
+        image:dato.image[0],
+        model:dato.model,
+        name:dato.name,
+        price:dato.price,
+        state:dato.state,
+        stock:dato.stock
+      }
       productId.length
-        ? res.status(200).send(productId)
+          ? res.status(200).send(datos)
         : res.status(404).send("Product not found!");
     }
   } catch (error) {
