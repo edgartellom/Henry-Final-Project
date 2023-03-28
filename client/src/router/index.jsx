@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Login, Products, Detail, Contact } from "../pages";
+import { Home, Login, Register, Products, Detail, Contact } from "../pages";
+import firebase from "firebase/compat/app";
 
 const router = createBrowserRouter([
   {
@@ -7,8 +8,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/login",
+    path: "/sign-in",
     element: <Login />,
+  },
+  {
+    path: "/sign-up",
+    element: <Register />,
   },
   {
     path: "/products",

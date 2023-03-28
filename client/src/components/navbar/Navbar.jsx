@@ -65,10 +65,10 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">perfil</NavLink>
+                  <NavLink to="/">Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/login">Login</NavLink>
+                  <NavLink to="/sign-in">Sign in</NavLink>
                 </li>
               </ul>
             </details>
