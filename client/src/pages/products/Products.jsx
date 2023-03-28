@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { Pagination, Stack, Typography } from "@mui/material";
 import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
 import RestoreIcon from "@mui/icons-material/Restore";
-import { getFilteredByBrand } from "../../tools/filters";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
+import "./products.css";
 
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
@@ -16,8 +16,13 @@ const Products = () => {
   const setBrandFilter = useStore((state) => state.setBrandFilter);
   const setListProducts = useStore((state) => state.setListProducts);
   const listProducts = useStore((state) => state.listProducts);
-  const categoryFilter = useStore((state) => state.categoryFilter);
-  const brandFilter = useStore((state) => state.brandFilter);
+  const products = useStore((state) => state.products);
+  // const categoryFilter = useStore((state) => state.categoryFilter);
+  // const brandFilter = useStore((state) => state.brandFilter);
+
+  const names = products.map((pe) => pe.brand);
+  const nNames = new Set(names);
+  let rNames = [...nNames];
 
   const [page, setPage] = useState(1);
 
@@ -45,7 +50,7 @@ const Products = () => {
     );
     setListProducts(filteredProducts);
     setPage(1); // Resetear la página a la 1 cuando se filtra por marca
-    setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
+    //setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
   }
 
   const handleBrandChange = (event) => {
@@ -57,7 +62,7 @@ const Products = () => {
     );
     setListProducts(filteredProducts);
     setPage(1); // Resetear la página a la 1 cuando se filtra por marca
-    setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
+    //setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
   };
 
   const handleRefresh = () => {
@@ -72,7 +77,7 @@ const Products = () => {
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
-          <Typography>Page: {page}</Typography>
+          {/* <Typography>Page: {page}</Typography> */}
           <Pagination
             count={parseInt(listProducts.length / productsPerPage)}
             page={page}
@@ -122,7 +127,18 @@ const Products = () => {
               label="Age"
               onChange={handleBrandChange}
             >
-              <MenuItem value="Genius" style={{ color: "#2196f3" }}>
+              {rNames &&
+                rNames.map((product) => (
+                  <MenuItem
+                    key={product}
+                    value={product}
+                    className="option"
+                    style={{ color: "#2196f3" }}
+                  >
+                    {product}
+                  </MenuItem>
+                ))}
+              {/* <MenuItem value="Genius" style={{ color: "#2196f3" }}>
                 Genius
               </MenuItem>
               <MenuItem value="Corsair" style={{ color: "#2196f3" }}>
@@ -208,7 +224,7 @@ const Products = () => {
               </MenuItem>
               <MenuItem value="MSI" style={{ color: "#2196f3" }}>
                 MSI
-              </MenuItem>
+              </MenuItem> */}
             </Select>
           </FormControl>
         </div>

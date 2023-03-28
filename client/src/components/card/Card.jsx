@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./card.css";
 
 const Card = ({ id, feature, price, image, stock }) => {
   return (
     <>
       <div className="col">
-        <div className="item-list">
+        <div className="item-list card-container">
           <NavLink to={`/products/${id}`} role="link">
             <img
               className="img-fluid"
@@ -14,11 +15,11 @@ const Card = ({ id, feature, price, image, stock }) => {
               width="200px"
               height="250px"
             />
-            <sup>
+            <sup className="feature">
               <small>{feature}</small>
             </sup>
             <p className="center">
-              <small>
+              <small className="i">
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
@@ -34,14 +35,16 @@ const Card = ({ id, feature, price, image, stock }) => {
               to="/detail"
               role="button"
               className="primary"
-              data-tooltip="Add to Cart">
+              data-tooltip="Add to Cart"
+            >
               <i className="bi bi-cart-plus"></i>
             </NavLink>
             <NavLink
               to="/detail"
               role="button"
               className="secondary"
-              data-tooltip="Details">
+              data-tooltip="Details"
+            >
               <i className="bi bi-card-list"></i>
             </NavLink>
           </div>

@@ -1,0 +1,28 @@
+.item-list {
+  display: felx;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.img-fluid {
+  display: felx;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.feature {
+  display: block;
+  margin: 30px;
+  word-wrap: break-word;
+}
+.center {
+  margin: 10px;
+}
+.card-container {
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 5px 3px 10px #2196f3;
+}
