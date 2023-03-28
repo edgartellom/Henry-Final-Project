@@ -9,6 +9,7 @@ const useStore = create(
     categoryFilter: "",
     categoryFilter2: "",
     brandFilter: "",
+    detailProduct: [],
     setListProducts: (listFilter) =>
       set((state) => ({ ...state, listProducts: listFilter })),
     setCategoryFilter: (category) =>
@@ -23,6 +24,14 @@ const useStore = create(
         set({ products: response.data, listProducts: response.data });
       } catch (error) {
         console.error(error);
+      }
+    },
+    filterId: async (id) => {
+      try {
+        const responseId = await axios.get("products/" + id);
+        set({ detailProduct: responseId.data });
+      } catch (error) {
+        console.log(error);
       }
     },
   }))
