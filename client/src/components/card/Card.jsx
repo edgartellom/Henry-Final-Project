@@ -19,8 +19,7 @@ const Card = ({ id, feature, price, image, stock }) => {
   const addHandle = () => {
     add({ id, price, image });
   };
-  console.log(add);
-  console.log(items);
+
   return (
     <>
       <div className="col">

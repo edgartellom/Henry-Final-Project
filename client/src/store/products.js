@@ -7,11 +7,14 @@ const useStore = create(
     products: [],
     listProducts: [],
     categoryFilter: "",
+    categoryFilter2: "",
     brandFilter: "",
     setListProducts: (listFilter) =>
       set((state) => ({ ...state, listProducts: listFilter })),
     setCategoryFilter: (category) =>
       set((state) => ({ ...state, categoryFilter: category })),
+    setCategoryFilter2: (category) =>
+      set((state) => ({ ...state, categoryFilter2: category })),
     setBrandFilter: (brand) =>
       set((state) => ({ ...state, brandFilter: brand })),
     fetchProducts: async () => {

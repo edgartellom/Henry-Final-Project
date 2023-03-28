@@ -6,13 +6,17 @@ const API_URL = process.env.API_URL;
 const getAllCategories = async () => {
   try {
     let allCategories = (await axios(`${API_URL}/categories`)).data;
-    allCategories = allCategories.map((el) => el.name);
+    allCategories = allCategories.map((el) => ({
+      name: el.name,
+      type: el.type,
+    }));
+
     let createdCount = 0;
     let foundCount = 0;
     let categoryPromises = await Promise.all(
       allCategories.map(async (cat) => {
         const [category, created] = await Category.findOrCreate({
-          where: { name: cat },
+          where: { name: cat.name, type: cat.type },
         });
         if (created) {
           createdCount++;
@@ -28,6 +32,7 @@ const getAllCategories = async () => {
     const categories = await Category.findAll();
     return { data: categories, status: "success" };
   } catch (error) {
+    console.log(error);
     return { message: error.message, status: "error" };
   }
 };

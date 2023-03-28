@@ -43,7 +43,7 @@
   },
   {
     "id": 3,
-    "brand": "GENIUS ",
+    "brand": "GENIUS",
     "name": "TECLADO Y MOUSE",
     "model": "KM-200",
     "feature": "TECLADO Y MOUSE GENIUS KM-200 SMART USB BLACK",
@@ -64,7 +64,7 @@
   },
   {
     "id": 4,
-    "brand": "LOGITECH ",
+    "brand": "LOGITECH",
     "name": "TECLADO Y MOUSE",
     "model": " MK120 920-004428",
     "feature": "KIT TECLADO Y MOUSE LOGITECH MK120 920-004428",
@@ -236,7 +236,7 @@
   },
   {
     "id": 12,
-    "brand": "TRUST ",
+    "brand": "TRUST",
     "name": "MOUSE",
     "model": "GAV JUNGLE GXT101C",
     "feature": "MOUSE TRUST GAV JUNGLE GXT101C",
