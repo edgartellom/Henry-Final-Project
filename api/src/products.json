@@ -1,2001 +1,1837 @@
 [
-    {    
+  {
     "id": 1,
     "brand": "GENIUS",
     "name": "TECLADO Y MOUSE",
-    "model":"KM-160 KB-115",
-    "feature":"TEC+MOUSE GENIUS KM-160 USB BLACK SP",
-    "detail":"Resolución del sensor del mouse: 1000 dpi, Conexión del teclado: USB, Altura del teclado: 157.5 mm, Ancho del teclado: 460 mm, Profundidad del teclado: 27 mm, Peso del teclado: 570 g, Largo del cable del teclado: 1.5 m, Con conexión bluetooth para teclado: No, Conexión del mouse: USB, Peso del mouse: 85 g, Largo del cable del mouse: 1.5 m, Cantidad de botones del mouse: 3, Sistema operativo compatible: Windows 7 y versiones superiores",
-    "price": 4746.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/tecmouse-genius-km160-usb-black-sp-0.jpg"
-
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "KM-160 KB-115",
+    "feature": "TEC+MOUSE GENIUS KM-160 USB BLACK SP",
+    "detail": "Resolución del sensor del mouse: 1000 dpi, Conexión del teclado: USB, Altura del teclado: 157.5 mm, Ancho del teclado: 460 mm, Profundidad del teclado: 27 mm, Peso del teclado: 570 g, Largo del cable del teclado: 1.5 m, Con conexión bluetooth para teclado: No, Conexión del mouse: USB, Peso del mouse: 85 g, Largo del cable del mouse: 1.5 m, Cantidad de botones del mouse: 3, Sistema operativo compatible: Windows 7 y versiones superiores",
+    "price": 4746.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/tecmouse-genius-km160-usb-black-sp-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 2,
     "brand": "CORSAIR",
     "name": "AURICULARES",
-    "model":"HS35",
-    "feature":"AURICULARES CORSAIR GAMING HS35 GREEN",
-    "detail":"COMPATIBILIDADES Y USOS PC, PS4, XBOX One, Nintendo Switch, Mobile devices, Producto de audio: auriculares, Micrófono Desmontable: Sí, Respuesta de frecuencia de auriculares: 20Hz - 20 kHz, Sensibilidad de auriculares: 113dB (+/- 3dB), Impedancia: 32 ohmios a 1 kHz, Tipo de auriculares: con cable, Conector de auriculares: analógico de 3.5 mm, Controladores de auriculares: 50 mm, Longitud del cable: 1.1m, Color Verde,    Audio: estéreo",
-    "price": 14490.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-2.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name":"Gamer"
-        }              
+    "model": "HS35",
+    "feature": "AURICULARES CORSAIR GAMING HS35 GREEN",
+    "detail": "COMPATIBILIDADES Y USOS PC, PS4, XBOX One, Nintendo Switch, Mobile devices, Producto de audio: auriculares, Micrófono Desmontable: Sí, Respuesta de frecuencia de auriculares: 20Hz - 20 kHz, Sensibilidad de auriculares: 113dB (+/- 3dB), Impedancia: 32 ohmios a 1 kHz, Tipo de auriculares: con cable, Conector de auriculares: analógico de 3.5 mm, Controladores de auriculares: 50 mm, Longitud del cable: 1.1m, Color Verde,    Audio: estéreo",
+    "price": 14490.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-gaming-hs35-green-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 3,
-    "brand": "GENIUS ",
+    "brand": "GENIUS",
     "name": "TECLADO Y MOUSE",
-    "model":"KM-200",
-    "feature":"TECLADO Y MOUSE GENIUS KM-200 SMART USB BLACK",
-    "detail":"Ocho teclas de acceso directo para funciones multimedia y de internet. Estructura de teclas delgadas para reducción de ruidos. Diseño a prueba de derrame líquidos. Plug and Play: No se requiere software. Sólo tiene que conectar el teclado a su PC y listo. Conector: USB, TIPO : Multimedia, Idioma : Español, Resolucion : 800 dpi",
-    "price": 4880.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-genius-km200-smart-usb-black-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-genius-km200-smart-usb-black-1.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "KM-200",
+    "feature": "TECLADO Y MOUSE GENIUS KM-200 SMART USB BLACK",
+    "detail": "Ocho teclas de acceso directo para funciones multimedia y de internet. Estructura de teclas delgadas para reducción de ruidos. Diseño a prueba de derrame líquidos. Plug and Play: No se requiere software. Sólo tiene que conectar el teclado a su PC y listo. Conector: USB, TIPO : Multimedia, Idioma : Español, Resolucion : 800 dpi",
+    "price": 4880.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-genius-km200-smart-usb-black-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-genius-km200-smart-usb-black-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 4,
-    "brand": "LOGITECH ",
+    "brand": "LOGITECH",
     "name": "TECLADO Y MOUSE",
-    "model":" MK120 920-004428",
-    "feature":"KIT TECLADO Y MOUSE LOGITECH MK120 920-004428",
-    "detail":"CÓMODA ESCRITURA. Sus manos disfrutarán de las teclas silenciosas de bajo perfil y diseño estándar con teclas F y teclado numérico de tamaño completo. BUENA PRESENCIA El teclado delgado no es solo elegante, es resistente con un diseño resistente a salpicaduras, patas resistentes y teclas duraderas.1 RUTA SUAVE Se moverá suavemente con un mouse óptico preciso de alta definición para ayudarlo a moverse.COMPRENSIBLE Y SILENCIOSO Disfrutarás de una experiencia de escritura cómoda y tranquila gracias a las teclas de perfil bajo que apenas hacen un sonido y el diseño estándar con teclas F y teclado numérico de tamaño completo. DISEÑO RESISTENTE A DERRAMES El líquido se drena fuera del teclado, por lo que no tiene que preocuparse por arruinar su inversión con derrames accidentales.",
-    "price": 5200.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-mk120-920004428-0.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": " MK120 920-004428",
+    "feature": "KIT TECLADO Y MOUSE LOGITECH MK120 920-004428",
+    "detail": "CÓMODA ESCRITURA. Sus manos disfrutarán de las teclas silenciosas de bajo perfil y diseño estándar con teclas F y teclado numérico de tamaño completo. BUENA PRESENCIA El teclado delgado no es solo elegante, es resistente con un diseño resistente a salpicaduras, patas resistentes y teclas duraderas.1 RUTA SUAVE Se moverá suavemente con un mouse óptico preciso de alta definición para ayudarlo a moverse.COMPRENSIBLE Y SILENCIOSO Disfrutarás de una experiencia de escritura cómoda y tranquila gracias a las teclas de perfil bajo que apenas hacen un sonido y el diseño estándar con teclas F y teclado numérico de tamaño completo. DISEÑO RESISTENTE A DERRAMES El líquido se drena fuera del teclado, por lo que no tiene que preocuparse por arruinar su inversión con derrames accidentales.",
+    "price": 5200.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-mk120-920004428-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 5,
     "brand": "GENIUS",
     "name": "TECLADO Y MOUSE",
-    "model":"GENIUS KM-8100 SMART BLACK",
-    "feature":"TECLADO Y MOUSE WIRELESS GENIUS KM-8100 SMART BLACK",
-    "detail":"Nombre del modelo Smart KM-8100, Frecuencia RF 2.4 GHz, Tipo de tecla Cóncavo, Teclas de función Sí, 12 (8 de audio, 4 de Internet), Teclas multimedia No, Motor de sensor de ratón Óptico, Resolución del ratón (DPI) 1000, Ratón número de botones 3 (izquierda, derecha, botón central con desplazamiento)",
-    "price": 7150.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-genius-km8100-smart-black-0.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "GENIUS KM-8100 SMART BLACK",
+    "feature": "TECLADO Y MOUSE WIRELESS GENIUS KM-8100 SMART BLACK",
+    "detail": "Nombre del modelo Smart KM-8100, Frecuencia RF 2.4 GHz, Tipo de tecla Cóncavo, Teclas de función Sí, 12 (8 de audio, 4 de Internet), Teclas multimedia No, Motor de sensor de ratón Óptico, Resolución del ratón (DPI) 1000, Ratón número de botones 3 (izquierda, derecha, botón central con desplazamiento)",
+    "price": 7150.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-genius-km8100-smart-black-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 6,
     "brand": "XFX",
     "name": "TECLADO GAMER",
-    "model":"YARI GK-01",
-    "feature":"TECLADO GAMER MECANICO SWITCH BLUE XFX YARI GK-01",
-    "detail":"Luz de fondo arcoiris, Kit de reparación, Mecánico, Interfaz en español, Blue Switch, 50 millones de clicks, Cable USB de 1,5 M con anillo magnético, Compatible con: Windows XP, Vista, Win7, Win8, Win10A, Android, Linux, Max y Mac Luz de fondo: se activa presionando la tecla de iluminación, Sitema anti-fantasma",
-    "price": 8238.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-2.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "YARI GK-01",
+    "feature": "TECLADO GAMER MECANICO SWITCH BLUE XFX YARI GK-01",
+    "detail": "Luz de fondo arcoiris, Kit de reparación, Mecánico, Interfaz en español, Blue Switch, 50 millones de clicks, Cable USB de 1,5 M con anillo magnético, Compatible con: Windows XP, Vista, Win7, Win8, Win10A, Android, Linux, Max y Mac Luz de fondo: se activa presionando la tecla de iluminación, Sitema anti-fantasma",
+    "price": 8238.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-gamer-mecanico-switch-blue-xfx-yari-gk01-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 7,
     "brand": "TRUST",
     "name": "TECLADO GAMER",
-    "model":"GXT1180RW",
-    "feature":"TRUST GAMING BUNDLE 4EN1 GXT1180RW",
-    "detail":"Todo lo que necesitas para crear un entorno de juego de lo más completo. Funciona con todos los ordenadores de mesa y portátiles: se configura, se enchufa y se empieza a jugar inmediatamente.Teclado de distribución normal, iluminado con onda de arco iris, con función anti efecto fantasma de 6 teclas y 12 teclas multimedia de acceso directo. Cómodos auriculares con un sonido potente y diseño ajustable. Mouse con un diseño de LED de colores, 6 botones, forma ambidiestra y cable trenzado de 1,8 m. Alfombrilla para mouse (250 mm x 210 mm), con superficie optimizada y base de goma antideslizante.",
-    "price": 9492.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-2.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-3.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT1180RW",
+    "feature": "TRUST GAMING BUNDLE 4EN1 GXT1180RW",
+    "detail": "Todo lo que necesitas para crear un entorno de juego de lo más completo. Funciona con todos los ordenadores de mesa y portátiles: se configura, se enchufa y se empieza a jugar inmediatamente.Teclado de distribución normal, iluminado con onda de arco iris, con función anti efecto fantasma de 6 teclas y 12 teclas multimedia de acceso directo. Cómodos auriculares con un sonido potente y diseño ajustable. Mouse con un diseño de LED de colores, 6 botones, forma ambidiestra y cable trenzado de 1,8 m. Alfombrilla para mouse (250 mm x 210 mm), con superficie optimizada y base de goma antideslizante.",
+    "price": 9492.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-2.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/trust-gaming-bundle-4en1-gxt1180rw-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 8,
     "brand": "TRUST",
     "name": "TECLADO GAMER",
-    "model":"GXT838",
-    "feature":"TECLADO Y MOUSE GAMER TRUST AZOR GXT838 ESPAÑOL",
-    "detail":"TECLADO:Teclado de tamaño completo, 3 modos de color LED con brillo ajustable, Función contra efecto fantasma: con hasta 8 pulsaciones de tecla simultáneas, Interruptor de modo de juego; desactive la tecla de Windows directamente, Pies de goma antideslizantes y 2 pasos de altura ajustable, 12 teclas para funciones multimedia, RATÓN: Botón de selección de velocidad (800-3000 ppp), 6 botones de respuesta, Ciclo de colores continuo, Almohadillas de deslizamiento suaves con baja fricción",
-    "price": 9187.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-2.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT838",
+    "feature": "TECLADO Y MOUSE GAMER TRUST AZOR GXT838 ESPAÑOL",
+    "detail": "TECLADO:Teclado de tamaño completo, 3 modos de color LED con brillo ajustable, Función contra efecto fantasma: con hasta 8 pulsaciones de tecla simultáneas, Interruptor de modo de juego; desactive la tecla de Windows directamente, Pies de goma antideslizantes y 2 pasos de altura ajustable, 12 teclas para funciones multimedia, RATÓN: Botón de selección de velocidad (800-3000 ppp), 6 botones de respuesta, Ciclo de colores continuo, Almohadillas de deslizamiento suaves con baja fricción",
+    "price": 9187.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-gamer-trust-azor-gxt838-espaol-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 9,
     "brand": "LOGITECH",
     "name": "TECLADO Y MOUSE",
-    "model":"MK220",
-    "feature":"KIT TECLADO Y MOUSE LOGITECH WIRELESS MK220 920-004430",
-    "detail":"Marca: Logitech, Modelo: Teclado (K220) Ratón (M150), Receptor inalambrico USB, Tecnología inalámbrica avanzada de 2,4 GHz, La fiable conexión inalámbrica permite trabajar o jugar hasta a 10 metros de distancia, Las teclas apenas hacen ruido, por lo que puede escuchar una canción tranquilamente en lugar del sonido de las teclas.",
-    "price": 9617.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-wireless-mk220-920004430-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-wireless-mk220-920004430-1.jpg"       
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "MK220",
+    "feature": "KIT TECLADO Y MOUSE LOGITECH WIRELESS MK220 920-004430",
+    "detail": "Marca: Logitech, Modelo: Teclado (K220) Ratón (M150), Receptor inalambrico USB, Tecnología inalámbrica avanzada de 2,4 GHz, La fiable conexión inalámbrica permite trabajar o jugar hasta a 10 metros de distancia, Las teclas apenas hacen ruido, por lo que puede escuchar una canción tranquilamente en lugar del sonido de las teclas.",
+    "price": 9617.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-wireless-mk220-920004430-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/kit-teclado-y-mouse-logitech-wireless-mk220-920004430-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 10,
     "brand": "LOGITECH",
     "name": "TECLADO Y MOUSE",
-    "model":"MK270",
-    "feature":"TECLADO Y MOUSE WIRELESS LOGITECH MK270",
-    "detail":"Tecnología inalámbrica de gran alcance, Ofrece una conexión fiable y rápida hasta 10 metros, sin apenas retrasos ni interrupciones gracias a la conectividad inalámbrica avanzada de 2,4 GHz de Logitech. Mouse diseñado para los desplazamientos. Puedes llevarte este compacto mouse allá a donde vaya tu computadora. Larga duración de las baterías. Funciona durante meses sin cambiar las baterías. Un conmutador de encendido/apagado ahorra batería.",
-    "price": 10450.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-3.jpg"               
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "MK270",
+    "feature": "TECLADO Y MOUSE WIRELESS LOGITECH MK270",
+    "detail": "Tecnología inalámbrica de gran alcance, Ofrece una conexión fiable y rápida hasta 10 metros, sin apenas retrasos ni interrupciones gracias a la conectividad inalámbrica avanzada de 2,4 GHz de Logitech. Mouse diseñado para los desplazamientos. Puedes llevarte este compacto mouse allá a donde vaya tu computadora. Larga duración de las baterías. Funciona durante meses sin cambiar las baterías. Un conmutador de encendido/apagado ahorra batería.",
+    "price": 10450.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk270-920004432-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 11,
     "brand": "LOGITECH",
     "name": "TECLADO Y MOUSE",
-    "model":"MK345 COMFORT",
-    "feature":"TECLADO Y MOUSE WIRELESS LOGITECH MK345 COMFORT",
-    "detail":"Teclado: Duración de la batería: 48 meses, Batería: 2-AAA, Interruptor de encendido / apagado: Sí,Diseño de tamaño completo con 12 teclas F mejoradas para el control de medios, Distancia de funcionamiento inalámbrica: 10m máximo, Sistema inalámbrico: Conectividad inalámbrica avanzada de 2,4 GHz. Ratón: Tecnología de sensores: Logitech Advanced Optical, Duración de la batería: 18 meses, Batería: 1-AA, Interruptor de encendido / apagado: Sí, Número de botones: 3, Rueda de desplazamiento: Sí, Función de inclinación: No, Distancia de funcionamiento inalámbrica: 10 m máximo, Sistema inalámbrico: Conectividad inalámbrica avanzada de 2,4 GHz",
-    "price": 12462.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-2.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-3.jpg"               
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "MK345 COMFORT",
+    "feature": "TECLADO Y MOUSE WIRELESS LOGITECH MK345 COMFORT",
+    "detail": "Teclado: Duración de la batería: 48 meses, Batería: 2-AAA, Interruptor de encendido / apagado: Sí,Diseño de tamaño completo con 12 teclas F mejoradas para el control de medios, Distancia de funcionamiento inalámbrica: 10m máximo, Sistema inalámbrico: Conectividad inalámbrica avanzada de 2,4 GHz. Ratón: Tecnología de sensores: Logitech Advanced Optical, Duración de la batería: 18 meses, Batería: 1-AA, Interruptor de encendido / apagado: Sí, Número de botones: 3, Rueda de desplazamiento: Sí, Función de inclinación: No, Distancia de funcionamiento inalámbrica: 10 m máximo, Sistema inalámbrico: Conectividad inalámbrica avanzada de 2,4 GHz",
+    "price": 12462.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-2.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/teclado-y-mouse-wireless-logitech-mk345-comfort-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 12,
-    "brand": "TRUST ",
+    "brand": "TRUST",
     "name": "MOUSE",
-    "model":"GAV JUNGLE GXT101C",
-    "feature":"MOUSE TRUST GAV JUNGLE GXT101C",
-    "detail":"Botón de selección de velocidad (600-4800 ppp), Diseño ergonómico y cómodo, Cable trenzado de 1,8 m,   Cable antieredos, 6 BOTONES,CABLE USB",
-    "price": 2060.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-3.jpg"               
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GAV JUNGLE GXT101C",
+    "feature": "MOUSE TRUST GAV JUNGLE GXT101C",
+    "detail": "Botón de selección de velocidad (600-4800 ppp), Diseño ergonómico y cómodo, Cable trenzado de 1,8 m,   Cable antieredos, 6 BOTONES,CABLE USB",
+    "price": 2060.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-gav-jungle-gxt101c-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 13,
     "brand": "GENIUS",
     "name": "MOUSE",
-    "model":"X-G200 USB BLACK G5",
-    "feature":"MOUSE GAMER GX GAMING X-G200 USB BLACK G5",
-    "detail":"Conexión Con Cable, Tipo de sensor Óptico, Cantidad de botones 3, Es inalámbrico USB Sí, Con cable Sí, Línea GX Gaming Series, Radio frecuencia 2.4 GHz, Modelo X-G200, Resolución del sensor 1000 dpi,Tipo De Juego, Es recargable No",
-    "price": 2530.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-2.jpg"               
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "X-G200 USB BLACK G5",
+    "feature": "MOUSE GAMER GX GAMING X-G200 USB BLACK G5",
+    "detail": "Conexión Con Cable, Tipo de sensor Óptico, Cantidad de botones 3, Es inalámbrico USB Sí, Con cable Sí, Línea GX Gaming Series, Radio frecuencia 2.4 GHz, Modelo X-G200, Resolución del sensor 1000 dpi,Tipo De Juego, Es recargable No",
+    "price": 2530.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-xg200-usb-black-g5-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 14,
     "brand": "GENIUS",
     "name": "MOUSE",
-    "model":"SCORPION SPEAR",
-    "feature":"MOUSE GAMER GX GAMING GENIUS SCORPION SPEAR",
-    "detail":"Tipo de sensor: Óptico, Es inalámbrico USB: No, Con Bluetooth: No, Con cable: Sí, Resolución del sensor: 2000 dpi, Cantidad de botones: 6, Interfaces: USB, Con luces: Sí",
-    "price": 2977.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-spear-0.jpg"
-                       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "SCORPION SPEAR",
+    "feature": "MOUSE GAMER GX GAMING GENIUS SCORPION SPEAR",
+    "detail": "Tipo de sensor: Óptico, Es inalámbrico USB: No, Con Bluetooth: No, Con cable: Sí, Resolución del sensor: 2000 dpi, Cantidad de botones: 6, Interfaces: USB, Con luces: Sí",
+    "price": 2977.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-spear-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 15,
     "brand": "GENIUS",
     "name": "MOUSE",
-    "model":"SCORPION M8-610 WG WHITE",
-    "feature":"MOUSE GAMER GX GAMING GENIUS SCORPION M8-610 WG WHITE",
-    "detail":"A un click de distancia. El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla. Además, su sensor láser te permitirá ser preciso y exacto en tus movimientos. Con sus 6 botones podrás tener mayor control e independencia para ejecutar. Rendimiento en juegos, Velocidad de cuadros: 6500 fps, Aceleración: 30 Gs, Velocidad: 150 IPS, Requisitos del sistema CPU: Procesador Intel / AMD de 1 GHz o superior, Tamaño de RAM: 2G o superior, Windows® 7/8 o posterior, MAC OS X 10.7.4 o posterior, Puerto USB disponible, Resolución láser (DPI) 800-8200, Número de botones 6",
-    "price": 3500.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-2.jpg"                       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "SCORPION M8-610 WG WHITE",
+    "feature": "MOUSE GAMER GX GAMING GENIUS SCORPION M8-610 WG WHITE",
+    "detail": "A un click de distancia. El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla. Además, su sensor láser te permitirá ser preciso y exacto en tus movimientos. Con sus 6 botones podrás tener mayor control e independencia para ejecutar. Rendimiento en juegos, Velocidad de cuadros: 6500 fps, Aceleración: 30 Gs, Velocidad: 150 IPS, Requisitos del sistema CPU: Procesador Intel / AMD de 1 GHz o superior, Tamaño de RAM: 2G o superior, Windows® 7/8 o posterior, MAC OS X 10.7.4 o posterior, Puerto USB disponible, Resolución láser (DPI) 800-8200, Número de botones 6",
+    "price": 3500.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-gx-gaming-genius-scorpion-m8610-wg-white-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 16,
     "brand": "AUREOX",
     "name": "MOUSE",
-    "model":"GM400",
-    "feature":"MOUSE AUREOX LASERSIGHT GAMING GM400",
-    "detail":"SENSOR ÓPTICO DE GRADO GAMING PROFESIONAL CON 4800DPI. 9 BOTONES PROGRAMABLES INCLUYENDO LA CONFIGURACIÓN DE LA RUEDA. BOTONES DE FUNCIONES ADICIONALES COMO DISPARAR, APUNTAR Y MACROS. INCLUYE 3 PESAS DE 5G PARA AJUSTAR EL PESO SEGÚN PREFERENCIAS DE USO. ILUMINACIÓN ENVOLVENTE RGB CON INDICADOR DE DPI.MICROINTERRUPTORES OMRON CON VIDA UTIL DE 10 MILLONES DE CLICS. CABLE TRENZADO ANTI-TORSIÓN CON ANILLO MAGNÉTICO",
-    "price": 3890.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-aureox-lasersight-gaming-gm400-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-aureox-lasersight-gaming-gm400-1.jpg"                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GM400",
+    "feature": "MOUSE AUREOX LASERSIGHT GAMING GM400",
+    "detail": "SENSOR ÓPTICO DE GRADO GAMING PROFESIONAL CON 4800DPI. 9 BOTONES PROGRAMABLES INCLUYENDO LA CONFIGURACIÓN DE LA RUEDA. BOTONES DE FUNCIONES ADICIONALES COMO DISPARAR, APUNTAR Y MACROS. INCLUYE 3 PESAS DE 5G PARA AJUSTAR EL PESO SEGÚN PREFERENCIAS DE USO. ILUMINACIÓN ENVOLVENTE RGB CON INDICADOR DE DPI.MICROINTERRUPTORES OMRON CON VIDA UTIL DE 10 MILLONES DE CLICS. CABLE TRENZADO ANTI-TORSIÓN CON ANILLO MAGNÉTICO",
+    "price": 3890.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-aureox-lasersight-gaming-gm400-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-aureox-lasersight-gaming-gm400-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 17,
     "brand": "TRUST",
     "name": "MOUSE",
-    "model":"GXT 170",
-    "feature":"MOUSE TRUST HERON RGB GXT 170",
-    "detail":"Ratón para jugar, con LED RGB y sensor óptico avanzado. Sensor óptico avanzado con resolución de 7.000 ppp. Iluminación LED RGB completa y ajustable (con efecto de onda de arco iris). Memoria integrada. Software avanzado para programar botones y macros. Recubrimiento de goma en la parte superior para un mejor agarre. Almohadillas de deslizamiento suaves con baja fricción.",
-    "price": 4420.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-2.jpg"                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT 170",
+    "feature": "MOUSE TRUST HERON RGB GXT 170",
+    "detail": "Ratón para jugar, con LED RGB y sensor óptico avanzado. Sensor óptico avanzado con resolución de 7.000 ppp. Iluminación LED RGB completa y ajustable (con efecto de onda de arco iris). Memoria integrada. Software avanzado para programar botones y macros. Recubrimiento de goma en la parte superior para un mejor agarre. Almohadillas de deslizamiento suaves con baja fricción.",
+    "price": 4420.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-trust-heron-rgb-gxt-170-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 18,
     "brand": "TALON",
     "name": "MOUSE",
-    "model":"ELIT RGB 5000DPI",
-    "feature":"MOUSE TT TALON ELIT RGB 5000DPI + MOUSE PAD DASHER MINI BLAC",
-    "detail":"Resolución: 400/ 800/ 1600/ 3200 5000 dpi, Interfaz: USB de 1.8 mts, Aceleración: 20G, Iluminación: Led 16.8 millones de colores RGB (con TT deportes gaming Software), Ciclo de vida: 20 millones de clics, Color: Negro, Mouse Pad dimensiones: 250 x 210 x 2mm, Superficie: Tejido de tela, Base: Poliuretano antideslizante,   Color: Negro",
-    "price": 4818.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-2.jpg"                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "ELIT RGB 5000DPI",
+    "feature": "MOUSE TT TALON ELIT RGB 5000DPI + MOUSE PAD DASHER MINI BLAC",
+    "detail": "Resolución: 400/ 800/ 1600/ 3200 5000 dpi, Interfaz: USB de 1.8 mts, Aceleración: 20G, Iluminación: Led 16.8 millones de colores RGB (con TT deportes gaming Software), Ciclo de vida: 20 millones de clics, Color: Negro, Mouse Pad dimensiones: 250 x 210 x 2mm, Superficie: Tejido de tela, Base: Poliuretano antideslizante,   Color: Negro",
+    "price": 4818.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-tt-talon-elit-rgb-5000dpi--mouse-pad-dasher-mini-blac-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-  
-    {    
+  },
+
+  {
     "id": 19,
     "brand": "TRUST",
     "name": "MOUSE",
-    "model":"GXT970 MORFIX",
-    "feature":"MOUSE GAMING GXT970 MORFIX TRUST",
-    "detail":"Sensor óptico avanzado con resolución de 10 000 ppp, 4 piezas laterales intercambiables magnéticamente para personalizar los botones de los lados y la forma, 2 piezas en el lado izquierdo con configuraciones de 3 o 9 botones, programables para cualquier juego, 2 piezas en el lado derecho con diferentes formas, Iluminación RGB totalmente ajustable con múltiples efectos, Hasta 14 botones programables de manera independiente, Botones de selección de ppp con indicación LED, Software avanzado para programar botones, macros y efectos lumínicos,    Cable trenzado (1,8 mts)",
-    "price": 5719.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-2.jpg"                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT970 MORFIX",
+    "feature": "MOUSE GAMING GXT970 MORFIX TRUST",
+    "detail": "Sensor óptico avanzado con resolución de 10 000 ppp, 4 piezas laterales intercambiables magnéticamente para personalizar los botones de los lados y la forma, 2 piezas en el lado izquierdo con configuraciones de 3 o 9 botones, programables para cualquier juego, 2 piezas en el lado derecho con diferentes formas, Iluminación RGB totalmente ajustable con múltiples efectos, Hasta 14 botones programables de manera independiente, Botones de selección de ppp con indicación LED, Software avanzado para programar botones, macros y efectos lumínicos,    Cable trenzado (1,8 mts)",
+    "price": 5719.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gaming-gxt970-morfix-trust-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 20,
     "brand": "TRUST",
     "name": "MOUSE",
-    "model":"GXT 960",
-    "feature":"MOUSE GAMER TRUST GRAPHIN LIGHTWEIGHT GXT 960",
-    "detail":"Carcasa perforada de solo 74 gramos para una respuesta rápida, Sensor óptico de alta precisión de hasta 10 000 ppp, Tasa de sondeo ajustable de hasta 1000 Hz para un control de alta capacidad de respuesta,Iluminación RGB personalizable con efecto de respiración y arco iris, El cable trenzado de arrastre cero garantiza un movimiento suave, Incluye 2 botones para pulgar de fácil acceso, Almohadillas de deslizamiento con fricción ultrabaja",
-    "price": 6905.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-trust-graphin-lightweight-gxt-960-0.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT 960",
+    "feature": "MOUSE GAMER TRUST GRAPHIN LIGHTWEIGHT GXT 960",
+    "detail": "Carcasa perforada de solo 74 gramos para una respuesta rápida, Sensor óptico de alta precisión de hasta 10 000 ppp, Tasa de sondeo ajustable de hasta 1000 Hz para un control de alta capacidad de respuesta,Iluminación RGB personalizable con efecto de respiración y arco iris, El cable trenzado de arrastre cero garantiza un movimiento suave, Incluye 2 botones para pulgar de fácil acceso, Almohadillas de deslizamiento con fricción ultrabaja",
+    "price": 6905.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-gamer-trust-graphin-lightweight-gxt-960-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 21,
     "brand": "LOGITECH",
     "name": "MOUSE",
-    "model":"G203",
-    "feature":"MOUSE LOGITECH G203 GAMING LIGHTSYNC LILA 910-005852",
-    "detail":"ONDA DE COLORES RGB LIGHTSYNC Elige entre animaciones vibrantes y ajustes según el juego y el soporte, o programa tus propios ajustes con unos 16,8 millones de colores a tu disposición. FÁCIL PERSONALIZACIÓN Elige un color, combina tres, selecciona un divertido preajuste de animación o crea uno propio. ¡Tú decides! Incluso puedes sincronizar tu ratón con otros dispositivos y accesorios Logitech G LIGHTSYNC para lograr la combinación perfecta. MUESTREO DINÁMICO DE LA PANTALLA Configura la iluminación como Muestra de pantalla para que se sincronice con la tuya. Configura el ratón para que reaccione a los cambios de color en juegos, películas, etc.VISUALIZADOR DE AUDIO Reproduce música, películas, juegos... prácticamente cualquier sonido: el G203 seguirá el ritmo con destellos de colores. Personaliza niveles y colores para dar a tus fiestas tu toque exclusivo.   SENSOR PARA GAMING Te proporciona un seguimiento preciso del cursor y una respuesta rápida. Con una sensibilidad ajustable de 200-8.000 dpi, puedes elegir el valor idóneo para tu estilo de juego. Utiliza el software Logitech G HUB para programar hasta 5 preajustes.",
-    "price": 7676.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-logitech-g203-gaming-lightsync-lila-910005852-0.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "G203",
+    "feature": "MOUSE LOGITECH G203 GAMING LIGHTSYNC LILA 910-005852",
+    "detail": "ONDA DE COLORES RGB LIGHTSYNC Elige entre animaciones vibrantes y ajustes según el juego y el soporte, o programa tus propios ajustes con unos 16,8 millones de colores a tu disposición. FÁCIL PERSONALIZACIÓN Elige un color, combina tres, selecciona un divertido preajuste de animación o crea uno propio. ¡Tú decides! Incluso puedes sincronizar tu ratón con otros dispositivos y accesorios Logitech G LIGHTSYNC para lograr la combinación perfecta. MUESTREO DINÁMICO DE LA PANTALLA Configura la iluminación como Muestra de pantalla para que se sincronice con la tuya. Configura el ratón para que reaccione a los cambios de color en juegos, películas, etc.VISUALIZADOR DE AUDIO Reproduce música, películas, juegos... prácticamente cualquier sonido: el G203 seguirá el ritmo con destellos de colores. Personaliza niveles y colores para dar a tus fiestas tu toque exclusivo.   SENSOR PARA GAMING Te proporciona un seguimiento preciso del cursor y una respuesta rápida. Con una sensibilidad ajustable de 200-8.000 dpi, puedes elegir el valor idóneo para tu estilo de juego. Utiliza el software Logitech G HUB para programar hasta 5 preajustes.",
+    "price": 7676.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-logitech-g203-gaming-lightsync-lila-910005852-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 22,
     "brand": "MASTER",
     "name": "MOUSE",
-    "model":"MM711",
-    "feature":"MOUSE COOLER MASTER MM711 NEGRO MATE",
-    "detail":"Interfaz del dispositivo: USB tipo A, Tecnología de detección de movimientos: Óptico, Tipo de botones: Botones presionados, Tipo de desplazamiento: Rueda, Cantidad de botones: 6, Resolución de movimiento: 16000 DPI,Velocidad de seguimiento del ratón: 400 ips, Personalizable resolución movimiento: Si, Número de modos de resolución de movimiento: 7, Aceleración (máx.): 50 G, Frecuencia de sondeo: 1000 Hz, Modelo del procesador: ARM Cortex M0+, Memoria incorporada: Si",
-    "price": 10345.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-3.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "MM711",
+    "feature": "MOUSE COOLER MASTER MM711 NEGRO MATE",
+    "detail": "Interfaz del dispositivo: USB tipo A, Tecnología de detección de movimientos: Óptico, Tipo de botones: Botones presionados, Tipo de desplazamiento: Rueda, Cantidad de botones: 6, Resolución de movimiento: 16000 DPI,Velocidad de seguimiento del ratón: 400 ips, Personalizable resolución movimiento: Si, Número de modos de resolución de movimiento: 7, Aceleración (máx.): 50 G, Frecuencia de sondeo: 1000 Hz, Modelo del procesador: ARM Cortex M0+, Memoria incorporada: Si",
+    "price": 10345.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mouse-cooler-master-mm711-negro-mate-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 23,
     "brand": "LOGITECH",
     "name": "AURICULARES",
-    "model":"H111",
-    "feature":"AURICULARES LOGITECH H111",
-    "detail":"Funcionan con las principales aplicaciones de telefonía en casi todas las plataformas y sistemas operativos. Funcionan con computadoras, smartphones, tablets Una toma de 3,5 mm, Longitud de cable: 1,8 m",
-    "price": 4533.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "H111",
+    "feature": "AURICULARES LOGITECH H111",
+    "detail": "Funcionan con las principales aplicaciones de telefonía en casi todas las plataformas y sistemas operativos. Funcionan con computadoras, smartphones, tablets Una toma de 3,5 mm, Longitud de cable: 1,8 m",
+    "price": 4533.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-logitech-h111-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 24,
     "brand": "HYPERX",
     "name": "AURICULARES",
-    "model":"CLOUD FLIGHT",
-    "feature":"AURICULARES HP HYPERX CLOUD FLIGHT WIRELESS PC PS4 BLACK/RED",
-    "detail":"Auriculares inalámbricos para jugadores HyperX Cloud Flight, Escapa de los límites de las conexiones por cable y deambula libremente con los HyperX Cloud Flight™ inalámbrico. Gracias a una conexión inalámbrica sólida y perfecta para juegos, a la increíble duración de la batería de 30 horas1 y a la practicidad característica de los HyperX, los Cloud Flight te permiten jugar de manera ininterrumpida durante más tiempo. Supervisa fácilmente la duración de la batería y ajusta el volumen de salida y del micrófono con el software HyperX NGenuity. El diseño de casco cerrado te ayuda a mantenerte inmerso, mientras que el duradero control deslizante de acero y la estructura de alta calidad se han creado para resistir el desgaste y el uso diarios. Estos auriculares compatibles con PC, PS4™ y PS4™ Pro también son audífonos compatibles con los dispositivos que admiten una conexión de audio por cable de 3,5 mm2 a través del cable incluido. Los cascos para los oídos giran 90° y pueden apoyarse cómodamente alrededor del cuello durante las pausas; además, ofrecen controles muy prácticos para ajustar los efectos LED, el silencio del micrófono, el encendido y el volumen. El micrófono de cancelación de ruido extraíble te ayuda a garantizar que tus comunicaciones se oigan con total claridad y los Cloud Flight han recibido las certificaciones de TeamSpeak y Discord.",
-    "price": 41890.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CLOUD FLIGHT",
+    "feature": "AURICULARES HP HYPERX CLOUD FLIGHT WIRELESS PC PS4 BLACK/RED",
+    "detail": "Auriculares inalámbricos para jugadores HyperX Cloud Flight, Escapa de los límites de las conexiones por cable y deambula libremente con los HyperX Cloud Flight™ inalámbrico. Gracias a una conexión inalámbrica sólida y perfecta para juegos, a la increíble duración de la batería de 30 horas1 y a la practicidad característica de los HyperX, los Cloud Flight te permiten jugar de manera ininterrumpida durante más tiempo. Supervisa fácilmente la duración de la batería y ajusta el volumen de salida y del micrófono con el software HyperX NGenuity. El diseño de casco cerrado te ayuda a mantenerte inmerso, mientras que el duradero control deslizante de acero y la estructura de alta calidad se han creado para resistir el desgaste y el uso diarios. Estos auriculares compatibles con PC, PS4™ y PS4™ Pro también son audífonos compatibles con los dispositivos que admiten una conexión de audio por cable de 3,5 mm2 a través del cable incluido. Los cascos para los oídos giran 90° y pueden apoyarse cómodamente alrededor del cuello durante las pausas; además, ofrecen controles muy prácticos para ajustar los efectos LED, el silencio del micrófono, el encendido y el volumen. El micrófono de cancelación de ruido extraíble te ayuda a garantizar que tus comunicaciones se oigan con total claridad y los Cloud Flight han recibido las certificaciones de TeamSpeak y Discord.",
+    "price": 41890.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-hp-hyperx-cloud-flight-wireless-pc-ps4-blackred-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 25,
     "brand": "MARS",
     "name": "AURICULARES",
-    "model":"MH020",
-    "feature":"AURICULARES MARS GAMING MH020 STEREO PC/PS4/PS5/XBOX/SWITCH",
-    "detail":"Materiales: Almohadillas cuero sintético + ABS, Tipo de cable: Recubrimiento de goma, Diadema: Ajustable, Extras: Tecnología AIR, Longitud del cable: 200cm, Conector: Jack 3.5mm, Control de volumen: Sí, Caja de control en cable: Sí, Botón mute: No, Rango de frecuencia (driver): 18Hz-20Khz, Dimensiones (micrófono): 6 x 2,7mm, Retráctil (micrófono): Plegable",
-    "price": 4499.00,
-    "image":[
-        "https://s3-sa-east-1.amazonaws.com/saasargentina/ctYuDYH5BNfQ0hqTCNH0/imagen",
-        "https://s3-sa-east-1.amazonaws.com/saasargentina/mjSyXjgZT9fpmpdK4Efz/imagen",
-        "https://s3-sa-east-1.amazonaws.com/saasargentina/X2WXTNreSVgRYpsKaffP/miniatura"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "MH020",
+    "feature": "AURICULARES MARS GAMING MH020 STEREO PC/PS4/PS5/XBOX/SWITCH",
+    "detail": "Materiales: Almohadillas cuero sintético + ABS, Tipo de cable: Recubrimiento de goma, Diadema: Ajustable, Extras: Tecnología AIR, Longitud del cable: 200cm, Conector: Jack 3.5mm, Control de volumen: Sí, Caja de control en cable: Sí, Botón mute: No, Rango de frecuencia (driver): 18Hz-20Khz, Dimensiones (micrófono): 6 x 2,7mm, Retráctil (micrófono): Plegable",
+    "price": 4499.0,
+    "image": [
+      "https://s3-sa-east-1.amazonaws.com/saasargentina/ctYuDYH5BNfQ0hqTCNH0/imagen",
+      "https://s3-sa-east-1.amazonaws.com/saasargentina/mjSyXjgZT9fpmpdK4Efz/imagen",
+      "https://s3-sa-east-1.amazonaws.com/saasargentina/X2WXTNreSVgRYpsKaffP/miniatura"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 26,
     "brand": "THERMALTAKE",
     "name": "AURICULARES",
-    "model":"GAMING PULSE G100",
-    "feature":"AURICULARES GAMING PULSE G100 RGB 3D 7.1 THERMALTAKE",
-    "detail":"Marca: TT esports By Thermalltake, Modelo: HT-PLS-ANECBK-28, Color: Negro RGB, Diamante negro: Conector, Enchufe de 3,5 mm x 2, USB X 1, Longitud del cable 1.8M, 5.9 pies, Micrófono Plug & Play: si, Controlador externo en línea: si, Unidad de controlador (mm), Imán de neodimio de 53 mm: Canal, Estéreo: Respuesta ,frecuente: 20 Hz 20 KH",
-    "price": 9822.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GAMING PULSE G100",
+    "feature": "AURICULARES GAMING PULSE G100 RGB 3D 7.1 THERMALTAKE",
+    "detail": "Marca: TT esports By Thermalltake, Modelo: HT-PLS-ANECBK-28, Color: Negro RGB, Diamante negro: Conector, Enchufe de 3,5 mm x 2, USB X 1, Longitud del cable 1.8M, 5.9 pies, Micrófono Plug & Play: si, Controlador externo en línea: si, Unidad de controlador (mm), Imán de neodimio de 53 mm: Canal, Estéreo: Respuesta ,frecuente: 20 Hz 20 KH",
+    "price": 9822.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-pulse-g100-rgb-3d-71-thermaltake-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 27,
     "brand": "TRUST",
     "name": "AURICULARES",
-    "model":"GXT 433K PYLO",
-    "feature":"AURICULARES GAMING GXT 433K PYLO TRUST",
-    "detail":"Auriculares multiplataforma para gaming, Almohadillas circumaurales suaves y amplias hechas de cómoda espuma retráctil, Unidades de altavoces activos de 50 mm para conseguir un bajo profundo y rico en matices y agudos limpios, Diadema ajustable con atractivos detalles de metal pulido y un micrófono plegable, Mando a distancia integrado para el control del volumen e interruptor de silenciamiento del micrófono, Cable trenzado con conexión multifunción para consola, portátil, teléfono y tableta (1 m), Cable adaptador de extensión de 1 m para PC",
-    "price": 9660.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT 433K PYLO",
+    "feature": "AURICULARES GAMING GXT 433K PYLO TRUST",
+    "detail": "Auriculares multiplataforma para gaming, Almohadillas circumaurales suaves y amplias hechas de cómoda espuma retráctil, Unidades de altavoces activos de 50 mm para conseguir un bajo profundo y rico en matices y agudos limpios, Diadema ajustable con atractivos detalles de metal pulido y un micrófono plegable, Mando a distancia integrado para el control del volumen e interruptor de silenciamiento del micrófono, Cable trenzado con conexión multifunción para consola, portátil, teléfono y tableta (1 m), Cable adaptador de extensión de 1 m para PC",
+    "price": 9660.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-gxt-433k-pylo-trust-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 28,
     "brand": "TRUST",
     "name": "AURICULARES",
-    "model":"BLIZZ GXT 450",
-    "feature":"AURICULARES GAMING TRUST BLIZZ GXT 450 7.1 RGB",
-    "detail":"Sonido envolvente 7.1 virtual para disfrutar de una experiencia de sonido realista, Potentes unidades de altavoces activos de 40 mm, Flujo de efectos de luz RGB en ambas almohadillas, Mando a distancia integrado con botones de control de volumen/luz y de silenciamiento, Brazo del micrófono flexible con indicador de silenciamiento LED, Cómodas almohadillas circumaurales de gran tamaño, Almohadillas giratorias y diadema ajustable, Cable trenzado de 2 m con conector USB",
-    "price": 11660.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-3.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "BLIZZ GXT 450",
+    "feature": "AURICULARES GAMING TRUST BLIZZ GXT 450 7.1 RGB",
+    "detail": "Sonido envolvente 7.1 virtual para disfrutar de una experiencia de sonido realista, Potentes unidades de altavoces activos de 40 mm, Flujo de efectos de luz RGB en ambas almohadillas, Mando a distancia integrado con botones de control de volumen/luz y de silenciamiento, Brazo del micrófono flexible con indicador de silenciamiento LED, Cómodas almohadillas circumaurales de gran tamaño, Almohadillas giratorias y diadema ajustable, Cable trenzado de 2 m con conector USB",
+    "price": 11660.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 29,
     "brand": "TRUST",
     "name": "AURICULARES",
-    "model":"BLIZZ GXT 450",
-    "feature":"AURICULARES GAMING TRUST BLIZZ GXT 450 7.1 RGB",
-    "detail":"Sonido envolvente 7.1 virtual para disfrutar de una experiencia de sonido realista, Potentes unidades de altavoces activos de 40 mm, Flujo de efectos de luz RGB en ambas almohadillas, Mando a distancia integrado con botones de control de volumen/luz y de silenciamiento, Brazo del micrófono flexible con indicador de silenciamiento LED, Cómodas almohadillas circumaurales de gran tamaño, Almohadillas giratorias y diadema ajustable, Cable trenzado de 2 m con conector USB",
-    "price": 11660.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-3.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "BLIZZ GXT 450",
+    "feature": "AURICULARES GAMING TRUST BLIZZ GXT 450 7.1 RGB",
+    "detail": "Sonido envolvente 7.1 virtual para disfrutar de una experiencia de sonido realista, Potentes unidades de altavoces activos de 40 mm, Flujo de efectos de luz RGB en ambas almohadillas, Mando a distancia integrado con botones de control de volumen/luz y de silenciamiento, Brazo del micrófono flexible con indicador de silenciamiento LED, Cómodas almohadillas circumaurales de gran tamaño, Almohadillas giratorias y diadema ajustable, Cable trenzado de 2 m con conector USB",
+    "price": 11660.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-gaming-trust-blizz-gxt-450-71-rgb-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 30,
     "brand": "CORSAIR",
     "name": "AURICULARES",
-    "model":"SE RGB HIFI",
-    "feature":"AURICULARES CORSAIR VIRTUOSO WIRELESS SE RGB HIFI GAMING ESP",
-    "detail":"Los CORSAIR VIRTUOSO RGB Wireless SE ofrecen una experiencia de sonido de alta fidelidad y una comodidad continua gracias a las orejeras de espuma con memoria premium y una conectividad hiperrápida con tecnología SLIPSTREAM WIRELESS. Calidad de sonido impecable, Con los VIRTUOSO RGB Wireless podrá escucharlo todo, desde la pisada más fuerte hasta el tono bajo más profundo. Un par de transductores de neodimio de alta densidad de 50 mm ajustados con precisión ofrecen un rango de frecuencia de 20 Hz-40 000 Hz, el doble que casi todos los auriculares de juego. La comodidad es la clave, Las almohadillas de espuma viscoelástica premium se adaptan a la forma de su cabeza; además, la banda ligera ofrece una comodidad duradera y suave como una almohada para que pueda jugar durante horas. Fabricación ligera premium, La construcción de aluminio mecanizado consigue que los VIRTUOSO RGB Wireless ofrezcan un diseño ligero, una fuerte durabilidad y la mayor comodidad en una combinación perfecta. Tres formas de conexión, Los VIRTUOSO RGB Wireless pueden conectarse a casi cualquier lugar, independientemente de dónde vaya a jugar.",
-    "price": 60646.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "SE RGB HIFI",
+    "feature": "AURICULARES CORSAIR VIRTUOSO WIRELESS SE RGB HIFI GAMING ESP",
+    "detail": "Los CORSAIR VIRTUOSO RGB Wireless SE ofrecen una experiencia de sonido de alta fidelidad y una comodidad continua gracias a las orejeras de espuma con memoria premium y una conectividad hiperrápida con tecnología SLIPSTREAM WIRELESS. Calidad de sonido impecable, Con los VIRTUOSO RGB Wireless podrá escucharlo todo, desde la pisada más fuerte hasta el tono bajo más profundo. Un par de transductores de neodimio de alta densidad de 50 mm ajustados con precisión ofrecen un rango de frecuencia de 20 Hz-40 000 Hz, el doble que casi todos los auriculares de juego. La comodidad es la clave, Las almohadillas de espuma viscoelástica premium se adaptan a la forma de su cabeza; además, la banda ligera ofrece una comodidad duradera y suave como una almohada para que pueda jugar durante horas. Fabricación ligera premium, La construcción de aluminio mecanizado consigue que los VIRTUOSO RGB Wireless ofrezcan un diseño ligero, una fuerte durabilidad y la mayor comodidad en una combinación perfecta. Tres formas de conexión, Los VIRTUOSO RGB Wireless pueden conectarse a casi cualquier lugar, independientemente de dónde vaya a jugar.",
+    "price": 60646.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-corsair-virtuoso-wireless-se-rgb-hifi-gaming-esp-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 31,
     "brand": "BELKIN",
     "name": "AURICULARES",
-    "model":"SOUNDFORM FREEDOM TWS",
-    "feature":"AURICULARES BLUETOOTH BELKIN SOUNDFORM FREEDOM TWS",
-    "detail":"El sonido exclusivo de Belkin, Nuestros drivers de doble capa han sido diseñados para producir un sonido rico en detalle y vibrante a cualquier volumen. Los auriculares True Wireles SOUNDFORM habilitan unos sonidos bajos muy potentes y resonantes para un audio cristalino; no te perderás ni un solo detalle de tus canciones favoritas. Hasta 36 horas de funcionamiento, Escucha sin interrupciones durante más de 8 horas entre carga y carga y consigue otras 28 horas adicionales con el estuche de carga. Tendrás tiempo más que suficiente para darte maratones con tus podcasts favoritos, escuchar los últimos éxitos musicales o terminar ese audiolibro que tanto te gusta. No los pierdas más gracias a la aplicación Buscar de Apple, Ten siempre localizado el estuche de tus SOUNDFORM Freedom. Estos auriculares son uno de los primeros accesorios de un fabricante independiente que funciona con la red de la aplicación Buscar de Apple. Cancelación del ruido ambiente avanzada (ENC), Nuestra tecnología Clear-Call asegura que siempre se te escuchará con claridad, incluso cuando hay ruido de fondo. Resistentes al sudor y las salpicaduras, La certificación IPX5 significa que podrás seguir usándolos durante los entrenamientos más severos o cuando se pone a llover inesperadamente.",
-    "price": 5100.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-2.jpg"
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SOUNDFORM FREEDOM TWS",
+    "feature": "AURICULARES BLUETOOTH BELKIN SOUNDFORM FREEDOM TWS",
+    "detail": "El sonido exclusivo de Belkin, Nuestros drivers de doble capa han sido diseñados para producir un sonido rico en detalle y vibrante a cualquier volumen. Los auriculares True Wireles SOUNDFORM habilitan unos sonidos bajos muy potentes y resonantes para un audio cristalino; no te perderás ni un solo detalle de tus canciones favoritas. Hasta 36 horas de funcionamiento, Escucha sin interrupciones durante más de 8 horas entre carga y carga y consigue otras 28 horas adicionales con el estuche de carga. Tendrás tiempo más que suficiente para darte maratones con tus podcasts favoritos, escuchar los últimos éxitos musicales o terminar ese audiolibro que tanto te gusta. No los pierdas más gracias a la aplicación Buscar de Apple, Ten siempre localizado el estuche de tus SOUNDFORM Freedom. Estos auriculares son uno de los primeros accesorios de un fabricante independiente que funciona con la red de la aplicación Buscar de Apple. Cancelación del ruido ambiente avanzada (ENC), Nuestra tecnología Clear-Call asegura que siempre se te escuchará con claridad, incluso cuando hay ruido de fondo. Resistentes al sudor y las salpicaduras, La certificación IPX5 significa que podrás seguir usándolos durante los entrenamientos más severos o cuando se pone a llover inesperadamente.",
+    "price": 5100.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-belkin-soundform-freedom-tws-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 32,
     "brand": "LENOVO",
     "name": "AURICULARES",
-    "model":"XG01 BLACK",
-    "feature":"AURICULARES BLUETOOTH LENOVO XG01 BLACK",
-    "detail":"Audífonos Gaming E-Sports Lenovo XG01 con ultra-baja latencia, sonido HiFi, diseño innovador, protección al agua IPX5 y dos espectaculares colores acompañados de luces led",
-    "price": 10344.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-lenovo-xg01-black-0.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "XG01 BLACK",
+    "feature": "AURICULARES BLUETOOTH LENOVO XG01 BLACK",
+    "detail": "Audífonos Gaming E-Sports Lenovo XG01 con ultra-baja latencia, sonido HiFi, diseño innovador, protección al agua IPX5 y dos espectaculares colores acompañados de luces led",
+    "price": 10344.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-bluetooth-lenovo-xg01-black-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 33,
     "brand": "PRIMUS",
     "name": "AURICULARES",
-    "model":"ARCUS 90T 3.5MM BLACK",
-    "feature":"AURICULARES PRIMUS ARCUS 90T 3.5MM BLACK",
-    "detail":"Audio de alta fidelidad acústicamente equilibrado- destinado para que vivas a plenitud la acción de cada uno de tus juegos. Potentes microparlantes de 10mm, de alta precisión -acentúan los efectos de sonido de tus vídeos, garantizando una inmersión total en la acción. Cápsula de mando en línea para el control de volumen, así como para la gestión de música y llamadas telefónicas. AUDIO DE ALTA FIDELIDAD ACÚSTICAMENTE EQUILIBRADO    Especialmente diseñado para los fanáticos de los videojuegos, reproduce hasta el más mínimo detalle de videojuegos cargados de adrenalina. POTENTES MICROPARLANTES DE 10MM, DE ALTA PRECISIÓN. Al impartir un sonido más nítido, equilibrado y con una impresionante acentuación de graves, son capaces de crear una atmósfera virtual mucho más cautivante e inmersiva durante el juego. DISEÑO ERGONÓMICO. Los audífonos con puntas de silicona se ajustan fácilmente en los oídos, ofreciendo máxima comodidad y estabilidad durante intensas sesiones de juego. MICRÓFONO DE ALTA DEFINICIÓN Flexible y desmontable, permite ajustarlo o removerlo con facilidad cuando no se necesita. PRÁCTICA CÁPSULA DE CONTROL EN LÍNEA, Siempre está a tu alcance para regular el nivel del volumen, así como para la gestión de música y llamadas telefónicas en sólo segundos.",
-    "price": 4850.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-primus-arcus-90t-35mm-black-0.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "ARCUS 90T 3.5MM BLACK",
+    "feature": "AURICULARES PRIMUS ARCUS 90T 3.5MM BLACK",
+    "detail": "Audio de alta fidelidad acústicamente equilibrado- destinado para que vivas a plenitud la acción de cada uno de tus juegos. Potentes microparlantes de 10mm, de alta precisión -acentúan los efectos de sonido de tus vídeos, garantizando una inmersión total en la acción. Cápsula de mando en línea para el control de volumen, así como para la gestión de música y llamadas telefónicas. AUDIO DE ALTA FIDELIDAD ACÚSTICAMENTE EQUILIBRADO    Especialmente diseñado para los fanáticos de los videojuegos, reproduce hasta el más mínimo detalle de videojuegos cargados de adrenalina. POTENTES MICROPARLANTES DE 10MM, DE ALTA PRECISIÓN. Al impartir un sonido más nítido, equilibrado y con una impresionante acentuación de graves, son capaces de crear una atmósfera virtual mucho más cautivante e inmersiva durante el juego. DISEÑO ERGONÓMICO. Los audífonos con puntas de silicona se ajustan fácilmente en los oídos, ofreciendo máxima comodidad y estabilidad durante intensas sesiones de juego. MICRÓFONO DE ALTA DEFINICIÓN Flexible y desmontable, permite ajustarlo o removerlo con facilidad cuando no se necesita. PRÁCTICA CÁPSULA DE CONTROL EN LÍNEA, Siempre está a tu alcance para regular el nivel del volumen, así como para la gestión de música y llamadas telefónicas en sólo segundos.",
+    "price": 4850.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-primus-arcus-90t-35mm-black-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 34,
     "brand": "HYPERX",
     "name": "AURICULARES",
-    "model":"CLOUD II 7.1",
-    "feature":"AURICULARES HP HYPERX CLOUD II 7.1 GUN METAL 4P5L9AA",
-    "detail":"La versátil familia de audífonos Cloud está diseñada para adaptarse a todas las necesidades de gaming sin importar el sistema, estilo de juego o estilo personal. Ya sea que busques un par de audífonos con sonido surround virtual 7.1 para tu PC o una configuración estéreo personalizada para cubrir las demandas de las consolas, tenemos un Cloud para ti. Cada modelo Cloud está diseñado para mantenerte en la cima del juego, ya que brinda la máxima comodidad gracias al memory foam original de HyperX™. Los altavoces de 53 mm brindan un sonido preciso e impecable, y las orejeras que cubren completamente los oídos bloquean el ruido y te sumergen por completo en el juego. Con una resistente estructura de aluminio, todos los audífonos de la línea Cloud están diseñados para soportar el desgaste del juego diario. El micrófono desmontable de Cloud con cancelación de ruido asegura que tu voz siempre se oirá fuerte y clara.",
-    "price": 36552.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-primus-arcus-90t-35mm-black-0.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CLOUD II 7.1",
+    "feature": "AURICULARES HP HYPERX CLOUD II 7.1 GUN METAL 4P5L9AA",
+    "detail": "La versátil familia de audífonos Cloud está diseñada para adaptarse a todas las necesidades de gaming sin importar el sistema, estilo de juego o estilo personal. Ya sea que busques un par de audífonos con sonido surround virtual 7.1 para tu PC o una configuración estéreo personalizada para cubrir las demandas de las consolas, tenemos un Cloud para ti. Cada modelo Cloud está diseñado para mantenerte en la cima del juego, ya que brinda la máxima comodidad gracias al memory foam original de HyperX™. Los altavoces de 53 mm brindan un sonido preciso e impecable, y las orejeras que cubren completamente los oídos bloquean el ruido y te sumergen por completo en el juego. Con una resistente estructura de aluminio, todos los audífonos de la línea Cloud están diseñados para soportar el desgaste del juego diario. El micrófono desmontable de Cloud con cancelación de ruido asegura que tu voz siempre se oirá fuerte y clara.",
+    "price": 36552.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/auriculares-primus-arcus-90t-35mm-black-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 35,
     "brand": "LOGITECH",
     "name": "MICROFONO",
-    "model":"SNOWBALL ICE WHITE",
-    "feature":"MICROFONO SNOWBALL ICE WHITE LOGITECH",
-    "detail":"Snowball iCE es la forma más rápida y sencilla de conseguir un sonido de alta calidad para grabaciones y streaming. Alimentado por una cápsula de condensador cardioide personalizada, proporciona una calidad de audio transparente como el cristal que está a años luz del micrófono incorporado en su ordenador.",
-    "price": 13917.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micrfono-snowball-ice-white-logitech-0.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SNOWBALL ICE WHITE",
+    "feature": "MICROFONO SNOWBALL ICE WHITE LOGITECH",
+    "detail": "Snowball iCE es la forma más rápida y sencilla de conseguir un sonido de alta calidad para grabaciones y streaming. Alimentado por una cápsula de condensador cardioide personalizada, proporciona una calidad de audio transparente como el cristal que está a años luz del micrófono incorporado en su ordenador.",
+    "price": 13917.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micrfono-snowball-ice-white-logitech-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 36,
     "brand": "HYPERX",
     "name": "MICROFONO",
-    "model":"SOLOCAST WHITE",
-    "feature":"MICROFONO HP HYPERX SOLOCAST WHITE PC PS4",
-    "detail":"Para los editores de video, streamers y jugadores que buscan un micrófono USB con una gran calidad de sonido, HyperX SoloCast es imprescindible. Obtenga grabaciones de 24 bits y 96 kHz con la alta profundidad de bits y frecuencia de muestreo de SoloCast. Es Plug N Play con una conexión USB-C, lo que lo hace fácil de usar, con algunas de las comodidades favoritas de nuestros fanáticos, como el sensor de tocar para silenciar y el indicador LED de silencio. El micrófono versátil tiene un soporte ajustable y flexible y también es compatible con la mayoría de los brazos articulados, por lo que puede colocarse en su escritorio o montarse en el trabajo.",
-    "price": 22500.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-solocast-white-pc-ps4-0.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SOLOCAST WHITE",
+    "feature": "MICROFONO HP HYPERX SOLOCAST WHITE PC PS4",
+    "detail": "Para los editores de video, streamers y jugadores que buscan un micrófono USB con una gran calidad de sonido, HyperX SoloCast es imprescindible. Obtenga grabaciones de 24 bits y 96 kHz con la alta profundidad de bits y frecuencia de muestreo de SoloCast. Es Plug N Play con una conexión USB-C, lo que lo hace fácil de usar, con algunas de las comodidades favoritas de nuestros fanáticos, como el sensor de tocar para silenciar y el indicador LED de silencio. El micrófono versátil tiene un soporte ajustable y flexible y también es compatible con la mayoría de los brazos articulados, por lo que puede colocarse en su escritorio o montarse en el trabajo.",
+    "price": 22500.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-solocast-white-pc-ps4-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 37,
     "brand": "PRIMUS",
     "name": "MICROFONO",
-    "model":"ETHOS300P USB",
-    "feature":"MICROFONO PRIMUS GAMING ETHOS300P USB",
-    "detail":"INTERFAZ DE CONEXIÓN: USB. BOTONES: BOTONES: ENMUDECIMIENTO, CONTROL DE LAS LUCES LED. PERILLAS: CONTROL DEL VOLUMEN DEL MICRÓFONO, CONTROL DEL VOLUMEN DE LOS AURICULARES. PLATAFORMAS QUE ADMITE (COMPATIBILIDAD): WINDOWS XP, VISTA, 7,8,10, MAC OS X AND LINUX",
-    "price": 28845.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-primus-gaming-ethos300p-usb-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-primus-gaming-ethos300p-usb-1.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "ETHOS300P USB",
+    "feature": "MICROFONO PRIMUS GAMING ETHOS300P USB",
+    "detail": "INTERFAZ DE CONEXIÓN: USB. BOTONES: BOTONES: ENMUDECIMIENTO, CONTROL DE LAS LUCES LED. PERILLAS: CONTROL DEL VOLUMEN DEL MICRÓFONO, CONTROL DEL VOLUMEN DE LOS AURICULARES. PLATAFORMAS QUE ADMITE (COMPATIBILIDAD): WINDOWS XP, VISTA, 7,8,10, MAC OS X AND LINUX",
+    "price": 28845.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-primus-gaming-ethos300p-usb-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-primus-gaming-ethos300p-usb-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 38,
     "brand": "TRUST",
     "name": "MICROFONO",
-    "model":"GXT 256",
-    "feature":"MICROFONO TRUST EXXO STREAMING GXT 256",
-    "detail":"Application Home, Desktop, Indoor. Height of main product (in mm) 187 mm. Width of main product (in mm) 56 mm. Depth of main product (in mm) 51 mm. Total weight 1757 g. Weight of main unit 398 g. Connection type wired. Cable length main cable 180 cm. Connector type USB. Sensor type microphone condenser. Pick-up pattern Cardioid. Sampling rate 16bit, 48kHz. Signal-to-noise ratio 86 dB. Echo cancellation no",
-    "price": 34402.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-2.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GXT 256",
+    "feature": "MICROFONO TRUST EXXO STREAMING GXT 256",
+    "detail": "Application Home, Desktop, Indoor. Height of main product (in mm) 187 mm. Width of main product (in mm) 56 mm. Depth of main product (in mm) 51 mm. Total weight 1757 g. Weight of main unit 398 g. Connection type wired. Cable length main cable 180 cm. Connector type USB. Sensor type microphone condenser. Pick-up pattern Cardioid. Sampling rate 16bit, 48kHz. Signal-to-noise ratio 86 dB. Echo cancellation no",
+    "price": 34402.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-trust-exxo-streaming-gxt-256-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 39,
     "brand": "LOGITECH",
     "name": "MICROFONO",
-    "model":"YETI PROFESIONAL",
-    "feature":"Microfono Blue/Logitech Yeti Profesional",
-    "detail":"El Blue Yeti X es un micrófono USB insignia de última generación para juegos de nivel profesional, transmisión de Twitch, podcasting y producciones de YouTube. Con un nuevo conjunto de condensadores de cuatro cápsulas en su interior, Yeti X ofrece el legendario sonido de transmisión azul con mayor enfoque y claridad que nunca, en cuatro patrones de captación versátiles. Una perilla inteligente multifunción iluminada le permite monitorear y ajustar su nivel de voz en tiempo real, brindando un control preciso sobre su transmisión de audio.",
-    "price": 49003.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-2.jpg"      
-                                   
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "YETI PROFESIONAL",
+    "feature": "Microfono Blue/Logitech Yeti Profesional",
+    "detail": "El Blue Yeti X es un micrófono USB insignia de última generación para juegos de nivel profesional, transmisión de Twitch, podcasting y producciones de YouTube. Con un nuevo conjunto de condensadores de cuatro cápsulas en su interior, Yeti X ofrece el legendario sonido de transmisión azul con mayor enfoque y claridad que nunca, en cuatro patrones de captación versátiles. Una perilla inteligente multifunción iluminada le permite monitorear y ajustar su nivel de voz en tiempo real, brindando un control preciso sobre su transmisión de audio.",
+    "price": 49003.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-bluelogitech-yeti-profesional-usb-988000105-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 40,
     "brand": "LOGITECH",
     "name": "MICROFONO",
-    "model":"YETICASTER",
-    "feature":"MICROFONO BLUE YETICASTER LOGITECH",
-    "detail":"EL ESTUDIO DE DIFUSIÓN DEFINITIVO. Yeticaster ofrece la configuración de estudio de difusión definitiva para su escritorio, con todo lo que necesita para el podcasting, transmisión de partidas en tiempo real y voz superpuesta profesional. MICRÓFONO USB YETI. Grabe y transmita en tiempo real con una calidad de sonido sin igual directamente a su ordenador con el micrófono USB Yeti con tecnología de triple cápsula patentada. BRAZO JIRAFA PREMIUM PARA DIFUSIÓN COMPASS. Con muelles internos y organización interna de cableado, es ideal para aplicaciones de retransmisión con un manejo suave y silencioso y un aspecto sofisticado. SUSPENSIÓN ANTIVIBRACIONES RADIUS III. Diseñada para aislar a los micrófonos Yeti del ruido, golpes y vibraciones ambiente, con un nuevo diseño más ligero y estilizado, perfecto para retransmisión frente a cámara.",
-    "price": 173177.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-blue-yeticaster-logitech-988000107-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-blue-yeticaster-logitech-988000107-1.jpg"
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "YETICASTER",
+    "feature": "MICROFONO BLUE YETICASTER LOGITECH",
+    "detail": "EL ESTUDIO DE DIFUSIÓN DEFINITIVO. Yeticaster ofrece la configuración de estudio de difusión definitiva para su escritorio, con todo lo que necesita para el podcasting, transmisión de partidas en tiempo real y voz superpuesta profesional. MICRÓFONO USB YETI. Grabe y transmita en tiempo real con una calidad de sonido sin igual directamente a su ordenador con el micrófono USB Yeti con tecnología de triple cápsula patentada. BRAZO JIRAFA PREMIUM PARA DIFUSIÓN COMPASS. Con muelles internos y organización interna de cableado, es ideal para aplicaciones de retransmisión con un manejo suave y silencioso y un aspecto sofisticado. SUSPENSIÓN ANTIVIBRACIONES RADIUS III. Diseñada para aislar a los micrófonos Yeti del ruido, golpes y vibraciones ambiente, con un nuevo diseño más ligero y estilizado, perfecto para retransmisión frente a cámara.",
+    "price": 173177.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-blue-yeticaster-logitech-988000107-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-blue-yeticaster-logitech-988000107-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },  
-    {    
+  },
+  {
     "id": 41,
     "brand": "HYPERX",
     "name": "MICROFONO",
-    "model":"QUADCAST S USB WHITE-GREY",
-    "feature":"MICROFONO HP HYPERX QUADCAST S USB WHITE-GREY PC PS4 P/STREAMING CONDENSADOR 519",
-    "detail":"El HyperX QuadCast S es un micrófono de condensador USB que suena genial y se ve genial. La iluminación RGB sumamente impresionante y los efectos dinámicos agregarán estilo y estilo a cualquier transmisión o configuración y se pueden personalizar a través del software HyperX NGENUITY. El QuadCast S es un micrófono con todo incluido, que cuenta con una montura de choque antivibración para ayudar a silenciar los ruidos de la vida diaria y un filtro pop incorporado para amortiguar los sonidos explosivos. Conozca al instante el estado de su micrófono con el indicador LED y simplemente toque para silenciar para evitar accidentes de transmisión incómodos. Con cuatro patrones polares seleccionables, este micrófono está preparado para casi cualquier situación de grabación y también cuenta con un dial de control de ganancia para regular rápidamente la sensibilidad de entrada. El adaptador de montaje incluido se adapta a tamaños de rosca de 3/8 y 5/8, compatible con la mayoría de los soportes.",
-    "price": 67631.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-quadcast-s-usb-whitegrey-pc-ps4-pstreaming-condensador-519-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-quadcast-s-usb-whitegrey-pc-ps4-pstreaming-condensador-519-1.jpg"
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "QUADCAST S USB WHITE-GREY",
+    "feature": "MICROFONO HP HYPERX QUADCAST S USB WHITE-GREY PC PS4 P/STREAMING CONDENSADOR 519",
+    "detail": "El HyperX QuadCast S es un micrófono de condensador USB que suena genial y se ve genial. La iluminación RGB sumamente impresionante y los efectos dinámicos agregarán estilo y estilo a cualquier transmisión o configuración y se pueden personalizar a través del software HyperX NGENUITY. El QuadCast S es un micrófono con todo incluido, que cuenta con una montura de choque antivibración para ayudar a silenciar los ruidos de la vida diaria y un filtro pop incorporado para amortiguar los sonidos explosivos. Conozca al instante el estado de su micrófono con el indicador LED y simplemente toque para silenciar para evitar accidentes de transmisión incómodos. Con cuatro patrones polares seleccionables, este micrófono está preparado para casi cualquier situación de grabación y también cuenta con un dial de control de ganancia para regular rápidamente la sensibilidad de entrada. El adaptador de montaje incluido se adapta a tamaños de rosca de 3/8 y 5/8, compatible con la mayoría de los soportes.",
+    "price": 67631.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-quadcast-s-usb-whitegrey-pc-ps4-pstreaming-condensador-519-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/microfono-hp-hyperx-quadcast-s-usb-whitegrey-pc-ps4-pstreaming-condensador-519-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 42,
     "brand": "LOGITECH",
     "name": "PARLANTES",
-    "model":"S150 USB",
-    "feature":"PARLANTES LOGITECH S150 USB",
-    "detail":"Potencia total RMS: 1.2w stereo. Componentes: 2 altavoces. Control integrado: Volumen, silencio.Conectividad: Cable USB (120 cm)",
-    "price": 6074.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-logitech-s150-usb-9800001004-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-logitech-s150-usb-9800001004-1.jpg"
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "S150 USB",
+    "feature": "PARLANTES LOGITECH S150 USB",
+    "detail": "Potencia total RMS: 1.2w stereo. Componentes: 2 altavoces. Control integrado: Volumen, silencio.Conectividad: Cable USB (120 cm)",
+    "price": 6074.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-logitech-s150-usb-9800001004-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-logitech-s150-usb-9800001004-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 43,
     "brand": "XIAOMI",
     "name": "PARLANTES",
-    "model":"MI PORTABLE",
-    "feature":"PARLANTE BLUETOOTH XIAOMI MI PORTABLE GRIS",
-    "detail":"Batería. Autonomía de la batería: 10 h. Incluye batería recargable: Sí. Accesorios. Cantidad de micrófonos: 1. Con base: Sí. Con micrófono: Sí. Incluye soporte: No. Incluye control remoto: No. Potencia de salida (RMS): 2 W. Tipos de parlante: Portatil. Tipos de filtros del parlante: Activo. Configuración de canales: 2.0. Respuesta mínima - Respuesta máxima en frecuencia: 85 Hz - 20 kHz. Especificaciones. Cantidad de parlantes: 1. Formato del parlante: Compacto. Con luces LED: No. Con modo manos libres: No. Con controladores DJ integrados: No. Con función karaoke: No. Con efecto de voz: No. Con radio: No. Es portátil: Sí. Es inalámbrico: Sí. Peso y dimensiones. Ancho x Profundidad x Altura: 168 mm x 24.5 mm x 58 mm. Peso: 270 g",
-    "price": 6848.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-2.jpg"
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "MI PORTABLE",
+    "feature": "PARLANTE BLUETOOTH XIAOMI MI PORTABLE GRIS",
+    "detail": "Batería. Autonomía de la batería: 10 h. Incluye batería recargable: Sí. Accesorios. Cantidad de micrófonos: 1. Con base: Sí. Con micrófono: Sí. Incluye soporte: No. Incluye control remoto: No. Potencia de salida (RMS): 2 W. Tipos de parlante: Portatil. Tipos de filtros del parlante: Activo. Configuración de canales: 2.0. Respuesta mínima - Respuesta máxima en frecuencia: 85 Hz - 20 kHz. Especificaciones. Cantidad de parlantes: 1. Formato del parlante: Compacto. Con luces LED: No. Con modo manos libres: No. Con controladores DJ integrados: No. Con función karaoke: No. Con efecto de voz: No. Con radio: No. Es portátil: Sí. Es inalámbrico: Sí. Peso y dimensiones. Ancho x Profundidad x Altura: 168 mm x 24.5 mm x 58 mm. Peso: 270 g",
+    "price": 6848.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-xiaomi-mi-portable-gris-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 44,
     "brand": "GENIUS",
     "name": "PARLANTES",
-    "model":"SOUNDBAR 200",
-    "feature":"PARLANTE BLUETOOTH GENIUS SOUNDBAR 200 USB BLACK",
-    "detail":"Conectividad Bluetooth 5.1 o entrada de línea. Potencia total de salida 4 W. Unidad de controlador 2 pulgada x 2, 3 ohmios. Respuesta frecuente 120 Hz 20 kHz. Relación señal / ruido 75 dB. Sensibilidad de entrada 600 +/- 100 mV. Fuente de alimentación USB CC 5 V. Peso(g). Aprox. 691 g. Dimensiones (A x A x P) mm (pulgadas) 448 x 72.6 x 73.5 mm (17.6 x 2.86 x 2.89 pulgadas)",
-    "price": 6848.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-2.jpg"
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SOUNDBAR 200",
+    "feature": "PARLANTE BLUETOOTH GENIUS SOUNDBAR 200 USB BLACK",
+    "detail": "Conectividad Bluetooth 5.1 o entrada de línea. Potencia total de salida 4 W. Unidad de controlador 2 pulgada x 2, 3 ohmios. Respuesta frecuente 120 Hz 20 kHz. Relación señal / ruido 75 dB. Sensibilidad de entrada 600 +/- 100 mV. Fuente de alimentación USB CC 5 V. Peso(g). Aprox. 691 g. Dimensiones (A x A x P) mm (pulgadas) 448 x 72.6 x 73.5 mm (17.6 x 2.86 x 2.89 pulgadas)",
+    "price": 6848.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-genius-soundbar-200-usb-black-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 45,
     "brand": "GENIUS",
     "name": "PARLANTES",
-    "model":"SW-2.1 300X",
-    "feature":"PARLANTES GENIUS SW-2.1 300X 3.5MM BLACK",
-    "detail":"Marca: Genius. Modelo: SW-2.1 300X. Producto: Parlantes. Interfaz: 3.5mm. Dimensiones: Subwoofer: 130 x 150 x 180 mm y satélites:70 x 40 x 140 mm. Cable: 1.5m. SN Ratio: Subwoofer +/- 65 dB y Satélites +/- 65 dB. Frecuencia: Subwoofer 25 a 200 Hz y satélites 200 a 18KHz. Peso: 1.22 Kg. Potencia: 10 Watts",
-    "price": 14968.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-300x-35mm-black-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-300x-35mm-black-1.jpg"
-        
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SW-2.1 300X",
+    "feature": "PARLANTES GENIUS SW-2.1 300X 3.5MM BLACK",
+    "detail": "Marca: Genius. Modelo: SW-2.1 300X. Producto: Parlantes. Interfaz: 3.5mm. Dimensiones: Subwoofer: 130 x 150 x 180 mm y satélites:70 x 40 x 140 mm. Cable: 1.5m. SN Ratio: Subwoofer +/- 65 dB y Satélites +/- 65 dB. Frecuencia: Subwoofer 25 a 200 Hz y satélites 200 a 18KHz. Peso: 1.22 Kg. Potencia: 10 Watts",
+    "price": 14968.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-300x-35mm-black-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-300x-35mm-black-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 46,
     "brand": "GENIUS",
     "name": "PARLANTES",
-    "model":"SW-2.1 350 3.5MM MADERA",
-    "feature":"PARLANTES GENIUS SW-2.1 350 3.5MM MADERA",
-    "detail":"Estos parlantes cuentan con 3 piezas de alta fidelidad y un potente subwoofer con un controlador de 4 pulgadas que le proporciona bajos potentes. Además, cada satélite cuenta con un controlador de 2 pulgadas para ofrecer un sonido medio bajo. Disfruta de una alta calidad de sonido y los bajos se ajustan por separado. Este sistema combina un perfecto campo de sonido, y es ideal para escuchas música, jugar o ver películas / TV.",
-    "price": 20742.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-350-35mm-madera-0.jpg"      
-        
-                             
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "SW-2.1 350 3.5MM MADERA",
+    "feature": "PARLANTES GENIUS SW-2.1 350 3.5MM MADERA",
+    "detail": "Estos parlantes cuentan con 3 piezas de alta fidelidad y un potente subwoofer con un controlador de 4 pulgadas que le proporciona bajos potentes. Además, cada satélite cuenta con un controlador de 2 pulgadas para ofrecer un sonido medio bajo. Disfruta de una alta calidad de sonido y los bajos se ajustan por separado. Este sistema combina un perfecto campo de sonido, y es ideal para escuchas música, jugar o ver películas / TV.",
+    "price": 20742.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-sw21-350-35mm-madera-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 47,
     "brand": "JBL",
     "name": "PARLANTES",
-    "model":"CLIP4 BLUETOOTH ROJO",
-    "feature":"PARLANTE JBL CLIP4 BLUETOOTH ROJO",
-    "detail":"Autonomía de la batería 10Hs. Incluye batería recargable Sí. Incluye cargador Sí. Accesorios. Cantidad de micrófonos 1. Con base No. Con micrófono Sí. Incluye soporte No. Lugares de colocación mesa,exterior,interior. Es a prueba de agua Sí. Es apto para uso en exteriores Sí. Incluye manija Sí. Conectividad.Con Bluetooth Sí. Con Wi-Fi No. Conectores de entrada USB-C. Tipos de alimentación Batería,USB.",
-    "price": 23262.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-jbl-clip4-bluetooth-rojo-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-jbl-clip4-bluetooth-rojo-1.jpg" 
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "CLIP4 BLUETOOTH ROJO",
+    "feature": "PARLANTE JBL CLIP4 BLUETOOTH ROJO",
+    "detail": "Autonomía de la batería 10Hs. Incluye batería recargable Sí. Incluye cargador Sí. Accesorios. Cantidad de micrófonos 1. Con base No. Con micrófono Sí. Incluye soporte No. Lugares de colocación mesa,exterior,interior. Es a prueba de agua Sí. Es apto para uso en exteriores Sí. Incluye manija Sí. Conectividad.Con Bluetooth Sí. Con Wi-Fi No. Conectores de entrada USB-C. Tipos de alimentación Batería,USB.",
+    "price": 23262.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-jbl-clip4-bluetooth-rojo-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-jbl-clip4-bluetooth-rojo-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 48,
     "brand": "JBL",
     "name": "PARLANTES",
-    "model":"GO 3 RED",
-    "feature":"PARLANTE BLUETOOTH JBL GO 3 RED",
-    "detail":"JBL Go 3 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa uniformemente por toda la habitación. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia. Olvidate del amplificador. Al ser activo solo necesitarás conectarlo a la fuente de sonido y el mismo equipo se encargará de amplificar y reproducir: ganarás practicidad y espacio, ya que además requiere menos cableado que uno pasivo. Es la solución más conveniente si querés producir música en tu casa o en un estudio, y también para DJs. Apto para aire libre. Usalo en donde quieras, este dispositivo está diseñado para que tengas el mejor sonido siempre, tanto en interiores como en exteriores. Características. Sonido JBL Pro original. El sonido JBL Pro ofrece un audio sorprendentemente potente y unos graves impactantes desde el tamaño ultracompacto del Go 3. Estilo llamativo y diseño ultraportátil. El diseño ultraportátil del JBL Go 3 combina a la perfección con los últimos estilos, y sus coloridos tejidos y detalles expresivos hacen que luzca tan bien como suena. Resistente al polvo y al agua conforme a la norma IP67. Para ir a la piscina. Para ir al parque. El JBL Go 3 es resistente al polvo y al agua conforme a la norma IP67 para que puedas llevar tu altavoz a cualquier parte.",
-    "price": 23501.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-1.jpg" ,
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-2.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficina"
-        }              
+    "model": "GO 3 RED",
+    "feature": "PARLANTE BLUETOOTH JBL GO 3 RED",
+    "detail": "JBL Go 3 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa uniformemente por toda la habitación. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia. Olvidate del amplificador. Al ser activo solo necesitarás conectarlo a la fuente de sonido y el mismo equipo se encargará de amplificar y reproducir: ganarás practicidad y espacio, ya que además requiere menos cableado que uno pasivo. Es la solución más conveniente si querés producir música en tu casa o en un estudio, y también para DJs. Apto para aire libre. Usalo en donde quieras, este dispositivo está diseñado para que tengas el mejor sonido siempre, tanto en interiores como en exteriores. Características. Sonido JBL Pro original. El sonido JBL Pro ofrece un audio sorprendentemente potente y unos graves impactantes desde el tamaño ultracompacto del Go 3. Estilo llamativo y diseño ultraportátil. El diseño ultraportátil del JBL Go 3 combina a la perfección con los últimos estilos, y sus coloridos tejidos y detalles expresivos hacen que luzca tan bien como suena. Resistente al polvo y al agua conforme a la norma IP67. Para ir a la piscina. Para ir al parque. El JBL Go 3 es resistente al polvo y al agua conforme a la norma IP67 para que puedas llevar tu altavoz a cualquier parte.",
+    "price": 23501.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-go-3-red-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 50,
     "brand": "GENIUS",
     "name": "PARLANTES",
-    "model":"GX SW-G2.1 2000",
-    "feature":"PARLANTES GENIUS GX SW-G2.1 2000",
-    "detail":"Potencia total: 45 watts (parlante de graves 29 watts + secundarios 8 watts x 2). Unidad de potencia: Parlantes secundarios: Parlantes metálicos de 3 pulgadas // Unidad de graves: Unidad de presión de 6.5 pulg. Retroiluminada. Frecuencia: 25 Hz - 20K Hz. Alimentación: 220v. Peso: 4,320g. Dimensiones: Parlante de graves:252 x 233 x 235 mm // Secundarios:125 x 155 x 91 mm // Unidad de control: 55 x 177 x 155 mm. Contenido de la caja: Parlante de graves, Dos altavoces secundarios, Controlador, Cable RCA a RCA, Dos cables de audio 3.5mm a 3.5mm",
-    "price": 47206.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-2.jpg" ,
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-3.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GX SW-G2.1 2000",
+    "feature": "PARLANTES GENIUS GX SW-G2.1 2000",
+    "detail": "Potencia total: 45 watts (parlante de graves 29 watts + secundarios 8 watts x 2). Unidad de potencia: Parlantes secundarios: Parlantes metálicos de 3 pulgadas // Unidad de graves: Unidad de presión de 6.5 pulg. Retroiluminada. Frecuencia: 25 Hz - 20K Hz. Alimentación: 220v. Peso: 4,320g. Dimensiones: Parlante de graves:252 x 233 x 235 mm // Secundarios:125 x 155 x 91 mm // Unidad de control: 55 x 177 x 155 mm. Contenido de la caja: Parlante de graves, Dos altavoces secundarios, Controlador, Cable RCA a RCA, Dos cables de audio 3.5mm a 3.5mm",
+    "price": 47206.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-2.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlantes-genius-gx-swg21-2000-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 51,
     "brand": "JBL",
     "name": "PARLANTES",
-    "model":"CHARGE 5 BLACK",
-    "feature":"PARLANTE BLUETOOTH JBL CHARGE 5 BLACK",
-    "detail":"Potente sonido JBL Original Pro. Disfruta de la increíble potencia del sonido JBL Original Pro. El JBL Charge 5 incorpora un driver optimizado de gran amplitud, un altavoz de agudos independiente y dos radiadores de graves JBL que te proporcionan un sonido intenso y nítido. Consigue el sonido de las salas más grandes, incluso al aire libre. 20 horas de tiempo de reproducción. Para que no pare la diversión. El Charge 5 de JBL mantiene tu fiesta en marcha día y noche gracias a su increíble batería con una duración de 20 horas.Resistente al polvo y el agua conforme a la norma IP67. Para ir a la piscina. Para ir al parque. El JBL Charge 5 es resistente al polvo y el agua conforme a la norma IP67 para que puedas llevar tu altavoz a cualquier parte.",
-    "price": 73875.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-1.jpg" ,
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-2.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "CHARGE 5 BLACK",
+    "feature": "PARLANTE BLUETOOTH JBL CHARGE 5 BLACK",
+    "detail": "Potente sonido JBL Original Pro. Disfruta de la increíble potencia del sonido JBL Original Pro. El JBL Charge 5 incorpora un driver optimizado de gran amplitud, un altavoz de agudos independiente y dos radiadores de graves JBL que te proporcionan un sonido intenso y nítido. Consigue el sonido de las salas más grandes, incluso al aire libre. 20 horas de tiempo de reproducción. Para que no pare la diversión. El Charge 5 de JBL mantiene tu fiesta en marcha día y noche gracias a su increíble batería con una duración de 20 horas.Resistente al polvo y el agua conforme a la norma IP67. Para ir a la piscina. Para ir al parque. El JBL Charge 5 es resistente al polvo y el agua conforme a la norma IP67 para que puedas llevar tu altavoz a cualquier parte.",
+    "price": 73875.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/parlante-bluetooth-jbl-charge-5-black-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 52,
     "brand": "KELYX",
     "name": "WEBCAM",
-    "model":"1080P",
-    "feature":"WEBCAM KELYX 1080P USB C/MIC ZOOM MEET WEB",
-    "detail":"Resolución: 1920 x 1080 px. Micrófono incorporado: Sí. Protocolo: Standar UVC/UVA protocol. Salida de video: Transmisión de video USB. Conectividad: USB 2.0. Lente: 3.6mm. Video en directo: H.264 y formato de video MJPEG. IC: Hi3518EV300. Cuadros por segundo: 25FPS / 30FPS",
-    "price": 3613.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-kelyx-1080p-usb-cmic-zoom-meet-web-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-kelyx-1080p-usb-cmic-zoom-meet-web-1.jpg" 
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "1080P",
+    "feature": "WEBCAM KELYX 1080P USB C/MIC ZOOM MEET WEB",
+    "detail": "Resolución: 1920 x 1080 px. Micrófono incorporado: Sí. Protocolo: Standar UVC/UVA protocol. Salida de video: Transmisión de video USB. Conectividad: USB 2.0. Lente: 3.6mm. Video en directo: H.264 y formato de video MJPEG. IC: Hi3518EV300. Cuadros por segundo: 25FPS / 30FPS",
+    "price": 3613.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-kelyx-1080p-usb-cmic-zoom-meet-web-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-kelyx-1080p-usb-cmic-zoom-meet-web-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 53,
     "brand": "VIDLOK",
     "name": "WEBCAM",
-    "model":"W90",
-    "feature":"WEBCAM VIDLOK W90 1080P USB BLACK",
-    "detail":"Cámara Web VidLok Auto Pro W90 1080p Microfono USB. Cámara web Full HD de 2mp. Micófono integrado para realizar videollamadas. Resolución Full HD 1080p. Fácil instalación Plug n Play. Ajuste sobre escritorio o en monitor o TV con soporte multifuncional. Soporta todos los sistemas operativos: Windows, Mac, Linux, Chrome y más.",
-    "price": 6113.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-vidlok-w90-1080p-usb-black-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-vidlok-w90-1080p-usb-black-1.jpg" 
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "W90",
+    "feature": "WEBCAM VIDLOK W90 1080P USB BLACK",
+    "detail": "Cámara Web VidLok Auto Pro W90 1080p Microfono USB. Cámara web Full HD de 2mp. Micófono integrado para realizar videollamadas. Resolución Full HD 1080p. Fácil instalación Plug n Play. Ajuste sobre escritorio o en monitor o TV con soporte multifuncional. Soporta todos los sistemas operativos: Windows, Mac, Linux, Chrome y más.",
+    "price": 6113.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-vidlok-w90-1080p-usb-black-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-vidlok-w90-1080p-usb-black-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 54,
     "brand": "GENIUS",
     "name": "WEBCAM",
-    "model":"S FACECAM 1000X V2",
-    "feature":"WEBCAM GENIUS S FACECAM 1000X V2",
-    "detail":"Sensor de imagen CMOS de píxeles de alta definición 720p. tipo de lente objetivo de enfoque manual.Formato de archivo AVI/WMV. Con Micrófono SÍ. Resolución (DPI) 1MP, 1280 x 720, 640 x 480 pixels. Peso 50 g.Dimensiones (A x A x P) 20 x 22 x 60 mm. Colores Negro. Contenido de la caja",
-    "price": 7210.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-facecam-1000x-v2-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-facecam-1000x-v2-1.jpg"
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "S FACECAM 1000X V2",
+    "feature": "WEBCAM GENIUS S FACECAM 1000X V2",
+    "detail": "Sensor de imagen CMOS de píxeles de alta definición 720p. tipo de lente objetivo de enfoque manual.Formato de archivo AVI/WMV. Con Micrófono SÍ. Resolución (DPI) 1MP, 1280 x 720, 640 x 480 pixels. Peso 50 g.Dimensiones (A x A x P) 20 x 22 x 60 mm. Colores Negro. Contenido de la caja",
+    "price": 7210.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-facecam-1000x-v2-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-facecam-1000x-v2-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 55,
     "brand": "GENIUS",
     "name": "WEBCAM",
-    "model":"FACECAM 2000X",
-    "feature":"WEBCAM GENIUS FACECAM 2000X FHD 1080P",
-    "detail":"General.Interfaz Usb Color Primario Negro. Enganche Pantalla Notebook Si. Incluido En El Paquete.    Longitud Cable Incluido 1,5 M Tipo De Cable Usb 2.0. Software Genius Crazytalk Cam Suite Bolsa De Transporte No. Soporte Si Cables Incluidos Si. Sistemas Operativos Compatibles. Windows 7 Si. Windows Vista Si. Windows Xp Si. Microsoft Windows 2000 Si. Mac Si",
-    "price": 10990.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-2000x-fhd-1080p-0.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "FACECAM 2000X",
+    "feature": "WEBCAM GENIUS FACECAM 2000X FHD 1080P",
+    "detail": "General.Interfaz Usb Color Primario Negro. Enganche Pantalla Notebook Si. Incluido En El Paquete.    Longitud Cable Incluido 1,5 M Tipo De Cable Usb 2.0. Software Genius Crazytalk Cam Suite Bolsa De Transporte No. Soporte Si Cables Incluidos Si. Sistemas Operativos Compatibles. Windows 7 Si. Windows Vista Si. Windows Xp Si. Microsoft Windows 2000 Si. Mac Si",
+    "price": 10990.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-2000x-fhd-1080p-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 56,
     "brand": "GENIUS",
     "name": "WEBCAM",
-    "model":"ECAM 8000",
-    "feature":"WEBCAM GENIUS S RS ECAM 8000 BLACK mic 1080p fhd 360°",
-    "detail":"Marca Genius. Línea ECam. Modelo Ecam 8000. Color Negro. Micrófono incorporado Sí. Resolución de video Full HD 1080p. Resolución de imagen 2 Mpx. Interfaces USB 2.0. Requisitos del sistema: Windows 7, 8, 8.1, 10 o superior, Mac OS X 10.10 o superior, Linux 2.6.21 anterior, Puerto USB",
-    "price": 12868.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-rs-ecam-8000-black-mic-1080p-fhd-360-0.jpg"
-        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "ECAM 8000",
+    "feature": "WEBCAM GENIUS S RS ECAM 8000 BLACK mic 1080p fhd 360°",
+    "detail": "Marca Genius. Línea ECam. Modelo Ecam 8000. Color Negro. Micrófono incorporado Sí. Resolución de video Full HD 1080p. Resolución de imagen 2 Mpx. Interfaces USB 2.0. Requisitos del sistema: Windows 7, 8, 8.1, 10 o superior, Mac OS X 10.10 o superior, Linux 2.6.21 anterior, Puerto USB",
+    "price": 12868.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-s-rs-ecam-8000-black-mic-1080p-fhd-360-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 57,
     "brand": "GENIUS",
     "name": "WEBCAM",
-    "model":"F100 TL",
-    "feature":"WEBCAM GENIUS F100 TL FHD 1080p 12mp 120°",
-    "detail":"Cubre más personas y vistas 120 grados que permite una amplia cobertura por lo que no hay necesidad de multitud en torno a una cámara web normal en una reunión. Vídeo de alta definición. No importa si estás en reunión o chat personal, experimentar la belleza de alta definición, velocidad de fotogramas y colores en 1080P Full HD. También permite grabar video 1080p Full HD por software. Micrófono estéreo. El micrófono estéreo incorporado captura voces de diverso ángulo y entrega una gran experiencia de conversación.",
-    "price": 14673.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-2.jpg"        
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "F100 TL",
+    "feature": "WEBCAM GENIUS F100 TL FHD 1080p 12mp 120°",
+    "detail": "Cubre más personas y vistas 120 grados que permite una amplia cobertura por lo que no hay necesidad de multitud en torno a una cámara web normal en una reunión. Vídeo de alta definición. No importa si estás en reunión o chat personal, experimentar la belleza de alta definición, velocidad de fotogramas y colores en 1080P Full HD. También permite grabar video 1080p Full HD por software. Micrófono estéreo. El micrófono estéreo incorporado captura voces de diverso ángulo y entrega una gran experiencia de conversación.",
+    "price": 14673.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-f100-tl-fhd-1080p-12mp-120-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 58,
     "brand": "GENIUS",
     "name": "WEBCAM",
-    "model":"FACECAM QUIET",
-    "feature":"WEBCAM GENIUS FACECAM QUIET 1080P NOISE REDUCTION",
-    "detail":"Nombre del modelo FaceCam Quiet. Interfaz USB. Resolución (DPI) Full HD / 1920 x 1080P. Noise cancellation Sí. Movie clip MPEG4 / 30 fps. Built-in mic Dual digital mic. Focus Fixed Focus 60 cm. UVC (Plug & Play) Sí. Peso (g) Aprox. 118 g. Dimensiones (A x A x P) mm (pulgadas) 63.8 x 55.8 x 63 mm (2.5 x 2.2 x 2.5 pulgadas). Requisitos del sistema Windows® 8, 10, 11or later / Available USB port. Colores Negro",
-    "price": 15288.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-quiet-1080p-noise-reduction-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-quiet-1080p-noise-reduction-1.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "FACECAM QUIET",
+    "feature": "WEBCAM GENIUS FACECAM QUIET 1080P NOISE REDUCTION",
+    "detail": "Nombre del modelo FaceCam Quiet. Interfaz USB. Resolución (DPI) Full HD / 1920 x 1080P. Noise cancellation Sí. Movie clip MPEG4 / 30 fps. Built-in mic Dual digital mic. Focus Fixed Focus 60 cm. UVC (Plug & Play) Sí. Peso (g) Aprox. 118 g. Dimensiones (A x A x P) mm (pulgadas) 63.8 x 55.8 x 63 mm (2.5 x 2.2 x 2.5 pulgadas). Requisitos del sistema Windows® 8, 10, 11or later / Available USB port. Colores Negro",
+    "price": 15288.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-quiet-1080p-noise-reduction-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-genius-facecam-quiet-1080p-noise-reduction-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 59,
     "brand": "LOGITECH",
     "name": "WEBCAM",
-    "model":"C920E",
-    "feature":"WEBCAM LOGITECH C920E FULL HD",
-    "detail":"Videoconferencias Full HD 1080p (hasta 1920 x 1080 píxeles) con la versión más reciente de Skype para Windows. Videoconferencias HD 720p (1280 x 720 píxeles) con clientes compatibles. Grabaciones de video Full HD (hasta 1920 x 1080 píxeles). Compresión de video H.264. Micrófonos estéreo integrados con reducción de ruido automática. Corrección automática de iluminación escasa. Clip universal compatible con trípodes para monitores LCD, CRT o laptops",
-    "price": 35627.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-c920e-full-hd-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-c920e-full-hd-1.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "C920E",
+    "feature": "WEBCAM LOGITECH C920E FULL HD",
+    "detail": "Videoconferencias Full HD 1080p (hasta 1920 x 1080 píxeles) con la versión más reciente de Skype para Windows. Videoconferencias HD 720p (1280 x 720 píxeles) con clientes compatibles. Grabaciones de video Full HD (hasta 1920 x 1080 píxeles). Compresión de video H.264. Micrófonos estéreo integrados con reducción de ruido automática. Corrección automática de iluminación escasa. Clip universal compatible con trípodes para monitores LCD, CRT o laptops",
+    "price": 35627.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-c920e-full-hd-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-c920e-full-hd-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 60,
     "brand": "LOGITECH",
     "name": "WEBCAM",
-    "model":"GRAPHITE",
-    "feature":"WEBCAM LOGITECH STREAM CAM PLUS GRAPHITE",
-    "detail":"Resolución de video máxima: 1080p/60 fps en MJPEG. Resoluciones admitidas: 1920x1080, 1280x720, 960x540, 848x480, 640x360, 320x240. Campo visual: 78° (diagonal). Enfoque: Automático (10 cm a infinito) / Facial con Logitech Capture. Audio integrado. Dos micrófonos omnidireccionales con filtro de reducción de ruido. Canal estéreo o mono doble. Indicadores luminosos de estado activo LED blanco",
-    "price": 57962.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-3.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Oficna"
-        }              
+    "model": "GRAPHITE",
+    "feature": "WEBCAM LOGITECH STREAM CAM PLUS GRAPHITE",
+    "detail": "Resolución de video máxima: 1080p/60 fps en MJPEG. Resoluciones admitidas: 1920x1080, 1280x720, 960x540, 848x480, 640x360, 320x240. Campo visual: 78° (diagonal). Enfoque: Automático (10 cm a infinito) / Facial con Logitech Capture. Audio integrado. Dos micrófonos omnidireccionales con filtro de reducción de ruido. Canal estéreo o mono doble. Indicadores luminosos de estado activo LED blanco",
+    "price": 57962.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/webcam-logitech-stream-cam-plus-graphite-960001280-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Oficna"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 61,
     "brand": "LOGITECH",
     "name": "JOYSTICKS",
-    "model":"GAMEPAD",
-    "feature":"GAMEPAD WIRELESS LOGITECH",
-    "detail":"Marca: Logitech. Modelo: F310. Empareje F310 con Big Picture y navegue por Steam, explore Internet, juegue y mucho más desde la comodidad del sofá. Creado para ofrecer una experiencia de control como la de las consolas y con innovaciones a partir de un diseño original, F310 se adapta como un guante. Mando de dirección de cuatro conmutadores exclusivo. Cable de 1,8 metros. Disfrute de sesiones de juego prolongadas y cómodas gracias a las curvas suaves y el recubrimiento de goma contorneado.",
-    "price": 14999.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GAMEPAD",
+    "feature": "GAMEPAD WIRELESS LOGITECH",
+    "detail": "Marca: Logitech. Modelo: F310. Empareje F310 con Big Picture y navegue por Steam, explore Internet, juegue y mucho más desde la comodidad del sofá. Creado para ofrecer una experiencia de control como la de las consolas y con innovaciones a partir de un diseño original, F310 se adapta como un guante. Mando de dirección de cuatro conmutadores exclusivo. Cable de 1,8 metros. Disfrute de sesiones de juego prolongadas y cómodas gracias a las curvas suaves y el recubrimiento de goma contorneado.",
+    "price": 14999.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f310-940000110-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 62,
     "brand": "SYX",
     "name": "VOLANTE PEDALERA PALANCA",
-    "model":"KIT",
-    "feature":"VOLANTE PEDALERA PALANCA SYX 7+1 270 GRADOS TYPE-C",
-    "detail":"SYX Volante Pedalera Palanca NS-9877 PS3 / PS4 / PC / XBOX (ONE & 360) / ANDROID / SWITCH. UNIVERSAL Se conecta a PC, PS3, PS4, Xbox One, Xbox 360, Nintendo Switch y Android para juegos para juegos de carreras.Fijación de abrazadera. Asegure el volante de carreras a su mesa, plataforma de carreras o escritorio con fuertes abrazaderas de goma integradas en la base del volante. Pedales incluidos. Conecta los pedales incluidos al volante para una experiencia de carrera completa",
-    "price": 15293.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "KIT",
+    "feature": "VOLANTE PEDALERA PALANCA SYX 7+1 270 GRADOS TYPE-C",
+    "detail": "SYX Volante Pedalera Palanca NS-9877 PS3 / PS4 / PC / XBOX (ONE & 360) / ANDROID / SWITCH. UNIVERSAL Se conecta a PC, PS3, PS4, Xbox One, Xbox 360, Nintendo Switch y Android para juegos para juegos de carreras.Fijación de abrazadera. Asegure el volante de carreras a su mesa, plataforma de carreras o escritorio con fuertes abrazaderas de goma integradas en la base del volante. Pedales incluidos. Conecta los pedales incluidos al volante para una experiencia de carrera completa",
+    "price": 15293.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/volante-pedalera-palanca-syx-71-270-grados-typec-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 63,
     "brand": "SYX",
     "name": "GAMEPAD",
-    "model":"F710",
-    "feature":"GAMEPAD WIRELESS LOGITECH F710",
-    "detail":"CONEXIÓN INALÁMBRICA DE 2,4 GHZ. Corta el cable y disfruta de la libertad de juego sin cables. Simplemente inserte el nano-receptor en un puerto USB para una transmisión de datos rápida de 2.4 GHz sin prácticamente retrasos, caídas ni interferencias. RABAJA CON TV ANDROID. Nuestros controladores de juegos funcionan con televisores Android de Sony. Con el interruptor del controlador en modo XID, nuestro diseño tipo consola le dará la ventaja a medida que compite. Las curvas suaves y las empuñaduras de goma contorneadas proporcionan sesiones de juego largas y cómodas. Los controles estándar de Android TV, proporcionados a través del botón Logotipo de Logitech en el gamepad junto con la tecla Atrás en el controlador, le permiten navegar sin problemas por su televisor Android.",
-    "price": 20890.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "F710",
+    "feature": "GAMEPAD WIRELESS LOGITECH F710",
+    "detail": "CONEXIÓN INALÁMBRICA DE 2,4 GHZ. Corta el cable y disfruta de la libertad de juego sin cables. Simplemente inserte el nano-receptor en un puerto USB para una transmisión de datos rápida de 2.4 GHz sin prácticamente retrasos, caídas ni interferencias. RABAJA CON TV ANDROID. Nuestros controladores de juegos funcionan con televisores Android de Sony. Con el interruptor del controlador en modo XID, nuestro diseño tipo consola le dará la ventaja a medida que compite. Las curvas suaves y las empuñaduras de goma contorneadas proporcionan sesiones de juego largas y cómodas. Los controles estándar de Android TV, proporcionados a través del botón Logotipo de Logitech en el gamepad junto con la tecla Atrás en el controlador, le permiten navegar sin problemas por su televisor Android.",
+    "price": 20890.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/gamepad-wireless-logitech-f710-940000117-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 64,
     "brand": "RAZER",
     "name": "JOYSTICK",
-    "model":"WOLVERINE",
-    "feature":"JOYSTICK RAZER WOLVERINE V2 PARA XBOX X/S",
-    "detail":"Wired connection. 3m wired cable with strain relief. Configuration App Yes. Multi-Function Buttons 6 remappable multi-function buttons. Mechanical Action Buttons Razer™ Mecha-Tactile Action Buttons and Razer™ Mecha-Tactile D-Pad. Interchangeble Dpad None. Interchangeble Thumbsticks Yes",
-    "price": 65762.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/joystick-razer-wolverine-v2-para-xbox-xs-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/joystick-razer-wolverine-v2-para-xbox-xs-1.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Perifericos"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "WOLVERINE",
+    "feature": "JOYSTICK RAZER WOLVERINE V2 PARA XBOX X/S",
+    "detail": "Wired connection. 3m wired cable with strain relief. Configuration App Yes. Multi-Function Buttons 6 remappable multi-function buttons. Mechanical Action Buttons Razer™ Mecha-Tactile Action Buttons and Razer™ Mecha-Tactile D-Pad. Interchangeble Dpad None. Interchangeble Thumbsticks Yes",
+    "price": 65762.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/joystick-razer-wolverine-v2-para-xbox-xs-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/joystick-razer-wolverine-v2-para-xbox-xs-1.jpg"
+    ],
+    "category": [
+      {
+        "name": "Perifericos"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 65,
     "brand": "RADEON",
     "name": "PLACA VIDEO",
-    "model":"AFOX 2048SP",
-    "feature":"VIDEO RADEON RX 580 8GB AFOX 2048SP GDDR5 MINING",
-    "detail":"Graphics Engine AMD Radeon RX 580 2048SP.Bus Standard PCI Express 3.0.Video Memory GDDR5 8192MB Engine Clock 1284 MHz. Memory Clock 7.0 Gbps.RAMDAC 400MHz.Memory Interface 256-Bit. DVI Max Resolution 2560 x 1600.DP Max Resolution 3840 x 2160(1.4 HDR).DP Port Yes x 3. HDMI Support Yes x 1. HDCP Support Yes",
-    "price": 125849.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "AFOX 2048SP",
+    "feature": "VIDEO RADEON RX 580 8GB AFOX 2048SP GDDR5 MINING",
+    "detail": "Graphics Engine AMD Radeon RX 580 2048SP.Bus Standard PCI Express 3.0.Video Memory GDDR5 8192MB Engine Clock 1284 MHz. Memory Clock 7.0 Gbps.RAMDAC 400MHz.Memory Interface 256-Bit. DVI Max Resolution 2560 x 1600.DP Max Resolution 3840 x 2160(1.4 HDR).DP Port Yes x 3. HDMI Support Yes x 1. HDCP Support Yes",
+    "price": 125849.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-580-8gb-afox-2048sp-gddr5-mining-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 66,
     "brand": "RADEON",
     "name": "PLACA VIDEO",
-    "model":"SAPPHIRE PULSE GAMING OC",
-    "feature":"VIDEO RADEON RX 6500 XT 4GB SAPPHIRE PULSE GAMING OC",
-    "detail":"GPU. AMD Radeon™ RX 6500 XT Graphics Card. 6nm GPU. AMD RDNA™ 2 Architecture. Engine Clock. Boost Clock: Up to 2825 MHz. Game Clock: Up to 2685 MHz. Boost Clock is the maximum frequency achievable on the GPU running bursty workload. Boost clock achievability, frequency, and sustainabilty will vary based on several factors, including but not limited to: thermal conditions and variation in application and workloads. Game Clock is the expected GPU clock when running typical gaming applications, set to typical TGP(Total Graphics Power). Actual individual game clock results may vary. Stream Processors. 1024. Infinity Cache 16MB. Ray Accelerators 16. Memory Size/Bus. 4GB GDDR6. Memory Clock 18 Gbps Effective. Displays Maximum 2 Displays   Resolution",
-    "price": 126526.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-3.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "SAPPHIRE PULSE GAMING OC",
+    "feature": "VIDEO RADEON RX 6500 XT 4GB SAPPHIRE PULSE GAMING OC",
+    "detail": "GPU. AMD Radeon™ RX 6500 XT Graphics Card. 6nm GPU. AMD RDNA™ 2 Architecture. Engine Clock. Boost Clock: Up to 2825 MHz. Game Clock: Up to 2685 MHz. Boost Clock is the maximum frequency achievable on the GPU running bursty workload. Boost clock achievability, frequency, and sustainabilty will vary based on several factors, including but not limited to: thermal conditions and variation in application and workloads. Game Clock is the expected GPU clock when running typical gaming applications, set to typical TGP(Total Graphics Power). Actual individual game clock results may vary. Stream Processors. 1024. Infinity Cache 16MB. Ray Accelerators 16. Memory Size/Bus. 4GB GDDR6. Memory Clock 18 Gbps Effective. Displays Maximum 2 Displays   Resolution",
+    "price": 126526.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6500-xt-4gb-sapphire-pulse-gaming-oc-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 67,
     "brand": "RADEON",
     "name": "PLACA VIDEO",
-    "model":"POWERCOLOR FIGHTER",
-    "feature":"VIDEO RADEON RX 6600 8GB XT POWERCOLOR FIGHTER",
-    "detail":"Graphics Engine AXRX 6600 XT 8GBD6-3DH. Video Memory 8GB GDDR6. Stream Processor 2048 Units. Engine Clock(OC) up to 2359MHz(Game) / up to 2589MHz(Boost). Engine Clock(STD/Silent). Memory Clock 16.0 Gbps. Memory Interface 128-bit. DirectX® Support 12. Bus Standard PCIE 4.0. Standard Display Connectors 1 x HDMI 2.1 , 3 x DisplayPort 1.4",
-    "price": 148212.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "POWERCOLOR FIGHTER",
+    "feature": "VIDEO RADEON RX 6600 8GB XT POWERCOLOR FIGHTER",
+    "detail": "Graphics Engine AXRX 6600 XT 8GBD6-3DH. Video Memory 8GB GDDR6. Stream Processor 2048 Units. Engine Clock(OC) up to 2359MHz(Game) / up to 2589MHz(Boost). Engine Clock(STD/Silent). Memory Clock 16.0 Gbps. Memory Interface 128-bit. DirectX® Support 12. Bus Standard PCIE 4.0. Standard Display Connectors 1 x HDMI 2.1 , 3 x DisplayPort 1.4",
+    "price": 148212.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-8gb-xt-powercolor-fighter-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 68,
     "brand": "RADEON",
     "name": "PLACA VIDEO",
-    "model":"6600 XT",
-    "feature":"VIDEO RADEON RX 6600 XT MSI MECH 2X 8G OC",
-    "detail":"HDCP SUPPORT SI. POWER CONSUMPTION 132 W. POWER CONNECTORS 8-pin x 1. RECOMMENDED PSU 500W or greater CARD DIMENSION (MM) 235 x 125 x 46 mm. WEIGHT (CARD / PACKAGE) 710 g / 1175 g. DIRECTX VERSION SUPPORT 12 API OPENGL VERSION SUPPORT 4.6. MAXIMUM DISPLAYS 4. VR READY SI. MULTI-GPU TECHNOLOGY SI. AFTERBURNER OC SI.DIGITAL MAXIMUM RESOLUTION 7680 x 4320",
-    "price": 185135.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "6600 XT",
+    "feature": "VIDEO RADEON RX 6600 XT MSI MECH 2X 8G OC",
+    "detail": "HDCP SUPPORT SI. POWER CONSUMPTION 132 W. POWER CONNECTORS 8-pin x 1. RECOMMENDED PSU 500W or greater CARD DIMENSION (MM) 235 x 125 x 46 mm. WEIGHT (CARD / PACKAGE) 710 g / 1175 g. DIRECTX VERSION SUPPORT 12 API OPENGL VERSION SUPPORT 4.6. MAXIMUM DISPLAYS 4. VR READY SI. MULTI-GPU TECHNOLOGY SI. AFTERBURNER OC SI.DIGITAL MAXIMUM RESOLUTION 7680 x 4320",
+    "price": 185135.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6600-xt-msi-mech-2x-8g-oc-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 69,
     "brand": "RADEON",
     "name": "PLACA VIDEO",
-    "model":"RX 6650",
-    "feature":"VIDEO RADEON RX 6650 XT 8GB SAPPHIRE PULSE +Q 6600",
-    "detail":"Stream Processors 2048. Infinity Cache 32MB. Ray Accelerators 32. Memory Size/Bus 8GB GDDR6. Memory Clock 17.5 Gbps Effective. Displays Maximum 4 Displays. Resolution: HDMI™: 7680×4320. DisplayPort1.4: 7680×4320.Interface PCI-Express 4.0. Output 1x HDMI. 3x DisplayPort. BIOS Support UEFI. Game Index 1080P",
-    "price": 191534.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "RX 6650",
+    "feature": "VIDEO RADEON RX 6650 XT 8GB SAPPHIRE PULSE +Q 6600",
+    "detail": "Stream Processors 2048. Infinity Cache 32MB. Ray Accelerators 32. Memory Size/Bus 8GB GDDR6. Memory Clock 17.5 Gbps Effective. Displays Maximum 4 Displays. Resolution: HDMI™: 7680×4320. DisplayPort1.4: 7680×4320.Interface PCI-Express 4.0. Output 1x HDMI. 3x DisplayPort. BIOS Support UEFI. Game Index 1080P",
+    "price": 191534.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-radeon-rx-6650-xt-8gb-sapphire-pulse-q-6600-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 70,
     "brand": "GEFORCE",
     "name": "PLACA VIDEO",
-    "model":"GT 210",
-    "feature":"VIDEO GEFORCE GT 210 MSI 1GB DDR3",
-    "detail":"Núcleo/Memoria. Núcleo 589MHz. Memoria GDDR3 1000MHz de 1GB. Salida de Video. DVI doble link x 1.D-Sub x 1. HDMI x 1",
-    "price": 19796.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GT 210",
+    "feature": "VIDEO GEFORCE GT 210 MSI 1GB DDR3",
+    "detail": "Núcleo/Memoria. Núcleo 589MHz. Memoria GDDR3 1000MHz de 1GB. Salida de Video. DVI doble link x 1.D-Sub x 1. HDMI x 1",
+    "price": 19796.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gt-210-msi-1gb-ddr3-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 71,
-    "brand": "GEFORCE",
-    "name": "PLACA VIDEO",
-    "model":"GT 1030",
-    "feature":"VIDEO GEFORCE PRE VENTA 17-3 GT 1030 2GB ASUS CSM",
-    "detail":"Acerca de este producto: ASUS GeForce GT 1030 es la fantástica tarjeta gráfica de ASUS. Diseñado con un diseño térmico de 0dB altamente eficiente, disipa el calor en completo silencio, lo que hace del GT 1030 la elección perfecta para la construcción de tu PC de cine en casa (HTPC). Tecnología exclusiva AUTO-EXTREME para una calidad superior y la mejor confiabilidad. También tiene GPU Tweak II para ajustar el rendimiento intuitivo.",
-    "price": 47800.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-pre-venta-173-gt-1030-2gb-asus-csm-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-pre-venta-173-gt-1030-2gb-asus-csm-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-pre-venta-173-gt-1030-2gb-asus-csm-3.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "brand": "WESTERN DIGITAL",
+    "name": "SATA III",
+    "model": "WD10EZEX",
+    "feature": "DISCO HDD 1TB WD BLUE SATA III 3.5",
+    "detail": "Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.-Modelo: WD10EZEX. -Factor forma: 3.5. -Velocidad de rotación: 7200RPM. -Cache: 64MB.-Velocidad máxima sostenida: 150MB/s",
+    "price": 12395.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Oficina"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 72,
     "brand": "GEFORCE",
     "name": "PLACA VIDEO",
-    "model":"GTX 1650",
-    "feature":"VIDEO GEFORCE GTX 1650 4GB GIGABYTE OC SINGLE FAN",
-    "detail":"Memory Clock 12000 MHz. Memory Size 4GB. Memory Type GDDR6. Memory Bus 128 bit. Memory Bandwidth (GB/sec) 192 GB/s. Card Bus PCI-E 3.0 x 16. Digital max resolution 7680x4320. Multi-view 3. Card size L=172 W=122 H=40 mm. PCB Form ATX. DirectX 12. OpenGL 4.6",
-    "price": 111561.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "GTX 1650",
+    "feature": "VIDEO GEFORCE GTX 1650 4GB GIGABYTE OC SINGLE FAN",
+    "detail": "Memory Clock 12000 MHz. Memory Size 4GB. Memory Type GDDR6. Memory Bus 128 bit. Memory Bandwidth (GB/sec) 192 GB/s. Card Bus PCI-E 3.0 x 16. Digital max resolution 7680x4320. Multi-view 3. Card size L=172 W=122 H=40 mm. PCB Form ATX. DirectX 12. OpenGL 4.6",
+    "price": 111561.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-gtx-1650-4gb-gigabyte-oc-single-fan-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 73,
     "brand": "GEFORCE",
     "name": "PLACA VIDEO",
-    "model":"RTX 3060",
-    "feature":"VIDEO GEFORCE RTX 3060 12GB ASUS DUAL O12G",
-    "detail":"Bus Standard. PCI Express 4.0. OpenGL. OpenGL®4.6. Video Memory. 12GB GDDR6. Engine Clock. OC Mode - 1867 MHz (Boost Clock). Gaming Mode - 1837 MHz (Boost Clock). CUDA Core 3584. Memory Speed 15 Gbps. Memory Interface 192-bit. Resolution: Digital Max Resolution 7680 x 4320",
-    "price": 201616.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-2.jpg"       
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "RTX 3060",
+    "feature": "VIDEO GEFORCE RTX 3060 12GB ASUS DUAL O12G",
+    "detail": "Bus Standard. PCI Express 4.0. OpenGL. OpenGL®4.6. Video Memory. 12GB GDDR6. Engine Clock. OC Mode - 1867 MHz (Boost Clock). Gaming Mode - 1837 MHz (Boost Clock). CUDA Core 3584. Memory Speed 15 Gbps. Memory Interface 192-bit. Resolution: Digital Max Resolution 7680 x 4320",
+    "price": 201616.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/video-geforce-rtx-3060-12gb-asus-dual-o12g-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 74,
     "brand": "INTEL",
     "name": "PROCESADORES",
-    "model":"CORE I5 10400",
-    "feature":"MICRO INTEL CORE I5 10400",
-    "detail":" Micro Intel Core I5 10400. Cantidad de núcleos: 6. Cantidad de subprocesos: 12. Frecuencia básica del procesador: 2,90 GHz. Frecuencia turbo máxima: 4,30 GHz. Caché: 12 MB Intel® Smart Cache. Velocidad del bus: 8 GT/s. TDP: 65 W",
-    "price": 58477.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i5-10400-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CORE I5 10400",
+    "feature": "MICRO INTEL CORE I5 10400",
+    "detail": " Micro Intel Core I5 10400. Cantidad de núcleos: 6. Cantidad de subprocesos: 12. Frecuencia básica del procesador: 2,90 GHz. Frecuencia turbo máxima: 4,30 GHz. Caché: 12 MB Intel® Smart Cache. Velocidad del bus: 8 GT/s. TDP: 65 W",
+    "price": 58477.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i5-10400-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 75,
     "brand": "INTEL",
     "name": "PROCESADORES",
-    "model":"CORE I7 10700",
-    "feature":"MICRO INTEL CORE I7 10700",
-    "detail":"Procesador: Core i7 10700. Núcleos: 8. Hilos: 16. Frecuencia: 2.9 GHz. Frecuencia Turbo: 4.8 GHz.Proceso de Fabricación: 14 nm. Chipset GPU: Intel UHD Graphics 630. Socket: 1200 Comet Lake. TDP: 65W. Cache L1: 64 KB. Cache L2: 256 MB. Cache L3: 16 MB. Incluye Cooler CPU: Sí. Modelo: BX8070110700",
-    "price": 127106.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i7-10700-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CORE I7 10700",
+    "feature": "MICRO INTEL CORE I7 10700",
+    "detail": "Procesador: Core i7 10700. Núcleos: 8. Hilos: 16. Frecuencia: 2.9 GHz. Frecuencia Turbo: 4.8 GHz.Proceso de Fabricación: 14 nm. Chipset GPU: Intel UHD Graphics 630. Socket: 1200 Comet Lake. TDP: 65W. Cache L1: 64 KB. Cache L2: 256 MB. Cache L3: 16 MB. Incluye Cooler CPU: Sí. Modelo: BX8070110700",
+    "price": 127106.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i7-10700-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 76,
     "brand": "INTEL",
     "name": "PROCESADORES",
-    "model":"CORE I5 11600K 11 GEN",
-    "feature":"MICRO INTEL CORE I5 11600K 11 GEN",
-    "detail":" 3.90 GHz Base Frequency.- 4.90 GHz Maximum Turbo Frequency.- Socket LGA1200.- 6 Cores, 12 Threads. - 12 MB SmartCache. - DDR4-3200 Dual Channel Memory Support. - Maximum Number of PCI Express Lanes: 20. - Intel UHD Graphics 750. - 125W TDP.- Intel Solder Thermal Interface Material.- Intel Stock Cooler Not Included",
-    "price": 116890.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i5-11600k-11-gen-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CORE I5 11600K 11 GEN",
+    "feature": "MICRO INTEL CORE I5 11600K 11 GEN",
+    "detail": " 3.90 GHz Base Frequency.- 4.90 GHz Maximum Turbo Frequency.- Socket LGA1200.- 6 Cores, 12 Threads. - 12 MB SmartCache. - DDR4-3200 Dual Channel Memory Support. - Maximum Number of PCI Express Lanes: 20. - Intel UHD Graphics 750. - 125W TDP.- Intel Solder Thermal Interface Material.- Intel Stock Cooler Not Included",
+    "price": 116890.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i5-11600k-11-gen-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 77,
     "brand": "INTEL",
     "name": "PROCESADORES",
-    "model":"CORE I9 13900K",
-    "feature":"MICRO INTEL CORE I9 13900K S/COOLER S1700 BOX",
-    "detail":"Procesador. Núcleos totales 24. Hilos de ejecución 32. Núcs. principales 8 rendimiento a 3.0 GHz.Frec. turbo núcs. prin. hasta 5.8 GHz. Núcs. secundarios 16 eficiencia a 2.2 GHz. Frec. turbo núcs. sec. hasta 4.3 GHz. Caché L2 total 32768 KB. Memoria. Interfaz de memoria DDR5-5600, DDR4-3200. Memoria máxima 128 GB. Chip gráfico integrado. GPU Intel UHD Graphics 770.Frecuencia base 300 MHz. Sombreadores 256. Frecuencia turbo 1650 MHz. Cómputo FP32 0.84 TFLOPS. Parámetros: TUnión 100 ºC. Consumo a frec. base 125 W. Consumo a frec. Turbo 253 W",
-    "price": 289516.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i9-13900k-scooler-s1700-box-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "CORE I9 13900K",
+    "feature": "MICRO INTEL CORE I9 13900K S/COOLER S1700 BOX",
+    "detail": "Procesador. Núcleos totales 24. Hilos de ejecución 32. Núcs. principales 8 rendimiento a 3.0 GHz.Frec. turbo núcs. prin. hasta 5.8 GHz. Núcs. secundarios 16 eficiencia a 2.2 GHz. Frec. turbo núcs. sec. hasta 4.3 GHz. Caché L2 total 32768 KB. Memoria. Interfaz de memoria DDR5-5600, DDR4-3200. Memoria máxima 128 GB. Chip gráfico integrado. GPU Intel UHD Graphics 770.Frecuencia base 300 MHz. Sombreadores 256. Frecuencia turbo 1650 MHz. Cómputo FP32 0.84 TFLOPS. Parámetros: TUnión 100 ºC. Consumo a frec. base 125 W. Consumo a frec. Turbo 253 W",
+    "price": 289516.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-intel-core-i9-13900k-scooler-s1700-box-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 78,
     "brand": "RYZEN",
     "name": "PROCESADORES",
-    "model":"RYZEN 3 3200G VEGA 8",
-    "feature":"MICRO AMD RYZEN 3 3200G VEGA 8",
-    "detail":"-N.° de núcleos de CPU: 4.-N.° de subprocesos: 4.-N.° de núcleos de GPU: 8. -Reloj base: 3.6GHz. Reloj de aumento Max: 4GHz.-Caché L1 total: 384KB.-Caché L2 total: 2MB. -Caché L3 total:4MB. -Desbloqueados: Sí -CMOS: 12nm FinFET. -Paquete: AM4. -Versión de PCI Express: PCIe 3.0 x8. -TDP/TDP predeterminado: 65W cTDP: 45-65W.-Temp. Máx: 95°C. -Velocidad máxima de memoria: 2933MHz.-Tipo de memoria: DDR4. -Canales de memoria: 2",
-    "price": 68240.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-3-3200g-vega-8-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "RYZEN 3 3200G VEGA 8",
+    "feature": "MICRO AMD RYZEN 3 3200G VEGA 8",
+    "detail": "-N.° de núcleos de CPU: 4.-N.° de subprocesos: 4.-N.° de núcleos de GPU: 8. -Reloj base: 3.6GHz. Reloj de aumento Max: 4GHz.-Caché L1 total: 384KB.-Caché L2 total: 2MB. -Caché L3 total:4MB. -Desbloqueados: Sí -CMOS: 12nm FinFET. -Paquete: AM4. -Versión de PCI Express: PCIe 3.0 x8. -TDP/TDP predeterminado: 65W cTDP: 45-65W.-Temp. Máx: 95°C. -Velocidad máxima de memoria: 2933MHz.-Tipo de memoria: DDR4. -Canales de memoria: 2",
+    "price": 68240.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-3-3200g-vega-8-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 79,
     "brand": "RYZEN",
     "name": "PROCESADORES",
-    "model":"5600G",
-    "feature":"MICRO AMD RYZEN 5 5600G",
-    "detail":"N.° de núcleos de CPU 6. N.° de subprocesos 12. N.° de núcleos de GPU 7. Reloj base 3.9GHz. Reloj de aumento máx. Hasta 4.4GHz. Caché L2 total 3MB. Caché L3 total 16MB. Desbloqueados Sí. CMOS TSMC 7nm FinFET.Paquete AM4. Versión de PCI Express PCIe® 3.0. Solución térmica Wraith Stealth. TDP/TDP predeterminado 65W. cTDP 45-65W. Temp. máx. 95°C.*Compatible con SO. Windows 10 edición de 64·bits",
-    "price": 71900.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-5-5600g-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "5600G",
+    "feature": "MICRO AMD RYZEN 5 5600G",
+    "detail": "N.° de núcleos de CPU 6. N.° de subprocesos 12. N.° de núcleos de GPU 7. Reloj base 3.9GHz. Reloj de aumento máx. Hasta 4.4GHz. Caché L2 total 3MB. Caché L3 total 16MB. Desbloqueados Sí. CMOS TSMC 7nm FinFET.Paquete AM4. Versión de PCI Express PCIe® 3.0. Solución térmica Wraith Stealth. TDP/TDP predeterminado 65W. cTDP 45-65W. Temp. máx. 95°C.*Compatible con SO. Windows 10 edición de 64·bits",
+    "price": 71900.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-5-5600g-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 80,
     "brand": "RYZEN",
     "name": "PROCESADORES",
-    "model":"5700G",
-    "feature":"MICRO AMD RYZEN 7 5700G",
-    "detail":"N.° de núcleos de CPU 8. N.° de subprocesos 16. N.° de núcleos de GPU 8. Reloj base 3.9GHz. Reloj de aumento máx. Hasta 3.8GHz. Caché L2 total 3MB. Caché L3 total 16MB. Desbloqueados Sí. CMOS TSMC 7nm FinFET.Paquete AM4. Versión de PCI Express PCIe® 3.0. Solución térmica Wraith Stealth. TDP/TDP predeterminado 65W. cTDP 45-65W. Temp. máx. 95°C.*Compatible con SO. Windows 10 edición de 64·bits",
-    "price": 91660.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-7-5700g-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "5700G",
+    "feature": "MICRO AMD RYZEN 7 5700G",
+    "detail": "N.° de núcleos de CPU 8. N.° de subprocesos 16. N.° de núcleos de GPU 8. Reloj base 3.9GHz. Reloj de aumento máx. Hasta 3.8GHz. Caché L2 total 3MB. Caché L3 total 16MB. Desbloqueados Sí. CMOS TSMC 7nm FinFET.Paquete AM4. Versión de PCI Express PCIe® 3.0. Solución térmica Wraith Stealth. TDP/TDP predeterminado 65W. cTDP 45-65W. Temp. máx. 95°C.*Compatible con SO. Windows 10 edición de 64·bits",
+    "price": 91660.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-7-5700g-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 81,
     "brand": "RYZEN",
     "name": "PROCESADORES",
-    "model":"5600X",
-    "feature":"MICRO AMD RYZEN 5 5600X S/VIDEO C/COOLER",
-    "detail":"Microprocesador Ryzen 5 5600X 4.6GHz. Juega con lo mejor. Seis núcleos increíbles para quienes simplemente desean jugar. Cuando cuentas con la arquitectura2 de procesadores más avanzada del mundo para jugadores y creadores de contenido, las posibilidades son infinitas. Ya sea que juegues los juegos más recientes, diseñes el próximo rascacielos o proceses datos, necesitas un procesador poderoso que pueda dar respuesta a todas estas demandas, y más. Sin lugar a dudas, los procesadores para computadoras de escritorio AMD Ryzen™ serie 5000 elevan el nivel de expectativa para jugadores y artistas por igual. Ya sea para jugar o crear, los procesadores AMD Ryzen™ ofrecen el máximo rendimiento. Los procesadores AMD Ryzen™ serie 5000 están preparados para la próxima generación de juegos exigentes, ya que ofrecen una experiencia de inmersión única y dominan todas las tareas de varios procesos, como el renderizado de video o 3D3, y la compilación de software.Las tecnologías de última generación ",
-    "price": 136686.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-5-5600x-svideo-ccooler-0.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "5600X",
+    "feature": "MICRO AMD RYZEN 5 5600X S/VIDEO C/COOLER",
+    "detail": "Microprocesador Ryzen 5 5600X 4.6GHz. Juega con lo mejor. Seis núcleos increíbles para quienes simplemente desean jugar. Cuando cuentas con la arquitectura2 de procesadores más avanzada del mundo para jugadores y creadores de contenido, las posibilidades son infinitas. Ya sea que juegues los juegos más recientes, diseñes el próximo rascacielos o proceses datos, necesitas un procesador poderoso que pueda dar respuesta a todas estas demandas, y más. Sin lugar a dudas, los procesadores para computadoras de escritorio AMD Ryzen™ serie 5000 elevan el nivel de expectativa para jugadores y artistas por igual. Ya sea para jugar o crear, los procesadores AMD Ryzen™ ofrecen el máximo rendimiento. Los procesadores AMD Ryzen™ serie 5000 están preparados para la próxima generación de juegos exigentes, ya que ofrecen una experiencia de inmersión única y dominan todas las tareas de varios procesos, como el renderizado de video o 3D3, y la compilación de software.Las tecnologías de última generación ",
+    "price": 136686.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/micro-amd-ryzen-5-5600x-svideo-ccooler-0.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 82,
     "brand": "ASUS",
     "name": "MOTHER",
-    "model":"B450M-PLUS",
-    "feature":"MOTHER ASUS B450M-PLUS II TUF GAMING",
-    "detail":"Tarjeta madre para juegos AMD B450 (AM4) micro ATX con soporte M.2, micrófono con cancelación de ruido IA, HDMI, DVI-D, USB 3.2 Gen 2 Tipo A, USB 3.2 Gen 1 Tipo A y Tipo C, e iluminación Aura Sync RGB.Refrigeración completa: Disipadores VRM, disipador PCH y Fan Xpert 2+. Conectividad Next-gen: Compatibilidad con USB 3.2 Gen 2 Type-A. Códec Realtek S1200A: Calidad de audio impecable con una relación señal-ruido sin precedentes de 108 dB para salida de línea estéreo y SNR de 103 dB para entrada de línea. Micrófono con cancelación de ruido AI: Proporciona una comunicación de voz nítida en el juego. Iluminación Aura Sync RGB: Sincronice la iluminación LED con una amplia variedad de equipos de PC compatibles.",
-    "price": 32554.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-3.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "B450M-PLUS",
+    "feature": "MOTHER ASUS B450M-PLUS II TUF GAMING",
+    "detail": "Tarjeta madre para juegos AMD B450 (AM4) micro ATX con soporte M.2, micrófono con cancelación de ruido IA, HDMI, DVI-D, USB 3.2 Gen 2 Tipo A, USB 3.2 Gen 1 Tipo A y Tipo C, e iluminación Aura Sync RGB.Refrigeración completa: Disipadores VRM, disipador PCH y Fan Xpert 2+. Conectividad Next-gen: Compatibilidad con USB 3.2 Gen 2 Type-A. Códec Realtek S1200A: Calidad de audio impecable con una relación señal-ruido sin precedentes de 108 dB para salida de línea estéreo y SNR de 103 dB para entrada de línea. Micrófono con cancelación de ruido AI: Proporciona una comunicación de voz nítida en el juego. Iluminación Aura Sync RGB: Sincronice la iluminación LED con una amplia variedad de equipos de PC compatibles.",
+    "price": 32554.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-b450mplus-ii-tuf-gaming-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 83,
     "brand": "ASUS",
     "name": "MOTHER",
-    "model":"A520M PHANTOM",
-    "feature":"MOTHER ASROCK A520M PHANTOM GAMING 4",
-    "detail":"Soporta Socket AMD AM4 Ryzen™ 3000, 4000 G-Series y 5000 y 5000 G-Series Desktop Processors*Diseño de 8 fases de alimentación con Digi PowerSoporta memoria DDR4 4733+ (OC)2 x PCIe 3.0 x16, 1 x PCIe 3.0 x1Opciones de salida gráficos: HDMI, DisplayPortAudio 7.1 canales HD (Realtek ALC887/897 Audio Codec)4 x SATA3, 1 x Ultra M.2 (PCIe Gen3 x4),1 x M.2 (PCIe Gen3 x2 & SATA3)6 x USB 3.2 Gen1 (2 Frontales, 4 Traseros)6 x USB 2.0 (4 Frontales, 2 Traseros)Realtek Gigabit LAN *Not compatible con AMD Ryzen™ 5 3400G y Ryzen™ 3 3200G.",
-    "price": 40809.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-2.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "A520M PHANTOM",
+    "feature": "MOTHER ASROCK A520M PHANTOM GAMING 4",
+    "detail": "Soporta Socket AMD AM4 Ryzen™ 3000, 4000 G-Series y 5000 y 5000 G-Series Desktop Processors*Diseño de 8 fases de alimentación con Digi PowerSoporta memoria DDR4 4733+ (OC)2 x PCIe 3.0 x16, 1 x PCIe 3.0 x1Opciones de salida gráficos: HDMI, DisplayPortAudio 7.1 canales HD (Realtek ALC887/897 Audio Codec)4 x SATA3, 1 x Ultra M.2 (PCIe Gen3 x4),1 x M.2 (PCIe Gen3 x2 & SATA3)6 x USB 3.2 Gen1 (2 Frontales, 4 Traseros)6 x USB 2.0 (4 Frontales, 2 Traseros)Realtek Gigabit LAN *Not compatible con AMD Ryzen™ 5 3400G y Ryzen™ 3 3200G.",
+    "price": 40809.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-a520m-phantom-gaming-4-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 84,
     "brand": "ASROCK",
     "name": "MOTHER",
-    "model":"B560",
-    "feature":"MOTHER ASROCK B560 STEEL LEGEND DDR4 S1200",
-    "detail":"Soporta procesadores Intel® Core™ de 10ª generación y procesadores Intel® Core™ de 11ª generación (LGA1200)10 Phase Dr.MOS Power DesignSoporta memoria DDR4 4800MHz (OC)1 x PCIe 4.0 x16, 1 x PCIe 3.0 x16, 2 x PCIe 3.0 x11 x M.2 Key-E Para el WiFiOpciones de salida gráficos: HDMI, DisplayPortAudio 7.1 canales HD (Realtek ALC897 Audio Codec), Nahimic Audio6 SATA3, 1 x Hyper M.2 (PCIe Gen4 x4), 1 x Ultra M.2 (PCIe Gen3 x4)1 x M.2 (PCIe Gen3 x2 & SATA3)1 x Front USB 3.2 Gen2x2 Type-C (20 Gb/s)1 x Rear USB 3.2 Gen2 Type-C (10 Gb/s)6 x USB 3.2 Gen1 (4 x Rear, 2 x Front)Dragon 2.5 Gigabit LAN",
-    "price": 63113.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-3.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "B560",
+    "feature": "MOTHER ASROCK B560 STEEL LEGEND DDR4 S1200",
+    "detail": "Soporta procesadores Intel® Core™ de 10ª generación y procesadores Intel® Core™ de 11ª generación (LGA1200)10 Phase Dr.MOS Power DesignSoporta memoria DDR4 4800MHz (OC)1 x PCIe 4.0 x16, 1 x PCIe 3.0 x16, 2 x PCIe 3.0 x11 x M.2 Key-E Para el WiFiOpciones de salida gráficos: HDMI, DisplayPortAudio 7.1 canales HD (Realtek ALC897 Audio Codec), Nahimic Audio6 SATA3, 1 x Hyper M.2 (PCIe Gen4 x4), 1 x Ultra M.2 (PCIe Gen3 x4)1 x M.2 (PCIe Gen3 x2 & SATA3)1 x Front USB 3.2 Gen2x2 Type-C (20 Gb/s)1 x Rear USB 3.2 Gen2 Type-C (10 Gb/s)6 x USB 3.2 Gen1 (4 x Rear, 2 x Front)Dragon 2.5 Gigabit LAN",
+    "price": 63113.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asrock-b560-steel-legend-ddr4-s1200-3.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 85,
     "brand": "ASUS",
     "name": "MOTHER",
-    "model":"STRIX X570-E",
-    "feature":"MOTHER ASUS ROG STRIX X570-E GAMING WIFI II",
-    "detail":"Tarjeta madre gamer AMD X570 ATX con PCIe 4.0, 12+4 fases de poder y WiFi 6E (802.11ax), Realtek 2.5 Gb Ethernet, Cancelación de ruido AI bidireccional, M.2 dual con disipadores de calor, SATA 6 GB/s, USB 3.2 Iluminación Gen 2 Type C y Aura Sync RGB",
-    "price": 158904.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-2.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "STRIX X570-E",
+    "feature": "MOTHER ASUS ROG STRIX X570-E GAMING WIFI II",
+    "detail": "Tarjeta madre gamer AMD X570 ATX con PCIe 4.0, 12+4 fases de poder y WiFi 6E (802.11ax), Realtek 2.5 Gb Ethernet, Cancelación de ruido AI bidireccional, M.2 dual con disipadores de calor, SATA 6 GB/s, USB 3.2 Iluminación Gen 2 Type C y Aura Sync RGB",
+    "price": 158904.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-asus-rog-strix-x570e-gaming-wifi-ii-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 86,
     "brand": "MSI",
     "name": "MOTHER",
-    "model":"H310M",
-    "feature":"MOTHER MSI H310M PRO-VDH",
-    "detail":"Soporta procesadors 8va Gen Intel® Core™ / Pentium® Gold/ Celeron® para socket LGA 1151. Soporta memoria DDR4 hasta 2666MHz. Audio Boost: Gratifica tus oídos con el sonido con calidad de estudio. EZ Debug LED: La manera más fácil de resolver problemas. X-Boost: Software que detecta automáticamente y permite impulsar el desempeño de cualquier dispositivo de almacenamiento o USB. Core Boost: Con formato premium y diseño energético totalmente digital, soporta más núcleos y ofrece mejor desempeño.",
-    "price": 14292.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-2.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "H310M",
+    "feature": "MOTHER MSI H310M PRO-VDH",
+    "detail": "Soporta procesadors 8va Gen Intel® Core™ / Pentium® Gold/ Celeron® para socket LGA 1151. Soporta memoria DDR4 hasta 2666MHz. Audio Boost: Gratifica tus oídos con el sonido con calidad de estudio. EZ Debug LED: La manera más fácil de resolver problemas. X-Boost: Software que detecta automáticamente y permite impulsar el desempeño de cualquier dispositivo de almacenamiento o USB. Core Boost: Con formato premium y diseño energético totalmente digital, soporta más núcleos y ofrece mejor desempeño.",
+    "price": 14292.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
+  },
+  {
     "id": 87,
     "brand": "ASROCK",
     "name": "MOTHER",
-    "model":"H310CM-HDV",
-    "feature":"MOTHER ASROCK H310CM-HDV",
-    "detail":"CPU. Supports 9th and 8th Gen Intel® Core™ Processors (Socket 1151). Supports CPU up to 95W. 4 Power Phase design. Supports Intel® Turbo Boost 2.0 Technology. *Chipset Intel® H310. *Memory Dual Channel DDR4 Memory Technology. 2 x DDR4 DIMM Slots. Supports DDR4 2666 / 2400 / 2133 non-ECC, un-buffered memory Max. capacity of system memory: 64GB*",
-    "price": 22397.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-2.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Gamer"
-        }              
+    "model": "H310CM-HDV",
+    "feature": "MOTHER ASROCK H310CM-HDV",
+    "detail": "CPU. Supports 9th and 8th Gen Intel® Core™ Processors (Socket 1151). Supports CPU up to 95W. 4 Power Phase design. Supports Intel® Turbo Boost 2.0 Technology. *Chipset Intel® H310. *Memory Dual Channel DDR4 Memory Technology. 2 x DDR4 DIMM Slots. Supports DDR4 2666 / 2400 / 2133 non-ECC, un-buffered memory Max. capacity of system memory: 64GB*",
+    "price": 22397.0,
+    "image": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-msi-h310m-provdh-2.jpg"
+    ],
+    "category": [
+      {
+        "name": "Hardware"
+      },
+      {
+        "name": "Gamer"
+      }
     ]
-    },
-    {    
-    "id": 88,
-    "brand": "WESTERN DIGITAL",
-    "name": "SATA III",
-    "model":"WD10EZEX",
-    "feature":"DISCO HDD 1TB WD BLUE SATA III 3.5",
-    "detail":"Amplíe la capacidad de almacenamiento de su ordenador con los discos WD Blue, diseñados especialmente para ordenadores de sobremesa y todo en uno con diversas capacidades de almacenamiento.-Modelo: WD10EZEX. -Factor forma: 3.5. -Velocidad de rotación: 7200RPM. -Cache: 64MB.-Velocidad máxima sostenida: 150MB/s",
-    "price": 12395.00,
-    "image":[
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-0.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-1.jpg",
-        "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/disco-hdd-1tb-wd-blue-sata-iii-35-2.jpg"
-               
-    ],       
-    "category":[
-        {
-            "name": "Hardware"
-
-        },
-        {
-            "name": "Oficina"
-        }              
-    ]
-    }
-  
+  }
 ]
