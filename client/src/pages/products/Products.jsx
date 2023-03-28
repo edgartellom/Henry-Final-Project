@@ -21,47 +21,40 @@ const Products = () => {
   const categoryFilter = useStore((state) => state.categoryFilter);
   const brandFilter = useStore((state) => state.brandFilter);
   const categoryFilter2 = useStore((state) => state.categoryFilter2);
+  const [res, setRes] = useState([]);
+  const [res2, setRes2] = useState([]);
 
   const names = listProducts.map((pe) => pe.brand);
   const nNames = new Set(names);
   let rNames = [...nNames];
 
-  // var cat = [
-  //   {
-  //     id: 0,
-  //     brand: "",
-  //     name: "",
-  //     model: "",
-  //     feature: "",
-  //     detail: "",
-  //     price: 0,
-  //     image: [""],
-  //     categories: [
-  //       {
-  //         name: "",
-  //         type: 0,
-  //       },
-  //     ],
-  //   },
-  // ];
-  // const cargarFiltros = () => {
-  //   if (listProducts.length > 1)
-  //     listProducts.map((c) => c.categories.find((e) => e.type === 1));
-  //   console.log(cat);
-  //   const catArray = new Set(cat);
-  //   const catRep = [...catArray];
-  //   console.log(catRep);
-  // };
+  var response = [];
 
-  const cats = listProducts.map((pe) => pe.categories);
-  var catR = cats[0];
-  console.log(cats);
-  console.log(catR);
-  const ctsName = catR.filter((e) => e.type == 1);
+  const filtarCategories = async () => {
+    try {
+      const cats = await listProducts.map((pe) => pe.categories);
+      //const lCats = cats.flat();
+      //console.log(lCats);
+      const uniqueArray = cats
+        .flat()
+        .map((obj) => JSON.stringify(obj))
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .map((str) => JSON.parse(str));
+      //return uniqueArray;
+      setRes(uniqueArray.filter((el) => el.type === 1));
+      setRes2(uniqueArray.filter((el) => el.type === 2));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //const filterSelect = nSelect.filter((e) => e.type === 1);
+
+  //const ctsName = catR.filter((e) => e.type == 1);
 
   // console.log(ctsName);
   // const catt = new Set(ctsName);
-  let catRep = [...ctsName];
+  //let catRep = [...ctsName];
 
   const [page, setPage] = useState(1);
 
@@ -74,7 +67,12 @@ const Products = () => {
   );
 
   useEffect(() => {
+    filtarCategories();
+  }, [listProducts]);
+
+  useEffect(() => {
     fetchProducts();
+    setRes(filtarCategories());
     //cargarFiltros();
   }, []);
 
@@ -178,10 +176,10 @@ const Products = () => {
               label="Age"
               onChange={handleCategoryChange}
             >
-              {catRep ? (
-                catRep.map((e) => (
+              {res.length > 0 ? (
+                res.map((e) => (
                   <MenuItem
-                    key={e.id}
+                    key={e.name}
                     value={e.name}
                     className="option2"
                     style={{ color: "#2196f3" }}
@@ -192,12 +190,6 @@ const Products = () => {
               ) : (
                 <MenuItem></MenuItem>
               )}
-              {/* <MenuItem value="Perifericos" style={{ color: "#2196f3" }}>
-                Perifericos
-              </MenuItem>
-              <MenuItem value="Hardware" style={{ color: "#2196f3" }}>
-                Hardware
-              </MenuItem> */}
             </Select>
           </FormControl>
         </div>
@@ -240,12 +232,20 @@ const Products = () => {
               label="Age"
               onChange={handleTypeChange}
             >
-              <MenuItem value="Gamer" style={{ color: "#2196f3" }}>
-                Gamer
-              </MenuItem>
-              <MenuItem value="Oficina" style={{ color: "#2196f3" }}>
-                Oficina
-              </MenuItem>
+              {res2.length > 0 ? (
+                res2.map((e) => (
+                  <MenuItem
+                    key={e.name}
+                    value={e.name}
+                    className="option2"
+                    style={{ color: "#2196f3" }}
+                  >
+                    {e.name}
+                  </MenuItem>
+                ))
+              ) : (
+                <MenuItem></MenuItem>
+              )}
             </Select>
           </FormControl>
         </div>
