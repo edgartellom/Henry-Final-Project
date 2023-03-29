@@ -1,34 +1,40 @@
 import { create } from "zustand";
 import axios from "axios";
+import { devtools } from "zustand/middleware";
 
-const useStore = create((set,get) => ({
-  products: [],
-  detailProduct:[],
-  fetchProducts: async () => {
-    try {
-      const response = await axios.get("/products");
-      set({ products: response.data });
-    } catch (error) {
-      console.error(error);
-    }
-  },
-
-  filterId: async(id)=>{
-    try{
-      const responseId=await axios.get("products/"+id);
-      set({detailProduct:responseId.data})
-    }catch(error){
-      console.log(error)
-    }
-  },
-
-}));
-
-
-
-
-
-
-
+const useStore = create(
+  devtools((set, get) => ({
+    products: [],
+    listProducts: [],
+    categoryFilter: "",
+    categoryFilter2: "",
+    brandFilter: "",
+    detailProduct: [],
+    setListProducts: (listFilter) =>
+      set((state) => ({ ...state, listProducts: listFilter })),
+    setCategoryFilter: (category) =>
+      set((state) => ({ ...state, categoryFilter: category })),
+    setCategoryFilter2: (category) =>
+      set((state) => ({ ...state, categoryFilter2: category })),
+    setBrandFilter: (brand) =>
+      set((state) => ({ ...state, brandFilter: brand })),
+    fetchProducts: async () => {
+      try {
+        const response = await axios.get("/products");
+        set({ products: response.data, listProducts: response.data });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    filterId: async (id) => {
+      try {
+        const responseId = await axios.get("products/" + id);
+        set({ detailProduct: responseId.data });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  }))
+);
 
 export default useStore;

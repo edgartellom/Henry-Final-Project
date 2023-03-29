@@ -29,7 +29,7 @@
 .col {
   flex: 1 0 0%;
 }
- 
+
 .row-cols-auto > * {
   flex: 0 0 auto;
   width: auto;
@@ -910,7 +910,6 @@
     --bs-gutter-y: 3rem;
   }
 }
-
 
 * {
   padding: 0;

@@ -21,7 +21,7 @@ const List = ({ products }) => {
               ))}
             </div>
           </section>
-          <aside>
+          {/* <aside>
             <h3 className="center">
               <small>Filters</small>
             </h3>
@@ -41,7 +41,7 @@ const List = ({ products }) => {
               </li>
               <li>Rango de precio</li>
             </ul>
-          </aside>
+          </aside> */}
         </div>
       </main>
     </>
