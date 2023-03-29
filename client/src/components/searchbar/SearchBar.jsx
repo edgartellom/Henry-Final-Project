@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import useStore from "../../store/products";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 const SearchBar = ()=>{
 
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const [searchTerm, setSearchTerm] = useState(null);
   const inputRef = React.createRef();
@@ -15,11 +17,13 @@ const SearchBar = ()=>{
 
     if(!value){
       //r the search
+      setSearchTerm(null);
     }
 
     setInputValue(value)
 
     if(term){
+      navigate('/products')
       setSearchTerm(term)
       searchProducts(term)
     }
