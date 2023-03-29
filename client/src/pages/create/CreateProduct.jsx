@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useStore from "../../store/Category";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function CreateProduct() {
 
@@ -117,9 +118,9 @@ function CreateProduct() {
     //console.log(errors)
   return (
     <div className="validateContainer">
-      {/* <di>
-        <Link to ="/Home" className="homeButton">Home</Link>
-      </di> */}
+      <di>
+        <Link to ="/products" className="homeButton">Go back</Link>
+      </di>
 
       
 
