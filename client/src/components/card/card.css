@@ -5,12 +5,13 @@
   align-items: center;
 }
 
-.img-fluid {
-  display: felx;
+.img-fluidd {
   justify-content: center;
   justify-items: center;
   align-items: center;
   border-radius: 2px;
+  width: 200px;
+  height: 180px;
 }
 
 .feature {

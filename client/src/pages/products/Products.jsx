@@ -159,6 +159,7 @@ const Products = () => {
             page={page}
             onChange={handleChange}
             color="primary"
+            style={{ "& .MuiButton-label": { color: "red" } }}
           />
         </Stack>
       </div>
