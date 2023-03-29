@@ -17,7 +17,6 @@ const Home = () => {
 
   const sliceProducts = products.slice(0, 3);
 
-  
   const prevImg = () => {
     setCurrentImgIndex(
       currentImgIndex === 0 ? images.length - 1 : currentImgIndex - 1
@@ -62,13 +61,13 @@ const Home = () => {
       </div>
       <div className="card_div">
         {sliceProducts.map((product) => (
-           <Link to={`/products/${product.id}`} >
-          <div key={product.id} className="card">
-            <img src={product.image[0]} alt={product.name} />
-            <div>
-              {product.feature} {"$" + product.price}
+          <Link to={`/products/${product.id}`}>
+            <div key={product.id} className="card">
+              <img src={product.image[0]} alt={product.name} />
+              <div>
+                {product.feature} {"$" + product.price}
+              </div>
             </div>
-          </div>
           </Link>
         ))}
       </div>

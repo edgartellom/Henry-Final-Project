@@ -1,47 +1,45 @@
 import { useEffect } from "react";
-import useStore from "../../store/ShoppingCart";
+import useStore from "../../store/shoppingCart";
 import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
-  const cart = useStore(state => state.cartItems)
-  const add = useStore((state) => state.addToCart)
-  const clear = useStore((state) => state.clearCart)
-  const quantity = useStore((state) => state.cartTotalQuantity)
-  const amount = useStore((state) => state.cartTotalAmount)
-  const getTotal = useStore((state) => state.getTotals)
+  const cart = useStore((state) => state.cartItems);
+  const add = useStore((state) => state.addToCart);
+  const clear = useStore((state) => state.clearCart);
+  const quantity = useStore((state) => state.cartTotalQuantity);
+  const amount = useStore((state) => state.cartTotalAmount);
+  const getTotal = useStore((state) => state.getTotals);
 
-  
+  const addCart = (e) => {
+    console.log(e);
+    add(e);
+  };
 
-    const addCart = (e) => {
-        console.log(e)
-        add(e)
-    }
+  const total = () => {
+    getTotal();
+  };
 
-    const total = () => {
-        getTotal()
-    }
-
-    useEffect(() => {
+  useEffect(() => {
     // dispatch(getTotals());
-    total()
-    console.log(cart)
-    console.log(add)
-    console.log(clear)
-    }, [cart, addCart, quantity]); //cart, dispatch
+    total();
+    console.log(cart);
+    console.log(add);
+    console.log(clear);
+  }, [cart, addCart, quantity]); //cart, dispatch
   //Redux Tool kit
 
-//   const handleAddToCart = (product) => {
-//     dispatch(addToCart(product));
-//   };
-//   const handleDecreaseCart = (product) => {
-//     dispatch(decreaseCart(product));
-//   };
-//   const handleRemoveFromCart = (product) => {
-//     dispatch(removeFromCart(product));
-//   };
-//   const handleClearCart = () => {
-//     dispatch(clearCart());
-//   };
+  //   const handleAddToCart = (product) => {
+  //     dispatch(addToCart(product));
+  //   };
+  //   const handleDecreaseCart = (product) => {
+  //     dispatch(decreaseCart(product));
+  //   };
+  //   const handleRemoveFromCart = (product) => {
+  //     dispatch(removeFromCart(product));
+  //   };
+  //   const handleClearCart = () => {
+  //     dispatch(clearCart());
+  //   };
 
   return (
     <div className="cart-container">
@@ -57,8 +55,7 @@ const ShoppingCart = () => {
                 height="20"
                 fill="currentColor"
                 className="bi bi-arrow-left"
-                viewBox="0 0 16 16"
-              >
+                viewBox="0 0 16 16">
                 <path
                   fillRule="evenodd"
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
@@ -89,12 +86,10 @@ const ShoppingCart = () => {
                       {/* <button onClick={() => handleRemoveFromCart(cartItem)}>
                         Remove
                       </button> */}
-
                     </div>
                   </div>
                   <div className="cart-product-price">${cartItem.price}</div>
                   <div className="cart-product-quantity">
-
                     {/* <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
                     </button> */}
@@ -127,8 +122,7 @@ const ShoppingCart = () => {
                     height="20"
                     fill="currentColor"
                     className="bi bi-arrow-left"
-                    viewBox="0 0 16 16"
-                  >
+                    viewBox="0 0 16 16">
                     <path
                       fillRule="evenodd"
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
