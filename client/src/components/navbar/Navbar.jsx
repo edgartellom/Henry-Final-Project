@@ -3,6 +3,7 @@ import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
 import "./navbar.css";
 import { useState } from "react";
+import SearchBar from "../searchbar/SearchBar";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -32,13 +33,7 @@ const Navbar = () => {
 
         <ul className="menu-items">
           <li>
-            <input
-              type="search"
-              className="search"
-              id="search"
-              name="search"
-              placeholder="Search"
-            />
+            <SearchBar></SearchBar>
           </li>
           <li>
             <details role="list" dir="list">
@@ -102,6 +97,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+
       <aside className={menu ? "side-s container" : "side-h"}>
         <nav>
           <ul>
