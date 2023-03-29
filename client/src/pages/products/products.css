@@ -1,0 +1,8 @@
+.MuiMenu-list {
+  display: table-cell !important;
+  list-style-type: none !important;
+  vertical-align: middle;
+}
+.MuiList-root {
+  display: table-row !important;
+}

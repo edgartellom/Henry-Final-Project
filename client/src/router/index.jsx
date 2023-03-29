@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Login, Register, Products, Detail, Contact } from "../pages";
-import firebase from "firebase/compat/app";
+import { Home, Login, Products, Detail, Contact } from "../pages";
+import CreateProduct from "../pages/create/CreateProduct";
+import ShoppingCart from "../pages/shoppingCart/ShoppingCart";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/create",
+    element: <CreateProduct />,
+  },
+  {
+    path: "/cart",
+    element: <ShoppingCart />,
   },
 ]);
 

@@ -64,7 +64,7 @@ const getAllProducts = async () => {
     const products = await Product.findAll({
       include: {
         model: Category,
-        attributes: ["name"],
+        attributes: ["name", "type"],
         through: {
           attributes: [],
         },

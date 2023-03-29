@@ -1,84 +1,122 @@
 import { NavLink } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
+import {useEffect, useState} from "react";
+import { useParams } from "react-router-dom";
+import useStore from "../../store/products"
+import ClipLoader from "react-spinners/ClipLoader";
+import "./Detail.css";
 
-const Detail = () => {
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+    
+
+const Detail=()=> {
+  const [loadingInProgress, setLoading] = useState(false);
+  const{filterId,detailProduct}=useStore()
+
+
+
+const{id}=useParams()
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    filterId(id)
+  }, []);
+
+
+
+
+
+
+
+
+console.log(detailProduct)
+
+
+
+//var dataRecibe=id?products.filter((el)=>el.id===id):""
+
+
   return (
     <>
       <Navbar></Navbar>
-      <main className="container">
-        <div className="row">
-          <div className="col">
-            <div className="images">
-              <img
-                className="img-fluid"
-                src="https://i0.wp.com/store.teslards.pe/wp-content/uploads/2023/03/r19vi1qiqo3trbcu_setting_xxx_0_90_end_800.png"
-              />
-            </div>
+
+      <main className='container'>
+        {loadingInProgress ? (
+          <div className='loader-container'>
+            <ClipLoader
+              color={"#fff"}
+              loading={loadingInProgress}
+              size={150}
+            />
           </div>
-          <div className="col">
-            <hgroup>
-              <h3>Model : MONITOR ASUS VG27VH1B 27″ VA FHD</h3>
-              <h4>SKU: 453532121565</h4>
-            </hgroup>
-            <div className="rate">
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
-              <i className="bi bi-star"></i>
+        ) : (
+          <div className='row'>
+            <div className='col'>
+              <div className='images'>
+                <img className='img-fluid' src={detailProduct.image} />
+              </div>
             </div>
-            <p>
-              desc: Monitor Gamer Curvo TUF Gaming VG27VH1B – 27 pulgadas Full
-              HD (1920×1080), 165Hz (por encima de 144Hz), Extreme Low Motion
-              Blur™, Adaptive-sync, FreeSync™ Premium, 1 ms (MPRT){" "}
-            </p>
-            <details>
-              <summary>Details</summary>
-              <ul>
-                <li>
-                  Monitor gamer de 27 pulgadas Full HD (1920×1080) 1500R con
-                  frecuencia de actualización ultrarrápida de 165Hz diseñada
-                  para jugadores profesionales y un juego inmersivo
-                </li>
-                <li>
-                  La tecnología ASUS Extreme Low Motion Blur (ELMB™) permite un
-                  tiempo de respuesta de 1ms (MPRT) junto con sincronización
-                  adaptativa, eliminando el efecto fantasma y el desgarro para
-                  imágenes nítidas de juegos con altas velocidades de cuadros.
-                </li>
-                <li>
-                  Tecnología FreeSync™ Premium para eliminar el desgarro de la
-                  pantalla y las velocidades de fotogramas entrecortadas.
-                </li>
-              </ul>
-            </details>
-            <hgroup>
-              <h5>Categories</h5>
-              <h6>desktop monitores Asus Gaminig</h6>
-            </hgroup>
-            <p>
-              Price: <strong>S/ 782.00</strong>
-            </p>
-            <div className="actions">
-              <div className="btn-inline">
-                <NavLink
-                  to="/detail"
-                  role="button"
-                  className="primary"
-                  data-tooltip="Add to Cart">
-                  <i className="bi bi-cart-plus"></i>
-                </NavLink>
-                <NavLink
-                  to="/detail"
-                  role="button"
-                  className="secondary"
-                  data-tooltip="Add to favorites">
-                  <i className="bi bi-heart"></i>
-                </NavLink>
+            <div className='col'>
+              <hgroup>
+                <h3>{detailProduct.brand}</h3>
+                <h4>{detailProduct.model}</h4>
+              </hgroup>
+              <div>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+                <i className='bi bi-star'></i>
+              </div>
+              <p>{detailProduct.feature}</p>
+              <details>
+                <summary>Details</summary>
+                <ul>
+                  <li>{detailProduct.detail}</li>
+                </ul>
+              </details>
+              <hgroup>
+                <h5>Categories</h5>
+                <li>{detailProduct.categories}</li>
+              </hgroup>
+              <p>
+                Price: <strong>{formatter.format(detailProduct.price)}</strong>
+              </p>
+              <div className='actions'>
+                <div className='btn-inline'>
+                  <NavLink
+                    to='/detail'
+                    role='button'
+                    className='primary'
+                    data-tooltip='Add to Cart'
+                  >
+                    <i className='bi bi-cart-plus'></i>
+                  </NavLink>
+                  <NavLink
+                    to='/detail'
+                    role='button'
+                    className='secondary'
+                    data-tooltip='Add to favorites'
+                  >
+                    <i className='bi bi-heart'></i>
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </main>
+
       <Footer></Footer>
     </>
   );
