@@ -3,9 +3,8 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
-import customTheme from "./theme";
-import GoogleIcon from "./GoogleIcon";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import customTheme from "../theme";
+import GoogleIcon from "../GoogleIcon";
 import {
   Alert,
   Box,
@@ -20,6 +19,24 @@ import {
   Stack,
   Typography,
 } from "@mui/joy";
+import "firebase/app";
+import "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  fetchSignInMethodsForEmail,
+  updateProfile,
+} from "firebase/auth";
+import { app, auth, db } from "../../../firebase/firebaseConfig.js";
+import { setDoc, doc } from "firebase/firestore";
+import useUserStore from "../../../store/users";
+import ErrorAlert from "../../../components/alert/ErrorAlert";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -50,23 +67,30 @@ function ColorSchemeToggle({ onClick, ...props }) {
   );
 }
 
-function errorAlert(error) {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  return (
-    <Stack sx={{ width: "100%" }} spacing={2}>
-      <Alert severity="error">
-        Error {errorCode}! — {errorMessage}
-      </Alert>
-    </Stack>
-  );
-}
-
 const Login = () => {
   const auth = getAuth();
-  const provider = new GoogleAuthProvider();
-
   const user = auth.currentUser;
+  const provider = new GoogleAuthProvider();
+  const setUser = useUserStore((state) => state.setUser);
+
+  React.useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser({
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+          // admin: false,
+        });
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
@@ -84,7 +108,7 @@ const Login = () => {
         </Stack>
       );
     } catch (error) {
-      errorAlert();
+      <ErrorAlert error={error} />;
     }
   };
 
@@ -100,22 +124,32 @@ const Login = () => {
         </Stack>
       );
     } catch (error) {
-      errorAlert();
+      <ErrorAlert error={error} />;
     }
   };
 
-  const handleLogoutSubmit = async (event) => {
-    event.preventDefault();
+  const handleLoginGoogle = async () => {
     try {
-      await signOut(auth);
-      // Sign-out successful.
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="info">You have logged out!</Alert>
-        </Stack>
-      );
+      const result = await signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      if (user !== null) {
+        user.providerData.forEach((profile) => {
+          setUser({
+            "Sign-in provider": profile.providerId,
+            "Provider-specific UID": profile.uid,
+            Name: profile.displayName,
+            Email: profile.email,
+            "Photo URL": profile.photoURL,
+          });
+        });
+      }
+      // window.location.href = "/";
     } catch (error) {
-      errorAlert();
+      <ErrorAlert error={error} />;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
     }
   };
 
@@ -172,22 +206,25 @@ const Login = () => {
             <Typography
               fontWeight="lg"
               startDecorator={
-                <Box
-                  component="span"
-                  sx={{
-                    width: 24,
-                    height: 24,
-                    background: (theme) =>
-                      `linear-gradient(45deg, ${theme.vars.palette.primary.solidBg}, ${theme.vars.palette.primary.solidBg} 30%, ${theme.vars.palette.primary.softBg})`,
-                    borderRadius: "50%",
-                    boxShadow: (theme) => theme.shadow.md,
-                    "--joy-shadowChannel": (theme) =>
-                      theme.vars.palette.primary.mainChannel,
-                  }}
-                />
+                <Link href="/">
+                  <Box
+                    component="span"
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      background: (theme) =>
+                        `linear-gradient(45deg, ${theme.vars.palette.primary.solidBg}, ${theme.vars.palette.primary.solidBg} 30%, ${theme.vars.palette.primary.softBg})`,
+                      borderRadius: "50%",
+                      boxShadow: (theme) => theme.shadow.md,
+                      "--joy-shadowChannel": (theme) =>
+                        theme.vars.palette.primary.mainChannel,
+                    }}
+                  />
+                </Link>
               }>
               Logo
             </Typography>
+
             <ColorSchemeToggle />
           </Box>
           <Box
@@ -199,7 +236,7 @@ const Login = () => {
               display: "flex",
               flexDirection: "column",
               gap: 2,
-              width: 400,
+              width: 450,
               maxWidth: "100%",
               mx: "auto",
               borderRadius: "sm",
@@ -265,8 +302,12 @@ const Login = () => {
               <Button type="submit" fullWidth onClick={handleLoginSubmit}>
                 Sign in
               </Button>
+              <Link fontSize="sm" href="/sign-up" fontWeight="lg">
+                Don&apos;t have an account? Sign Up
+              </Link>
             </form>
             <Button
+              onClick={handleLoginGoogle}
               variant="outlined"
               color="neutral"
               fullWidth

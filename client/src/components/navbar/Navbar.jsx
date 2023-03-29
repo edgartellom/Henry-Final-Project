@@ -3,8 +3,14 @@ import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
 import "./navbar.css";
 import { useState } from "react";
+import { getAuth } from "firebase/auth";
+import ErrorAlert from "../alert/ErrorAlert";
+import "firebase/app";
+import "firebase/auth";
 
 const Navbar = () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
@@ -17,6 +23,21 @@ const Navbar = () => {
   const changeMenu = (e) => {
     e.preventDefault();
     setMenu(!menu);
+  };
+
+  const handleLogout = async (event) => {
+    event.preventDefault();
+    try {
+      await signOut(auth);
+      // Sign-out successful.
+      return (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert severity="info">You have logged out!</Alert>
+        </Stack>
+      );
+    } catch (error) {
+      <ErrorAlert error={error} />;
+    }
   };
 
   return (
@@ -68,7 +89,13 @@ const Navbar = () => {
                   <NavLink to="/">Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/sign-in">Sign in</NavLink>
+                  {user ? (
+                    <NavLink to="/sign-in">Sign in</NavLink>
+                  ) : (
+                    <NavLink to="/" onClick={handleLogout}>
+                      Sign out
+                    </NavLink>
+                  )}
                 </li>
               </ul>
             </details>
@@ -137,10 +164,16 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">perfil</NavLink>
+                    <NavLink to="/">Profile</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/login">Login</NavLink>
+                    {user ? (
+                      <NavLink to="/sign-in">Sign in</NavLink>
+                    ) : (
+                      <NavLink to="/" onClick={handleLogout}>
+                        Sign out
+                      </NavLink>
+                    )}
                   </li>
                 </ul>
               </details>
