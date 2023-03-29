@@ -1,11 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+
 /*!
  * Bootstrap Grid v5.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* [data-theme="dark"] {
+  background-color: #353740;
+  color: #fff;
+} */
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -28,7 +35,7 @@
 .col {
   flex: 1 0 0%;
 }
- 
+
 .row-cols-auto > * {
   flex: 0 0 auto;
   width: auto;

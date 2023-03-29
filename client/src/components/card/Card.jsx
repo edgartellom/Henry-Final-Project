@@ -19,20 +19,13 @@ const Card = ({ id, feature, price, image, stock }) => {
   const addHandle = () => {
     add({ id, price, image });
   };
-  console.log(add);
-  console.log(items);
+
   return (
     <>
       <div className="col">
         <div className="item-list card-container">
           <NavLink to={`/products/${id}`} role="link">
-            <img
-              className="img-fluid"
-              src={image[0]}
-              alt="img not found"
-              width="200px"
-              height="250px"
-            />
+            <img className="img-fluidd" src={image[0]} alt="img not found" />
             <sup className="feature">
               <small>{feature}</small>
             </sup>

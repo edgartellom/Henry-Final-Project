@@ -7,6 +7,7 @@ const useStore = create(
     products: [],
     listProducts: [],
     categoryFilter: "",
+    categoryFilter2: "",
     brandFilter: "",
     searchProducts: (words) =>set((state)=>({
       listProducts: state.products.filter(
@@ -17,6 +18,8 @@ const useStore = create(
       set((state) => ({ ...state, listProducts: listFilter })),
     setCategoryFilter: (category) =>
       set((state) => ({ ...state, categoryFilter: category })),
+    setCategoryFilter2: (category) =>
+      set((state) => ({ ...state, categoryFilter2: category })),
     setBrandFilter: (brand) =>
       set((state) => ({ ...state, brandFilter: brand })),
     fetchProducts: async () => {
@@ -25,6 +28,14 @@ const useStore = create(
         set({ products: response.data, listProducts: response.data });
       } catch (error) {
         console.error(error);
+      }
+    },
+    filterId: async (id) => {
+      try {
+        const responseId = await axios.get("products/" + id);
+        set({ detailProduct: responseId.data });
+      } catch (error) {
+        console.log(error);
       }
     },
   }))

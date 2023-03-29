@@ -22,11 +22,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container-fluid navbar-container">
+      <nav className="container-fluid">
         <ul>
           <li>
             <NavLink to="/">
-              <strong>Marca</strong>
+              <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
             </NavLink>
           </li>
         </ul>
@@ -41,12 +41,12 @@ const Navbar = () => {
                 Items
               </summary>
               <ul role="list-box">
-                <li>
+                {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
                   <NavLink to="/products">Laptops</NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/products">Accesories</NavLink>
                 </li>
@@ -117,12 +117,12 @@ const Navbar = () => {
                   Items
                 </summary>
                 <ul role="list-box">
-                  <li>
+                  {/* <li>
                     <NavLink to="/">Desktops</NavLink>
                   </li>
                   <li>
                     <NavLink to="/">Laptops</NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/">Accesories</NavLink>
                   </li>
