@@ -68,7 +68,7 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">perfil</NavLink>
+                  <NavLink to="/profile">perfil</NavLink>
                 </li>
                 <li>
                   <NavLink to="/login">Login</NavLink>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">perfil</NavLink>
+                    <NavLink to="/profile">perfil</NavLink>
                   </li>
                   <li>
                     <NavLink to="/login">Login</NavLink>
