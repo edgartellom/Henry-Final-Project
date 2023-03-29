@@ -3,45 +3,43 @@ import useStore from "../../store/ShoppingCart";
 import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
-  const cart = useStore(state => state.cartItems)
-  const add = useStore((state) => state.addToCart)
-  const clear = useStore((state) => state.clearCart)
-  const quantity = useStore((state) => state.cartTotalQuantity)
-  const amount = useStore((state) => state.cartTotalAmount)
-  const getTotal = useStore((state) => state.getTotals)
+  const cart = useStore((state) => state.cartItems);
+  const add = useStore((state) => state.addToCart);
+  const clear = useStore((state) => state.clearCart);
+  const quantity = useStore((state) => state.cartTotalQuantity);
+  const amount = useStore((state) => state.cartTotalAmount);
+  const getTotal = useStore((state) => state.getTotals);
 
-  
+  const addCart = (e) => {
+    console.log(e);
+    add(e);
+  };
 
-    const addCart = (e) => {
-        console.log(e)
-        add(e)
-    }
+  const total = () => {
+    getTotal();
+  };
 
-    const total = () => {
-        getTotal()
-    }
-
-    useEffect(() => {
+  useEffect(() => {
     // dispatch(getTotals());
-    total()
-    console.log(cart)
-    console.log(add)
-    console.log(clear)
-    }, [cart, addCart, quantity]); //cart, dispatch
+    total();
+    console.log(cart);
+    console.log(add);
+    console.log(clear);
+  }, [cart, addCart, quantity]); //cart, dispatch
   //Redux Tool kit
 
-//   const handleAddToCart = (product) => {
-//     dispatch(addToCart(product));
-//   };
-//   const handleDecreaseCart = (product) => {
-//     dispatch(decreaseCart(product));
-//   };
-//   const handleRemoveFromCart = (product) => {
-//     dispatch(removeFromCart(product));
-//   };
-//   const handleClearCart = () => {
-//     dispatch(clearCart());
-//   };
+  //   const handleAddToCart = (product) => {
+  //     dispatch(addToCart(product));
+  //   };
+  //   const handleDecreaseCart = (product) => {
+  //     dispatch(decreaseCart(product));
+  //   };
+  //   const handleRemoveFromCart = (product) => {
+  //     dispatch(removeFromCart(product));
+  //   };
+  //   const handleClearCart = () => {
+  //     dispatch(clearCart());
+  //   };
 
   return (
     <div className="cart-container">
@@ -89,12 +87,10 @@ const ShoppingCart = () => {
                       {/* <button onClick={() => handleRemoveFromCart(cartItem)}>
                         Remove
                       </button> */}
-
                     </div>
                   </div>
                   <div className="cart-product-price">${cartItem.price}</div>
                   <div className="cart-product-quantity">
-
                     {/* <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
                     </button> */}

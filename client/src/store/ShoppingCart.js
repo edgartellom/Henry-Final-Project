@@ -1,4 +1,4 @@
-import {create} from 'zustand';
+import { create } from "zustand";
 
 const useStore = create((set) => ({
   cartItems: localStorage.getItem("cartItems")
@@ -6,7 +6,7 @@ const useStore = create((set) => ({
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
-  cartItemsUser:[],
+  cartItemsUser: [],
 
   addToCart: (action) => {
     set((state) => {
@@ -54,38 +54,34 @@ const useStore = create((set) => ({
       };
     });
   },
-//   addToCart: (action) => {
-//     set(state => {
-//       const existingIndex = state.cartItems.findIndex(
-//         (item) => item.id === action.id
-//       );
-//       if (existingIndex >= 0) {
-//         state.cartItems[existingIndex] = {
-//           ...state.cartItems[existingIndex],
-//           cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
-//           itemPrice : state.cartItems[existingIndex].itemPrice
-//         };
-//       } else {
-//         let tempProductItem = {
-//           ...action,
-//           cartQuantity: 1,
-//           itemPrice: action.price
-//         };
-//         state.cartItems = [...state.cartItems, tempProductItem];
-//       }
-//       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-//       return state;
-//     });
+  //   addToCart: (action) => {
+  //     set(state => {
+  //       const existingIndex = state.cartItems.findIndex(
+  //         (item) => item.id === action.id
+  //       );
+  //       if (existingIndex >= 0) {
+  //         state.cartItems[existingIndex] = {
+  //           ...state.cartItems[existingIndex],
+  //           cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
+  //           itemPrice : state.cartItems[existingIndex].itemPrice
+  //         };
+  //       } else {
+  //         let tempProductItem = {
+  //           ...action,
+  //           cartQuantity: 1,
+  //           itemPrice: action.price
+  //         };
+  //         state.cartItems = [...state.cartItems, tempProductItem];
+  //       }
+  //       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  //       return state;
+  //     });
 
-    
-//   },
+  //   },
   clearCart: () => {
     set({ cartItems: [] });
     localStorage.setItem("cartItems", JSON.stringify([]));
   },
-
-
-
 
   //Redux ToolKit
 
@@ -106,7 +102,7 @@ const useStore = create((set) => ({
   //         ...payload,
   //         cartQuantity: 1,
   //         itemPrice: state.cartItems.price, // change this(possibly error)
-        
+
   //       };
   //       state.cartItems.push(tempProductItem);
   //     }
