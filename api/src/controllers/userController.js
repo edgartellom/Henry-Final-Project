@@ -9,7 +9,7 @@ const getApiInfo = async () => {
     const users = dataFireStore.documents.map((user) => user.fields);
     const apiInfo = await users.map((el) => ({
       id: el.id && el.id.stringValue,
-      username: el.username && elusername.stringValue,
+      username: el.username && el.username.stringValue,
       email: el.email && el.email.stringValue,
       admin: el.admin && el.admin.booleanValue,
     }));
