@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import useStore from "../../store/ShoppingCart";
+import useStore from "../../store/shoppingCart";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -46,16 +46,14 @@ const Card = ({ id, feature, price, image, stock }) => {
               to="/cart"
               role="button"
               className="primary"
-              data-tooltip="Add to Cart"
-            >
+              data-tooltip="Add to Cart">
               <i className="bi bi-cart-plus"></i>
             </NavLink>
             <NavLink
               to="/detail"
               role="button"
               className="secondary"
-              data-tooltip="Details"
-            >
+              data-tooltip="Details">
               <i className="bi bi-card-list"></i>
             </NavLink>
           </div>
