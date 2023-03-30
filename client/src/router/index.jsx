@@ -8,6 +8,7 @@ import {
   Contact,
   CreateProduct,
   ShoppingCart,
+  ProfileUser
 } from "../pages";
 
 const router = createBrowserRouter([
