@@ -43,6 +43,10 @@ const router = createBrowserRouter([
     path: "/cart",
     element: <ShoppingCart />,
   },
+  {
+    path: "/profile",
+    element: <ProfileUser />,
+  }
 ]);
 
 export default router;
