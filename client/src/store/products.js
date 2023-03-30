@@ -9,7 +9,11 @@ const useStore = create(
     categoryFilter: "",
     categoryFilter2: "",
     brandFilter: "",
-    detailProduct: [],
+    searchProducts: (words) =>set((state)=>({
+      listProducts: state.products.filter(
+        e=>{ return e.brand.toLowerCase().includes(words.toLowerCase()) || e.name.toLowerCase().includes(words.toLowerCase()) || e.model.toLowerCase().includes(words.toLowerCase())}
+        )
+    })),
     setListProducts: (listFilter) =>
       set((state) => ({ ...state, listProducts: listFilter })),
     setCategoryFilter: (category) =>
