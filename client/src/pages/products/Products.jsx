@@ -48,14 +48,6 @@ const Products = () => {
     }
   };
 
-  //const filterSelect = nSelect.filter((e) => e.type === 1);
-
-  //const ctsName = catR.filter((e) => e.type == 1);
-
-  // console.log(ctsName);
-  // const catt = new Set(ctsName);
-  //let catRep = [...ctsName];
-
   const [page, setPage] = useState(1);
 
   const productsPerPage = 12;
@@ -159,6 +151,7 @@ const Products = () => {
             page={page}
             onChange={handleChange}
             color="primary"
+            style={{ "& .MuiButton-label": { color: "red" } }}
           />
         </Stack>
       </div>
