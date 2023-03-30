@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import useStore from "../../store/Category";
 import axios from "axios";
 import { Link } from "react-router-dom";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 function CreateProduct() {
   //const fetch = useStore((state) => state.fetchData)
@@ -78,6 +79,12 @@ function CreateProduct() {
     });
   };
 
+  const reset = () => {
+    console.log("reseting")
+   
+    setInput({ name: "", brand: "",price:null,model:null,image:null,feature:null, category:[]}) // category should be empty but its not working properly yet
+  }
+
   const changeHandle = (e) => {
     //const nameFixed = e.target.value.replace(/[^a-zA-Z]/, '') //(line58).replace(/[^a-zA-Z]/, '')
     setInput({
@@ -95,7 +102,7 @@ function CreateProduct() {
     // if(input.find(r => r.name.toLowerCase() === e.target.value.toLowerCase()))
     //   setErrors({
     //     ...input,
-    //     [e.target.name]: 'this recipe is already on the API or created'
+    //     [e.target.name]: 'this product is already on the API or created'
     //   })
   };
 
@@ -112,10 +119,10 @@ function CreateProduct() {
 
   //console.log(errors)
   return (
-    <div className="validateContainer">
-      {/* <di>
-        <Link to ="/Home" className="homeButton">Home</Link>
-      </di> */}
+    <div className="container">
+      <di>
+        <Link to ="/products" className="homeButton">Go back</Link>
+      </di>
 
       <Link to="/products" className="homeButton">
         Go back
@@ -183,25 +190,11 @@ function CreateProduct() {
           onChange={changeHandle}
         />
 
-        <select defaultValue="categories" onChange={(e) => selectHandle(e)}>
-          <option disabled>categories</option>
-          {categories?.map((t) => (
-            <option key={t.name} value={t.name}>
-              {t.name}
-            </option>
-          ))}
-        </select>
-
-        <br />
-        <br />
-        <button
-          disabled={!input.name || errors.name || !input.brand || errors.brand}
-          type="submit"
-          className="createButton"
-        >
-          Create a product
-        </button>
+        <br /><br />
+        <button disabled={!input.name || errors.name || !input.brand || errors.brand} type="submit" className="createButton" >Create a product</button>
       </form>
+       <button className= "btn btn-danger" onClick={()=> reset()}>Cancel</button>
+
     </div>
   );
 }

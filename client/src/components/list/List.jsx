@@ -11,6 +11,7 @@ const List = ({ products }) => {
               {products?.map((p) => (
                 <Card
                   id={p.id}
+                  name={p.name}
                   feature={p.feature}
                   price={p.price}
                   image={p.image}

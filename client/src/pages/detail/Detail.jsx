@@ -95,7 +95,7 @@ console.log(detailProduct)
               <div className='actions'>
                 <div className='btn-inline'>
                   <NavLink
-                    to='/detail'
+                    to='/cart'
                     role='button'
                     className='primary'
                     data-tooltip='Add to Cart'

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import useStore from "../../store/shoppingCart";
+import { useDispatch, useSelector} from 'react-redux'
+import { addToCart } from '../../store/ShoppingCartRedux'
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -12,13 +13,17 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 import "./card.css";
 
-const Card = ({ id, feature, price, image, stock }) => {
-  const add = useStore((state) => state.addToCart);
-  const items = useStore((state) => state.cartItems);
+const Card = ({ id, feature, price, image, stock, name }) => {
+const dispatch = useDispatch()
+const select = useSelector(state => state.cart.cartItems)
 
-  const addHandle = () => {
-    add({ id, price, image });
-  };
+
+const addHandle = (e) => {
+  e.preventDefault()
+  console.log(select)
+  dispatch(addToCart({id, price, image, name}))
+}
+
 
   return (
     <>
@@ -43,21 +48,24 @@ const Card = ({ id, feature, price, image, stock }) => {
 
           <div className="center footer-item">
             <NavLink
-              to="/cart"
-              role="button"
-              className="primary"
-              data-tooltip="Add to Cart">
-              <i className="bi bi-cart-plus"></i>
+              to='/cart'
+              role='button'
+              className='primary'
+              data-tooltip='Go to your cart'
+            >
+              <i class="bi bi-cart-check"></i>
+              
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/detail"
               role="button"
               className="secondary"
               data-tooltip="Details">
               <i className="bi bi-card-list"></i>
-            </NavLink>
+            </NavLink> */}
+            <a href="/" role="button" className="contrast" data-tooltip="Add to cart"  onClick={addHandle}><i className='bi bi-cart-plus'></i></a>
           </div>
-          <button onClick={addHandle}>Add to shopping cart</button>
+          
         </div>
       </div>
     </>

@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
 import "./navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getAuth } from "firebase/auth";
 import ErrorAlert from "../alert/ErrorAlert";
@@ -18,6 +19,12 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
+
+  const {cartTotalQuantity} = useSelector((state) => state.cart)
+
+  // useEffect(()=> {
+
+  // },[cartTotalQuantity])
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -101,11 +108,12 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-          <li>
-            <NavLink to="/">
+          <li data-tooltip="Go to cart" data-placement = "bottom">
+            <NavLink to="/cart">
+              
               <i className="bi bi-cart"></i>
               <strong>
-                <sup>4</sup>
+                <sup>{cartTotalQuantity}</sup>
               </strong>
             </NavLink>
           </li>

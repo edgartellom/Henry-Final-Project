@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Cart from "../pages/shoppingCart/Cart";
 import {
   Home,
   Login,
@@ -40,9 +41,9 @@ const router = createBrowserRouter([
     element: <CreateProduct />,
   },
   {
-    path: "/cart",
-    element: <ShoppingCart />,
-  },
+    path:"/cart",
+    element: <Cart />
+  }
 ]);
 
 export default router;
