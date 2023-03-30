@@ -3,6 +3,7 @@ import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
 import "./navbar.css";
 import { useState } from "react";
+import SearchBar from "../searchbar/SearchBar";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -21,24 +22,18 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container-fluid navbar-container">
+      <nav className="container-fluid">
         <ul>
           <li>
             <NavLink to="/">
-              <strong>Marca</strong>
+              <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
             </NavLink>
           </li>
         </ul>
 
         <ul className="menu-items">
           <li>
-            <input
-              type="search"
-              className="search"
-              id="search"
-              name="search"
-              placeholder="Search"
-            />
+            <SearchBar></SearchBar>
           </li>
           <li>
             <details role="list" dir="list">
@@ -46,12 +41,12 @@ const Navbar = () => {
                 Items
               </summary>
               <ul role="list-box">
-                <li>
+                {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
                   <NavLink to="/products">Laptops</NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/products">Accesories</NavLink>
                 </li>
@@ -102,6 +97,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+
       <aside className={menu ? "side-s container" : "side-h"}>
         <nav>
           <ul>
@@ -121,12 +117,12 @@ const Navbar = () => {
                   Items
                 </summary>
                 <ul role="list-box">
-                  <li>
+                  {/* <li>
                     <NavLink to="/">Desktops</NavLink>
                   </li>
                   <li>
                     <NavLink to="/">Laptops</NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/">Accesories</NavLink>
                   </li>
