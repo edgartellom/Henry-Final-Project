@@ -20,12 +20,11 @@ const ProfileUser=()=> {
                 <div>
                   <div class='mb-3 border-radio card2'>
                     <div class='row g-0'>
-                      <div
-                        class='col-md-4 gradient-custom text-center border-radio-full'>
+                      <div class='col-md-4 gradient-custom text-center border-radio-full'>
                         <img
                           src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp'
                           alt='Avatar'
-                          class='img-fluid my-5 img-width'
+                          class='img-fluid my-5 img-size'
                         />
                         <h5>Marie Horwitz</h5>
                         <p>Web Designer</p>

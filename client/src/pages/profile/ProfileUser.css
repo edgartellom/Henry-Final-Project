@@ -30,8 +30,9 @@ border-radius: .5rem;
   background-color: black;
 }
 
-.img-width{
-  width: 80px;
+.img-size{
+ width: 100px;
+  height: 100px;
   padding: 10px;
 }
 
