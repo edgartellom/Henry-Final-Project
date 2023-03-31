@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
       );
       productBrand.length
         ? res.status(200).send(productBrand)
-        : res.status(404).send("BRAND NOT FOUND");
+        : res.status(404).send("BRAND NOT FOUND.");
     } else {
       res.status(200).send(allProducts);
     }
