@@ -130,6 +130,7 @@ const Login = () => {
       if (confirmEmail.length === 0) {
         console.log("error");
         setError("Email address not registered. Please sign up.");
+        window.location.href = "/sign-up";
         return;
       }
 
