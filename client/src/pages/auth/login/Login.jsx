@@ -76,6 +76,7 @@ const Login = () => {
   const setUser = useUserStore((state) => state.setUser);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -119,12 +120,19 @@ const Login = () => {
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
+      const emailRegex =
+        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2})?$/i;
+      if (!emailRegex.test(email)) {
+        setError("Invalid email format.");
+        return;
+      }
       const confirmEmail = await fetchSignInMethodsForEmail(auth, email);
       if (confirmEmail.length === 0) {
         console.log("error");
         setError("Email address not registered. Please sign up.");
         return;
       }
+
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
@@ -133,10 +141,12 @@ const Login = () => {
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
+      window.location.href = "/products";
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
+      console.log(error.code, error.message);
       setError(error.message);
-      window.location.href = "/sign-up";
+      // window.location.href = "/sign-up";
       // <ErrorAlert error={error} />;
     }
   };
@@ -311,11 +321,19 @@ const Login = () => {
                   placeholder="Enter your email"
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </FormControl>
               <FormControl required>
                 <FormLabel>Password</FormLabel>
-                <Input placeholder="•••••••" type="password" name="password" />
+                <Input
+                  placeholder="•••••••"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
               </FormControl>
               <Box
                 sx={{
