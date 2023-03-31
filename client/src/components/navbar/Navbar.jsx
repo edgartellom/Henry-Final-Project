@@ -94,7 +94,7 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">Profile</NavLink>
+                  <NavLink to="/profile">Profile</NavLink>
                 </li>
                 <li>
                   {user ? (
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">Profile</NavLink>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                   <li>
                     {user ? (
