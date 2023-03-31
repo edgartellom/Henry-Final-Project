@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
@@ -61,7 +62,8 @@ function ColorSchemeToggle({ onClick, ...props }) {
           setMode("light");
         }
         onClick?.(event);
-      }}>
+      }}
+    >
       {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
     </IconButton>
   );
@@ -72,6 +74,8 @@ const Login = () => {
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -92,23 +96,48 @@ const Login = () => {
     };
   }, []);
 
+  // const handleLoginSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     await signInWithEmailAndPassword(auth, email, password);
+  //     // Signed in
+  //     if (user !== null) {
+  //       const username = user.displayName;
+  //       const email = user.email;
+  //       const uid = user.uid;
+  //     }
+  //     return (
+  //       <Stack sx={{ width: "100%" }} spacing={2}>
+  //         <Alert severity="success">Login succesfully!</Alert>
+  //       </Stack>
+  //     );
+  //   } catch (error) {
+  //     <ErrorAlert error={error} />;
+  //   }
+  // };
+
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Signed in
-      if (user !== null) {
-        const username = user.displayName;
-        const email = user.email;
-        const uid = user.uid;
+      const confirmEmail = await fetchSignInMethodsForEmail(auth, email);
+      if (confirmEmail.length === 0) {
+        console.log("error");
+        setError("Email address not registered. Please sign up.");
+        return;
       }
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="success">Login succesfully!</Alert>
-        </Stack>
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
       );
+
+      setUser(userCredential.user);
+      setError(""); // Limpia cualquier mensaje de error previo
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error.message);
+      setError(error.message);
+      window.location.href = "/sign-up";
+      // <ErrorAlert error={error} />;
     }
   };
 
@@ -143,6 +172,7 @@ const Login = () => {
             Email: profile.email,
             "Photo URL": profile.photoURL,
           });
+          window.location.href = "/products";
         });
       }
       // window.location.href = "/";
@@ -157,7 +187,8 @@ const Login = () => {
     <CssVarsProvider
       defaultMode="dark"
       disableTransitionOnChange
-      theme={customTheme}>
+      theme={customTheme}
+    >
       <CssBaseline />
       <GlobalStyles
         styles={{
@@ -184,7 +215,8 @@ const Login = () => {
           [theme.getColorSchemeSelector("dark")]: {
             backgroundColor: "rgba(19 19 24 / 0.4)",
           },
-        })}>
+        })}
+      >
         <Box
           sx={{
             display: "flex",
@@ -194,7 +226,8 @@ const Login = () => {
               "clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw) * 999, 100%)",
             maxWidth: "100%",
             px: 2,
-          }}>
+          }}
+        >
           <Box
             component="header"
             sx={{
@@ -202,7 +235,8 @@ const Login = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-            }}>
+            }}
+          >
             <Typography
               fontWeight="lg"
               startDecorator={
@@ -221,7 +255,8 @@ const Login = () => {
                     }}
                   />
                 </Link>
-              }>
+              }
+            >
               Logo
             </Typography>
 
@@ -248,7 +283,8 @@ const Login = () => {
               [`& .${formLabelClasses.asterisk}`]: {
                 visibility: "hidden",
               },
-            }}>
+            }}
+          >
             <div>
               <Typography component="h2" fontSize="xl2" fontWeight="lg">
                 Welcome back
@@ -267,7 +303,8 @@ const Login = () => {
                   persistent: formElements.persistent.checked,
                 };
                 alert(JSON.stringify(data, null, 2));
-              }}>
+              }}
+            >
               <FormControl required>
                 <FormLabel>Email</FormLabel>
                 <Input
@@ -285,7 +322,8 @@ const Login = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                }}>
+                }}
+              >
                 <Checkbox
                   size="sm"
                   label="Remember for 30 days"
@@ -295,23 +333,31 @@ const Login = () => {
                   fontSize="sm"
                   href="#replace-with-a-link"
                   fontWeight="lg"
-                  onClick={handlePasswordReset}>
+                  onClick={handlePasswordReset}
+                >
                   Forgot password
                 </Link>
               </Box>
-              <Button type="submit" fullWidth onClick={handleLoginSubmit}>
+              <Button
+                type="submit"
+                value={email}
+                fullWidth
+                onClick={(event) => handleLoginSubmit(event)}
+              >
                 Sign in
               </Button>
               <Link fontSize="sm" href="/sign-up" fontWeight="lg">
                 Don&apos;t have an account? Sign Up
               </Link>
             </form>
+            {error && <p>{error}</p>}
             <Button
               onClick={handleLoginGoogle}
               variant="outlined"
               color="neutral"
               fullWidth
-              startDecorator={<GoogleIcon />}>
+              startDecorator={<GoogleIcon />}
+            >
               Sign in with Google
             </Button>
           </Box>
