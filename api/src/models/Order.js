@@ -17,6 +17,7 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("succeeded, processing, failed"),
         allowNull: false,
       },
+      
     },
     {
       timestamps: false,

@@ -49,6 +49,7 @@ const {
   Order,
   Order_detail,
   User,
+  Bills,
   Product,
   Cart,
   Cart_detail,
