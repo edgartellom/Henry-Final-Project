@@ -8,10 +8,10 @@ const getApiInfo = async () => {
     const dataFireStore = (await axios(API_FIRESTORE_URL)).data;
     const users = dataFireStore.documents.map((user) => user.fields);
     const apiInfo = await users.map((el) => ({
-      id: el.id?.stringValue,
-      username: el.username?.stringValue,
-      email: el.email?.stringValue,
-      admin: el.admin?.booleanValue,
+      id: el.id && el.id.stringValue,
+      username: el.username && elusername.stringValue,
+      email: el.email && el.email.stringValue,
+      admin: el.admin && el.admin.booleanValue,
     }));
     return apiInfo;
   } catch (error) {
