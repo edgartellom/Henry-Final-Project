@@ -10,6 +10,7 @@
 }
 
 .container {
+  padding: 5%;
   margin: auto;
   width: 45%;
 }
@@ -27,6 +28,7 @@ border-radius: .5rem;
 }
 
 .card2{
+  width: 900px;
   background-color: black;
 }
 
@@ -37,7 +39,8 @@ border-radius: .5rem;
 }
 
 .card-body{
- padding: 5px;
+  width: 600px;
+ padding: 13px;
 }
 
 .section-styles{

@@ -124,6 +124,8 @@ const Register = () => {
     }
   };
 
+
+
   return (
     <CssVarsProvider
       defaultMode="dark"
