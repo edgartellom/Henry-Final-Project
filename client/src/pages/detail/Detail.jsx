@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useStore from "../../store/products"
+import useStore from "../../store/products";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Detail.css";
 
@@ -15,68 +15,50 @@ const formatter = new Intl.NumberFormat("en-US", {
   //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 });
 
-    
-
-const Detail=()=> {
+const Detail = () => {
   const [loadingInProgress, setLoading] = useState(false);
-  const{filterId,detailProduct}=useStore()
+  const { filterId, detailProduct } = useStore();
 
-
-
-const{id}=useParams()
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-    filterId(id)
+    filterId(id);
   }, []);
 
+  //console.log(detailProduct)
 
-
-
-
-
-
-
-console.log(detailProduct)
-
-
-
-//var dataRecibe=id?products.filter((el)=>el.id===id):""
-
+  //var dataRecibe=id?products.filter((el)=>el.id===id):""
 
   return (
     <>
       <Navbar></Navbar>
 
-      <main className='container'>
+      <main className="container">
         {loadingInProgress ? (
-          <div className='loader-container'>
-            <ClipLoader
-              color={"#fff"}
-              loading={loadingInProgress}
-              size={150}
-            />
+          <div className="loader-container">
+            <ClipLoader color={"#fff"} loading={loadingInProgress} size={150} />
           </div>
         ) : (
-          <div className='row'>
-            <div className='col'>
-              <div className='images'>
-                <img className='img-fluid' src={detailProduct.image} />
+          <div className="row">
+            <div className="col">
+              <div className="images">
+                <img className="img-fluid" src={detailProduct.image} />
               </div>
             </div>
-            <div className='col'>
+            <div className="col">
               <hgroup>
                 <h3>{detailProduct.brand}</h3>
                 <h4>{detailProduct.model}</h4>
               </hgroup>
               <div>
-                <i className='bi bi-star'></i>
-                <i className='bi bi-star'></i>
-                <i className='bi bi-star'></i>
-                <i className='bi bi-star'></i>
+                <i className="bi bi-star"></i>
+                <i className="bi bi-star"></i>
+                <i className="bi bi-star"></i>
+                <i className="bi bi-star"></i>
               </div>
               <p>{detailProduct.feature}</p>
               <details>
@@ -92,23 +74,23 @@ console.log(detailProduct)
               <p>
                 Price: <strong>{formatter.format(detailProduct.price)}</strong>
               </p>
-              <div className='actions'>
-                <div className='btn-inline'>
+              <div className="actions">
+                <div className="btn-inline">
                   <NavLink
-                    to='/detail'
-                    role='button'
-                    className='primary'
-                    data-tooltip='Add to Cart'
+                    to="/cart"
+                    role="button"
+                    className="primary"
+                    data-tooltip="Add to Cart"
                   >
-                    <i className='bi bi-cart-plus'></i>
+                    <i className="bi bi-cart-plus"></i>
                   </NavLink>
                   <NavLink
-                    to='/detail'
-                    role='button'
-                    className='secondary'
-                    data-tooltip='Add to favorites'
+                    to="/detail"
+                    role="button"
+                    className="secondary"
+                    data-tooltip="Add to favorites"
                   >
-                    <i className='bi bi-heart'></i>
+                    <i className="bi bi-heart"></i>
                   </NavLink>
                 </div>
               </div>

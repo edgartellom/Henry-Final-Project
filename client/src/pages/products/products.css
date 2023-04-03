@@ -6,3 +6,7 @@
 .MuiList-root {
   display: table-row !important;
 }
+
+.MuiPaginationItem-page {
+  color: #d2bebe !important; /* Cambiar el color a rojo */
+}
