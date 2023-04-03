@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import useStore from "../../store/Category";
+import useStore from "../../store/category";
 import axios from "axios";
 import { Link } from "react-router-dom";
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -80,10 +80,18 @@ function CreateProduct() {
   };
 
   const reset = () => {
-    console.log("reseting")
-   
-    setInput({ name: "", brand: "",price:null,model:null,image:null,feature:null, category:[]}) // category should be empty but its not working properly yet
-  }
+    console.log("reseting");
+
+    setInput({
+      name: "",
+      brand: "",
+      price: null,
+      model: null,
+      image: null,
+      feature: null,
+      category: [],
+    }); // category should be empty but its not working properly yet
+  };
 
   const changeHandle = (e) => {
     //const nameFixed = e.target.value.replace(/[^a-zA-Z]/, '') //(line58).replace(/[^a-zA-Z]/, '')
@@ -121,7 +129,9 @@ function CreateProduct() {
   return (
     <div className="container">
       <di>
-        <Link to ="/products" className="homeButton">Go back</Link>
+        <Link to="/products" className="homeButton">
+          Go back
+        </Link>
       </di>
 
       <Link to="/products" className="homeButton">
@@ -190,11 +200,18 @@ function CreateProduct() {
           onChange={changeHandle}
         />
 
-        <br /><br />
-        <button disabled={!input.name || errors.name || !input.brand || errors.brand} type="submit" className="createButton" >Create a product</button>
+        <br />
+        <br />
+        <button
+          disabled={!input.name || errors.name || !input.brand || errors.brand}
+          type="submit"
+          className="createButton">
+          Create a product
+        </button>
       </form>
-       <button className= "btn btn-danger" onClick={()=> reset()}>Cancel</button>
-
+      <button className="btn btn-danger" onClick={() => reset()}>
+        Cancel
+      </button>
     </div>
   );
 }

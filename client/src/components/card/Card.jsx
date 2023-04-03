@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector} from 'react-redux'
-import { addToCart } from '../../store/ShoppingCartRedux'
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../store/shoppingCartRedux";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -14,16 +14,14 @@ const formatter = new Intl.NumberFormat("en-US", {
 import "./card.css";
 
 const Card = ({ id, feature, price, image, stock, name }) => {
-const dispatch = useDispatch()
-const select = useSelector(state => state.cart.cartItems)
+  const dispatch = useDispatch();
+  const select = useSelector((state) => state.cart.cartItems);
 
-
-const addHandle = (e) => {
-  e.preventDefault()
-  console.log(select)
-  dispatch(addToCart({id, price, image, name}))
-}
-
+  const addHandle = (e) => {
+    e.preventDefault();
+    console.log(select);
+    dispatch(addToCart({ id, price, image, name }));
+  };
 
   return (
     <>
@@ -48,13 +46,11 @@ const addHandle = (e) => {
 
           <div className="center footer-item">
             <NavLink
-              to='/cart'
-              role='button'
-              className='primary'
-              data-tooltip='Go to your cart'
-            >
+              to="/cart"
+              role="button"
+              className="primary"
+              data-tooltip="Go to your cart">
               <i class="bi bi-cart-check"></i>
-              
             </NavLink>
             {/* <NavLink
               to="/detail"
@@ -63,9 +59,15 @@ const addHandle = (e) => {
               data-tooltip="Details">
               <i className="bi bi-card-list"></i>
             </NavLink> */}
-            <a href="/" role="button" className="contrast" data-tooltip="Add to cart"  onClick={addHandle}><i className='bi bi-cart-plus'></i></a>
+            <a
+              href="/"
+              role="button"
+              className="contrast"
+              data-tooltip="Add to cart"
+              onClick={addHandle}>
+              <i className="bi bi-cart-plus"></i>
+            </a>
           </div>
-          
         </div>
       </div>
     </>
