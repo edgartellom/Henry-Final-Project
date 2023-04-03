@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
@@ -58,17 +59,54 @@ function ColorSchemeToggle({ onClick, ...props }) {
           setMode("light");
         }
         onClick?.(event);
-      }}>
+      }}
+    >
       {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
     </IconButton>
   );
 }
 
+// const Register = () => {
+//   const auth = getAuth();
+
+//   const handleRegisterSubmit = async (event) => {
+//     event.preventDefault();
+//     try {
+//       const userCredential = await createUserWithEmailAndPassword(
+//         auth,
+//         email,
+//         password
+//       );
+//       // Signed up
+//       const user = userCredential.user;
+//       await sendEmailVerification(auth.currentUser);
+//       // ...
+//     } catch (error) {
+//       <ErrorAlert error={error} />;
+//       // ..
+//     }
+//   };
+
 const Register = () => {
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const auth = getAuth();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
   const handleRegisterSubmit = async (event) => {
     event.preventDefault();
+    const emailRegex =
+      /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2})?$/i;
+    if (!emailRegex.test(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -78,10 +116,11 @@ const Register = () => {
       // Signed up
       const user = userCredential.user;
       await sendEmailVerification(auth.currentUser);
+      window.location.href = "/products";
       // ...
     } catch (error) {
-      <ErrorAlert error={error} />;
-      // ..
+      console.log(error);
+      setError(error.message);
     }
   };
 
@@ -89,7 +128,8 @@ const Register = () => {
     <CssVarsProvider
       defaultMode="dark"
       disableTransitionOnChange
-      theme={customTheme}>
+      theme={customTheme}
+    >
       <CssBaseline />
       <GlobalStyles
         styles={{
@@ -116,7 +156,8 @@ const Register = () => {
           [theme.getColorSchemeSelector("dark")]: {
             backgroundColor: "rgba(19 19 24 / 0.4)",
           },
-        })}>
+        })}
+      >
         <Box
           sx={{
             display: "flex",
@@ -126,7 +167,8 @@ const Register = () => {
               "clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw) * 999, 100%)",
             maxWidth: "100%",
             px: 2,
-          }}>
+          }}
+        >
           <Box
             component="header"
             sx={{
@@ -134,7 +176,8 @@ const Register = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-            }}>
+            }}
+          >
             <Typography
               fontWeight="lg"
               startDecorator={
@@ -153,7 +196,8 @@ const Register = () => {
                     }}
                   />
                 </Link>
-              }>
+              }
+            >
               Logo
             </Typography>
             <ColorSchemeToggle />
@@ -179,7 +223,8 @@ const Register = () => {
               [`& .${formLabelClasses.asterisk}`]: {
                 visibility: "hidden",
               },
-            }}>
+            }}
+          >
             <div>
               <Typography component="h2" fontSize="xl2" fontWeight="lg">
                 Register your account
@@ -197,7 +242,8 @@ const Register = () => {
                   password: formElements.password.value,
                 };
                 alert(JSON.stringify(data, null, 2));
-              }}>
+              }}
+            >
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <FormControl required>
@@ -228,19 +274,29 @@ const Register = () => {
                   placeholder="Enter your email"
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </FormControl>
               <FormControl required>
                 <FormLabel>Password</FormLabel>
-                <Input placeholder="•••••••" type="password" name="password" />
+                <Input
+                  placeholder="•••••••"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
               </FormControl>
               <Button type="submit" fullWidth onClick={handleRegisterSubmit}>
                 Sign up
               </Button>
+
               <Link fontSize="sm" href="/sign-in" fontWeight="lg">
                 Already have an account? Sign in
               </Link>
             </form>
+            {error && <p>{error}</p>}
           </Box>
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body3" textAlign="center">

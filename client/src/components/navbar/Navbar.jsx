@@ -5,13 +5,12 @@ import "./navbar.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import ErrorAlert from "../alert/ErrorAlert";
 import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
-
 
 const Navbar = () => {
   const auth = getAuth();
@@ -19,8 +18,9 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
+  //const currentUser = useUserStore((state) => state.currentUser);
 
-  const {cartTotalQuantity} = useSelector((state) => state.cart)
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
 
   // useEffect(()=> {
 
@@ -98,19 +98,18 @@ const Navbar = () => {
                 </li>
                 <li>
                   {user ? (
-                    <NavLink to="/sign-in">Sign in</NavLink>
-                  ) : (
                     <NavLink to="/" onClick={handleLogout}>
                       Sign out
                     </NavLink>
+                  ) : (
+                    <NavLink to="/sign-in">Sign in</NavLink>
                   )}
                 </li>
               </ul>
             </details>
           </li>
-          <li data-tooltip="Go to cart" data-placement = "bottom">
+          <li data-tooltip="Go to cart" data-placement="bottom">
             <NavLink to="/cart">
-              
               <i className="bi bi-cart"></i>
               <strong>
                 <sup>{cartTotalQuantity}</sup>
