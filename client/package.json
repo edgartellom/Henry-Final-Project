@@ -34,7 +34,7 @@
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.6",
-    "theme": "^0.1.0",
+    "theme": "^0.0.8",
     "zustand": "^4.3.6"
   },
   "devDependencies": {
