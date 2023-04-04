@@ -4,6 +4,7 @@ import { shallow } from "zustand/shallow";
 import "./navbar.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { getAuth, signOut } from "firebase/auth";
 import ErrorAlert from "../alert/ErrorAlert";
@@ -18,10 +19,15 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
+
   //const currentUser = useUserStore((state) => state.currentUser);
 
   const { cartTotalQuantity } = useSelector((state) => state.cart);
+  const navigate=useNavigate()
 
+  const perfil=user?false:true
+  
+  
   // useEffect(()=> {
 
   // },[cartTotalQuantity])
@@ -40,6 +46,8 @@ const Navbar = () => {
     event.preventDefault();
     try {
       await signOut(auth);
+      alert("Sign-out successful")
+      navigate('/')
       // Sign-out successful.
       return (
         <Stack sx={{ width: "100%" }} spacing={2}>
@@ -94,7 +102,7 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">Profile</NavLink>
+                  <NavLink to="/profile" hidden={perfil}>Profile</NavLink>
                 </li>
                 <li>
                   {user ? (
@@ -173,7 +181,7 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">Profile</NavLink>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                   <li>
                     {user ? (

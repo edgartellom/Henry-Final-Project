@@ -9,6 +9,7 @@ import {
   Contact,
   CreateProduct,
   ShoppingCart,
+  ProfileUser
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path:"/cart",
     element: <Cart />
+  },
+   {
+    path: "/profile",
+    element: <ProfileUser />,
   }
 ]);
 

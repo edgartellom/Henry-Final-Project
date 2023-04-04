@@ -8,8 +8,11 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
 import "./products.css";
 
+
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
+
+
 
   const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
