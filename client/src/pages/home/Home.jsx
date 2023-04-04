@@ -59,16 +59,18 @@ const Home = () => {
           Next
         </button>
       </div>
-      <Link to="/detail" className="card_div">
+      <div className="card_div">
         {sliceProducts.map((product) => (
-          <div key={product.id} className="card">
-            <img src={product.image[0]} alt={product.name} />
-            <div>
-              {product.feature} {"$" + product.price}
+          <Link to={`/products/${product.id}`}>
+            <div key={product.id} className="card">
+              <img src={product.image[0]} alt={product.name} />
+              <div>
+                {product.feature} {"$" + product.price}
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
-      </Link>
+      </div>
       <Footer />
     </div>
   );

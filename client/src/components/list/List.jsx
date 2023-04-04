@@ -11,6 +11,7 @@ const List = ({ products }) => {
               {products?.map((p) => (
                 <Card
                   id={p.id}
+                  name={p.name}
                   feature={p.feature}
                   price={p.price}
                   image={p.image}
@@ -20,27 +21,6 @@ const List = ({ products }) => {
               ))}
             </div>
           </section>
-          <aside>
-            <h3 className="center">
-              <small>Filters</small>
-            </h3>
-            <ul>
-              <li>Brands</li>
-              <li>
-                <input type="checkbox" />
-                Samsung
-              </li>
-              <li>
-                <input type="checkbox" />
-                Kingston
-              </li>
-              <li>
-                <input type="checkbox" />
-                Toshiba
-              </li>
-              <li>Rango de precio</li>
-            </ul>
-          </aside>
         </div>
       </main>
     </>
