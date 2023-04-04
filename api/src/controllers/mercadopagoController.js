@@ -31,7 +31,8 @@ exports.createPayment = async (req, res) => {
         items:items,
     //se redirige a la pagina correspondiente segun su estado
     back_urls: {
-        success: 'http://localhost:3000/success', // URL de retorno en caso de éxito
+        apro: 'http://127.0.0.1:5173',
+        success: 'http://127.0.0.1:5173', // URL de retorno en caso de éxito
         failure: 'http://localhost:3000/failure', // URL de retorno en caso de fallo
         pending: 'http://localhost:3000/pending', // URL de retorno en caso de pago pendiente
       },
