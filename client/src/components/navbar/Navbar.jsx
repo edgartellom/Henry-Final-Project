@@ -4,14 +4,14 @@ import { shallow } from "zustand/shallow";
 import "./navbar.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import ErrorAlert from "../alert/ErrorAlert";
 import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
-
 
 const Navbar = () => {
   const auth = getAuth();
@@ -20,8 +20,14 @@ const Navbar = () => {
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
 
-  const {cartTotalQuantity} = useSelector((state) => state.cart)
+  //const currentUser = useUserStore((state) => state.currentUser);
 
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
+  const navigate=useNavigate()
+
+  const perfil=user?false:true
+  
+  
   // useEffect(()=> {
 
   // },[cartTotalQuantity])
@@ -40,6 +46,8 @@ const Navbar = () => {
     event.preventDefault();
     try {
       await signOut(auth);
+      alert("Sign-out successful")
+      navigate('/')
       // Sign-out successful.
       return (
         <Stack sx={{ width: "100%" }} spacing={2}>
@@ -94,23 +102,22 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">Profile</NavLink>
+                  <NavLink to="/profile" hidden={perfil}>Profile</NavLink>
                 </li>
                 <li>
                   {user ? (
-                    <NavLink to="/sign-in">Sign in</NavLink>
-                  ) : (
                     <NavLink to="/" onClick={handleLogout}>
                       Sign out
                     </NavLink>
+                  ) : (
+                    <NavLink to="/sign-in">Sign in</NavLink>
                   )}
                 </li>
               </ul>
             </details>
           </li>
-          <li data-tooltip="Go to cart" data-placement = "bottom">
+          <li data-tooltip="Go to cart" data-placement="bottom">
             <NavLink to="/cart">
-              
               <i className="bi bi-cart"></i>
               <strong>
                 <sup>{cartTotalQuantity}</sup>
@@ -174,7 +181,7 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">Profile</NavLink>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                   <li>
                     {user ? (

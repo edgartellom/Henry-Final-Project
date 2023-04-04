@@ -8,8 +8,11 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
 import "./products.css";
 
+
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
+
+
 
   const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
@@ -160,7 +163,7 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Category
             </InputLabel>
             <Select
               labelId="demo-select-small"
@@ -189,7 +192,7 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Brand
             </InputLabel>
             <Select
               labelId="demo-select-small"
@@ -216,7 +219,7 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Type
             </InputLabel>
             <Select
               labelId="demo-select-small"

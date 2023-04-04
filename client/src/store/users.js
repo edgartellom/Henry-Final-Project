@@ -16,6 +16,14 @@ const useUserStore = create(
             console.error(error);
           }
         },
+        registerUser: async (userData) => {
+          try {
+            const response = await axios.post("/users", userData);
+            console.log(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        },
         setUser: (user) => set({ currentUser: user }),
         clearUser: () => set({ currentUser: {} }),
       }),

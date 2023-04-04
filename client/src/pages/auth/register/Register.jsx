@@ -1,9 +1,12 @@
 import * as React from "react";
+import { useState } from "react";
+import useUserStore from "../../../store/users";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import customTheme from "../theme";
+import { setDoc, doc } from "firebase/firestore";
 import {
   Alert,
   Box,
@@ -20,7 +23,7 @@ import {
   TextField,
   Typography,
 } from "@mui/joy";
-import { db } from "../../../firebase/firebaseConfig";
+import { db, auth, app } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
   signInWithPopup,
@@ -58,17 +61,56 @@ function ColorSchemeToggle({ onClick, ...props }) {
           setMode("light");
         }
         onClick?.(event);
-      }}>
+      }}
+    >
       {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
     </IconButton>
   );
 }
 
+// const Register = () => {
+//   const auth = getAuth();
+
+//   const handleRegisterSubmit = async (event) => {
+//     event.preventDefault();
+//     try {
+//       const userCredential = await createUserWithEmailAndPassword(
+//         auth,
+//         email,
+//         password
+//       );
+//       // Signed up
+//       const user = userCredential.user;
+//       await sendEmailVerification(auth.currentUser);
+//       // ...
+//     } catch (error) {
+//       <ErrorAlert error={error} />;
+//       // ..
+//     }
+//   };
+
 const Register = () => {
+  const registerUser = useUserStore((state) => state.registerUser);
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
   const auth = getAuth();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
   const handleRegisterSubmit = async (event) => {
     event.preventDefault();
+    const emailRegex =
+      /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2})?$/i;
+    if (!emailRegex.test(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -77,19 +119,44 @@ const Register = () => {
       );
       // Signed up
       const user = userCredential.user;
-      await sendEmailVerification(auth.currentUser);
-      // ...
+      //store user data in firestore database
+      try {
+        const userDoc = doc(db, "users", user.uid);
+        await setDoc(userDoc, {
+          id: user.uid,
+          username,
+          admin: false,
+          email: email,
+        });
+        const userData = {
+          id: user.uid,
+          username,
+          email,
+          admin: false,
+          // otros detalles del usuario
+        };
+        registerUser(userData);
+
+        await sendEmailVerification(auth.currentUser);
+        window.location.href = "/products";
+        // ...
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
-      <ErrorAlert error={error} />;
-      // ..
+      console.log(error);
+      setError(error.message);
     }
   };
+
+
 
   return (
     <CssVarsProvider
       defaultMode="dark"
       disableTransitionOnChange
-      theme={customTheme}>
+      theme={customTheme}
+    >
       <CssBaseline />
       <GlobalStyles
         styles={{
@@ -116,7 +183,8 @@ const Register = () => {
           [theme.getColorSchemeSelector("dark")]: {
             backgroundColor: "rgba(19 19 24 / 0.4)",
           },
-        })}>
+        })}
+      >
         <Box
           sx={{
             display: "flex",
@@ -126,7 +194,8 @@ const Register = () => {
               "clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw) * 999, 100%)",
             maxWidth: "100%",
             px: 2,
-          }}>
+          }}
+        >
           <Box
             component="header"
             sx={{
@@ -134,7 +203,8 @@ const Register = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-            }}>
+            }}
+          >
             <Typography
               fontWeight="lg"
               startDecorator={
@@ -153,7 +223,8 @@ const Register = () => {
                     }}
                   />
                 </Link>
-              }>
+              }
+            >
               Logo
             </Typography>
             <ColorSchemeToggle />
@@ -179,7 +250,8 @@ const Register = () => {
               [`& .${formLabelClasses.asterisk}`]: {
                 visibility: "hidden",
               },
-            }}>
+            }}
+          >
             <div>
               <Typography component="h2" fontSize="xl2" fontWeight="lg">
                 Register your account
@@ -197,7 +269,8 @@ const Register = () => {
                   password: formElements.password.value,
                 };
                 alert(JSON.stringify(data, null, 2));
-              }}>
+              }}
+            >
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <FormControl required>
@@ -212,12 +285,14 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl required>
-                    <FormLabel>Lastname</FormLabel>
+                    <FormLabel>Username</FormLabel>
                     <Input
                       placeholder="Enter your lastname"
                       type="lastname"
                       name="lastname"
                       autoComplete="family-name"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </FormControl>
                 </Grid>
@@ -228,19 +303,29 @@ const Register = () => {
                   placeholder="Enter your email"
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </FormControl>
               <FormControl required>
                 <FormLabel>Password</FormLabel>
-                <Input placeholder="•••••••" type="password" name="password" />
+                <Input
+                  placeholder="•••••••"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
               </FormControl>
               <Button type="submit" fullWidth onClick={handleRegisterSubmit}>
                 Sign up
               </Button>
+
               <Link fontSize="sm" href="/sign-in" fontWeight="lg">
                 Already have an account? Sign in
               </Link>
             </form>
+            {error && <p>{error}</p>}
           </Box>
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body3" textAlign="center">
