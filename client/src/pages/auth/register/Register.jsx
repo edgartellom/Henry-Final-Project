@@ -1,10 +1,12 @@
 import * as React from "react";
 import { useState } from "react";
+import useUserStore from "../../../store/users";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import customTheme from "../theme";
+import { setDoc, doc } from "firebase/firestore";
 import {
   Alert,
   Box,
@@ -21,7 +23,7 @@ import {
   TextField,
   Typography,
 } from "@mui/joy";
-import { db } from "../../../firebase/firebaseConfig";
+import { db, auth, app } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
   signInWithPopup,
@@ -88,9 +90,11 @@ function ColorSchemeToggle({ onClick, ...props }) {
 //   };
 
 const Register = () => {
+  const registerUser = useUserStore((state) => state.registerUser);
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
   const auth = getAuth();
 
@@ -115,9 +119,30 @@ const Register = () => {
       );
       // Signed up
       const user = userCredential.user;
-      await sendEmailVerification(auth.currentUser);
-      window.location.href = "/products";
-      // ...
+      //store user data in firestore database
+      try {
+        const userDoc = doc(db, "users", user.uid);
+        await setDoc(userDoc, {
+          id: user.uid,
+          username,
+          admin: false,
+          email: email,
+        });
+        const userData = {
+          id: user.uid,
+          username,
+          email,
+          admin: false,
+          // otros detalles del usuario
+        };
+        registerUser(userData);
+
+        await sendEmailVerification(auth.currentUser);
+        window.location.href = "/products";
+        // ...
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
       console.log(error);
       setError(error.message);
@@ -258,12 +283,14 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl required>
-                    <FormLabel>Lastname</FormLabel>
+                    <FormLabel>Username</FormLabel>
                     <Input
                       placeholder="Enter your lastname"
                       type="lastname"
                       name="lastname"
                       autoComplete="family-name"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </FormControl>
                 </Grid>
