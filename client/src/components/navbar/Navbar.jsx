@@ -101,8 +101,8 @@ const Navbar = () => {
                 <i className="bi bi-person-circle"></i>
               </summary>
               <ul role="listbox">
-                <li>
-                  <NavLink to="/profile" hidden={perfil}>Profile</NavLink>
+                <li hidden={perfil}>
+                  <NavLink to="/profile">Profile</NavLink>
                 </li>
                 <li>
                   {user ? (
