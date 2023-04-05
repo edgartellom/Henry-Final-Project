@@ -38,6 +38,7 @@ import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
 import ErrorAlert from "../../../components/alert/ErrorAlert";
+import { NavLink } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -354,9 +355,11 @@ const Login = () => {
                 onClick={(event) => handleLoginSubmit(event)}>
                 Sign in
               </Button>
-              <Link fontSize="sm" href="/sign-up" fontWeight="lg">
-                Don&apos;t have an account? Sign Up
-              </Link>
+              <NavLink to="/sign-up">
+                <Link fontSize="sm" fontWeight="lg">
+                  Don&apos;t have an account? Sign Up
+                </Link>
+              </NavLink>
             </form>
             {error && <p>{error}</p>}
             <Button
