@@ -2,12 +2,32 @@ import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
 import "./navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getAuth, signOut } from "firebase/auth";
+import ErrorAlert from "../alert/ErrorAlert";
+import "firebase/app";
+import "firebase/auth";
+
+import SearchBar from "../searchbar/SearchBar";
+import { getTotals } from "../../store/shoppingCartRedux";
 
 const Navbar = () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
+  //const currentUser = useUserStore((state) => state.currentUser);
+  const dispatch = useDispatch();
+  const { cart, cartTotalQuantity } = useSelector((state) => state.cart);
+  const carts = useSelector((state) => state.cart.cartItems)
+
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, cartTotalQuantity]);
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -19,26 +39,35 @@ const Navbar = () => {
     setMenu(!menu);
   };
 
+  const handleLogout = async (event) => {
+    event.preventDefault();
+    try {
+      await signOut(auth);
+      // Sign-out successful.
+      return (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert severity="info">You have logged out!</Alert>
+        </Stack>
+      );
+    } catch (error) {
+      <ErrorAlert error={error} />;
+    }
+  };
+
   return (
     <>
-      <nav className="container-fluid navbar-container">
+      <nav className="container-fluid">
         <ul>
           <li>
             <NavLink to="/">
-              <strong>Marca</strong>
+              <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
             </NavLink>
           </li>
         </ul>
 
         <ul className="menu-items">
           <li>
-            <input
-              type="search"
-              className="search"
-              id="search"
-              name="search"
-              placeholder="Search"
-            />
+            <SearchBar></SearchBar>
           </li>
           <li>
             <details role="list" dir="list">
@@ -46,12 +75,12 @@ const Navbar = () => {
                 Items
               </summary>
               <ul role="list-box">
-                <li>
+                {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
                   <NavLink to="/products">Laptops</NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/products">Accesories</NavLink>
                 </li>
@@ -68,19 +97,26 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/">perfil</NavLink>
+                  <NavLink to="/">Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/login">Login</NavLink>
+                  {user ? (
+                    <NavLink to="/" onClick={handleLogout}>
+                      Sign out
+                    </NavLink>
+                  ) : (
+                    <NavLink to="/sign-in">Sign in</NavLink>
+                  )}
                 </li>
               </ul>
             </details>
           </li>
-          <li>
-            <NavLink to="/">
+          <li data-tooltip="Go to cart" data-placement="bottom">
+            <NavLink to="/cart">
               <i className="bi bi-cart"></i>
               <strong>
-                <sup>4</sup>
+                {/* <sup>{cartTotalQuantity}</sup> */}
+                <sup>{carts.length}</sup>
               </strong>
             </NavLink>
           </li>
@@ -102,6 +138,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+
       <aside className={menu ? "side-s container" : "side-h"}>
         <nav>
           <ul>
@@ -121,12 +158,12 @@ const Navbar = () => {
                   Items
                 </summary>
                 <ul role="list-box">
-                  <li>
+                  {/* <li>
                     <NavLink to="/">Desktops</NavLink>
                   </li>
                   <li>
                     <NavLink to="/">Laptops</NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/">Accesories</NavLink>
                   </li>
@@ -140,10 +177,16 @@ const Navbar = () => {
                 </summary>
                 <ul role="listbox">
                   <li>
-                    <NavLink to="/">perfil</NavLink>
+                    <NavLink to="/">Profile</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/login">Login</NavLink>
+                    {user ? (
+                      <NavLink to="/sign-in">Sign in</NavLink>
+                    ) : (
+                      <NavLink to="/" onClick={handleLogout}>
+                        Sign out
+                      </NavLink>
+                    )}
                   </li>
                 </ul>
               </details>

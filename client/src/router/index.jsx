@@ -1,7 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Login, Products, Detail, Contact } from "../pages";
-import CreateProduct from "../pages/create/CreateProduct";
-import ShoppingCart from '../pages/shoppingCart/ShoppingCart'
+import Cart from "../pages/shoppingCart/Cart";
+import {
+  Home,
+  Login,
+  Register,
+  Products,
+  Detail,
+  Contact,
+  CreateProduct,
+  ShoppingCart,
+} from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -9,8 +17,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/login",
+    path: "/sign-in",
     element: <Login />,
+  },
+  {
+    path: "/sign-up",
+    element: <Register />,
   },
   {
     path: "/products",
@@ -25,12 +37,12 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path:"/create",
-    element: <CreateProduct />
+    path: "/create",
+    element: <CreateProduct />,
   },
   {
     path:"/cart",
-    element: <ShoppingCart />
+    element: <Cart />
   }
 ]);
 

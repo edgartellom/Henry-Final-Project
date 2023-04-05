@@ -6,6 +6,12 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* [data-theme="dark"] {
+  background-color: #353740;
+  color: #fff;
+} */
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -28,7 +34,7 @@
 .col {
   flex: 1 0 0%;
 }
- 
+
 .row-cols-auto > * {
   flex: 0 0 auto;
   width: auto;
