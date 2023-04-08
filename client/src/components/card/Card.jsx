@@ -50,7 +50,7 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               role="button"
               className="primary"
               data-tooltip="Go to your cart">
-              <i class="bi bi-cart-check"></i>
+              <i className="bi bi-cart-check"></i>
             </NavLink>
             {/* <NavLink
               to="/detail"
