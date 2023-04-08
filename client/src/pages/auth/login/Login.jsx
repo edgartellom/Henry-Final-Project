@@ -34,7 +34,6 @@ import {
 import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
-import ErrorAlert from "../../../components/alert/ErrorAlert";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
@@ -109,7 +108,6 @@ const Login = () => {
         console.log("error");
         setError("Email address not registered. Please sign up.");
         setTimeout(() => navigate("/sign-up"), 3000);
-        // window.location.assign("/sign-up");
         return;
       }
 
@@ -122,13 +120,9 @@ const Login = () => {
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
       navigate("/products");
-      // window.location.assign("/products");
     } catch (error) {
-      // console.log(error.message);
       console.log(error.code, error.message);
       setError(error.message);
-      // window.location.href = "/sign-up";
-      // <ErrorAlert error={error} />;
     }
   };
 
@@ -144,7 +138,7 @@ const Login = () => {
         </Stack>
       );
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
     }
   };
 
@@ -163,13 +157,11 @@ const Login = () => {
             Email: profile.email,
             "Photo URL": profile.photoURL,
           });
-          // window.location.assign("/products");
         });
       }
       navigate("/products");
-      // window.location.href = "/";
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     }

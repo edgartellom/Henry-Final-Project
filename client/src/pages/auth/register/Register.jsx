@@ -31,7 +31,6 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "firebase/auth";
-import ErrorAlert from "../../../components/alert/ErrorAlert";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
