@@ -12,7 +12,8 @@ import {
   Contact,
   CreateProduct,
   ShoppingCart,
-  ProfileUser
+  ProfileUser,
+  CreateUser
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
    {
     path: "/profile",
     element: <ProfileUser />,
+  },
+  {
+    path:"/createuser",
+    element:<CreateUser />
+
   }
 
 ]);

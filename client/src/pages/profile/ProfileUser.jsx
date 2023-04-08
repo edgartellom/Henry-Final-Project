@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useStore from "../../store/products";
+import useStoreUser from "../../store/userGenerals";
 import ClipLoader from "react-spinners/ClipLoader";
+import useUserStore from "../../store/users";
 import "./ProfileUser.css";
 import { useUserContext } from "../../components/contexts/userContexts";
 
@@ -12,6 +13,17 @@ import { useUserContext } from "../../components/contexts/userContexts";
 const ProfileUser=()=> {
 
 const{user,setUser}=useUserContext()
+const{getUser,usuarioSesion}=useStoreUser()
+const{currentUser}=useUserStore() 
+
+
+
+useEffect(() => {
+  getUser(currentUser["Provider-specific UID"]);
+  }, []);
+
+
+console.log(usuarioSesion)
 
 
 
@@ -87,6 +99,16 @@ if(!user){
             </div>
           </section>
         </main>
+
+{usuarioSesion.name?
+<div>
+<h1>{usuarioSesion.name}</h1>
+<h1>{usuarioSesion.tnumber}</h1> 
+<h1>{usuarioSesion.username}</h1>
+<h1>{usuarioSesion.email}</h1>
+</div>
+:<h1>COMPLETA TUS DATOS CULEROOOOOO!!</h1>
+}
 
         <Footer></Footer>
       </>

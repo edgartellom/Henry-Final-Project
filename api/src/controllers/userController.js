@@ -62,7 +62,7 @@ const getUserById = async (userId) => {
 };
 
 const createUser = async (user) => {
-  const { id, username, email, admin } = user;
+  const { id, username,name,tnumber, email, admin } = user;
   try {
     let userFound = await User.findOne({
       where: {
@@ -74,6 +74,8 @@ const createUser = async (user) => {
     let userCreated = await User.create({
       id: id,
       username: username,
+      name:name,
+      tnumber:tnumber,
       email: email,
       admin: admin,
     });
