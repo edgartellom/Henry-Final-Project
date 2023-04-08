@@ -1,26 +1,33 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import useStore from "../../store/category";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function CreateProduct() {
   //const fetch = useStore((state) => state.fetchData)
   const { fetchData } = useStore();
   const categories = useStore((state) => state.category);
+  const [cat, setCat] = useState("");
+  const [type, setType] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption2, setSelectedOption2] = useState("");
+
+  console.log(cat);
+  console.log(type);
 
   const [input, setInput] = useState({
     name: "",
     brand: "",
     price: null,
     model: null,
-    image: null,
+    image: [],
     feature: null,
     category: [],
   });
-
-  const [errors, setErrors] = useState([]);
+  console.log(input);
 
   const verify = (input) => {
     ///[^A-Z a-z0-9]/
@@ -47,7 +54,7 @@ function CreateProduct() {
   useEffect(() => {
     //  fetch()
     fetchData();
-    console.log(fetchData);
+    //console.log(fetchData);
     console.log(categories);
     // if(params.id && recipeDb){  //UPDATE
     //   setInput(recipeDb.find((i) => i.id === params.id))
@@ -65,6 +72,7 @@ function CreateProduct() {
     // //   history.push('/home')
     // }
     e.preventDefault();
+
     await axios.post(`http://localhost:3001/products`, input, {
       headers: { "content-type": "application/x-www-form-urlencoded" },
     });
@@ -74,8 +82,9 @@ function CreateProduct() {
       brand: "",
       price: null,
       model: null,
-      image: null,
+      image: [],
       feature: null,
+      category: [],
     });
   };
 
@@ -87,11 +96,105 @@ function CreateProduct() {
       brand: "",
       price: null,
       model: null,
-      image: null,
+      image: [],
       feature: null,
       category: [],
     }); // category should be empty but its not working properly yet
   };
+
+  const handleImage = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: [...input[e.target.name], e.target.value],
+    });
+
+    setErrors(
+      verify({
+        ...input,
+        [e.target.name]: [...input[e.target.name], e.target.value],
+      })
+    );
+  };
+
+  const changeHandleCategory = (e) => {
+    // Verificar si la nueva opción es diferente a la que ya está seleccionada
+    if (e.target.value !== selectedOption) {
+      const newCategory = [{ name: e.target.value }];
+      if (input.type && input.type[0]) {
+        newCategory.push(input.type[0]);
+      }
+      setInput({
+        ...input,
+        category: newCategory,
+      });
+      setSelectedOption(e.target.value);
+
+      setErrors(
+        verify({
+          ...input,
+          category: newCategory,
+        })
+      );
+    }
+  };
+
+  const changeHandleType = (e) => {
+    // Verificar si la nueva opción es diferente a la que ya está seleccionada
+    if (e.target.value !== selectedOption2) {
+      const newCategory = [{ name: e.target.value }];
+      if (input.category[0]) {
+        newCategory.push(input.category[0]);
+      }
+      setInput({
+        ...input,
+        category: newCategory,
+      });
+      setSelectedOption2(e.target.value);
+
+      setErrors(
+        verify({
+          ...input,
+          category: newCategory,
+        })
+      );
+    }
+  };
+
+  // const changeHandleCategory = (e) => {
+  //   // Verificar si la nueva opción es diferente a la que ya está seleccionada
+  //   if (e.target.value !== selectedOption) {
+  //     setInput({
+  //       ...input,
+  //       [e.target.name]: [{ name: e.target.value }],
+  //     });
+  //     setSelectedOption(e.target.value);
+
+  //     setErrors(
+  //       verify({
+  //         ...input,
+  //         [e.target.name]: [{ name: e.target.value }],
+  //       })
+  //     );
+  //   }
+  // };
+
+  // const changeHandleType = (e) => {
+  //   // Verificar si la nueva opción es diferente a la que ya está seleccionada
+  //   if (e.target.value !== selectedOption2) {
+  //     setInput({
+  //       ...input,
+  //       [e.target.name]: [{ name: e.target.value }],
+  //     });
+  //     setSelectedOption2(e.target.value);
+
+  //     setErrors(
+  //       verify({
+  //         ...input,
+  //         [e.target.name]: [{ name: e.target.value }],
+  //       })
+  //     );
+  //   }
+  // };
 
   const changeHandle = (e) => {
     //const nameFixed = e.target.value.replace(/[^a-zA-Z]/, '') //(line58).replace(/[^a-zA-Z]/, '')
@@ -114,16 +217,16 @@ function CreateProduct() {
     //   })
   };
 
-  const selectHandle = (e) => {
-    if (!input.category.includes(e.target.value)) {
-      alert(e.target.value);
-      setInput({
-        ...input,
-        category: [...input.category, e.target.value],
-      });
-    }
-    console.log(e.target.value);
-  };
+  // const selectHandle = (e) => {
+  //   if (!input.category.includes(e.target.value)) {
+  //     alert(e.target.value);
+  //     setInput({
+  //       ...input,
+  //       category: [...input.category, e.target.value],
+  //     });
+  //   }
+  //   console.log(e.target.value);
+  // };
 
   //console.log(errors)
   return (
@@ -197,15 +300,111 @@ function CreateProduct() {
           name="image"
           id="image"
           placeholder="enter a url (optional)"
-          onChange={changeHandle}
+          onChange={handleImage}
         />
+        <h3>Categories</h3>
+        <div class="form-group">
+          <label for="exampleSelect1"></label>
+          <select
+            class="form-control"
+            id="exampleSelect1"
+            name="category"
+            value={selectedOption}
+            onChange={changeHandleCategory}
+          >
+            <option value="">Category</option>
+            <option value="Hardware">Harware</option>
+            <option value="Perifericos">Perifericos</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleSelect1"></label>
+          <select
+            class="form-control"
+            id="exampleSelect1"
+            name="category"
+            value={selectedOption2}
+            onChange={changeHandleType}
+          >
+            <option value="">Type</option>
+            <option value="Gamer">Gamer</option>
+            <option value="Oficina">Oficina</option>
+          </select>
+        </div>
+        {/* <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="category"
+            id="Harware"
+            value={input.category}
+            checked={cat === "Harware"}
+            onChange={changeHandleArray}
+          /> */}
+        {/* <input
+            class="form-check-input"
+            type="radio"
+            name="category"
+            id="Harware"
+            value={cat}
+            checked={cat === "Harware"}
+            onChange={() => setCat("Harware")}
+          /> */}
+        {/* <label class="form-check-label" for="Harware">
+            Harware
+          </label>
+        </div> */}
+        {/* <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="Perifericos"
+            id="Perifericos"
+            value={type}
+            checked={cat === "Perifericos"}
+            onChange={() => setCat("Perifericos")}
+          />
+          <label class="form-check-label" for="Perifericos">
+            Perifericos
+          </label>
+        </div>
+        <br />
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="Gamer"
+            id="Gamer"
+            value="Gamer"
+            checked={type === "Gamer"}
+            onChange={() => setType("Gamer")}
+          />
+          <label class="form-check-label" for="Gamer">
+            Gamer
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="Oficina"
+            id="Oficina"
+            value="Oficina"
+            checked={type === "Oficina"}
+            onChange={() => setType("Oficina")}
+          />
+          <label class="form-check-label" for="Oficina">
+            Oficina
+          </label>
+        </div> */}
 
         <br />
         <br />
         <button
           disabled={!input.name || errors.name || !input.brand || errors.brand}
           type="submit"
-          className="createButton">
+          className="createButton"
+        >
           Create a product
         </button>
       </form>
