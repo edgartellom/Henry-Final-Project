@@ -23,11 +23,10 @@ const Navbar = () => {
   //const currentUser = useUserStore((state) => state.currentUser);
 
   const { cartTotalQuantity } = useSelector((state) => state.cart);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
-  const perfil=user?false:true
-  
-  
+  const perfil = user ? false : true;
+
   // useEffect(()=> {
 
   // },[cartTotalQuantity])
@@ -46,16 +45,16 @@ const Navbar = () => {
     event.preventDefault();
     try {
       await signOut(auth);
-      alert("Sign-out successful")
-      navigate('/')
+      alert("Sign-out successful");
+      navigate("/");
       // Sign-out successful.
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="info">You have logged out!</Alert>
-        </Stack>
-      );
+      // return (
+      //   <Stack sx={{ width: "100%" }} spacing={2}>
+      //     <Alert severity="info">You have logged out!</Alert>
+      //   </Stack>
+      // );
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error.message);
     }
   };
 
@@ -102,7 +101,9 @@ const Navbar = () => {
               </summary>
               <ul role="listbox">
                 <li>
-                  <NavLink to="/profile" hidden={perfil}>Profile</NavLink>
+                  <NavLink to="/profile" hidden={perfil}>
+                    Profile
+                  </NavLink>
                 </li>
                 <li>
                   {user ? (

@@ -26,11 +26,8 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   fetchSignInMethodsForEmail,
   updateProfile,
 } from "firebase/auth";
@@ -38,7 +35,7 @@ import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
 import ErrorAlert from "../../../components/alert/ErrorAlert";
-import { NavLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -71,6 +68,7 @@ function ColorSchemeToggle({ onClick, ...props }) {
 
 const Login = () => {
   const auth = getAuth();
+  const navigate = useNavigate();
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
@@ -97,26 +95,6 @@ const Login = () => {
     };
   }, []);
 
-  // const handleLoginSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await signInWithEmailAndPassword(auth, email, password);
-  //     // Signed in
-  //     if (user !== null) {
-  //       const username = user.displayName;
-  //       const email = user.email;
-  //       const uid = user.uid;
-  //     }
-  //     return (
-  //       <Stack sx={{ width: "100%" }} spacing={2}>
-  //         <Alert severity="success">Login succesfully!</Alert>
-  //       </Stack>
-  //     );
-  //   } catch (error) {
-  //     <ErrorAlert error={error} />;
-  //   }
-  // };
-
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -130,7 +108,8 @@ const Login = () => {
       if (confirmEmail.length === 0) {
         console.log("error");
         setError("Email address not registered. Please sign up.");
-        window.location.assign("/sign-up");
+        setTimeout(() => navigate("/sign-up"), 3000);
+        // window.location.assign("/sign-up");
         return;
       }
 
@@ -142,7 +121,8 @@ const Login = () => {
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
-      window.location.assign("/products");
+      navigate("/products");
+      // window.location.assign("/products");
     } catch (error) {
       // console.log(error.message);
       console.log(error.code, error.message);
@@ -183,9 +163,10 @@ const Login = () => {
             Email: profile.email,
             "Photo URL": profile.photoURL,
           });
-          window.location.assign("/products");
+          // window.location.assign("/products");
         });
       }
+      navigate("/products");
       // window.location.href = "/";
     } catch (error) {
       <ErrorAlert error={error} />;
@@ -355,11 +336,13 @@ const Login = () => {
                 onClick={(event) => handleLoginSubmit(event)}>
                 Sign in
               </Button>
-              <NavLink to="/sign-up">
-                <Link fontSize="sm" fontWeight="lg">
-                  Don&apos;t have an account? Sign Up
-                </Link>
-              </NavLink>
+              <Link
+                component={RouterLink}
+                to="/sign-up"
+                fontSize="sm"
+                fontWeight="lg">
+                Don&apos;t have an account? Sign Up
+              </Link>
             </form>
             {error && <p>{error}</p>}
             <Button
