@@ -125,7 +125,7 @@ if(!user){
 <h1>{usuarioSesion.username}</h1>
 <h1>{usuarioSesion.email}</h1>
 </div>
-:<h1>COMPLETA TUS DATOS CULEROOOOOO!!</h1>
+:<h1>COMPLETA TUS DATOS!!</h1>
 }
 <Link to={`/createuser`}>
   <h1>COMPLETAR DATOS</h1>
