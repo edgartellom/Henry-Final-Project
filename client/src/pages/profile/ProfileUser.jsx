@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import useStoreUser from "../../store/userGenerals";
 import ClipLoader from "react-spinners/ClipLoader";
 import useUserStore from "../../store/users";
+import useStoreAddress from "../../store/address";
 import "./ProfileUser.css";
 import { useUserContext } from "../../components/contexts/userContexts";
-
+import { Link } from "react-router-dom";
 
 
 const ProfileUser=()=> {
@@ -15,15 +16,32 @@ const ProfileUser=()=> {
 const{user,setUser}=useUserContext()
 const{getUser,usuarioSesion}=useStoreUser()
 const{currentUser}=useUserStore() 
+const{getAddress,dataAddress,filterAddress,filterAdd}=useStoreAddress()
 
 
+var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
 
 useEffect(() => {
-  getUser(currentUser["Provider-specific UID"]);
+  getAddress()
+  getUser(validacion);
   }, []);
 
 
-console.log(usuarioSesion)
+var direccion=dataAddress.map((e)=>{
+  return({
+    idAddress:e.idAddress,
+    tipo:e.tipo,
+    numero:e.numero,
+    cruzamiento:e.cruzamiento,
+    id:e.userId
+  })
+})
+
+var filtrado=direccion.filter(e=>e.id==validacion)
+
+
+
+console.log(filtrado)
 
 
 
@@ -109,6 +127,39 @@ if(!user){
 </div>
 :<h1>COMPLETA TUS DATOS CULEROOOOOO!!</h1>
 }
+<Link to={`/createuser`}>
+  <h1>COMPLETAR DATOS</h1>
+</Link>
+<Link to={`/createaddress`}>
+  <h1>Ingresar direccion</h1>
+</Link>
+
+
+
+<div className="card_div">
+        {filtrado.map((ad) => (
+            <div className="card" >
+            <div>{ad.idAddress}</div>
+            <div>{ad.tipo} </div>
+            <div>{ad.calle}</div>
+            <div>{ad.numero}</div>
+            <div>{ad.cruzamiento}</div>
+            <div>{ad.colonia}</div>
+            <div>{ad.municipio}</div>
+            <div>{ad.estado}</div>
+            <div>{ad.pais}</div>
+            <div>{ad.codigoPostal}</div>
+            <div>{ad.referencia}</div>            
+            </div>
+            
+        ))}
+      </div>
+
+
+  
+
+
+
 
         <Footer></Footer>
       </>

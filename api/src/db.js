@@ -53,6 +53,7 @@ const {
   Cart,
   Cart_detail,
   Review,
+  Address
 } = sequelize.models; //extraer datos y asignarlos como variables
 
 //Product_relations
@@ -95,6 +96,13 @@ Order_detail.belongsTo(Product, { foreignKey: "productId" });
 
 Order.hasMany(Order_detail);
 Order_detail.belongsTo(Order, { foreignKey: "orderId" });
+
+
+//DIRECCIONES 
+
+User.hasMany(Address)
+Address.belongsTo(User,{foreignKey:"userId"})
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

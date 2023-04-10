@@ -13,7 +13,8 @@ import {
   CreateProduct,
   ShoppingCart,
   ProfileUser,
-  CreateUser
+  CreateUser,
+  CreateAddress
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -68,7 +69,10 @@ const router = createBrowserRouter([
   {
     path:"/createuser",
     element:<CreateUser />
-
+  },
+  {
+    path:"/createaddress",
+    element:<CreateAddress/>
   }
 
 ]);

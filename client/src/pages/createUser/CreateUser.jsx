@@ -12,15 +12,19 @@ function CreateUser() {
   const{postUser,getUser,usuarioSesion}=useStoreUser()
   const{currentUser}=useUserStore()
 
+  var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
+
+
+
   useEffect(() => {
-  getUser(currentUser["Provider-specific UID"]);
+  getUser(validacion);
   }, []);
 
 console.log(usuarioSesion)
 
 
   const [input, setInput] = useState({
-    id: currentUser["Provider-specific UID"],
+    id: validacion,
     username: "",
     name:"",
     tnumber:"",
@@ -40,6 +44,7 @@ console.log(usuarioSesion)
 
 
 var idUser=currentUser["Provider-specific UID"]
+
 function handleSubmit(e){
   postUser(input)
   console.log(error)
