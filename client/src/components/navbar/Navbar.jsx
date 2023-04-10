@@ -27,6 +27,7 @@ const Navbar = () => {
 
   const perfil=user?false:true
   
+  console.log(user);
   
   // useEffect(()=> {
 

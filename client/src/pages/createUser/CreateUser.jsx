@@ -4,6 +4,8 @@ import useStoreUser from "../../store/userGenerals";
 import useUserStore from "../../store/users";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Footer, Navbar } from "../../components";
+import "./CreateUser.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function CreateUser() {
@@ -25,11 +27,11 @@ console.log(usuarioSesion)
 
   const [input, setInput] = useState({
     id: validacion,
-    username: "",
-    name:"",
-    tnumber:"",
-    email: "",
-    admin:"",
+    username: usuarioSesion.username,
+    name: usuarioSesion.name,
+    tnumber: usuarioSesion.tnumber,
+    email: usuarioSesion.email,
+    admin: usuarioSesion.admin,
   });
 
  
@@ -54,91 +56,87 @@ function handleSubmit(e){
 
 
 
-return(
+return (
+  <>
+    <Navbar></Navbar>
+    <div className='contenedor'>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div>
+          <label className='formulario'>ID </label>
+          <input
+            className='form'
+            type='text'
+            value={input.id}
+            name='id'
+            onChange={handleChange}
+          />
+        </div>
+        <br></br>
+        <div>
+          <label className='formulario'>Email </label>
+          <input
+            className='form'
+            type='text'
+            value={input.email}
+            name='email'
+            onChange={handleChange}
+          />
+        </div>
+        <br></br>
+        <div>
+          <div className='formulario'>Username </div>
+          <input
+            className='describe'
+            text='text'
+            value={input.username}
+            name='username'
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <div className='formulario'>Name </div>
+          <input
+            className='describe'
+            text='text'
+            value={input.name}
+            name='name'
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <div className='formulario'>Telephone </div>
+          <input
+            className='describe'
+            text='text'
+            value={input.tnumber}
+            name='tnumber'
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
 
-  <div className="contenedor">
+        <br></br>
+        <div>
+          <label className='formulario'>Admin: </label>
+          <input
+            text='text'
+            value={input.admin}
+            name='admin'
+            onChange={handleChange}
+          />
+        </div>
 
-<form onSubmit={(e)=>handleSubmit(e)}>
-<div>
-       <label className="formulario">ID </label>
-              <input
-              className="form"
-                  type="text"
-                  value={input.id}
-                  name="id"
-                  onChange={handleChange}
-              />
-          
-</div>
-<br></br>
-<div>
-       <label className="formulario">Email </label>
-              <input
-              className="form"
-                  type="text"
-                  value={input.email}
-                  name="email"
-                  onChange={handleChange}
+        <button className='crear' typeof='submit'>
+          Confirmar
+        </button>
+      </form>
+    </div>
 
-              />
-</div>
-<br></br>
-<div>
-       <div className="formulario">Username </div>
-              <input className="describe"
-                  text="text"
-                  value={input.username}
-                  name="username"
-                  onChange={handleChange}
-                 maxLength={100}
-              
-              />
-          
-</div>
-<div>
-       <div className="formulario">Name </div>
-              <input className="describe"
-                  text="text"
-                  value={input.name}
-                  name="name"
-                  onChange={handleChange}
-                 maxLength={100}
-              
-              />
-          
-</div>
-<div>
-       <div className="formulario">Telephone </div>
-              <input className="describe"
-                  text="text"
-                  value={input.tnumber}
-                  name="tnumber"
-                  onChange={handleChange}
-                 maxLength={100}
-              
-              />
-          
-</div>
-
-
-
-<br></br>
-<div>
-       <label className="formulario">Admin: </label>
-              <input
-                  text="text"
-                  value={input.admin}
-                  name="admin"
-                  onChange={handleChange}
-              />
-</div>
-
-<button className="crear" typeof="submit" >Confirmar</button>
-
-</form>
-</div>
-
-)
+    <Footer></Footer>
+  </>
+);
 
 }  
 

@@ -10,9 +10,9 @@
 }
 
 .container {
-  padding: 5%;
-  margin: auto;
-  width: 45%;
+  padding-top: 5%;
+  width: 62%;
+  margin: 0 auto;
 }
 
 .text-center{
@@ -36,6 +36,7 @@ border-radius: .5rem;
  width: 100px;
   height: 100px;
   padding: 10px;
+  border-radius: 50%;
 }
 
 .card-body{
@@ -51,4 +52,16 @@ border-radius: .5rem;
 
 .card{
   color: blue;
+}
+
+.alert-data{
+  animation: blinker 1s linear infinite;
+  color: rgb(255, 0, 0);
+  font-size: bolder;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
