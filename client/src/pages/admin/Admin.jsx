@@ -2,11 +2,12 @@ import { Admin, Resource, ListGuesser } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import {Helmet, HelmetProvider} from "react-helmet-async"
 import { MyLayout } from "./layout/Layout";
-import PostIcon from "@mui/icons-material/Book";
-import UserIcon from "@mui/icons-material/Group";
+import BallotIcon from '@mui/icons-material/Ballot';
 import { PostEdit, PostList } from "./posts/posts";
+import dataProvider from "./provider/dataProvider"
+import { ProductList } from "./products/products";
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+// const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const AdminDashboard = () => {
   return (<>
@@ -16,8 +17,8 @@ const AdminDashboard = () => {
       </Helmet>
     </HelmetProvider>
       <Admin basename="/admin" dataProvider={dataProvider}   >
-        <Resource name="users" list={ListGuesser} icon={UserIcon} />
-        <Resource name="posts" list={PostList} edit={PostEdit} icon={PostIcon}/>
+        <Resource name="products" list={ProductList} icon={BallotIcon} />
+        {/* <Resource name="posts" list={PostList} edit={PostEdit} icon={PostIcon}/> */}
       </Admin>
   </>
 
