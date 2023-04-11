@@ -4,6 +4,7 @@ import { shallow } from "zustand/shallow";
 import "@picocss/pico";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
+import "./bootstrap.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
