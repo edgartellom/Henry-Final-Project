@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
+import "@picocss/pico";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,6 +66,7 @@ const Navbar = () => {
           <li>
             <SearchBar></SearchBar>
           </li>
+
           <li>
             <details role="list" dir="list">
               <summary aria-haspopup="list-box" role="list">
@@ -100,6 +103,9 @@ const Navbar = () => {
                       <NavLink to="/" onClick={handleLogout}>
                         Sign out
                       </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/admin">admin</NavLink>
                     </li>
                   </>
                 ) : (

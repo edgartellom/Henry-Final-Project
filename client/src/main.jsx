@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import App from "./App";
-import "@picocss/pico";
-import "bootstrap-icons/font/bootstrap-icons.css";
+
 import "./index.css";
 import axios from "axios";
 import router from "./router";
