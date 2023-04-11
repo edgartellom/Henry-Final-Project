@@ -35,8 +35,15 @@ var direccion=dataAddress.map((e)=>{
   return({
     idAddress:e.idAddress,
     tipo:e.tipo,
+    calle: e.calle,
     numero:e.numero,
+    colonia:e.colonia,
+    codigoPostal:e.codigoPostal, 
+    municipio:e.municipio,
+    estado:e.estado,
+    pais:e.pais,
     cruzamiento:e.cruzamiento,
+    referencia:e.referencia,
     id:e.userId
   })
 })
@@ -125,7 +132,24 @@ if(!user){
                             <div class='row pt-1'>
                               <div class='col-6 mb-3'>
                                 <h6>Addresses</h6>
-                                <p class='text-muted'>{email}</p>
+                                <p class='text-muted'>
+                                  {filtrado.map((ad) => (
+                                    <div>
+                                      <hr class='mt-0 mb-4' />
+                                      <div>{ad.tipo}</div>
+                                      <div>
+                                        Street: {ad.calle} {ad.numero}
+                                      </div>
+                                      <div>{ad.cruzamiento}</div>
+                                      <div>{ad.colonia}</div>
+                                      <div>City: {ad.municipio}</div>
+                                      <div>State: {ad.estado}</div>
+                                      <div>Country: {ad.pais}</div>
+                                      <div>Postal Code: {ad.codigoPostal}</div>
+                                      <div>References: {ad.referencia}</div>
+                                    </div>
+                                  ))}
+                                </p>
                                 <Link to={`/createaddress`}>
                                   <p>Add address</p>
                                 </Link>
@@ -164,7 +188,7 @@ if(!user){
           )}
         </main>
 
-  {/*       {usuarioSesion.name ? (
+        {/*       {usuarioSesion.name ? (
           <div>
             <h1>{usuarioSesion.name}</h1>
             <h1>{usuarioSesion.tnumber}</h1>
