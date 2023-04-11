@@ -205,7 +205,7 @@ if(!user){
           <h1>Ingresar direccion</h1>
         </Link> */}
 
-        <div className='card_div'>
+       {/*  <div className='card_div'>
           {filtrado.map((ad) => (
             <div className='card'>
               <div>{ad.idAddress}</div>
@@ -221,7 +221,7 @@ if(!user){
               <div>{ad.referencia}</div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <Footer></Footer>
       </>
