@@ -16,7 +16,12 @@ const dataProvider = {
             total: response.data.length //parseInt(response.headers['x-total-count'], 10),
         }
     },
-
+    getOne: async (resource, params) =>{
+        const response = await axios.get(`/${resource}/${params.id}`)
+        return {
+            data: response.data
+        }
+    }
 }
 
 export default dataProvider;
