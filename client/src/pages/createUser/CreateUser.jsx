@@ -1,25 +1,39 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import useStoreUser from "../../store/userGenerals";
 import useUserStore from "../../store/users";
-import axios from "axios";
+//import axios from "axios";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import "./CreateUser.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
+import { useUserContext } from "../../components/contexts/userContexts";
+import { getAuth } from "firebase/auth";
+import ClipLoader from "react-spinners/ClipLoader";
 
-function CreateUser() {
+
+const CreateUser=()=> {
   //const fetch = useStore((state) => state.fetchData)
 
+ const user = getAuth().currentUser;
+
+  //const { user, setUser } = useUserContext();
   const{postUser,getUser,usuarioSesion}=useStoreUser()
   const{currentUser}=useUserStore()
-
-  var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
-
+  const [loadingInProgress, setLoading] = useState(false);
+  //console.log(user);
+  //var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
+if (user) {
+  console.log(user.email);
+  var validacion = user.uid ? user.uid : user["Provider-specific UID"];
+}
 
 
   useEffect(() => {
   getUser(validacion);
+  setLoading(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 1500);
   }, []);
 
 console.log(usuarioSesion)
@@ -28,8 +42,8 @@ console.log(usuarioSesion)
   const [input, setInput] = useState({
     id: validacion,
     username: usuarioSesion.username,
-    name: usuarioSesion.name,
-    tnumber: usuarioSesion.tnumber,
+    name: '',
+    tnumber: '',
     email: usuarioSesion.email,
     admin: usuarioSesion.admin,
   });
@@ -45,12 +59,12 @@ console.log(usuarioSesion)
 
 
 
-var idUser=currentUser["Provider-specific UID"]
+//var idUser=currentUser["Provider-specific UID"]
 
-function handleSubmit(e){
+ function handleSubmit(e){
   postUser(input)
   console.log(error)
-}
+} 
 
 
 
@@ -58,8 +72,9 @@ function handleSubmit(e){
 
 return (
   <>
-    <Navbar></Navbar>
-    <div className='contenedor'>
+     <Navbar></Navbar> 
+     <main className='container'></main>
+     <div className='contenedor'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label className='formulario'>ID </label>
@@ -132,12 +147,12 @@ return (
           Confirmar
         </button>
       </form>
-    </div>
+    </div> 
 
     <Footer></Footer>
   </>
 );
 
-}  
+} ;
 
-export default CreateUser
+export default CreateUser;

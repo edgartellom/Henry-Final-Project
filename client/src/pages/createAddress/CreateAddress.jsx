@@ -6,15 +6,23 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import "./CreateAddress.css";
+import ClipLoader from "react-spinners/ClipLoader";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function CreateAddress() {
   //const fetch = useStore((state) => state.fetchData)
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
 const{currentUser}=useUserStore()
 const{postAddress}=useStoreAddress()
 var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
-
+const [loadingInProgress, setLoading] = useState(false);
 
 
 console.log(currentUser)

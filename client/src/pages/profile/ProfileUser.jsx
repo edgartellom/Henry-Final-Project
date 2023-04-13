@@ -9,17 +9,29 @@ import useStoreAddress from "../../store/address";
 import "./ProfileUser.css";
 import { useUserContext } from "../../components/contexts/userContexts";
 import { Link } from "react-router-dom";
+import { getAuth} from "firebase/auth";
+
 
 const ProfileUser=()=> {
+  //const auth = getAuth();
+  //const user = auth.currentUser;
+const user = getAuth().currentUser;
 const [loadingInProgress, setLoading] = useState(false);
-const{user,setUser}=useUserContext()
+//const{user,setUser}=useUserContext()
 const{getUser,usuarioSesion}=useStoreUser()
 const{currentUser}=useUserStore() 
 const{getAddress,dataAddress,filterAddress,filterAdd}=useStoreAddress()
 
+ const { iduser } = useParams();
+ var validacion = iduser;
 
-var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
-//var validacion = "A9wLAlfIdhQ5gc9kC0TVTZJ9qrB3";
+//var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
+/*if(user){
+   console.log(user.email);
+validacion = iduser;
+  ? user.uid
+  : user["Provider-specific UID"];
+}*/
 
 useEffect(() => {
   getAddress();
@@ -63,8 +75,12 @@ if(!user){
   var foto=user.reloadUserInfo.photoUrl?user.reloadUserInfo.photoUrl:"https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png?20170128013930"
   var creado=user.metadata.creationTime
   var ultimo=user.metadata.lastSignInTime
-}
 
+}
+  const googlename = {name} ? false : true;
+
+const dbname=usuarioSesion.name?false:true;
+const dbname2 = usuarioSesion.name ? true : false;
 
     return (
       <>
@@ -91,15 +107,16 @@ if(!user){
                             alt='Avatar'
                             class='img-fluid my-5 img-size'
                           />
-                          {usuarioSesion.name ? (
+                        
                             <div>
-                              <h5>{usuarioSesion.name}</h5>
+                              <h5 hidden={dbname}>{usuarioSesion.name}</h5>
+                              <h5 hidden={googlename}>{user.displayName}</h5>
                               <p>Usuario</p>
                             </div>
-                          ) : (
-                            <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
-                          )}
-                          <Link to={`/createuser`}>
+                            <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
+                          
+                        
+                          <Link to={`/edituser/${validacion}`}>
                             <i className='bi bi-pencil-square'></i>
                           </Link>
                         </div>
@@ -205,7 +222,7 @@ if(!user){
           <h1>Ingresar direccion</h1>
         </Link> */}
 
-       {/*  <div className='card_div'>
+        {/*  <div className='card_div'>
           {filtrado.map((ad) => (
             <div className='card'>
               <div>{ad.idAddress}</div>

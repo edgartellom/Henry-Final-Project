@@ -16,6 +16,7 @@ import SearchBar from "../searchbar/SearchBar";
 const Navbar = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
@@ -26,8 +27,16 @@ const Navbar = () => {
   const navigate=useNavigate()
 
   const perfil=user?false:true
+
+if (!user) {
+  ("");
+} else {
+ var iduser = user.uid;
+}
+
   
-  console.log(user);
+  
+  //console.log(user.uid);
   
   // useEffect(()=> {
 
@@ -62,25 +71,25 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container-fluid">
+      <nav className='container-fluid'>
         <ul>
           <li>
-            <NavLink to="/">
+            <NavLink to='/'>
               <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
             </NavLink>
           </li>
         </ul>
 
-        <ul className="menu-items">
+        <ul className='menu-items'>
           <li>
             <SearchBar></SearchBar>
           </li>
           <li>
-            <details role="list" dir="list">
-              <summary aria-haspopup="list-box" role="list">
+            <details role='list' dir='list'>
+              <summary aria-haspopup='list-box' role='list'>
                 Items
               </summary>
-              <ul role="list-box">
+              <ul role='list-box'>
                 {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
@@ -88,57 +97,60 @@ const Navbar = () => {
                   <NavLink to="/products">Laptops</NavLink>
                 </li> */}
                 <li>
-                  <NavLink to="/products">Accesories</NavLink>
+                  <NavLink to='/products'>Accesories</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/create">Create a product</NavLink>
+                  <NavLink to='/create'>Create a product</NavLink>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <details role="list" dir="rtl">
-              <summary aria-haspopup="listbox" role="list">
-                <i className="bi bi-person-circle"></i>
+            <details role='list' dir='rtl'>
+              <summary aria-haspopup='listbox' role='list'>
+                <i className='bi bi-person-circle'></i>
               </summary>
-              <ul role="listbox">
+              <ul role='listbox'>
                 <li hidden={perfil}>
-                  <NavLink to="/profile">Profile</NavLink>
+                  {/* <NavLink to="/profile">Profile</NavLink> */}
+                  <NavLink to={`/profile/${iduser}`}>
+                    Profile
+                  </NavLink>
                 </li>
                 <li>
                   {user ? (
-                    <NavLink to="/" onClick={handleLogout}>
+                    <NavLink to='/' onClick={handleLogout}>
                       Sign out
                     </NavLink>
                   ) : (
-                    <NavLink to="/sign-in">Sign in</NavLink>
+                    <NavLink to='/sign-in'>Sign in</NavLink>
                   )}
                 </li>
               </ul>
             </details>
           </li>
-          <li data-tooltip="Go to cart" data-placement="bottom">
-            <NavLink to="/cart">
-              <i className="bi bi-cart"></i>
+          <li data-tooltip='Go to cart' data-placement='bottom'>
+            <NavLink to='/cart'>
+              <i className='bi bi-cart'></i>
               <strong>
                 <sup>{cartTotalQuantity}</sup>
               </strong>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" onClick={ChangeTheme}>
+            <NavLink to='/' onClick={ChangeTheme}>
               {theme ? (
-                <i className="bi bi-sun"></i>
+                <i className='bi bi-sun'></i>
               ) : (
-                <i className="bi bi-moon"></i>
+                <i className='bi bi-moon'></i>
               )}
             </NavLink>
           </li>
         </ul>
-        <ul className="menu-icon">
+        <ul className='menu-icon'>
           <li>
-            <NavLink to="/" onClick={changeMenu}>
-              <i className="bi bi-list"></i>
+            <NavLink to='/' onClick={changeMenu}>
+              <i className='bi bi-list'></i>
             </NavLink>
           </li>
         </ul>
@@ -149,20 +161,20 @@ const Navbar = () => {
           <ul>
             <li>
               <input
-                type="search"
-                className="search"
-                id="search"
-                name="search"
-                placeholder="Search"
-                height="30%"
+                type='search'
+                className='search'
+                id='search'
+                name='search'
+                placeholder='Search'
+                height='30%'
               />
             </li>
             <li>
-              <details role="list" dir="list">
-                <summary aria-haspopup="list-box" role="list">
+              <details role='list' dir='list'>
+                <summary aria-haspopup='list-box' role='list'>
                   Items
                 </summary>
-                <ul role="list-box">
+                <ul role='list-box'>
                   {/* <li>
                     <NavLink to="/">Desktops</NavLink>
                   </li>
@@ -170,25 +182,26 @@ const Navbar = () => {
                     <NavLink to="/">Laptops</NavLink>
                   </li> */}
                   <li>
-                    <NavLink to="/">Accesories</NavLink>
+                    <NavLink to='/'>Accesories</NavLink>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <details role="list" dir="rtl">
-                <summary aria-haspopup="listbox" role="list">
-                  <i className="bi bi-person-circle"></i>
+              <details role='list' dir='rtl'>
+                <summary aria-haspopup='listbox' role='list'>
+                  <i className='bi bi-person-circle'></i>
                 </summary>
-                <ul role="listbox">
+                <ul role='listbox'>
                   <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    {/* <NavLink to='/profile'>Profile</NavLink> */}
+                    <NavLink to={`/profile/${iduser}`}>Profile</NavLink>
                   </li>
                   <li>
                     {user ? (
-                      <NavLink to="/sign-in">Sign in</NavLink>
+                      <NavLink to='/sign-in'>Sign in</NavLink>
                     ) : (
-                      <NavLink to="/" onClick={handleLogout}>
+                      <NavLink to='/' onClick={handleLogout}>
                         Sign out
                       </NavLink>
                     )}
@@ -197,19 +210,19 @@ const Navbar = () => {
               </details>
             </li>
             <li>
-              <NavLink to="/">
-                <i className="bi bi-cart"></i>
+              <NavLink to='/'>
+                <i className='bi bi-cart'></i>
                 <strong>
                   <sup>4</sup>
                 </strong>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" onClick={ChangeTheme}>
+              <NavLink to='/' onClick={ChangeTheme}>
                 {theme ? (
-                  <i className="bi bi-sun"></i>
+                  <i className='bi bi-sun'></i>
                 ) : (
-                  <i className="bi bi-moon"></i>
+                  <i className='bi bi-moon'></i>
                 )}
               </NavLink>
             </li>

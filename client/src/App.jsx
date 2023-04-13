@@ -13,11 +13,12 @@ import { onAuthStateChanged } from 'firebase/auth';
 function App() {
 
   const { theme, title } = useCommonStore((state) => ({ theme: state.theme, title: state.title }), shallow)
-  const {user,setUser}=useUserContext();
-  onAuthStateChanged(auth,(firebaseUser)=>{
+  
+  /*  const {user,setUser}=useUserContext();
+onAuthStateChanged(auth,(firebaseUser)=>{
     if(firebaseUser)setUser(firebaseUser);
     if(!firebaseUser)setUser(null)
-  })
+  })*/
 
 
   return (
