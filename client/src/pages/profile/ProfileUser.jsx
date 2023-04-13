@@ -95,6 +95,7 @@ console.log(usuarioSesion)
             </div>
           ) : (
             <section class='section-styles'>
+            <div>
               <div>
                 <div>
                   <div>
@@ -245,8 +246,8 @@ console.log(usuarioSesion)
 
         <Footer></Footer>
       </>
-    );
-
+ );
+      
 };
 
 export default ProfileUser;
