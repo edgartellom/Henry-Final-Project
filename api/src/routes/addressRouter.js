@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const{createAddress, addressDB} =require("../controllers/addressController")
+const{createAddress, addressDB, updateAddress} =require("../controllers/addressController")
 
 const router = Router();
 
@@ -23,9 +23,18 @@ router.get("/", async(req,res)=>{
   }catch (error){
     res.status(400).send(error.message)
   }
-})
+});
 
-
+router.put("/", async (req, res) => {
+  try {
+    let response = await updateAddress(req.body);
+    response.status !== "error"
+      ? res.send(response)
+      : res.status(404).send(response);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
 
 
 

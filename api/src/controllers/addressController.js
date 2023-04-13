@@ -53,7 +53,32 @@ const createAddress = async (address) => {
   }
 };
 
+const updateAddress = async (address) => {
+  const { idAddress, tipo, calle, numero, cruzamiento, colonia, municipio, estado, pais, codigoPostal, referencia, userId } = address;
+  try {
+    const actualiza = await Address.update(
+      {
+        idAddress: idAddress,
+        tipo: tipo,
+        calle: calle,
+        numero: numero,
+        cruzamiento: cruzamiento,
+        colonia: colonia,
+        municipio: municipio,
+        estado: estado,
+        pais: pais,
+        codigoPostal: codigoPostal,
+        referencia: referencia,
+        userId: userId
+      },
+      { where: { idAddress: idAddress } }
+    );
 
+    return { message: "todo bien" };
+  } catch (error) {
+    return { message: error.message, status: "error" };
+  }
+};
 
 
 
@@ -61,7 +86,8 @@ const createAddress = async (address) => {
 
 module.exports = {
   addressDB,
-  createAddress
+  createAddress,
+  updateAddress
 };
 
 

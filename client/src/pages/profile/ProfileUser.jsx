@@ -75,7 +75,7 @@ if(!user){
   const googlename = {name} ? false : true;
 
 const dbname=usuarioSesion.name?false:true;
-const dbname2 = !usuarioSesion.name ? true : false;
+const dbname2 = usuarioSesion.name||usuarioSesion.tnumber ? true : false;
 const register= usuarioSesion.id||usuarioSesion.username||usuarioSesion.name||usuarioSesion.email||usuarioSesion.tnumber?true:false
 const register2= usuarioSesion.username||usuarioSesion.email?false:true
 console.log(usuarioSesion)
@@ -95,7 +95,6 @@ console.log(usuarioSesion)
             </div>
           ) : (
             <section class='section-styles'>
-            <div>
               <div>
                 <div>
                   <div>
@@ -107,30 +106,27 @@ console.log(usuarioSesion)
                             alt='Avatar'
                             class='img-fluid my-5 img-size'
                           />
-                        
-                            <div>
-                              <h5 hidden={dbname}>{usuarioSesion.name}</h5>
-                            
-                              <p>Usuario</p>
-                            </div>
-                           
-                          <div hidden={register}>
-                          <Link to={`/createuser/${validacion}`}>
-                            <i className='bi bi-pencil-square'></i>
-                          </Link>
-                          <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
-                        </div>  
-                        
+                          <div>
+                            <h5 hidden={dbname}>{usuarioSesion.name}</h5>
 
-                        <div hidden={register2}>
-                          <Link to={`/edituser/${validacion}`}>
-                            <i className='bi bi-pencil-square'></i>
-                          </Link>
-                          <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
-                        </div>  
+                            <p>Usuario</p>
                           </div>
 
+                          <div hidden={register}>
+                            <Link to={`/createuser/${validacion}`}>
+                              <i className='bi bi-pencil-square'></i>
+                            </Link>
+                            <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
+                          </div>
 
+                          <div hidden={register2}>
+                            <Link to={`/edituser/${validacion}`}>
+                              <i className='bi bi-pencil-square'></i>
+                            </Link>
+                            <p class='alert-data' hidden={dbname2}>
+                     ¡COMPLETA TUS DATOS!
+                            </p>
+                          </div>
                         </div>
                         <div class='col-md-8'>
                           <div class='card-body'>
@@ -179,9 +175,11 @@ console.log(usuarioSesion)
                                     </div>
                                   ))}
                                 </p>
-                                <Link to={`/createaddress`}>
-                                  <p>Add address</p>
-                                </Link>
+                                <div hidden={!register}>
+                                  <Link to={`/createaddress/${validacion}`}>
+                                    <p>Add address</p>
+                                  </Link>
+                                </div>
                               </div>
                             </div>
                             <hr class='mt-0 mb-4' />
@@ -254,7 +252,7 @@ console.log(usuarioSesion)
 
         <Footer></Footer>
       </>
- );
+    );
       
 };
 

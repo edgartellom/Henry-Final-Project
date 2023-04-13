@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -19,7 +19,7 @@ const [loadingInProgress, setLoading] = useState(false);
 //const{user,setUser}=useUserContext()
 const { updateUser,getUser, usuarioSesion } = useStoreUser();
 const{currentUser}=useUserStore() 
-
+const navigate = useNavigate();
  
 
 //var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
@@ -62,8 +62,11 @@ useEffect(() => {
     }
 
   function handleSubmit(e){
-  updateUser(input)
-  console.log(error)
+    e.preventDefault();
+  updateUser(input);
+  
+  navigate(`/profile/${validacion}`);
+  //console.log(error)
 }
 
     return (
@@ -83,7 +86,7 @@ useEffect(() => {
             </div>
             <br></br>
             <div>
-              <label className='formulario'>Email Edit </label>
+              <label className='formulario'>Email</label>
               <input
                 className='form'
                 type='text'
