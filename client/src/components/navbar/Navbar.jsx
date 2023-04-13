@@ -11,6 +11,7 @@ import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
+import { getTotals } from "../../store/ShoppingCartRedux";
 
 
 const Navbar = () => {
@@ -20,11 +21,14 @@ const Navbar = () => {
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
 
-  const {cartTotalQuantity} = useSelector((state) => state.cart)
+  const dispatch = useDispatch()
+  const {cartTotalQuantity, cart} = useSelector((state) => state.cart)
+  const carts = useSelector((state) => state.cart.cartItems)
+  
 
-  // useEffect(()=> {
-
-  // },[cartTotalQuantity])
+  useEffect(()=> {
+    dispatch(getTotals());
+  },[cart, cartTotalQuantity])
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -113,7 +117,8 @@ const Navbar = () => {
               
               <i className="bi bi-cart"></i>
               <strong>
-                <sup>{cartTotalQuantity}</sup>
+                {/* <sup>{cartTotalQuantity}</sup> */} 
+                <sup>{carts.length}</sup>
               </strong>
             </NavLink>
           </li>

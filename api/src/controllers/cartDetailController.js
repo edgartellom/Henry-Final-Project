@@ -35,8 +35,12 @@ const createDetail = async (details) => {
       i++;
     }
     if (isValid) {
+      
       let detailsCreated = await Cart_detail.bulkCreate(details);
+      console.log(details)
+      console.log("first")
       return {
+        
         detailsCreated,
         message: "Details created succesfully",
         status: "success",
@@ -45,6 +49,7 @@ const createDetail = async (details) => {
       return { message: "Invalid Details", status: "error" };
     }
   } catch (error) {
+    console.log(error)
     return { message: error.message, status: "error" };
   }
 };

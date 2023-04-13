@@ -65,9 +65,15 @@ function CreateProduct() {
     // //   history.push('/home')
     // }
     e.preventDefault();
-    await axios.post(`http://localhost:3001/products`, input, {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
+    // await axios.post(`http://localhost:3001/products`, input, {
+    //   headers: { "content-type": "application/x-www-form-urlencoded" },
+    // });
+
+    await axios.post('http://localhost:3001/products', input, {
+    headers: { 'content-type': 'application/json' }
     });
+
+
     alert("Product created successfully");
     setInput({
       name: "",
@@ -189,6 +195,16 @@ function CreateProduct() {
           placeholder="enter a url (optional)"
           onChange={changeHandle}
         />
+
+            <select className="fw-bold" defaultValue="Categories" onChange={(e) => selectHandle(e)}>
+            <option className="fw-bold" disabled>Categories</option>
+            {categories.map((t, index) => (
+              <option key={index} value={t.name}>
+                {t.name}
+              </option>
+            ))}
+
+            </select>
 
         <br /><br />
         <button disabled={!input.name || errors.name || !input.brand || errors.brand} type="submit" className="createButton" >Create a product</button>
