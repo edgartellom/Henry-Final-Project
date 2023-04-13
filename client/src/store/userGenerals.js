@@ -24,7 +24,19 @@ usuarioSesion:[],
     }catch(error){
       console.log(error)
     }
-  }
+  },
+
+
+  updateUser: async (input) => {
+    try {
+      const updateUser = await axios.put("/users",input,{
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+      });
+      console.log(updateUser)
+    } catch (error) {
+      console.log(error);
+    }
+  },
 
 
 

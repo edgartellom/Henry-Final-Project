@@ -66,7 +66,7 @@ const createUser = async (user) => {
   try {
     let userFound = await User.findOne({
       where: {
-        email: email,
+        id: id,
       },
     });
     if (userFound) return { message: "User already exists", status: "error" };
@@ -89,14 +89,16 @@ const createUser = async (user) => {
   }
 };
 
-const updateUser = async (user) => {
-  const { id, username, admin, state } = user;
+const updateUser2 = async (user) => {
+  const { id,username, name,tnumber,admin, state } = user;
   try {
     const userFromDb = await User.findByPk(id);
     if (userFromDb) {
       await userFromDb.update({
         username,
+        name,
         admin,
+        tnumber,
         state,
       });
       return { message: "User updated succesfully", status: "success" };
@@ -106,6 +108,32 @@ const updateUser = async (user) => {
     return { message: error.message, status: "error" };
   }
 };
+
+const updateUser = async (user) => {
+  const { id,username, name,tnumber,admin, state } = user;
+  try {
+    const actualiza=await User.update({
+      id:id,
+      username:username,
+      name:name,
+      tnumber:tnumber,
+    },
+    {where: { id: id }});
+   
+
+  return{message:"todo bien"}
+
+
+    
+  
+  } catch (error) {
+    return { message: error.message, status: "error" };
+  }
+};
+
+
+
+
 
 module.exports = {
   getAllUsers,

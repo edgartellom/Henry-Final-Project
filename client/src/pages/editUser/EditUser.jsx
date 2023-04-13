@@ -17,7 +17,7 @@ const EditUser=()=> {
 const user = getAuth().currentUser;
 const [loadingInProgress, setLoading] = useState(false);
 //const{user,setUser}=useUserContext()
-const { postUser,getUser, usuarioSesion } = useStoreUser();
+const { updateUser,getUser, usuarioSesion } = useStoreUser();
 const{currentUser}=useUserStore() 
 
  
@@ -62,7 +62,7 @@ useEffect(() => {
     }
 
   function handleSubmit(e){
-  postUser(input)
+  updateUser(input)
   console.log(error)
 }
 
@@ -71,7 +71,7 @@ useEffect(() => {
         <Navbar></Navbar>
         <main className='container'>
           <form onSubmit={(e) => handleSubmit(e)}>
-            <div>
+            <div hidden={true}>
               <label className='formulario'>ID </label>
               <input
                 className='form'
@@ -83,7 +83,7 @@ useEffect(() => {
             </div>
             <br></br>
             <div>
-              <label className='formulario'>Email </label>
+              <label className='formulario'>Email Edit </label>
               <input
                 className='form'
                 type='text'
@@ -128,15 +128,7 @@ useEffect(() => {
             </div>
 
             <br></br>
-            <div>
-              <label className='formulario'>Admin: </label>
-              <input
-                text='text'
-                value={input.admin}
-                name='admin'
-                onChange={handleChange}
-              />
-            </div>
+            
 
             <button className='crear' typeof='submit'>
               Confirmar

@@ -95,6 +95,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [name,setName]=useState("");
 
   const auth = getAuth();
 
@@ -125,12 +126,14 @@ const Register = () => {
         await setDoc(userDoc, {
           id: user.uid,
           username,
+          name,
           admin: false,
           email: email,
         });
         const userData = {
           id: user.uid,
           username,
+          name,
           email,
           admin: false,
           // otros detalles del usuario
@@ -280,6 +283,8 @@ const Register = () => {
                       type="firstname"
                       name="firstname"
                       autoComplete="given-name"
+                      value={name}
+                      onChange={(e)=>setName(e.target.value)}
                     />
                   </FormControl>
                 </Grid>

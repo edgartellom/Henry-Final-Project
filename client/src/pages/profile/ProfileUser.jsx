@@ -62,25 +62,25 @@ var direccion=dataAddress.map((e)=>{
 
 var filtrado=direccion.filter(e=>e.id==validacion)
 
-
-
-console.log(filtrado)
-
-
 if(!user){
   ""
 }else{
   var email=user.email
-  var name=user.displayName
+ // var name=user.displayName
   var foto=user.reloadUserInfo.photoUrl?user.reloadUserInfo.photoUrl:"https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png?20170128013930"
   var creado=user.metadata.creationTime
   var ultimo=user.metadata.lastSignInTime
 
 }
-  const googlename = {name} ? false : true;
+
+
 
 const dbname=usuarioSesion.name?false:true;
-const dbname2 = usuarioSesion.name ? true : false;
+const dbname2 = !usuarioSesion.name ? true : false;
+const register= usuarioSesion.id||usuarioSesion.username||usuarioSesion.name||usuarioSesion.email||usuarioSesion.tnumber?true:false
+const register2= usuarioSesion.username||usuarioSesion.email?false:true
+console.log(usuarioSesion)
+
 
     return (
       <>
@@ -110,15 +110,25 @@ const dbname2 = usuarioSesion.name ? true : false;
                         
                             <div>
                               <h5 hidden={dbname}>{usuarioSesion.name}</h5>
-                              <h5 hidden={googlename}>{user.displayName}</h5>
+                            
                               <p>Usuario</p>
                             </div>
-                            <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
+                           
                           
-                        
-                          <Link to={`/edituser/${validacion}`}>
+                        <div hidden={register}>
+                          <Link to={`/createuser/${validacion}` }>
                             <i className='bi bi-pencil-square'></i>
                           </Link>
+                        <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
+                        </div>
+                        <div hidden={register2}>
+                          <Link to={`/edituser/${validacion}` }>
+                            <i className='bi bi-pencil-square'></i>
+                          </Link>
+                          <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
+                          </div>
+
+
                         </div>
                         <div class='col-md-8'>
                           <div class='card-body'>
