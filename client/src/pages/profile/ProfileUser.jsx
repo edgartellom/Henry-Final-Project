@@ -110,16 +110,24 @@ console.log(usuarioSesion)
                         
                             <div>
                               <h5 hidden={dbname}>{usuarioSesion.name}</h5>
-                              <h5 hidden={googlename}>{user.displayName}</h5>
+                            
                               <p>Usuario</p>
                             </div>
-                            <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
-                          
+                           
+                          <div hidden={register}>
+                          <Link to={`/createuser/${validacion}`}>
+                            <i className='bi bi-pencil-square'></i>
+                          </Link>
+                          <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
+                        </div>  
                         
+
+                        <div hidden={register2}>
                           <Link to={`/edituser/${validacion}`}>
                             <i className='bi bi-pencil-square'></i>
                           </Link>
-                          <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
+                          <p class='alert-data'>¡COMPLETA TUS DATOS!</p>
+                        </div>  
                           </div>
 
 
