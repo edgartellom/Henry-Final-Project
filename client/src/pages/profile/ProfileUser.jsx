@@ -77,7 +77,7 @@ if(!user){
   var ultimo=user.metadata.lastSignInTime
 
 }
-  const googlename = {name} ? false : true;
+ //const googlename = {name} ? false : true;
 
 const dbname=usuarioSesion.name?false:true;
 const dbname2 = usuarioSesion.name ? true : false;
@@ -107,15 +107,16 @@ const dbname2 = usuarioSesion.name ? true : false;
                             alt='Avatar'
                             class='img-fluid my-5 img-size'
                           />
-                        
-                            <div>
-                              <h5 hidden={dbname}>{usuarioSesion.name}</h5>
-                              <h5 hidden={googlename}>{user.displayName}</h5>
-                              <p>Usuario</p>
-                            </div>
-                            <p class='alert-data' hidden={!dbname2}>¡COMPLETA TUS DATOS!</p>
-                          
-                        
+
+                          <div>
+                            <h5 hidden={dbname}>{usuarioSesion.name}</h5>
+                            <h5 hidden={dbname2}>{user.displayName}</h5>
+                            <p>Usuario</p>
+                          </div>
+                          <p class='alert-data' hidden={!dbname2}>
+                            ¡COMPLETA TUS DATOS!
+                          </p>
+
                           <Link to={`/edituser/${validacion}`}>
                             <i className='bi bi-pencil-square'></i>
                           </Link>
