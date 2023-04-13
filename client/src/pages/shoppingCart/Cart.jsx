@@ -8,10 +8,13 @@ import {
   removeFromCart,
 } from "../../store/shoppingCartRedux";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     console.log(cart);
@@ -30,6 +33,24 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+  
+  const handleCheckout = () => {
+    const data = {
+      quantity: cart.cartTotalAmount,
+      name: 'Compra Bestify-PC' // cambiar el nombre aquí
+    };
+
+    axios.post('http://localhost:3001/mercadopago/create-payment', data)
+      .then(response => {
+        // console.log(response.data.init_point)
+        window.location.replace(response.data.init_point);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -100,7 +121,7 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <button onClick={handleCheckout} >Check out</button>
               <div className="continue-shopping">
                 <Link to="/products">
                   <svg

@@ -12,29 +12,24 @@ mercadopago.configure({
 //se crea el pago con los detalles del producto y el precio
 
 exports.createPayment = async (req, res) => {
-  const { products } = req.body;
+  const { quantity , name } = req.body;
   // console.log(products)
   const items = []
 
-  products.forEach((product) => {
-    const { title, description, price, quantity } = product;
     items.push({
-      title,
-      description,
-      unit_price: parseFloat(price),
-      quantity: parseInt(quantity),
-    });
-  });
-  
+      title:name,
+      description:"Productos",
+      unit_price: quantity,
+      quantity: 1,
+    })
+
 
   const preference = {
         items:items,
     //se redirige a la pagina correspondiente segun su estado
     back_urls: {
-        apro: 'http://127.0.0.1:5173',
-        success: 'http://127.0.0.1:5173', // URL de retorno en caso de éxito
-        failure: 'http://localhost:3000/failure', // URL de retorno en caso de fallo
-        pending: 'http://localhost:3000/pending', // URL de retorno en caso de pago pendiente
+        success: 'http://127.0.0.1:5173/success', // URL de retorno en caso de éxito
+        failure: 'http://127.0.0.1:5173/failure', // URL de retorno en caso de fallo
       },
     auto_return: 'approved',
     // external_reference: 'YOUR_EXTERNAL_REFERENCE',
