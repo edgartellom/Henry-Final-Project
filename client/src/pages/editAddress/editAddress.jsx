@@ -4,9 +4,9 @@ import useStoreAddress from "../../store/address"
 import useUserStore from "../../store/users";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
-import "./CreateAddress.css";
+import "./EditAddress.css";
 import ClipLoader from "react-spinners/ClipLoader";
 import { getAuth } from "firebase/auth";
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +15,7 @@ function CreateAddress() {
   //const fetch = useStore((state) => state.fetchData)
 
   useEffect(() => {
+    getAddress();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -23,29 +24,109 @@ function CreateAddress() {
 
 const{currentUser}=useUserStore()
 const user = getAuth().currentUser;
-const{postAddress}=useStoreAddress()
+const{updateAddress}=useStoreAddress()
 //var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
 const [loadingInProgress, setLoading] = useState(false);
+const navigate = useNavigate();
+const { idaddress } = useParams();
 
-const { iduser } = useParams();
-var validacion = iduser;
+//var validacion = iduser;
+const { getAddress, dataAddress, filterAddress, filterAdd } = useStoreAddress();
 
 //console.log(currentUser)
+var direcciones = dataAddress.map((e) => {
+  return {
+    idAddress: e.idAddress,
+    tipo: e.tipo,
+    calle: e.calle,
+    numero: e.numero,
+    colonia: e.colonia,
+    codigoPostal: e.codigoPostal,
+    municipio: e.municipio,
+    estado: e.estado,
+    pais: e.pais,
+    cruzamiento: e.cruzamiento,
+    referencia: e.referencia,
+    userId: e.userId,
+    
+  };
+  
+});
 
 
-  const [input, setInput] = useState({
-    tipo:"",
-    calle:"",
-    numero:"",
-    cruzamiento:"",
-    colonia:"",
-    municipio:"",
-    estado:"",
-    pais:"",
-    codigoPostal:"",
-    referencia:"",
-    id: validacion,
-  });
+
+const filtrado = direcciones.filter((e) => e.idAddress == idaddress);
+
+
+
+const idAddress = filtrado.map(function(filtrado) {
+  return filtrado.idAddress
+});
+
+const tipo = filtrado.map(function (filtrado) {
+  return filtrado.tipo;
+});
+
+const calle = filtrado.map(function (filtrado) {
+  return filtrado.calle;
+});
+
+
+const numero = filtrado.map(function (filtrado) {
+  return filtrado.numero;
+});
+
+const cruzamiento = filtrado.map(function (filtrado) {
+  return filtrado.cruzamiento;
+});
+
+const colonia = filtrado.map(function (filtrado) {
+  return filtrado.colonia;
+});
+
+const municipio = filtrado.map(function (filtrado) {
+  return filtrado.municipio;
+});
+
+const estado = filtrado.map(function (filtrado) {
+  return filtrado.estado;
+});
+
+const pais = filtrado.map(function (filtrado) {
+  return filtrado.pais;
+});
+
+const codigoPostal = filtrado.map(function (filtrado) {
+  return filtrado.codigoPostal;
+});
+
+const referencia = filtrado.map(function (filtrado) {
+  return filtrado.referencia;
+});
+
+const userId = filtrado.map(function (filtrado) {
+  return filtrado.userId;
+});
+
+var validacion = userId.toString();
+
+console.log(validacion)
+
+   const [input, setInput] = useState({
+     idAddress: idAddress.toString(),
+     tipo: tipo.toString(),
+     calle: calle.toString(),
+     numero: numero.toString(),
+     cruzamiento: cruzamiento.toString(),
+     colonia: colonia.toString(),
+     municipio: municipio.toString(),
+     estado: estado.toString(),
+     pais: pais.toString(),
+     codigoPostal: codigoPostal.toString(),
+     referencia: referencia.toString(),
+     userId: validacion,
+   });
+
 
  
   function handleChange(e){
@@ -63,8 +144,11 @@ var validacion = iduser;
 
 
 function handleSubmit(e){
-  postAddress(input)
-  console.log(error)
+ e.preventDefault();
+ updateAddress(input);
+/*console.log(input);
+console.log(error);*/
+ navigate(`/profile/${validacion}`);
 }
 
 
@@ -78,15 +162,16 @@ return (
     <div className='contenedor'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
+          EDIT ADDRESS
           <div hidden={true}>
-          <label className='formulario'>ADD ADDRESS </label>
-          <input
-            className='form'
-            type='text'
-            value={input.id}
-            name='id'
-            onChange={handleChange}
-          />
+            <label className='formulario'>ID </label>
+            <input
+              className='form'
+              type='text'
+              value={input.id}
+              name='id'
+              onChange={handleChange}
+            />
           </div>
         </div>
         <br></br>

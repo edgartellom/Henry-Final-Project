@@ -60,6 +60,7 @@ var direccion=dataAddress.map((e)=>{
   })
 })
 
+
 var filtrado=direccion.filter(e=>e.id==validacion)
 
 if(!user){
@@ -124,7 +125,7 @@ console.log(usuarioSesion)
                               <i className='bi bi-pencil-square'></i>
                             </Link>
                             <p class='alert-data' hidden={dbname2}>
-                     ¡COMPLETA TUS DATOS!
+                              ¡COMPLETA TUS DATOS!
                             </p>
                           </div>
                         </div>
@@ -155,31 +156,43 @@ console.log(usuarioSesion)
                             </div>
                             <hr class='mt-0 mb-4' />
                             <div class='row pt-1'>
-                              <div class='col-6 mb-3'>
-                                <h6>Addresses</h6>
-                                <p class='text-muted'>
-                                  {filtrado.map((ad) => (
-                                    <div>
-                                      <hr class='mt-0 mb-4' />
-                                      <div>{ad.tipo}</div>
+                              <h6>Addresses</h6>
+                              {filtrado.map((ad) => (
+                                <>
+                                  <hr class='mt-0 mb-4' />
+                                  <div class='col-6 mb-3'>
+                                    <p class='text-muted'>
                                       <div>
-                                        Street: {ad.calle} {ad.numero}
+                                        <div>{ad.tipo}</div>
+                                        <div>
+                                          Street: {ad.calle} {ad.numero}
+                                        </div>
+                                        <div>{ad.cruzamiento}</div>
+                                        <div>{ad.colonia}</div>
+                                        <div>City: {ad.municipio}</div>
+                                        <div>State: {ad.estado}</div>
+                                        <div>Country: {ad.pais}</div>
+                                        <div>
+                                          Postal Code: {ad.codigoPostal}
+                                        </div>
+                                        <div>References: {ad.referencia}</div>
                                       </div>
-                                      <div>{ad.cruzamiento}</div>
-                                      <div>{ad.colonia}</div>
-                                      <div>City: {ad.municipio}</div>
-                                      <div>State: {ad.estado}</div>
-                                      <div>Country: {ad.pais}</div>
-                                      <div>Postal Code: {ad.codigoPostal}</div>
-                                      <div>References: {ad.referencia}</div>
-                                    </div>
-                                  ))}
-                                </p>
-                                <div hidden={!register}>
-                                  <Link to={`/createaddress/${validacion}`}>
-                                    <p>Add address</p>
-                                  </Link>
-                                </div>
+                                    </p>
+                                  </div>
+                                  <div class='col-6 mb-3'>
+                                    <p class='text-muted'>
+                                      <Link to={`/editaddress/${ad.idAddress}`}>
+                                        <i className='bi bi-pencil-square'></i>
+                                      </Link>
+                                    </p>
+                                  </div>
+                                </>
+                              ))}
+
+                              <div hidden={!register}>
+                                <Link to={`/createaddress/${validacion}`}>
+                                  <p>Add address</p>
+                                </Link>
                               </div>
                             </div>
                             <hr class='mt-0 mb-4' />

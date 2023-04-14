@@ -33,6 +33,8 @@ var validacion = user.uid
   const { iduser } = useParams();
 var validacion = iduser;
 
+//console.log("iduser: " + iduser)
+
 useEffect(() => {
 
   getUser(validacion);

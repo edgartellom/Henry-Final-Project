@@ -25,7 +25,7 @@ const useStoreAddress = create((set, get) => ({
     }
   },
 
-  updateUser: async (input) => {
+  updateAddress: async (input) => {
     try {
       const updateAddress = await axios.put("/address", input, {
         headers: { "content-type": "application/x-www-form-urlencoded" },

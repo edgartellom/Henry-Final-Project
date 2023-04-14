@@ -15,7 +15,8 @@ import {
   ProfileUser,
   CreateUser,
   CreateAddress,
-  EditUser
+  EditUser,
+  EditAddress
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
   {
     path: "/edituser/:iduser/*",
     element: <EditUser />,
+  },
+  {
+    path: "/editaddress/:idaddress/*",
+    element: <EditAddress />,
   },
 ]);
 
