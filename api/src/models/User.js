@@ -24,6 +24,10 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
+      favorites: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [],
+      },
       state: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

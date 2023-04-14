@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/shoppingCartRedux";
+import useUserStore from "../../store/users";
+import { useUserContext } from "../../components/contexts/userContexts";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -16,11 +18,33 @@ import "./card.css";
 const Card = ({ id, feature, price, image, stock, name }) => {
   const dispatch = useDispatch();
   const select = useSelector((state) => state.cart.cartItems);
+  const updateUser = useUserStore((state) => state.updateUser);
+  const { user } = useUserContext();
+  const getUserById = useUserStore((state) => state.getUserById);
 
   const addHandle = (e) => {
     e.preventDefault();
     console.log(select);
     dispatch(addToCart({ id, price, image, name }));
+  };
+
+  const addFavoriteHandle = async (e) => {
+    e.preventDefault();
+    const userDb = await getUserById(user.uid);
+    if (!userDb) {
+      console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+      return;
+    }
+    // Agregar verificación aquí
+    if (userDb && userDb.favorites) {
+      updateUser({
+        ...userDb,
+        favorites: [...userDb.favorites, id],
+      });
+      console.log(user);
+    } else {
+      console.log("Error al actualizar el usuario: objeto de usuario inválido");
+    }
   };
 
   return (
@@ -49,9 +73,11 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               to="/cart"
               role="button"
               className="primary"
-              data-tooltip="Go to your cart">
+              data-tooltip="Go to your cart"
+            >
               <i className="bi bi-cart-check"></i>
             </NavLink>
+
             {/* <NavLink
               to="/detail"
               role="button"
@@ -64,9 +90,18 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               role="button"
               className="contrast"
               data-tooltip="Add to cart"
-              onClick={addHandle}>
+              onClick={addHandle}
+            >
               <i className="bi bi-cart-plus"></i>
             </a>
+            <NavLink
+              role="button"
+              className="secondary"
+              data-tooltip="Add to favorites"
+              onClick={addFavoriteHandle}
+            >
+              <i className="bi bi-heart"></i>
+            </NavLink>
           </div>
         </div>
       </div>

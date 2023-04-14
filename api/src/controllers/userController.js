@@ -9,7 +9,7 @@ const getApiInfo = async () => {
     const users = dataFireStore.documents.map((user) => user.fields);
     const apiInfo = await users.map((el) => ({
       id: el.id && el.id.stringValue,
-      username: el.username && elusername.stringValue,
+      username: el.username && el.username.stringValue,
       email: el.email && el.email.stringValue,
       admin: el.admin && el.admin.booleanValue,
     }));
@@ -87,13 +87,32 @@ const createUser = async (user) => {
   }
 };
 
+// const updateUser = async (user) => {
+//   const { id, username, admin, state } = user;
+//   try {
+//     const userFromDb = await User.findByPk(id);
+//     if (userFromDb) {
+//       await userFromDb.update({
+//         username,
+//         admin,
+//         state,
+//       });
+//       return { message: "User updated succesfully", status: "success" };
+//     }
+//     return { message: "User Not Found", status: "error" };
+//   } catch (error) {
+//     return { message: error.message, status: "error" };
+//   }
+// };
+
 const updateUser = async (user) => {
-  const { id, username, admin, state } = user;
+  const { id, username, favorites, admin, state } = user;
   try {
     const userFromDb = await User.findByPk(id);
     if (userFromDb) {
       await userFromDb.update({
         username,
+        favorites,
         admin,
         state,
       });

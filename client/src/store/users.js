@@ -16,9 +16,27 @@ const useUserStore = create(
             console.error(error);
           }
         },
+        getUserById: async (id) => {
+          try {
+            const response = await axios.get(`/users/${id}`);
+            set({ users: response.data });
+            return response.data;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+        },
         registerUser: async (userData) => {
           try {
             const response = await axios.post("/users", userData);
+            console.log(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        },
+        updateUser: async (userData) => {
+          try {
+            const response = await axios.put("/users", userData);
             console.log(response.data);
           } catch (error) {
             console.error(error);
