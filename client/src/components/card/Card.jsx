@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/shoppingCartRedux";
 import useUserStore from "../../store/users";
 import { useUserContext } from "../../components/contexts/userContexts";
+import "./card.css";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -13,7 +14,6 @@ const formatter = new Intl.NumberFormat("en-US", {
   //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
   //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 });
-import "./card.css";
 
 const Card = ({ id, feature, price, image, stock, name }) => {
   const dispatch = useDispatch();
@@ -21,6 +21,8 @@ const Card = ({ id, feature, price, image, stock, name }) => {
   const updateUser = useUserStore((state) => state.updateUser);
   const { user } = useUserContext();
   const getUserById = useUserStore((state) => state.getUserById);
+  const [favorito, setFavorito] = useState(false);
+  const [favoritosUsuario, setFavoritosUsuario] = useState([]);
 
   const addHandle = (e) => {
     e.preventDefault();
@@ -28,24 +30,74 @@ const Card = ({ id, feature, price, image, stock, name }) => {
     dispatch(addToCart({ id, price, image, name }));
   };
 
+  useEffect(() => {
+    if (user) {
+      const obtenerUsuario = async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setFavoritosUsuario(userDb.favorites);
+        }
+      };
+      obtenerUsuario();
+    } else {
+      console.log("hola");
+    }
+  }, [user]);
+
   const addFavoriteHandle = async (e) => {
     e.preventDefault();
+
+    if (favorito) {
+      // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
+      const userDb = await getUserById(user.uid);
+      if (userDb && userDb.favorites) {
+        const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+        updateUser({
+          ...userDb,
+          favorites: newFavoritesList,
+        });
+        setFavorito(false);
+        setFavoritosUsuario(newFavoritesList);
+      }
+      return;
+    }
+
+    // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
+    setFavorito(true);
     const userDb = await getUserById(user.uid);
     if (!userDb) {
       console.log(`No se encontró ningún usuario con el id ${user.uid}`);
       return;
     }
-    // Agregar verificación aquí
     if (userDb && userDb.favorites) {
       updateUser({
         ...userDb,
         favorites: [...userDb.favorites, id],
       });
-      console.log(user);
+      setFavoritosUsuario([...userDb.favorites, id]);
     } else {
       console.log("Error al actualizar el usuario: objeto de usuario inválido");
     }
   };
+
+  // const addFavoriteHandle = async (e) => {
+  //   e.preventDefault();
+  //   const userDb = await getUserById(user.uid);
+  //   if (!userDb) {
+  //     console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+  //     return;
+  //   }
+  //   // Agregar verificación aquí
+  //   if (userDb && userDb.favorites) {
+  //     updateUser({
+  //       ...userDb,
+  //       favorites: [...userDb.favorites, id],
+  //     });
+  //     console.log(user);
+  //   } else {
+  //     console.log("Error al actualizar el usuario: objeto de usuario inválido");
+  //   }
+  // };
 
   return (
     <>
@@ -98,10 +150,22 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               role="button"
               className="secondary"
               data-tooltip="Add to favorites"
+              style={{
+                backgroundColor: favorito ? "red" : "inherit",
+              }}
+              onClick={addFavoriteHandle}
+            >
+              {favorito ? "" : ""}
+              <i className="bi bi-heart"></i>
+            </NavLink>
+            {/* <NavLink
+              role="button"
+              className="secondary"
+              data-tooltip="Add to favorites"
               onClick={addFavoriteHandle}
             >
               <i className="bi bi-heart"></i>
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
       </div>
