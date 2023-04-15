@@ -86,7 +86,7 @@ const router = createBrowserRouter([
     path: "/editaddress/:idaddress/*",
     element: <EditAddress />,
   },
-
+  {
     path: "/admin/*",
     element: <AdminDashboard/>,
   }
