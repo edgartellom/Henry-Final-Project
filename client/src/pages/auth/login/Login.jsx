@@ -71,6 +71,8 @@ const Login = () => {
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
+  const getUserById = useUserStore((state) => state.getUserById);
+  const registerUser = useUserStore((state) => state.registerUser);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
@@ -149,15 +151,24 @@ const Login = () => {
       const token = credential.accessToken;
       const user = result.user;
       if (user !== null) {
-        user.providerData.forEach((profile) => {
-          setUser({
-            "Sign-in provider": profile.providerId,
-            "Provider-specific UID": profile.uid,
-            Name: profile.displayName,
-            Email: profile.email,
-            "Photo URL": profile.photoURL,
-          });
-        });
+        const userData = {
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+          admin: false,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          // otros detalles del usuario
+        };
+
+        setUser(userData);
+        const userDb = await getUserById(user.uid);
+        if (!userDb) {
+          const userDoc = doc(db, "users", user.uid);
+          await setDoc(userDoc, userData);
+
+          registerUser(userData);
+        }
       }
       navigate("/products");
     } catch (error) {

@@ -28,7 +28,12 @@ const getAllUsers = async () => {
       apiInfo.map(async (userData) => {
         const [user, created] = await User.findOrCreate({
           where: { id: userData.id, email: userData.email },
-          defaults: { username: userData.username, admin: userData.admin },
+          defaults: {
+            username: userData.username,
+            admin: userData.admin,
+            phoneNumber: userData.phoneNumber,
+            photoURL: userData.photoURL,
+          },
         });
         if (created) {
           createdCount++;
@@ -87,26 +92,8 @@ const createUser = async (user) => {
   }
 };
 
-// const updateUser = async (user) => {
-//   const { id, username, admin, state } = user;
-//   try {
-//     const userFromDb = await User.findByPk(id);
-//     if (userFromDb) {
-//       await userFromDb.update({
-//         username,
-//         admin,
-//         state,
-//       });
-//       return { message: "User updated succesfully", status: "success" };
-//     }
-//     return { message: "User Not Found", status: "error" };
-//   } catch (error) {
-//     return { message: error.message, status: "error" };
-//   }
-// };
-
 const updateUser = async (user) => {
-  const { id, username, favorites, admin, state } = user;
+  const { id, username, favorites, admin, phoneNumber, photoURL, state } = user;
   try {
     const userFromDb = await User.findByPk(id);
     if (userFromDb) {
@@ -114,6 +101,8 @@ const updateUser = async (user) => {
         username,
         favorites,
         admin,
+        phoneNumber,
+        photoURL,
         state,
       });
       return { message: "User updated succesfully", status: "success" };

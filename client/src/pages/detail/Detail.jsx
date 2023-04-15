@@ -38,15 +38,12 @@ const Detail = () => {
 
   useEffect(() => {
     if (user) {
-      const obtenerUsuario = async () => {
+      const obtenerUsuario = (async () => {
         const userDb = await getUserById(user.uid);
         if (userDb) {
           setFavoritosUsuario(userDb.favorites);
         }
-      };
-      obtenerUsuario();
-    } else {
-      console.log("hola");
+      })();
     }
   }, [user]);
 
@@ -81,31 +78,10 @@ const Detail = () => {
         favorites: [...userDb.favorites, id],
       });
       setFavoritosUsuario([...userDb.favorites, id]);
-      console.log(user);
     } else {
       console.log("Error al actualizar el usuario: objeto de usuario inválido");
     }
   };
-
-  // const addFavoriteHandle = async (e) => {
-  //   e.preventDefault();
-  //   setFavorito(!favorito);
-  //   const userDb = await getUserById(user.uid);
-  //   if (!userDb) {
-  //     console.log(`No se encontró ningún usuario con el id ${user.uid}`);
-  //     return;
-  //   }
-  //   // Agregar verificación aquí
-  //   if (userDb && userDb.favorites) {
-  //     updateUser({
-  //       ...userDb,
-  //       favorites: [...userDb.favorites, id],
-  //     });
-  //     console.log(user);
-  //   } else {
-  //     console.log("Error al actualizar el usuario: objeto de usuario inválido");
-  //   }
-  // };
 
   //console.log(detailProduct)
 
@@ -158,22 +134,24 @@ const Detail = () => {
                     to="/cart"
                     role="button"
                     className="primary"
-                    data-tooltip="Add to Cart"
-                  >
+                    data-tooltip="Add to Cart">
                     <i className="bi bi-cart-plus"></i>
                   </NavLink>
-                  <NavLink
-                    role="button"
-                    className="secondary"
-                    data-tooltip="Add to favorites"
-                    style={{
-                      backgroundColor: favorito ? "red" : "inherit",
-                    }}
-                    onClick={addFavoriteHandle}
-                  >
-                    {favorito ? "" : ""}
-                    <i className="bi bi-heart"></i>
-                  </NavLink>
+                  {user && (
+                    <NavLink
+                      role="button"
+                      className="secondary"
+                      data-tooltip="Add to favorites"
+                      style={{
+                        backgroundColor:
+                          favoritosUsuario.find((el) => el === id) || favorito
+                            ? "red"
+                            : "gray",
+                      }}
+                      onClick={addFavoriteHandle}>
+                      <i className="bi bi-heart"></i>
+                    </NavLink>
+                  )}
                 </div>
               </div>
             </div>

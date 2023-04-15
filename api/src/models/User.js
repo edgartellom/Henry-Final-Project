@@ -24,6 +24,12 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
+      phoneNumber: {
+        type: DataTypes.INTEGER,
+      },
+      photoURL: {
+        type: DataTypes.STRING,
+      },
       favorites: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         defaultValue: [],
