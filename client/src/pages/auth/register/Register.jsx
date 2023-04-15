@@ -115,20 +115,7 @@ const Register = () => {
         };
         registerUser(userData);
 
-      await setDoc(userDoc, {
-        id: user.uid,
-        username,
-        admin: false,
-        email: email,
-      });
-      const userData = {
-        id: user.uid,
-        username,
-        email,
-        admin: false,
-        // otros detalles del usuario
-      };
-      registerUser(userData);
+    
       await sendEmailVerification(auth.currentUser);
       navigate("/products");
       // window.location.href = "/products";
@@ -136,8 +123,14 @@ const Register = () => {
       console.log(error);
       setError(error.message);
     }
-  };
+  }catch (error) {
+    console.log(error);
+    setError(error.message);
+  }
 
+
+
+  
   return (
     <CssVarsProvider
       defaultMode="dark"
@@ -345,5 +338,6 @@ const Register = () => {
     </CssVarsProvider>
   );
 };
-
+} 
 export default Register;
+ 
