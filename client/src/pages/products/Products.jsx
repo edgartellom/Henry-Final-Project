@@ -8,11 +8,8 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
 import "./products.css";
 
-
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
-
-
 
   const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
@@ -154,7 +151,7 @@ const Products = () => {
             page={page}
             onChange={handleChange}
             color="primary"
-            style={{ "& .MuiButton-label": { color: "red" } }}
+            style={{ "& .MuiButtonLabel": { color: "red" } }}
           />
         </Stack>
       </div>
@@ -170,16 +167,14 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter}
               label="Age"
-              onChange={handleCategoryChange}
-            >
+              onChange={handleCategoryChange}>
               {res.length > 0 ? (
                 res.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {e.name}
                   </MenuItem>
                 ))
@@ -199,16 +194,14 @@ const Products = () => {
               id="demo-select-small"
               value={state.brandFilter}
               label="Age"
-              onChange={handleBrandChange}
-            >
+              onChange={handleBrandChange}>
               {rNames &&
                 rNames.map((product) => (
                   <MenuItem
                     key={product}
                     value={product}
                     className="option"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {product}
                   </MenuItem>
                 ))}
@@ -226,16 +219,14 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter2}
               label="Age"
-              onChange={handleTypeChange}
-            >
+              onChange={handleTypeChange}>
               {res2.length > 0 ? (
                 res2.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {e.name}
                   </MenuItem>
                 ))
@@ -249,8 +240,7 @@ const Products = () => {
       <IconButton
         onClick={handleRefresh}
         size="small"
-        style={{ color: "#2196f3" }}
-      >
+        style={{ color: "#2196f3" }}>
         <RefreshIcon fontSize="small" />
         <Box mr={3}>Refresh</Box>
       </IconButton>

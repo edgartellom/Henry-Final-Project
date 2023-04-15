@@ -26,18 +26,15 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   fetchSignInMethodsForEmail,
   updateProfile,
 } from "firebase/auth";
 import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
-import ErrorAlert from "../../../components/alert/ErrorAlert";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -62,8 +59,7 @@ function ColorSchemeToggle({ onClick, ...props }) {
           setMode("light");
         }
         onClick?.(event);
-      }}
-    >
+      }}>
       {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
     </IconButton>
   );
@@ -71,6 +67,7 @@ function ColorSchemeToggle({ onClick, ...props }) {
 
 const Login = () => {
   const auth = getAuth();
+  const navigate = useNavigate();
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
@@ -97,26 +94,6 @@ const Login = () => {
     };
   }, []);
 
-  // const handleLoginSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await signInWithEmailAndPassword(auth, email, password);
-  //     // Signed in
-  //     if (user !== null) {
-  //       const username = user.displayName;
-  //       const email = user.email;
-  //       const uid = user.uid;
-  //     }
-  //     return (
-  //       <Stack sx={{ width: "100%" }} spacing={2}>
-  //         <Alert severity="success">Login succesfully!</Alert>
-  //       </Stack>
-  //     );
-  //   } catch (error) {
-  //     <ErrorAlert error={error} />;
-  //   }
-  // };
-
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -130,7 +107,7 @@ const Login = () => {
       if (confirmEmail.length === 0) {
         console.log("error");
         setError("Email address not registered. Please sign up.");
-        window.location.href = "/sign-up";
+        setTimeout(() => navigate("/sign-up"), 3000);
         return;
       }
 
@@ -142,13 +119,10 @@ const Login = () => {
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
-      window.location.href = "/products";
+      navigate("/products");
     } catch (error) {
-      // console.log(error.message);
       console.log(error.code, error.message);
       setError(error.message);
-      // window.location.href = "/sign-up";
-      // <ErrorAlert error={error} />;
     }
   };
 
@@ -164,7 +138,7 @@ const Login = () => {
         </Stack>
       );
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
     }
   };
 
@@ -183,12 +157,11 @@ const Login = () => {
             Email: profile.email,
             "Photo URL": profile.photoURL,
           });
-          window.location.href = "/products";
         });
       }
-      // window.location.href = "/";
+      navigate("/products");
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
@@ -198,8 +171,7 @@ const Login = () => {
     <CssVarsProvider
       defaultMode="dark"
       disableTransitionOnChange
-      theme={customTheme}
-    >
+      theme={customTheme}>
       <CssBaseline />
       <GlobalStyles
         styles={{
@@ -226,8 +198,7 @@ const Login = () => {
           [theme.getColorSchemeSelector("dark")]: {
             backgroundColor: "rgba(19 19 24 / 0.4)",
           },
-        })}
-      >
+        })}>
         <Box
           sx={{
             display: "flex",
@@ -237,8 +208,7 @@ const Login = () => {
               "clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw) * 999, 100%)",
             maxWidth: "100%",
             px: 2,
-          }}
-        >
+          }}>
           <Box
             component="header"
             sx={{
@@ -246,8 +216,7 @@ const Login = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-            }}
-          >
+            }}>
             <Typography
               fontWeight="lg"
               startDecorator={
@@ -266,8 +235,7 @@ const Login = () => {
                     }}
                   />
                 </Link>
-              }
-            >
+              }>
               Logo
             </Typography>
 
@@ -294,8 +262,7 @@ const Login = () => {
               [`& .${formLabelClasses.asterisk}`]: {
                 visibility: "hidden",
               },
-            }}
-          >
+            }}>
             <div>
               <Typography component="h2" fontSize="xl2" fontWeight="lg">
                 Welcome back
@@ -314,8 +281,7 @@ const Login = () => {
                   persistent: formElements.persistent.checked,
                 };
                 alert(JSON.stringify(data, null, 2));
-              }}
-            >
+              }}>
               <FormControl required>
                 <FormLabel>Email</FormLabel>
                 <Input
@@ -341,8 +307,7 @@ const Login = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                }}
-              >
+                }}>
                 <Checkbox
                   size="sm"
                   label="Remember for 30 days"
@@ -352,8 +317,7 @@ const Login = () => {
                   fontSize="sm"
                   href="#replace-with-a-link"
                   fontWeight="lg"
-                  onClick={handlePasswordReset}
-                >
+                  onClick={handlePasswordReset}>
                   Forgot password
                 </Link>
               </Box>
@@ -361,11 +325,14 @@ const Login = () => {
                 type="submit"
                 value={email}
                 fullWidth
-                onClick={(event) => handleLoginSubmit(event)}
-              >
+                onClick={(event) => handleLoginSubmit(event)}>
                 Sign in
               </Button>
-              <Link fontSize="sm" href="/sign-up" fontWeight="lg">
+              <Link
+                component={RouterLink}
+                to="/sign-up"
+                fontSize="sm"
+                fontWeight="lg">
                 Don&apos;t have an account? Sign Up
               </Link>
             </form>
@@ -375,8 +342,7 @@ const Login = () => {
               variant="outlined"
               color="neutral"
               fullWidth
-              startDecorator={<GoogleIcon />}
-            >
+              startDecorator={<GoogleIcon />}>
               Sign in with Google
             </Button>
           </Box>

@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
+import "@picocss/pico";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
+import "./bootstrap.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { getAuth, signOut } from "firebase/auth";
-import ErrorAlert from "../alert/ErrorAlert";
 import "firebase/app";
 import "firebase/auth";
 
@@ -24,7 +26,8 @@ const Navbar = () => {
   //const currentUser = useUserStore((state) => state.currentUser);
 
   const { cartTotalQuantity } = useSelector((state) => state.cart);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
 
   const perfil=user?false:true
 
@@ -38,6 +41,7 @@ if (!user) {
   
   //console.log(user.uid);
   
+
   // useEffect(()=> {
 
   // },[cartTotalQuantity])
@@ -56,16 +60,10 @@ if (!user) {
     event.preventDefault();
     try {
       await signOut(auth);
-      alert("Sign-out successful")
-      navigate('/')
-      // Sign-out successful.
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="info">You have logged out!</Alert>
-        </Stack>
-      );
+      alert("Sign-out successful");
+      navigate("/");
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error.message);
     }
   };
 
@@ -84,6 +82,7 @@ if (!user) {
           <li>
             <SearchBar></SearchBar>
           </li>
+
           <li>
             <details role='list' dir='list'>
               <summary aria-haspopup='list-box' role='list'>
@@ -110,6 +109,7 @@ if (!user) {
               <summary aria-haspopup='listbox' role='list'>
                 <i className='bi bi-person-circle'></i>
               </summary>
+
               <ul role='listbox'>
                 <li hidden={perfil}>
                   {/* <NavLink to="/profile">Profile</NavLink> */}
@@ -126,6 +126,7 @@ if (!user) {
                     <NavLink to='/sign-in'>Sign in</NavLink>
                   )}
                 </li>
+
               </ul>
             </details>
           </li>
@@ -192,6 +193,7 @@ if (!user) {
                 <summary aria-haspopup='listbox' role='list'>
                   <i className='bi bi-person-circle'></i>
                 </summary>
+
                 <ul role='listbox'>
                   <li>
                     {/* <NavLink to='/profile'>Profile</NavLink> */}
@@ -206,6 +208,7 @@ if (!user) {
                       </NavLink>
                     )}
                   </li>
+
                 </ul>
               </details>
             </li>

@@ -16,7 +16,8 @@ import {
   CreateUser,
   CreateAddress,
   EditUser,
-  EditAddress
+  EditAddress,
+  AdminDashboard
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
     element: <ProfileUser />,
   },
   {
+
     path: "/createuser/:iduser/*",
     element: <CreateUser />,
   },
@@ -84,6 +86,12 @@ const router = createBrowserRouter([
     path: "/editaddress/:idaddress/*",
     element: <EditAddress />,
   },
+
+    path: "/admin/*",
+    element: <AdminDashboard/>,
+  }
+
+
 ]);
 
 export default router;
