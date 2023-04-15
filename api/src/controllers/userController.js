@@ -12,6 +12,8 @@ const getApiInfo = async () => {
       username: el.username && el.username.stringValue,
       email: el.email && el.email.stringValue,
       admin: el.admin && el.admin.booleanValue,
+      phoneNumber: el.phoneNumber && el.phoneNumber.integerValue,
+      photoURL: el.photoURL && el.photoURL.stringValue,
     }));
     return apiInfo;
   } catch (error) {
