@@ -31,6 +31,15 @@ const Navbar = () => {
 
   // },[cartTotalQuantity])
 
+  const perfil=user?false:true
+
+if (!user) {
+  ("");
+} else {
+ var iduser = user.uid;
+}
+
+
   const ChangeTheme = (e) => {
     e.preventDefault();
     changeTheme();
@@ -98,7 +107,7 @@ const Navbar = () => {
                 {user ? (
                   <>
                     <li>
-                      <NavLink to="/profile">Profile</NavLink>
+                      <NavLink to={`/profile/${iduser}`}>Profile</NavLink>
                     </li>
                     <li>
                       <NavLink to="/" onClick={handleLogout}>

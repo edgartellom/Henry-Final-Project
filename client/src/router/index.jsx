@@ -13,8 +13,12 @@ import {
   CreateProduct,
   ShoppingCart,
   ProfileUser,
-  AdminDashboard
-} from "../pages";
+  CreateUser,
+  CreateAddress,
+  EditUser,
+  EditAddress,
+  AdminDashboard,
+  } from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -62,8 +66,24 @@ const router = createBrowserRouter([
     element: <Cart />
   },
    {
-    path: "/profile",
+    path: "/profile/:iduser",
     element: <ProfileUser />,
+  },
+  {
+    path: "/createuser/:iduser/*",
+    element: <CreateUser />,
+  },
+  {
+    path: "/createaddress/:iduser/*",
+    element: <CreateAddress />,
+  },
+  {
+    path: "/edituser/:iduser/*",
+    element: <EditUser />,
+  },
+  {
+    path: "/editaddress/:idaddress/*",
+    element: <EditAddress />,
   },
   {
     path: "/admin/*",
