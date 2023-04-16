@@ -11,7 +11,9 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { getAuth } from "firebase/auth";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
-function EditAddress() {
+
+
+const EditAddress=()=> {
   //const fetch = useStore((state) => state.fetchData)
 
   useEffect(() => {
