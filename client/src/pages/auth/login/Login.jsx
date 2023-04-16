@@ -4,6 +4,7 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import customTheme from "../theme";
 import GoogleIcon from "../GoogleIcon";
 import {
@@ -76,6 +77,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -176,6 +178,10 @@ const Login = () => {
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -307,10 +313,15 @@ const Login = () => {
                 <FormLabel>Password</FormLabel>
                 <Input
                   placeholder="•••••••"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
+                  endDecorator={
+                    <IconButton onClick={handleTogglePassword}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  }
                 />
               </FormControl>
               <Box
