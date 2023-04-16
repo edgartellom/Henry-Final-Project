@@ -10,5 +10,5 @@ export { default as ProfileUser } from "./profile/ProfileUser";
 export { default as CreateUser} from "./createUser/CreateUser";
 export { default as CreateAddress} from "./createAddress/CreateAddress";
 export { default as EditUser } from "./editUser/EditUser";
-export { default as EditAddress} from "./editAddress/EditAddress";
+//export { default as EditAddress} from "./editAddress/EditAddress";
 export { default as AdminDashboard } from "./admin/Admin";
