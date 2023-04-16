@@ -16,6 +16,7 @@ import {
   CreateUser,
   CreateAddress,
   EditUser,
+  EditAddress,
   AdminDashboard,
   } from "../pages";
 
@@ -61,10 +62,10 @@ const router = createBrowserRouter([
     element: <CreateProduct />,
   },
   {
-    path:"/cart",
-    element: <Cart />
+    path: "/cart",
+    element: <Cart />,
   },
-   {
+  {
     path: "/profile/:iduser",
     element: <ProfileUser />,
   },
@@ -81,10 +82,13 @@ const router = createBrowserRouter([
     element: <EditUser />,
   },
   {
+    path: "/editaddress/:idaddress/*",
+    element: <EditAddress />,
+  },
+  {
     path: "/admin/*",
-    element: <AdminDashboard/>,
-  }
-
+    element: <AdminDashboard />,
+  },
 ]);
 
 export default router;
