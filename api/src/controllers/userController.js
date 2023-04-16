@@ -62,7 +62,7 @@ const getUserById = async (userId) => {
 };
 
 const createUser = async (user) => {
-  const { id, username,name,tnumber, email, admin } = user;
+  const { id, username,name,phoneNumber, email, admin } = user;
   try {
     let userFound = await User.findOne({
       where: {
@@ -75,7 +75,7 @@ const createUser = async (user) => {
       id: id,
       username: username,
       name:name,
-      tnumber:tnumber,
+      phoneNumber:phoneNumber,
       email: email,
       admin: admin,
     });
@@ -108,13 +108,13 @@ const updateUser2 = async (user) => {
 };
 
 const updateUser = async (user) => {
-  const { id,username, name,tnumber,admin, state } = user;
+  const { id,username, name,phoneNumber,admin, state } = user;
   try {
     const actualiza=await User.update({
       id:id,
       username:username,
       name:name,
-      tnumber:tnumber,
+      phoneNumber:phoneNumber,
     },
     {where: { id: id }});
    

@@ -37,13 +37,13 @@ const CreateUser=()=> {
     id: validacion,
     username:"",
     name: '',
-    tnumber: '',
+    phoneNumber: '',
     email: "",
     admin:false
   });
 
  
-  
+  console.log(input)
   function handleChange(e){
     setInput({
         ...input,
@@ -117,8 +117,8 @@ return (
           <input
             className='describe'
             text='text'
-            value={input.tnumber}
-            name='tnumber'
+            value={input.phoneNumber}
+            name='phoneNumber'
             onChange={handleChange}
             maxLength={100}
           />

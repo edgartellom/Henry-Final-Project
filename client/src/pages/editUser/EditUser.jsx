@@ -50,7 +50,7 @@ useEffect(() => {
     id: validacion,
     username: usuarioSesion.username,
     name: usuarioSesion.name,
-    tnumber: usuarioSesion.tnumber,
+    phoneNumber: usuarioSesion.phoneNumber,
     email: usuarioSesion.email,
     admin: usuarioSesion.admin,
   });
@@ -125,8 +125,8 @@ useEffect(() => {
               <input
                 className='describe'
                 text='text'
-                value={input.tnumber}
-                name='tnumber'
+                value={input.phoneNumber}
+                name='phoneNumber'
                 onChange={handleChange}
                 maxLength={100}
               />

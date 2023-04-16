@@ -134,7 +134,7 @@ return (
                               <div class='col-6 mb-3'>
                                 <h6>Telephone</h6>
                                 <p class='text-muted'>
-                                  {usuarioSesion.tnumber}
+                                  {usuarioSesion.phoneNumber}
                                 </p>
                               </div>
                               <div class='col-6 mb-3'>

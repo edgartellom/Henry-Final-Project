@@ -15,15 +15,6 @@ import { getAuth } from "firebase/auth";
 
 const EditAddress=()=> {
   //const fetch = useStore((state) => state.fetchData)
-
-  useEffect(() => {
-    getAddress();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-  }, []);
-
 const{currentUser}=useUserStore()
 const user = getAuth().currentUser;
 const{updateAddress}=useStoreAddress()
@@ -34,6 +25,16 @@ const { idaddress } = useParams();
 
 //var validacion = iduser;
 const { getAddress, dataAddress, filterAddress, filterAdd } = useStoreAddress();
+
+useEffect(() => {
+  getAddress();
+  setLoading(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 1500);
+}, []);
+
+
 
 //console.log(currentUser)
 var direcciones = dataAddress.map((e) => {
@@ -55,7 +56,7 @@ var direcciones = dataAddress.map((e) => {
   
 });
 
-
+console.log(dataAddress)
 
 const filtrado = direcciones.filter((e) => e.idAddress == idaddress);
 
@@ -112,7 +113,7 @@ const userId = filtrado.map(function (filtrado) {
 
 var validacion = userId.toString();
 
-console.log(validacion)
+
 
    const [input, setInput] = useState({
      idAddress: idAddress.toString(),
@@ -164,7 +165,7 @@ return (
     <div className='contenedor'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
-          EDIT ADDRESS
+          EDIT Address
           <div hidden={true}>
             <label className='formulario'>ID </label>
             <input
