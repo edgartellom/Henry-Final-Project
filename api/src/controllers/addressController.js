@@ -81,13 +81,25 @@ const updateAddress = async (address) => {
 };
 
 
+const getaAddressById = async (id) => {
+  try {
+    const address = await Address.findByPk(id);
 
+    if (address) {
+      return { data: address, status: "success" };
+    }
+    return { message: "User Not Found", status: "error" };
+  } catch (error) {
+    return { message: error.message, status: "error" };
+  }
+};
 
 
 module.exports = {
   addressDB,
   createAddress,
-  updateAddress
+  updateAddress,
+  getaAddressById
 };
 
 

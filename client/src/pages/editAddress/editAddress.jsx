@@ -3,31 +3,27 @@ import { useState, useEffect } from "react";
 import useStoreAddress from "../../store/address"
 import useUserStore from "../../store/users";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import "./EditAddress.css";
 import ClipLoader from "react-spinners/ClipLoader";
-import { getAuth } from "firebase/auth";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
 const EditAddress=()=> {
   //const fetch = useStore((state) => state.fetchData)
-const{currentUser}=useUserStore()
-const user = getAuth().currentUser;
-const{updateAddress}=useStoreAddress()
 //var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
 const [loadingInProgress, setLoading] = useState(false);
 const navigate = useNavigate();
 const { idaddress } = useParams();
 
-//var validacion = iduser;
-const { getAddress, dataAddress, filterAddress, filterAdd } = useStoreAddress();
+const {updateAddress, getAddressId, addSesion } = useStoreAddress();
+
+
 
 useEffect(() => {
-  getAddress();
+  getAddressId(idaddress);
   setLoading(true);
   setTimeout(() => {
     setLoading(false);
@@ -35,104 +31,22 @@ useEffect(() => {
 }, []);
 
 
-
-//console.log(currentUser)
-var direcciones = dataAddress.map((e) => {
-  return {
-    idAddress: e.idAddress,
-    tipo: e.tipo,
-    calle: e.calle,
-    numero: e.numero,
-    colonia: e.colonia,
-    codigoPostal: e.codigoPostal,
-    municipio: e.municipio,
-    estado: e.estado,
-    pais: e.pais,
-    cruzamiento: e.cruzamiento,
-    referencia: e.referencia,
-    userId: e.userId,
-    
-  };
-  
-});
-
-console.log(dataAddress)
-
-const filtrado = direcciones.filter((e) => e.idAddress == idaddress);
-
-
-
-const idAddress = filtrado.map(function(filtrado) {
-  return filtrado.idAddress
-});
-
-const tipo = filtrado.map(function (filtrado) {
-  return filtrado.tipo;
-});
-
-const calle = filtrado.map(function (filtrado) {
-  return filtrado.calle;
-});
-
-
-const numero = filtrado.map(function (filtrado) {
-  return filtrado.numero;
-});
-
-const cruzamiento = filtrado.map(function (filtrado) {
-  return filtrado.cruzamiento;
-});
-
-const colonia = filtrado.map(function (filtrado) {
-  return filtrado.colonia;
-});
-
-const municipio = filtrado.map(function (filtrado) {
-  return filtrado.municipio;
-});
-
-const estado = filtrado.map(function (filtrado) {
-  return filtrado.estado;
-});
-
-const pais = filtrado.map(function (filtrado) {
-  return filtrado.pais;
-});
-
-const codigoPostal = filtrado.map(function (filtrado) {
-  return filtrado.codigoPostal;
-});
-
-const referencia = filtrado.map(function (filtrado) {
-  return filtrado.referencia;
-});
-
-const userId = filtrado.map(function (filtrado) {
-  return filtrado.userId;
-});
-
-var validacion = userId.toString();
-
-
-
-   const [input, setInput] = useState({
-     idAddress: idAddress.toString(),
-     tipo: tipo.toString(),
-     calle: calle.toString(),
-     numero: numero.toString(),
-     cruzamiento: cruzamiento.toString(),
-     colonia: colonia.toString(),
-     municipio: municipio.toString(),
-     estado: estado.toString(),
-     pais: pais.toString(),
-     codigoPostal: codigoPostal.toString(),
-     referencia: referencia.toString(),
-     userId: validacion,
+const [input, setInput] = useState({
+     idAddress: addSesion.idAddress,
+     tipo: addSesion.tipo,
+     calle: addSesion.calle,
+     numero: addSesion.numero,
+     cruzamiento:addSesion.cruzamiento,
+     colonia:addSesion.colonia,
+     municipio:addSesion.municipio,
+     estado: addSesion.estado,
+     pais: addSesion.pais,
+     codigoPostal:addSesion.codigoPostal,
+     referencia:addSesion.referencia,
+     userId:addSesion.userId,
    });
 
-
- 
-  function handleChange(e){
+function handleChange(e){
     setInput({
         ...input,
         [e.target.name]:e.target.value
@@ -140,18 +54,12 @@ var validacion = userId.toString();
 }
 
 
-
-
-//var idUser=currentUser["Provider-specific UID"]
-
-
-
 function handleSubmit(e){
  e.preventDefault();
  updateAddress(input);
 /*console.log(input);
 console.log(error);*/
- navigate(`/profile/${validacion}`);
+ navigate(`/profile/${addSesion.userId}`);
 }
 
 

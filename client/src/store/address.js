@@ -4,6 +4,7 @@ import axios from "axios";
 
 const useStoreAddress = create((set, get) => ({
   dataAddress: [],
+  addSesion:[],
 
   postAddress: async (input) => {
     try {
@@ -25,6 +26,16 @@ const useStoreAddress = create((set, get) => ({
     }
   },
 
+
+  getAddressId: async(id)=>{
+    try{
+      const responseAddress = await axios.get("/address/"+id);
+      set({ addSesion: responseAddress.data });
+    }catch(error){
+      console.log(error)
+    }
+  },
+
   updateAddress: async (input) => {
     try {
       const updateAddress = await axios.put("/address", input, {
@@ -36,6 +47,10 @@ const useStoreAddress = create((set, get) => ({
     }
   },
 }));
+
+
+
+
 export default useStoreAddress;
 
 

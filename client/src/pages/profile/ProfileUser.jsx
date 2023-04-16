@@ -69,7 +69,7 @@ const ProfileUser = () => {
   const dbname2 = usuarioSesion.name||usuarioSesion.tnumber ? true : false;
   const register= usuarioSesion.id||usuarioSesion.username||usuarioSesion.name||usuarioSesion.email||usuarioSesion.tnumber?true:false
   const register2= usuarioSesion.username||usuarioSesion.email?false:true
-  console.log(usuarioSesion)
+
   
   
 return (
