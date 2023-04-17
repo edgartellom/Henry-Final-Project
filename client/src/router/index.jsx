@@ -9,6 +9,7 @@ import {
   Contact,
   CreateProduct,
   ShoppingCart,
+  Favorites,
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -41,9 +42,13 @@ const router = createBrowserRouter([
     element: <CreateProduct />,
   },
   {
-    path:"/cart",
-    element: <Cart />
-  }
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />,
+  },
 ]);
 
 export default router;
