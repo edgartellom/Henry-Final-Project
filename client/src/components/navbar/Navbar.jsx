@@ -64,18 +64,22 @@ if (!user) {
   return (
     <>
       <nav className="container-fluid">
-        <ul>
+        <ul className="logo">
           <li>
             <NavLink to="/">
-              <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
+            <a href="#">BESTIFY-PC</a>
+              
             </NavLink>
           </li>
         </ul>
 
-        <ul className="menu-items">
+        <ul className="search">
           <li>
             <SearchBar></SearchBar>
           </li>
+        </ul>
+
+        <ul className="container-x">
 
           <li>
             <details role="list" dir="list">

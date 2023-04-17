@@ -1,9 +1,9 @@
-.search {
+/* .search {
   height: calc(
     0.3rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
       var(--border-width) * 2
   ) !important;
-}
+} */
 
 .center{
   text-align: center;
@@ -26,7 +26,7 @@ img {
 }
 
 [role=link]:is([aria-current],:hover,:active,:focus), a:is([aria-current],:hover,:active,:focus){
-  -moz-text-decoration-line: none !important;
+  text-decoration-line: none !important;
   text-decoration: none;
 }
 
@@ -45,6 +45,9 @@ img {
 .container-fluid {
   padding: 8px;
   border-bottom: 3px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .container-fluid ul {
@@ -60,13 +63,30 @@ img {
 .menu-icon {
   display: none !important;
 }
-
-@media screen and (max-width: 600px) {
-  .menu-icon {
+.container-fluid .logo{
+  font-family: 'Righteous';
+    font-size: 26px;
+    color: #0db5a6;
+    text-decoration: none;
+}
+@media screen and (max-width: 720px) {
+  .container-fluid {
     display: flex;
+    flex-direction: column;
   }
-
-  .menu-items {
-    display: none;
+  .ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .logo{
+    font-size: x-large;
+  }
+  .search{
+    display: flex;
+    align-items: center;
+  }
+  .container-x{
+    display: flex;
+    justify-content:space-evenly
   }
 }
