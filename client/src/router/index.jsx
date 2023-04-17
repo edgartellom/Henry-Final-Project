@@ -1,4 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import Pending from "../components/paymentState/Pending";
+import Success from "../components/paymentState/Success";
+import Failure from "../components/paymentState/Failure";
 import Cart from "../pages/shoppingCart/Cart";
 import {
   Home,
@@ -10,6 +13,8 @@ import {
   CreateProduct,
   ShoppingCart,
   Favorites,
+  ProfileUser,
+  AdminDashboard,
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -38,6 +43,18 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
+    path: "/failure",
+    element: <Failure />,
+  },
+  {
+    path: "/pending",
+    element: <Pending />,
+  },
+  {
+    path: "/success",
+    element: <Success />,
+  },
+  {
     path: "/create",
     element: <CreateProduct />,
   },
@@ -48,6 +65,14 @@ const router = createBrowserRouter([
   {
     path: "/favorites",
     element: <Favorites />,
+  },
+  {
+    path: "/profile",
+    element: <ProfileUser />,
+  },
+  {
+    path: "/admin/*",
+    element: <AdminDashboard />,
   },
 ]);
 

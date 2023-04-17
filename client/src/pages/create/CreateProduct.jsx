@@ -74,10 +74,7 @@ function CreateProduct() {
     // //   history.push('/home')
     // }
     e.preventDefault();
-
-    await axios.post(`http://localhost:3001/products`, input, {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-    });
+    await axios.post(`http://localhost:3001/products`, input);
     alert("Product created successfully");
     setInput({
       name: "",
