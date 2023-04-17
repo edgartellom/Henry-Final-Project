@@ -58,8 +58,7 @@ const Navbar = () => {
         <ul className="logo">
           <li>
             <NavLink to="/">
-            <a href="#">BESTIFY-PC</a>
-              
+              <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
             </NavLink>
           </li>
         </ul>
@@ -71,7 +70,6 @@ const Navbar = () => {
         </ul>
 
         <ul className="container-x">
-
           <li>
             <details role="list" dir="list">
               <summary aria-haspopup="list-box" role="list">

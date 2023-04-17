@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import useStore from "../../store/products";
 import { Link } from "react-router-dom";
 import "./home.css";
-import img from '../img/mousese.jpg'
+import img from "../../assets/img/mousese.jpg";
 
 const Home = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -61,7 +61,9 @@ const Home = () => {
             <div className="card">
               <img src={product.image[0]} alt={product.name} />
               <div className="container-price">
-                <p className="price">{product.feature} {"$" + product.price}</p>
+                <p className="price">
+                  {product.feature} {"$" + product.price}
+                </p>
               </div>
             </div>
           </Link>
