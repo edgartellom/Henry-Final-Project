@@ -9,9 +9,11 @@ const getApiInfo = async () => {
     const users = dataFireStore.documents.map((user) => user.fields);
     const apiInfo = await users.map((el) => ({
       id: el.id && el.id.stringValue,
-      username: el.username && elusername.stringValue,
+      username: el.username && el.username.stringValue,
       email: el.email && el.email.stringValue,
       admin: el.admin && el.admin.booleanValue,
+      phoneNumber: el.phoneNumber && el.phoneNumber.integerValue,
+      photoURL: el.photoURL && el.photoURL.stringValue,
     }));
     return apiInfo;
   } catch (error) {
@@ -28,7 +30,12 @@ const getAllUsers = async () => {
       apiInfo.map(async (userData) => {
         const [user, created] = await User.findOrCreate({
           where: { id: userData.id, email: userData.email },
-          defaults: { username: userData.username, admin: userData.admin },
+          defaults: {
+            username: userData.username,
+            admin: userData.admin,
+            phoneNumber: userData.phoneNumber,
+            photoURL: userData.photoURL,
+          },
         });
         if (created) {
           createdCount++;
@@ -89,14 +96,17 @@ const createUser = async (user) => {
   }
 };
 
-const updateUser2 = async (user) => {
-  const { id, username, admin, state } = user;
+const updateUser = async (user) => {
+  const { id, username, favorites, admin, phoneNumber, photoURL, state } = user;
   try {
     const userFromDb = await User.findByPk(id);
     if (userFromDb) {
       await userFromDb.update({
         username,
+        favorites,
         admin,
+        phoneNumber,
+        photoURL,
         state,
       });
       return { message: "User updated succesfully", status: "success" };
@@ -125,7 +135,6 @@ const updateUser = async (user) => {
     return { message: error.message, status: "error" };
   }
 };
-
 
 
 module.exports = {

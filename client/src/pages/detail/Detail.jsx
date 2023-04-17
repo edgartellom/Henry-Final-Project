@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import useStore from "../../store/products";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Detail.css";
+import useUserStore from "../../store/users";
+import { useUserContext } from "../../components/contexts/userContexts";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -18,6 +20,11 @@ const formatter = new Intl.NumberFormat("en-US", {
 const Detail = () => {
   const [loadingInProgress, setLoading] = useState(false);
   const { filterId, detailProduct } = useStore();
+  const updateUser = useUserStore((state) => state.updateUser);
+  const { user } = useUserContext();
+  const getUserById = useUserStore((state) => state.getUserById);
+  const [favorito, setFavorito] = useState(false);
+  const [favoritosUsuario, setFavoritosUsuario] = useState([]);
 
   const { id } = useParams();
 
@@ -29,6 +36,53 @@ const Detail = () => {
     filterId(id);
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      const obtenerUsuario = (async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setFavoritosUsuario(userDb.favorites);
+        }
+      })();
+    }
+  }, [user]);
+
+  const addFavoriteHandle = async (e) => {
+    e.preventDefault();
+
+    if (favorito) {
+      // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
+      const userDb = await getUserById(user.uid);
+      if (userDb && userDb.favorites) {
+        const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+        updateUser({
+          ...userDb,
+          favorites: newFavoritesList,
+        });
+        setFavorito(false);
+        setFavoritosUsuario(newFavoritesList);
+      }
+      return;
+    }
+
+    // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
+    setFavorito(true);
+    const userDb = await getUserById(user.uid);
+    if (!userDb) {
+      console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+      return;
+    }
+    if (userDb && userDb.favorites) {
+      updateUser({
+        ...userDb,
+        favorites: [...userDb.favorites, id],
+      });
+      setFavoritosUsuario([...userDb.favorites, id]);
+    } else {
+      console.log("Error al actualizar el usuario: objeto de usuario inválido");
+    }
+  };
+
   //console.log(detailProduct)
 
   //var dataRecibe=id?products.filter((el)=>el.id===id):""
@@ -37,67 +91,82 @@ const Detail = () => {
     <>
       <Navbar></Navbar>
 
-      <main className="container">
+      <div className="contenedor">
         {loadingInProgress ? (
           <div className="loader-container">
             <ClipLoader color={"#fff"} loading={loadingInProgress} size={150} />
           </div>
         ) : (
           <div className="row">
-            <div className="col">
-              <div className="images">
-                <img className="img-fluid" src={detailProduct.image} />
+            <div className="x">
+
+          
+                <div className="contenedor-img">
+                  <img className="img-fluid" src={detailProduct.image} />
+                </div>
+            
+            <div className="contenedor-detalles">
+                 <h3 className="nameProduct">{detailProduct.feature}</h3>
+              <div className="cont-det-pro">
+                 <h4 className="detalles-product">Brand: {detailProduct.brand}</h4>
+                 <h4 className="detalles-product">Model: {detailProduct.model}</h4>
               </div>
-            </div>
-            <div className="col">
-              <hgroup>
-                <h3>{detailProduct.brand}</h3>
-                <h4>{detailProduct.model}</h4>
-              </hgroup>
               <div>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
               </div>
-              <p>{detailProduct.feature}</p>
+              
               <details>
                 <summary>Details</summary>
                 <ul>
-                  <li>{detailProduct.detail}</li>
+                  <li className="detail-product">{detailProduct.detail}</li>
                 </ul>
               </details>
+            
+              </div>
+              </div>
+              <div id="parte-pago">
               <hgroup>
                 <h5>Categories</h5>
                 <li>{detailProduct.categories}</li>
               </hgroup>
-              <p>
+              <p className="price">
                 Price: <strong>{formatter.format(detailProduct.price)}</strong>
               </p>
               <div className="actions">
                 <div className="btn-inline">
+
                   <NavLink
                     to="/cart"
                     role="button"
                     className="primary"
-                    data-tooltip="Add to Cart"
-                  >
+                    data-tooltip="Add to Cart">
                     <i className="bi bi-cart-plus"></i>
                   </NavLink>
-                  <NavLink
-                    to="/detail"
-                    role="button"
-                    className="secondary"
-                    data-tooltip="Add to favorites"
-                  >
-                    <i className="bi bi-heart"></i>
-                  </NavLink>
+                  {user && (
+                    <NavLink
+                      role="button"
+                      className="secondary"
+                      data-tooltip="Add to favorites"
+                      style={{
+                        backgroundColor:
+                          favoritosUsuario.find((el) => el === id) || favorito
+                            ? "red"
+                            : "gray",
+                      }}
+                      onClick={addFavoriteHandle}>
+                      <i className="bi bi-heart"></i>
+                    </NavLink>
+                  )}
                 </div>
               </div>
+              </div>
             </div>
-          </div>
+         
         )}
-      </main>
+      </div>
 
       <Footer></Footer>
     </>
