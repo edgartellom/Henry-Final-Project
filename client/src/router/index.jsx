@@ -16,7 +16,7 @@ import {
   CreateUser,
   CreateAddress,
   EditUser,
-  EditAddress,
+  UpdateAddress,
   AdminDashboard,
   } from "../pages";
 
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/editaddress/:idaddress/*",
-    element: <EditAddress />,
+    element: <UpdateAddress />,
   },
   {
     path: "/admin/*",

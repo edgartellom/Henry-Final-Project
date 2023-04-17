@@ -5,11 +5,11 @@ import useUserStore from "../../store/users";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
-import "./EditAddress.css";
+import "./UpdateAddress.css";
 import ClipLoader from "react-spinners/ClipLoader";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
-const EditAddress = () => {
+const UpdateAddress = () => {
   //const fetch = useStore((state) => state.fetchData)
   //var validacion=currentUser.uid?currentUser.uid:currentUser["Provider-specific UID"]
   const [loadingInProgress, setLoading] = useState(false);
@@ -188,4 +188,4 @@ console.log(error);*/
   );
 };
 
-export default EditAddress;
+export default UpdateAddress;
