@@ -91,45 +91,53 @@ const Detail = () => {
     <>
       <Navbar></Navbar>
 
-      <main className="container">
+      <div className="contenedor">
         {loadingInProgress ? (
           <div className="loader-container">
             <ClipLoader color={"#fff"} loading={loadingInProgress} size={150} />
           </div>
         ) : (
           <div className="row">
-            <div className="col">
-              <div className="images">
-                <img className="img-fluid" src={detailProduct.image} />
+            <div className="x">
+
+          
+                <div className="contenedor-img">
+                  <img className="img-fluid" src={detailProduct.image} />
+                </div>
+            
+            <div className="contenedor-detalles">
+                 <h3 className="nameProduct">{detailProduct.feature}</h3>
+              <div className="cont-det-pro">
+                 <h4 className="detalles-product">Brand: {detailProduct.brand}</h4>
+                 <h4 className="detalles-product">Model: {detailProduct.model}</h4>
               </div>
-            </div>
-            <div className="col">
-              <hgroup>
-                <h3>{detailProduct.brand}</h3>
-                <h4>{detailProduct.model}</h4>
-              </hgroup>
               <div>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
                 <i className="bi bi-star"></i>
               </div>
-              <p>{detailProduct.feature}</p>
+              
               <details>
                 <summary>Details</summary>
                 <ul>
-                  <li>{detailProduct.detail}</li>
+                  <li className="detail-product">{detailProduct.detail}</li>
                 </ul>
               </details>
+            
+              </div>
+              </div>
+              <div id="parte-pago">
               <hgroup>
                 <h5>Categories</h5>
                 <li>{detailProduct.categories}</li>
               </hgroup>
-              <p>
+              <p className="price">
                 Price: <strong>{formatter.format(detailProduct.price)}</strong>
               </p>
               <div className="actions">
                 <div className="btn-inline">
+
                   <NavLink
                     to="/cart"
                     role="button"
@@ -154,10 +162,11 @@ const Detail = () => {
                   )}
                 </div>
               </div>
+              </div>
             </div>
-          </div>
+         
         )}
-      </main>
+      </div>
 
       <Footer></Footer>
     </>

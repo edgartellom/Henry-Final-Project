@@ -141,7 +141,7 @@ const Products = () => {
   };
 
   return (
-    <>
+    <div style={{ display: "flex", justifyContent: "center", flexDirection:"column" }} >
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
@@ -246,7 +246,7 @@ const Products = () => {
       </IconButton>
       <List products={currentProducts} />
       <Footer />
-    </>
+    </div>
   );
 };
 
