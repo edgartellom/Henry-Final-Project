@@ -21,8 +21,45 @@ li {
   margin: 0 10px;
 }
 
+
 small {
   display: block;
   text-align: center;
   margin-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  footer{
+    display: flex;
+    flex-direction: column;
+ 
+  }
+   .seguinos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .redes{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .container-secundario{
+    border:  1px white solid;
+    border-left-color: rgba(143, 150, 188, 0);
+    border-right-color: rgba(188, 143, 143, 0);
+    border-top-color: #1b4a7c;
+    border-bottom-color: #1b4a7c;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  h3{
+    padding-top: 20px;
+  }
+  .conteiner-redes{
+    border:  1px white solid;
+    border-left-color: rgba(143, 150, 188, 0);
+    border-right-color: rgba(188, 143, 143, 0);
+    border-top-color: #1b4a7c;
+    border-bottom-color: #1b4a7c;
+
+  }
 }

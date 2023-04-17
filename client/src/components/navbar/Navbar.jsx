@@ -1,17 +1,19 @@
 import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
+import "@picocss/pico";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
+import "./bootstrap.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import { getAuth } from "firebase/auth";
-import ErrorAlert from "../alert/ErrorAlert";
+import { getAuth, signOut } from "firebase/auth";
 import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
-
 
 const Navbar = () => {
   const auth = getAuth();
@@ -20,11 +22,23 @@ const Navbar = () => {
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
 
-  const {cartTotalQuantity} = useSelector((state) => state.cart)
+  //const currentUser = useUserStore((state) => state.currentUser);
+
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
+  const navigate = useNavigate();
 
   // useEffect(()=> {
 
   // },[cartTotalQuantity])
+
+  const perfil=user?false:true
+
+if (!user) {
+  ("");
+} else {
+ var iduser = user.uid;
+}
+
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -40,21 +54,17 @@ const Navbar = () => {
     event.preventDefault();
     try {
       await signOut(auth);
-      // Sign-out successful.
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="info">You have logged out!</Alert>
-        </Stack>
-      );
+      alert("Sign-out successful");
+      navigate("/");
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error.message);
     }
   };
 
   return (
     <>
       <nav className="container-fluid">
-        <ul>
+        <ul className="logo">
           <li>
             <NavLink to="/">
               <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
@@ -62,10 +72,13 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <ul className="menu-items">
+        <ul className="search">
           <li>
             <SearchBar></SearchBar>
           </li>
+        </ul>
+
+        <ul className="container-x">
           <li>
             <details role="list" dir="list">
               <summary aria-haspopup="list-box" role="list">
@@ -93,24 +106,30 @@ const Navbar = () => {
                 <i className="bi bi-person-circle"></i>
               </summary>
               <ul role="listbox">
-                <li>
-                  <NavLink to="/">Profile</NavLink>
-                </li>
-                <li>
-                  {user ? (
+                {user ? (
+                  <>
+                    <li>
+                      <NavLink to={`/profile/${iduser}`}>Profile</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/" onClick={handleLogout}>
+                        Sign out
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/admin">admin</NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <li>
                     <NavLink to="/sign-in">Sign in</NavLink>
-                  ) : (
-                    <NavLink to="/" onClick={handleLogout}>
-                      Sign out
-                    </NavLink>
-                  )}
-                </li>
+                  </li>
+                )}
               </ul>
             </details>
           </li>
-          <li data-tooltip="Go to cart" data-placement = "bottom">
+          <li data-tooltip="Go to cart" data-placement="bottom">
             <NavLink to="/cart">
-              
               <i className="bi bi-cart"></i>
               <strong>
                 <sup>{cartTotalQuantity}</sup>
@@ -173,18 +192,22 @@ const Navbar = () => {
                   <i className="bi bi-person-circle"></i>
                 </summary>
                 <ul role="listbox">
-                  <li>
-                    <NavLink to="/">Profile</NavLink>
-                  </li>
-                  <li>
-                    {user ? (
+                  {user ? (
+                    <>
+                      <li>
+                        <NavLink to="/profile">Profile</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/" onClick={handleLogout}>
+                          Sign out
+                        </NavLink>
+                      </li>
+                    </>
+                  ) : (
+                    <li>
                       <NavLink to="/sign-in">Sign in</NavLink>
-                    ) : (
-                      <NavLink to="/" onClick={handleLogout}>
-                        Sign out
-                      </NavLink>
-                    )}
-                  </li>
+                    </li>
+                  )}
                 </ul>
               </details>
             </li>

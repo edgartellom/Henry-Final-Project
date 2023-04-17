@@ -1,0 +1,67 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6382f4;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(99, 130, 244, 1), rgb(0, 0, 0));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(99, 130, 244, 1), rgb(0, 0, 0))
+}
+
+.container {
+  padding-top: 5%;
+  width: 62%;
+  margin: 0 auto;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.border-radio{
+border-radius: .5rem;
+}
+.border-radio-full{
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+
+.card2{
+  width: 900px;
+  background-color: black;
+}
+
+.img-size{
+ width: 100px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.card-body{
+  width: 600px;
+ padding: 13px;
+}
+
+.section-styles{
+  /*background-color: #f4f5f7;*/
+  width: 32rem;
+}
+
+
+.card{
+  color: blue;
+}
+
+.alert-data{
+  animation: blinker 1s linear infinite;
+  color: rgb(255, 0, 0);
+  font-size: bolder;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

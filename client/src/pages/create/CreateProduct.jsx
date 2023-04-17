@@ -75,9 +75,10 @@ function CreateProduct() {
     // }
     e.preventDefault();
 
-    await axios.post(`http://localhost:3001/products`, input, {
+    await axios.post(`/products`, input, {
       headers: { "content-type": "application/x-www-form-urlencoded" },
     });
+
     alert("Product created successfully");
     setInput({
       name: "",
