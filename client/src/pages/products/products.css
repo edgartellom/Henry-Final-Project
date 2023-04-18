@@ -10,3 +10,7 @@
 .MuiPaginationItem-page {
   color: #d2bebe !important; /* Cambiar el color a rojo */
 }
+
+@media screen and (max-width: 720px) {
+  
+}

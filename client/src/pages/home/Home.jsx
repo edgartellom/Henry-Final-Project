@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import useStore from "../../store/products";
 import { Link } from "react-router-dom";
 import "./home.css";
+import img from "../../assets/img/mousese.jpg";
 
 const Home = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -40,7 +41,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextImg();
-    }, 2000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [currentImgIndex]);
@@ -51,21 +52,18 @@ const Home = () => {
       <div className="carousel">
         <img src={images[currentImgIndex]} alt="carousel-img" />
       </div>
-      <div className="botones">
-        <button id="boton_prev" onClick={prevImg}>
-          Prev
-        </button>
-        <button id="boton_next" onClick={nextImg}>
-          Next
-        </button>
-      </div>
+      <div className="text-banner"></div>
+      <img className="img-mouse" src={img} alt="Descripción de la imagen" />
+      <h3 className="populares">Mas populares</h3>
       <div className="card_div">
         {sliceProducts.map((product) => (
-          <Link to={`/products/${product.id}`}>
-            <div key={product.id} className="card">
+          <Link key={product.id} to={`/products/${product.id}`}>
+            <div className="card">
               <img src={product.image[0]} alt={product.name} />
-              <div>
-                {product.feature} {"$" + product.price}
+              <div className="container-price">
+                <p className="price">
+                  {product.feature} {"$" + product.price}
+                </p>
               </div>
             </div>
           </Link>

@@ -5,6 +5,7 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import customTheme from "../theme";
 import { setDoc, doc } from "firebase/firestore";
 import {
@@ -26,17 +27,12 @@ import {
 import { db, auth, app } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
-  fetchSignInMethodsForEmail,
   updateProfile,
 } from "firebase/auth";
-import ErrorAlert from "../../../components/alert/ErrorAlert";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -61,33 +57,11 @@ function ColorSchemeToggle({ onClick, ...props }) {
           setMode("light");
         }
         onClick?.(event);
-      }}
-    >
+      }}>
       {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
     </IconButton>
   );
 }
-
-// const Register = () => {
-//   const auth = getAuth();
-
-//   const handleRegisterSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//       const userCredential = await createUserWithEmailAndPassword(
-//         auth,
-//         email,
-//         password
-//       );
-//       // Signed up
-//       const user = userCredential.user;
-//       await sendEmailVerification(auth.currentUser);
-//       // ...
-//     } catch (error) {
-//       <ErrorAlert error={error} />;
-//       // ..
-//     }
-//   };
 
 const Register = () => {
   const registerUser = useUserStore((state) => state.registerUser);
@@ -95,7 +69,9 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
   const auth = getAuth();
 
   const handleEmailChange = (event) => {
@@ -120,43 +96,40 @@ const Register = () => {
       // Signed up
       const user = userCredential.user;
       //store user data in firestore database
-      try {
-        const userDoc = doc(db, "users", user.uid);
-        await setDoc(userDoc, {
-          id: user.uid,
-          username,
-          admin: false,
-          email: email,
-        });
-        const userData = {
-          id: user.uid,
-          username,
-          email,
-          admin: false,
-          // otros detalles del usuario
-        };
-        registerUser(userData);
 
-        await sendEmailVerification(auth.currentUser);
-        window.location.href = "/products";
-        // ...
-      } catch (error) {
-        console.log(error);
-      }
+      const userDoc = doc(db, "users", user.uid);
+      await setDoc(userDoc, {
+        id: user.uid,
+        username,
+        admin: false,
+        email: email,
+      });
+      const userData = {
+        id: user.uid,
+        username,
+        email,
+        admin: false,
+        // otros detalles del usuario
+      };
+      registerUser(userData);
+      await sendEmailVerification(auth.currentUser);
+      navigate("/products");
+      // window.location.href = "/products";
     } catch (error) {
       console.log(error);
       setError(error.message);
     }
   };
 
-
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   return (
     <CssVarsProvider
       defaultMode="dark"
       disableTransitionOnChange
-      theme={customTheme}
-    >
+      theme={customTheme}>
       <CssBaseline />
       <GlobalStyles
         styles={{
@@ -183,8 +156,7 @@ const Register = () => {
           [theme.getColorSchemeSelector("dark")]: {
             backgroundColor: "rgba(19 19 24 / 0.4)",
           },
-        })}
-      >
+        })}>
         <Box
           sx={{
             display: "flex",
@@ -194,8 +166,7 @@ const Register = () => {
               "clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw) * 999, 100%)",
             maxWidth: "100%",
             px: 2,
-          }}
-        >
+          }}>
           <Box
             component="header"
             sx={{
@@ -203,8 +174,7 @@ const Register = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-            }}
-          >
+            }}>
             <Typography
               fontWeight="lg"
               startDecorator={
@@ -223,8 +193,7 @@ const Register = () => {
                     }}
                   />
                 </Link>
-              }
-            >
+              }>
               Logo
             </Typography>
             <ColorSchemeToggle />
@@ -250,8 +219,7 @@ const Register = () => {
               [`& .${formLabelClasses.asterisk}`]: {
                 visibility: "hidden",
               },
-            }}
-          >
+            }}>
             <div>
               <Typography component="h2" fontSize="xl2" fontWeight="lg">
                 Register your account
@@ -269,8 +237,7 @@ const Register = () => {
                   password: formElements.password.value,
                 };
                 alert(JSON.stringify(data, null, 2));
-              }}
-            >
+              }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <FormControl required>
@@ -311,17 +278,25 @@ const Register = () => {
                 <FormLabel>Password</FormLabel>
                 <Input
                   placeholder="•••••••"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
+                  endDecorator={
+                    <IconButton onClick={handleTogglePassword}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  }
                 />
               </FormControl>
               <Button type="submit" fullWidth onClick={handleRegisterSubmit}>
                 Sign up
               </Button>
-
-              <Link fontSize="sm" href="/sign-in" fontWeight="lg">
+              <Link
+                component={RouterLink}
+                to="/sign-in"
+                fontSize="sm"
+                fontWeight="lg">
                 Already have an account? Sign in
               </Link>
             </form>
@@ -362,135 +337,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// import * as React from 'react';
-// import Avatar from '@mui/material/Avatar';
-// import Button from '@mui/material/Button';
-// import CssBaseline from '@mui/material/CssBaseline';
-// import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
-// import Grid from '@mui/material/Grid';
-// import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-// import Typography from '@mui/material/Typography';
-// import Container from '@mui/material/Container';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
-
-// const theme = createTheme();
-
-// export default function SignUp() {
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     const data = new FormData(event.currentTarget);
-//     console.log({
-//       email: data.get('email'),
-//       password: data.get('password'),
-//     });
-//   };
-
-//   return (
-//     <ThemeProvider theme={theme}>
-//       <Container component="main" maxWidth="xs">
-//         <CssBaseline />
-//         <Box
-//           sx={{
-//             marginTop: 8,
-//             display: 'flex',
-//             flexDirection: 'column',
-//             alignItems: 'center',
-//           }}
-//         >
-//           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-//             <LockOutlinedIcon />
-//           </Avatar>
-//           <Typography component="h1" variant="h5">
-//             Sign up
-//           </Typography>
-//           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-//             <Grid container spacing={2}>
-//               <Grid item xs={12} sm={6}>
-//                 <TextField
-//                   autoComplete="given-name"
-//                   name="firstName"
-//                   required
-//                   fullWidth
-//                   id="firstName"
-//                   label="First Name"
-//                   autoFocus
-//                 />
-//               </Grid>
-//               <Grid item xs={12} sm={6}>
-//                 <TextField
-//                   required
-//                   fullWidth
-//                   id="lastName"
-//                   label="Last Name"
-//                   name="lastName"
-//                   autoComplete="family-name"
-//                 />
-//               </Grid>
-//               <Grid item xs={12}>
-//                 <TextField
-//                   required
-//                   fullWidth
-//                   id="email"
-//                   label="Email Address"
-//                   name="email"
-//                   autoComplete="email"
-//                 />
-//               </Grid>
-//               <Grid item xs={12}>
-//                 <TextField
-//                   required
-//                   fullWidth
-//                   name="password"
-//                   label="Password"
-//                   type="password"
-//                   id="password"
-//                   autoComplete="new-password"
-//                 />
-//               </Grid>
-//               <Grid item xs={12}>
-//                 <FormControlLabel
-//                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-//                   label="I want to receive inspiration, marketing promotions and updates via email."
-//                 />
-//               </Grid>
-//             </Grid>
-//             <Button
-//               type="submit"
-//               fullWidth
-//               variant="contained"
-//               sx={{ mt: 3, mb: 2 }}
-//             >
-//               Sign Up
-//             </Button>
-//             <Grid container justifyContent="flex-end">
-//               <Grid item>
-//                 <Link href="#" variant="body2">
-//                   Already have an account? Sign in
-//                 </Link>
-//               </Grid>
-//             </Grid>
-//           </Box>
-//         </Box>
-//         <Copyright sx={{ mt: 5 }} />
-//       </Container>
-//     </ThemeProvider>
-//   );
-// }
