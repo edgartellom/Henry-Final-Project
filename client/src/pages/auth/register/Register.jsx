@@ -5,6 +5,7 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import customTheme from "../theme";
 import { setDoc, doc } from "firebase/firestore";
 import {
@@ -68,6 +69,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
   const auth = getAuth();
@@ -117,6 +119,10 @@ const Register = () => {
       console.log(error);
       setError(error.message);
     }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -272,10 +278,15 @@ const Register = () => {
                 <FormLabel>Password</FormLabel>
                 <Input
                   placeholder="•••••••"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
+                  endDecorator={
+                    <IconButton onClick={handleTogglePassword}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  }
                 />
               </FormControl>
               <Button type="submit" fullWidth onClick={handleRegisterSubmit}>

@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import useCommonStore from "../../store/commons";
 import { shallow } from "zustand/shallow";
+import "@picocss/pico";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
+import "./bootstrap.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +31,15 @@ const Navbar = () => {
 
   // },[cartTotalQuantity])
 
+  const perfil=user?false:true
+
+if (!user) {
+  ("");
+} else {
+ var iduser = user.uid;
+}
+
+
   const ChangeTheme = (e) => {
     e.preventDefault();
     changeTheme();
@@ -52,7 +64,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="container-fluid">
-        <ul>
+        <ul className="logo">
           <li>
             <NavLink to="/">
               <strong style={{ textAlign: "left" }}>BESTIFY-PC</strong>
@@ -60,10 +72,13 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <ul className="menu-items">
+        <ul className="search">
           <li>
             <SearchBar></SearchBar>
           </li>
+        </ul>
+
+        <ul className="container-x">
           <li>
             <details role="list" dir="list">
               <summary aria-haspopup="list-box" role="list">
@@ -94,12 +109,15 @@ const Navbar = () => {
                 {user ? (
                   <>
                     <li>
-                      <NavLink to="/profile">Profile</NavLink>
+                      <NavLink to={`/profile/${iduser}`}>Profile</NavLink>
                     </li>
                     <li>
                       <NavLink to="/" onClick={handleLogout}>
                         Sign out
                       </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/admin">admin</NavLink>
                     </li>
                   </>
                 ) : (

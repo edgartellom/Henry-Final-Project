@@ -4,6 +4,7 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import customTheme from "../theme";
 import GoogleIcon from "../GoogleIcon";
 import {
@@ -71,9 +72,12 @@ const Login = () => {
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
+  const getUserById = useUserStore((state) => state.getUserById);
+  const registerUser = useUserStore((state) => state.registerUser);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -149,15 +153,24 @@ const Login = () => {
       const token = credential.accessToken;
       const user = result.user;
       if (user !== null) {
-        user.providerData.forEach((profile) => {
-          setUser({
-            "Sign-in provider": profile.providerId,
-            "Provider-specific UID": profile.uid,
-            Name: profile.displayName,
-            Email: profile.email,
-            "Photo URL": profile.photoURL,
-          });
-        });
+        const userData = {
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+          admin: false,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          // otros detalles del usuario
+        };
+
+        setUser(userData);
+        const userDb = await getUserById(user.uid);
+        if (!userDb) {
+          const userDoc = doc(db, "users", user.uid);
+          await setDoc(userDoc, userData);
+
+          registerUser(userData);
+        }
       }
       navigate("/products");
     } catch (error) {
@@ -165,6 +178,10 @@ const Login = () => {
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -296,10 +313,15 @@ const Login = () => {
                 <FormLabel>Password</FormLabel>
                 <Input
                   placeholder="•••••••"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
+                  endDecorator={
+                    <IconButton onClick={handleTogglePassword}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  }
                 />
               </FormControl>
               <Box

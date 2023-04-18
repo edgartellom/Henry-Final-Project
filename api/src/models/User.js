@@ -12,6 +12,12 @@ module.exports = (sequelize) => {
       username: {
         type: DataTypes.STRING,
       },
+      name: {
+        type: DataTypes.STRING,
+      },
+      phoneNumber: {
+        type: DataTypes.STRING,
+      },
       email: {
         type: DataTypes.STRING,
         unique: true,
@@ -23,6 +29,16 @@ module.exports = (sequelize) => {
       admin: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
+      },
+      phoneNumber: {
+        type: DataTypes.INTEGER,
+      },
+      photoURL: {
+        type: DataTypes.STRING,
+      },
+      favorites: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [],
       },
       state: {
         type: DataTypes.BOOLEAN,
