@@ -1,0 +1,7 @@
+.container-principal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; /* opcional, si se quiere centrar horizontalmente también */
+    height: 100vh;
+  }
