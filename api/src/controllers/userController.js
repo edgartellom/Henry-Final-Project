@@ -117,26 +117,6 @@ const updateUser = async (user) => {
   }
 };
 
-const updateUser = async (user) => {
-  const { id,username, name,phoneNumber,admin, state } = user;
-  try {
-    const actualiza=await User.update({
-      id:id,
-      username:username,
-      name:name,
-      phoneNumber:phoneNumber,
-    },
-    {where: { id: id }});
-   
-
-  return{message:"todo bien"}
-   
-  } catch (error) {
-    return { message: error.message, status: "error" };
-  }
-};
-
-
 module.exports = {
   getAllUsers,
   getUserById,
