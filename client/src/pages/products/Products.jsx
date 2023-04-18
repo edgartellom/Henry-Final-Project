@@ -177,7 +177,7 @@ const Products = () => {
   };
 
   return (
-    <>
+    <div style={{ display: "flex", justifyContent: "center", flexDirection:"column" }} >
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
@@ -187,7 +187,7 @@ const Products = () => {
             page={page}
             onChange={handleChange}
             color="primary"
-            style={{ "& .MuiButton-label": { color: "red" } }}
+            style={{ "& .MuiButtonLabel": { color: "red" } }}
           />
         </Stack>
       </div>
@@ -196,23 +196,21 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Category
             </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
               value={state.categoryFilter}
               label="Age"
-              onChange={handleCategoryChange}
-            >
+              onChange={handleCategoryChange}>
               {res.length > 0 ? (
                 res.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {e.name}
                   </MenuItem>
                 ))
@@ -225,23 +223,21 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Brand
             </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
               value={state.brandFilter}
               label="Age"
-              onChange={handleBrandChange}
-            >
+              onChange={handleBrandChange}>
               {rNames &&
                 rNames.map((product) => (
                   <MenuItem
                     key={product}
                     value={product}
                     className="option"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {product}
                   </MenuItem>
                 ))}
@@ -252,23 +248,21 @@ const Products = () => {
         <div style={{ margin: "0 10px" }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small" style={{ color: "#2196f3" }}>
-              Filter
+              Type
             </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
               value={state.categoryFilter2}
               label="Age"
-              onChange={handleTypeChange}
-            >
+              onChange={handleTypeChange}>
               {res2.length > 0 ? (
                 res2.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}
-                  >
+                    style={{ color: "#2196f3" }}>
                     {e.name}
                   </MenuItem>
                 ))
@@ -282,14 +276,13 @@ const Products = () => {
       <IconButton
         onClick={handleRefresh}
         size="small"
-        style={{ color: "#2196f3" }}
-      >
+        style={{ color: "#2196f3" }}>
         <RefreshIcon fontSize="small" />
         <Box mr={3}>Refresh</Box>
       </IconButton>
       <List products={currentProducts} />
       <Footer />
-    </>
+    </div>
   );
 };
 

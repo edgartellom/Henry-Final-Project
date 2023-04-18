@@ -1,8 +1,10 @@
 import * as React from "react";
+import { useState } from "react";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import FormLabel, { formLabelClasses } from "@mui/joy/FormLabel";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import customTheme from "../theme";
 import GoogleIcon from "../GoogleIcon";
 import {
@@ -25,18 +27,16 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   fetchSignInMethodsForEmail,
   updateProfile,
 } from "firebase/auth";
 import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
-import ErrorAlert from "../../../components/alert/ErrorAlert";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -69,9 +69,18 @@ function ColorSchemeToggle({ onClick, ...props }) {
 
 const Login = () => {
   const auth = getAuth();
+  const navigate = useNavigate();
   const user = auth.currentUser;
   const provider = new GoogleAuthProvider();
   const setUser = useUserStore((state) => state.setUser);
+  const getUserById = useUserStore((state) => state.getUserById);
+  const registerUser = useUserStore((state) => state.registerUser);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const current = useUserStore((state) => state.currentUser)
+  const [cartId, setCartId] = useState('')
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -95,21 +104,48 @@ const Login = () => {
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Signed in
-      if (user !== null) {
-        const username = user.displayName;
-        const email = user.email;
-        const uid = user.uid;
+      const emailRegex =
+        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2})?$/i;
+      if (!emailRegex.test(email)) {
+        setError("Invalid email format.");
+        return;
       }
-      return (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert severity="success">Login succesfully!</Alert>
-        </Stack>
+      const confirmEmail = await fetchSignInMethodsForEmail(auth, email);
+      if (confirmEmail.length === 0) {
+        console.log("error");
+        setError("Email address not registered. Please sign up.");
+        setTimeout(() => navigate("/sign-up"), 3000);
+        return;
+      }
+
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
       );
+
+      setUser(userCredential.user);
+      setError(""); // Limpia cualquier mensaje de error previo
+      console.log(current)
+      console.log(current.id)
+        const userId = current.id
+       const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+      headers: {"content-type": "application/json"}
+      })
+      const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
+      setCartId(cartUid.data.cartCreated.id)
+      console.log(cartUid.data)
+      console.log(cartUid.data.cartCreated.id)
+      console.log(cartId)
+      const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
+      console.log(response.data)
+
+      navigate("/products");
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error.code, error.message);
+      setError(error.message);
     }
+
   };
 
   const handlePasswordReset = async (event) => {
@@ -124,7 +160,7 @@ const Login = () => {
         </Stack>
       );
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
     }
   };
 
@@ -135,22 +171,35 @@ const Login = () => {
       const token = credential.accessToken;
       const user = result.user;
       if (user !== null) {
-        user.providerData.forEach((profile) => {
-          setUser({
-            "Sign-in provider": profile.providerId,
-            "Provider-specific UID": profile.uid,
-            Name: profile.displayName,
-            Email: profile.email,
-            "Photo URL": profile.photoURL,
-          });
-        });
+        const userData = {
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+          admin: false,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          // otros detalles del usuario
+        };
+
+        setUser(userData);
+        const userDb = await getUserById(user.uid);
+        if (!userDb) {
+          const userDoc = doc(db, "users", user.uid);
+          await setDoc(userDoc, userData);
+
+          registerUser(userData);
+        }
       }
-      // window.location.href = "/";
+      navigate("/products");
     } catch (error) {
-      <ErrorAlert error={error} />;
+      console.log(error);
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -274,11 +323,24 @@ const Login = () => {
                   placeholder="Enter your email"
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </FormControl>
               <FormControl required>
                 <FormLabel>Password</FormLabel>
-                <Input placeholder="•••••••" type="password" name="password" />
+                <Input
+                  placeholder="•••••••"
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  endDecorator={
+                    <IconButton onClick={handleTogglePassword}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  }
+                />
               </FormControl>
               <Box
                 sx={{
@@ -299,13 +361,22 @@ const Login = () => {
                   Forgot password
                 </Link>
               </Box>
-              <Button type="submit" fullWidth onClick={handleLoginSubmit}>
+              <Button
+                type="submit"
+                value={email}
+                fullWidth
+                onClick={(event) => handleLoginSubmit(event)}>
                 Sign in
               </Button>
-              <Link fontSize="sm" href="/sign-up" fontWeight="lg">
+              <Link
+                component={RouterLink}
+                to="/sign-up"
+                fontSize="sm"
+                fontWeight="lg">
                 Don&apos;t have an account? Sign Up
               </Link>
             </form>
+            {error && <p>{error}</p>}
             <Button
               onClick={handleLoginGoogle}
               variant="outlined"

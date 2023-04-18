@@ -15,16 +15,18 @@
 <li>DB_DEPLOY=</li>
 <li>API_URL=</li>
 <li>API_FIRESTORE_URL=</li>
-<li>STRIPE_API_KEY=</li>
 </ul>
 <hr/>
 
 <ul><h3>Create .env file in /client & add variables as following : </h3>
 <li>VITE_APP_API=</li>
-<li>VITE_EMAIL_SERVICE_ID=</li>
-<li>VITE_EMAIL_PUBLIC_KEY=</li>
-<li>VITE_EMAIL_TEMPLATE_ID=</li>
-<li>VITE_STRIPE_API_KEY=</li>
+<li>VITE_FIREBASE_APIKEY=</li>
+<li>VITE_FIREBASE_AUTHDOMAIN=</li>
+<li>VITE_FIREBASE_PROJECTID=</li>
+<li>VITE_FIREBASE_STORAGEBUCKET=</li>
+<li>VITE_FIREBASE_MESSAGINGSENDERID=</li>
+<li>VITE_FIREBASE_APPID=</li>
+<li>VITE_FIREBASE_MEASUREMENTID=</li>
 </ul>
 <hr/>
 

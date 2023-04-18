@@ -7,7 +7,6 @@ export const fetchById = createAsyncThunk('cart/fetchById', async (id) => {
   return response.data;
 });
 
-
 const initialState = {
   //cartItems: [],
   cartItems: localStorage.getItem("cartItems")
@@ -17,8 +16,6 @@ const initialState = {
   cartTotalAmount: 0,
   dataList:[]
 };
-
-
 
 const cartSlice = createSlice({
   name: "cart",
@@ -34,11 +31,9 @@ const cartSlice = createSlice({
           ...state.cartItems[existingIndex],
           cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
         };
-        
       } else {
         let tempProductItem = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(tempProductItem);
-        
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
@@ -49,16 +44,12 @@ const cartSlice = createSlice({
 
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1;
-
-        
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
         const nextCartItems = state.cartItems.filter(
           (item) => item.id !== action.payload.id
         );
 
         state.cartItems = nextCartItems;
-
-        
       }
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -71,13 +62,11 @@ const cartSlice = createSlice({
           );
 
           state.cartItems = nextCartItems;
-
-          
         }
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         return state;
       });
-    }, 
+    },
     getTotals(state, action) {
       let { total, quantity } = state.cartItems.reduce(
         (cartTotal, cartItem) => {

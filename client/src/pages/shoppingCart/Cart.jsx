@@ -5,100 +5,133 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import { fetchById } from "../../store/ShoppingCartRedux";
 
-const Cart = () => {
+import { useUserContext } from "../../components/contexts/userContexts";
+import useUserStore from "../../store/users";
 
+const Cart = () => {
+  
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const cartList = useSelector((state) => state.cart.dataList)
   const [cart3, setCart3] = useState([])
+  const getUserById = useUserStore((state) => state.getUserById);
+  const current = useUserStore((state) => state.currentUser)
+
+  const carritoID = '0034cadd-0efe-4511-be19-9b680649f35d'
+
+ 
+
+  const [userId, setUserId] = useState('')
+  const [cartId, setCartId] = useState('')
+
+
+  const { user } = useUserContext();
   
-  var cart2 = [...cart.cartItems]
-  const dispatch = useDispatch();
+  useEffect(() => {
+    if (user) {
+      const obtenerUsuario = (async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setUserId(userDb.id)
+        }
+      })();
+      console.log(userId)
+      console.log(current)
+    }
+  }, [user]);
+
+console.log(userId)
+  useEffect(() => {
+    getCartId()
+  })
+
+  const getCartId = async() => {
+    console.log(userId)
+
+  //este post es para crear id a los carritos con el id del usuario
+
+  // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+  //   headers: {"content-type": "application/json"}
+  //})
+
+
+
+
+//setCartId(cartUid.data.cartCreated.id)
+
+  // console.log(cartUid)
+  // console.log(cartUid.data.cartCreated.id)
 
   const aux = cart.cartItems.map((i) => {
-    const cartId = 'dfe38ca0-0ea1-4218-a509-d4c52ecdcc93'
-    return {...i, cartId}
+    const carritoId = carritoID
+    return {...i, carritoId}
   })
 
+  console.log(aux)
   const aux2 = aux.map((e) => {
-    const { cartQuantity, id, ...rest } = e;
-    return { ...rest, quantity: cartQuantity, productId:id };
+    const { cartQuantity, id, carritoId, ...rest } = e;
+    return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
   })
 
-  //console.log(aux)
+  console.log(userId)
+
   console.log(aux2)
+  var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
+         headers: {"content-type": "application/json"}
+    })
+    console.log(res.data) 
+  }
+    
+   
+     
+  //console.log(userDb)
+  
+//  const aux = cart.cartItems.map((i) => {
+//     const carritoId = cartId
+//     return {...i, carritoId}
+//   })
+
+//   const aux2 = aux.map((e) => {
+//     const { cartQuantity, id, ...rest } = e;
+//     return { ...rest, quantity: cartQuantity, productId:id };
+//   })
+  
+
+  
+
+
+
   const userName = 'kelvin'
-  const userId = 123;
-  const jsonId = 1
-  const cartId = 'dfe38ca0-0ea1-4218-a509-d4c52ecdcc93'
+  const userId2 = 123
+  const jsonId = 1;
+  const cartId2 = 'dfe38ca0-0ea1-4218-a509-d4c52ecdcc93'
   const cartDetailsId = '1060f91e-1f41-4417-a037-07162a205e9b'
 
   //"content-type": "application/x-www-form-urlencoded" // application/json
 
-  let axiosConfig = {
-    headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
-        "Access-Control-Allow-Origin": "*",
-    }
-  };
-
-  // var res =  await axios.post(`http://localhost:3001/cartDetails`, {aux2}, {
-  //     headers: {"content-type": "application/x-www-form-urlencoded"}
-  //     })
-
- 
-
-  const myObject = [{ 
-    price: 10,
-    quantity:5 , 
-    cartId: "dfe38ca0-0ea1-4218-a509-d4c52ecdcc93", 
-    productId: "6b2f9ed7-9539-4132-96c4-53b549c545ba"
-  }]
-
-const obj5 = [{
-  cartId: "dfe38ca0-0ea1-4218-a509-d4c52ecdcc93",
-  
-  price: "63113.00",
-  // name:"MOTHER",
-    productId: "e1999c4d-30e0-45b1-969d-022c3818601d",
-  //  productId: "6b2f9ed7-9539-4132-96c4-53b549c545ba",
-  quantity: 3
-}]
-
-  console.log(aux2[0])
-
-  
-
   const cartDB = async() => {
-    const axus = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
-    setCart3([...axus.data, ...cart.cartItems])
+    //const axus = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
+    //setCart3([...axus.data, ...cart.cartItems])
     console.log(cart3)
-    console.log(aux2)
-
-    //cart2 = [...cart.cartItems, ...aux2.data]
-  
    
-  
     if(userName == 'kevin'){
     var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
          headers: {"content-type": "application/json"}
     })
-  }
+  
     console.log(cart3)   
   }
-
+}
 
   useEffect(()=> {
-  cartDB()
-  dispatch(fetchById(jsonId))
-    console.log(cartList)
-    console.log("hi")
+  //cartDB()
+  //dispatch(fetchById(jsonId))
+    //console.log(cartList)
+    
   },[])
   console.log(cartList)
 
-  // Solo funciona asi
-  // var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
-  //        headers: {"content-type": "application/json"}
-  //        })
+  
  
 
   useEffect(() => {
@@ -109,21 +142,6 @@ const obj5 = [{
   }, [cart, dispatch]);
 
   console.log(cart3)
-  // useEffect(()=>{
-  //   getCart()
-  //   dispatch(addItem(data))
-  //   //console.log(data)
-  //   console.log(cart.cartItems)
-  // },[])
-
-  // const getCart = async () => {
-  //   if(userId){
-  //     const cartData = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
-  //    //console.log(cartData.data)
-  //     setData(cartData.data)
-  //     //console.log(data)
-  //   }
-  // }
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -141,7 +159,7 @@ const obj5 = [{
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {/* {cart.cartItems.length === 0 ? ( */}
-      {cart3.length === 0 ? (
+      {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -152,8 +170,7 @@ const obj5 = [{
                 height="20"
                 fill="currentColor"
                 className="bi bi-arrow-left"
-                viewBox="0 0 16 16"
-              >
+                viewBox="0 0 16 16">
                 <path
                   fillRule="evenodd"
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
@@ -172,8 +189,8 @@ const obj5 = [{
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart3 &&
-              cart3.map((cartItem) => (
+            {cart.cartItems &&
+              cart.cartItems.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
                     {/* <img src={cartItem.image[0]} alt={cartItem.name} /> */}
@@ -185,7 +202,7 @@ const obj5 = [{
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${cartItem.price}</div>
+                  <div className="cart-product-price">${parseFloat(cartItem.price)}</div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
@@ -194,7 +211,7 @@ const obj5 = [{
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
                   <div className="cart-product-total-price">
-                    ${cartItem.price * cartItem.cartQuantity}
+                    ${parseFloat(cartItem.price )* cartItem.cartQuantity}
                   </div>
                 </div>
               ))}
@@ -218,8 +235,7 @@ const obj5 = [{
                     height="20"
                     fill="currentColor"
                     className="bi bi-arrow-left"
-                    viewBox="0 0 16 16"
-                  >
+                    viewBox="0 0 16 16">
                     <path
                       fillRule="evenodd"
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
@@ -237,3 +253,9 @@ const obj5 = [{
 };
 
 export default Cart;
+
+
+// Solo funciona asi
+  // var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
+  //        headers: {"content-type": "application/json"}
+  //        })
