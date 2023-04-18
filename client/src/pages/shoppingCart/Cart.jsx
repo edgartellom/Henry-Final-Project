@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, addToCart, clearCart, decreaseCart, getTotals,removeFromCart} from "../../store/ShoppingCartRedux";  
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import { fetchById } from "../../store/ShoppingCartRedux";
 
 const Cart = () => {
 
   const cart = useSelector((state) => state.cart);
+  const cartList = useSelector((state) => state.cart.dataList)
+  const [cart3, setCart3] = useState([])
   
-
-  const cart2 = [...cart.cartItems, 1]
+  var cart2 = [...cart.cartItems]
   const dispatch = useDispatch();
 
   const aux = cart.cartItems.map((i) => {
@@ -24,8 +26,9 @@ const Cart = () => {
 
   //console.log(aux)
   console.log(aux2)
-  const userName = 'kevin'
+  const userName = 'kelvin'
   const userId = 123;
+  const jsonId = 1
   const cartId = 'dfe38ca0-0ea1-4218-a509-d4c52ecdcc93'
   const cartDetailsId = '1060f91e-1f41-4417-a037-07162a205e9b'
 
@@ -42,28 +45,60 @@ const Cart = () => {
   //     headers: {"content-type": "application/x-www-form-urlencoded"}
   //     })
 
-  // const myObject = [{ 
-  //   price: 10,
-  //   quantity:5 , 
-  //   cartId: "dfe38ca0-0ea1-4218-a509-d4c52ecdcc93", 
-  //   productId: "6b2f9ed7-9539-4132-96c4-53b549c545ba"
-  // }]
+ 
+
+  const myObject = [{ 
+    price: 10,
+    quantity:5 , 
+    cartId: "dfe38ca0-0ea1-4218-a509-d4c52ecdcc93", 
+    productId: "6b2f9ed7-9539-4132-96c4-53b549c545ba"
+  }]
+
+const obj5 = [{
+  cartId: "dfe38ca0-0ea1-4218-a509-d4c52ecdcc93",
+  
+  price: "63113.00",
+  // name:"MOTHER",
+    productId: "e1999c4d-30e0-45b1-969d-022c3818601d",
+  //  productId: "6b2f9ed7-9539-4132-96c4-53b549c545ba",
+  quantity: 3
+}]
+
+  console.log(aux2[0])
+
+  
 
   const cartDB = async() => {
     const axus = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
+    setCart3([...axus.data, ...cart.cartItems])
+    console.log(cart3)
     console.log(aux2)
-    
-   var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2,  {
-         headers: {"content-type": "application/x-www-form-urlencoded"}
-         })
 
-    console.log(res.data)
-    console.log(axus.data)
+    //cart2 = [...cart.cartItems, ...aux2.data]
+  
+   
+  
+    if(userName == 'kevin'){
+    var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
+         headers: {"content-type": "application/json"}
+    })
   }
+    console.log(cart3)   
+  }
+
 
   useEffect(()=> {
   cartDB()
+  dispatch(fetchById(jsonId))
+    console.log(cartList)
+    console.log("hi")
   },[])
+  console.log(cartList)
+
+  // Solo funciona asi
+  // var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
+  //        headers: {"content-type": "application/json"}
+  //        })
  
 
   useEffect(() => {
@@ -73,6 +108,7 @@ const Cart = () => {
     
   }, [cart, dispatch]);
 
+  console.log(cart3)
   // useEffect(()=>{
   //   getCart()
   //   dispatch(addItem(data))
@@ -105,7 +141,7 @@ const Cart = () => {
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {/* {cart.cartItems.length === 0 ? ( */}
-      {cart.cartItems.length === 0 ? (
+      {cart3.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -136,8 +172,8 @@ const Cart = () => {
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems &&
-              cart.cartItems.map((cartItem) => (
+            {cart3 &&
+              cart3.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
                     {/* <img src={cartItem.image[0]} alt={cartItem.name} /> */}

@@ -30,7 +30,9 @@ const createDetail = async (details) => {
       let el = details[i];
       let cartFound = await Cart.findByPk(el.cartId);
       let productFound = await Product.findByPk(el.productId);
-      if (!el.cartId || !el.productId || !cartFound || !productFound)
+      // if (!el.cartId || !el.productId || !cartFound || !productFound)
+      // if (!el.cartId || !el.productId || !cartFound)
+      if (!el.cartId || !cartFound)
         isValid = false;
       i++;
     }
