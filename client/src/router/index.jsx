@@ -12,6 +12,7 @@ import {
   Contact,
   CreateProduct,
   ShoppingCart,
+  Favorites,
   ProfileUser,
   CreateUser,
   CreateAddress,
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />,
   },
   {
     path: "/profile/:iduser",
