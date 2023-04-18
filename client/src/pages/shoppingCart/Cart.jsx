@@ -41,7 +41,7 @@ const Cart = () => {
       name: 'Compra Bestify-PC' // cambiar el nombre aquí
     };
 
-    axios.post('http://localhost:3001/mercadopago/create-payment', data)
+    axios.post('/mercadopago/create-payment', data)
       .then(response => {
         // console.log(response.data.init_point)
         window.location.replace(response.data.init_point);

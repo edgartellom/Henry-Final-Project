@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import './Success.css'
 import VerifiedIcon from '@mui/icons-material/Verified';
+import { useNavigate } from "react-router-dom";
+
 const Success = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = 'http://127.0.0.1:5173/';
-    }, 7000); // tiempo en milisegundos (5 segundos)
+      navigate("/");
+    }, 7000); // tiempo en milisegundos (7 segundos)
 
     return () => clearTimeout(timer);
   }, []);

@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
 import './Failure.css'
+import { useNavigate } from "react-router-dom";
+
 
 const Failure = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = 'http://127.0.0.1:5173/';
-    }, 7000); // tiempo en milisegundos (5 segundos)
+      navigate("/");
+    }, 7000); // tiempo en milisegundos (7 segundos)
 
     return () => clearTimeout(timer);
   }, []);
