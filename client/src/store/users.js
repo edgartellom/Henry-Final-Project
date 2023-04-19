@@ -8,6 +8,35 @@ const useUserStore = create(
       (set) => ({
         users: [],
         currentUser: {},
+
+        idCart:'',
+        
+        updateId: (newId) => set((state) => ({ ...state, idCart: newId })),
+        
+        getCart: async (userId) => {
+          try {
+            const response = await axios.get(`/carts/${userId}`);
+            set({ idCart: response.data });
+            return response.data;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+        },
+
+        createCart: async (userData) => {
+          try {
+            const response = await axios.post("/carts", userData);
+            set({idCart: response.data})
+            console.log(response.data);
+
+            return response.data
+          } catch (error) {
+            console.error(error);
+          }
+        },
+
+
         fetchUsers: async () => {
           try {
             const response = await axios.get("/users");

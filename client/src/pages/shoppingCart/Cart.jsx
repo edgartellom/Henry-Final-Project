@@ -7,6 +7,7 @@ import { fetchById } from "../../store/ShoppingCartRedux";
 
 import { useUserContext } from "../../components/contexts/userContexts";
 import useUserStore from "../../store/users";
+import useCartStore from "../../store/shoppingCartZustand";
 
 const Cart = () => {
   
@@ -16,6 +17,10 @@ const Cart = () => {
   const [cart3, setCart3] = useState([])
   const getUserById = useUserStore((state) => state.getUserById);
   const current = useUserStore((state) => state.currentUser)
+
+  const cartZustand = useCartStore((state) => state.cart)
+
+  const finalCart =[...cart.cartItems,...cartZustand]
 
   const carritoID = '0034cadd-0efe-4511-be19-9b680649f35d'
 
@@ -37,6 +42,7 @@ const Cart = () => {
       })();
       console.log(userId)
       console.log(current)
+      console.log(finalCart)
     }
   }, [user]);
 
@@ -76,10 +82,11 @@ console.log(userId)
   console.log(userId)
 
   console.log(aux2)
-  var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
-         headers: {"content-type": "application/json"}
-    })
-    console.log(res.data) 
+  // codigo sirve pero mal ubicado
+  // var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
+  //        headers: {"content-type": "application/json"}
+  //   })
+  //   console.log(res.data) 
   }
     
    
@@ -159,7 +166,7 @@ console.log(userId)
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {/* {cart.cartItems.length === 0 ? ( */}
-      {cart.cartItems.length === 0 ? (
+      {finalCart.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -189,11 +196,11 @@ console.log(userId)
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems &&
-              cart.cartItems.map((cartItem) => (
+            {finalCart &&
+              finalCart.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
-                    {/* <img src={cartItem.image[0]} alt={cartItem.name} /> */}
+                    <img src={cartItem.image[0]} alt={cartItem.name} />
                     <div>
                       <h4>{cartItem.name}</h4>
                       <p>{cartItem.desc}</p>

@@ -37,6 +37,7 @@ import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
+import useCartStore from "../../../store/shoppingCartZustand";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -82,6 +83,19 @@ const Login = () => {
   const current = useUserStore((state) => state.currentUser)
   const [cartId, setCartId] = useState('')
 
+  //////////////////////////////////////// USER Store
+  const idCart = useUserStore((state) => state.idCart)
+  const getCart = useUserStore((state) => state.getCart)
+  const updateId = useUserStore((state) => state.updateId)
+  const createCart = useUserStore((state) => state.createCart)
+/////////////////////////////////////////////////////////Cart Store
+
+const getProductById = useCartStore((state) => state.getProductById)
+const cart = useCartStore((state) => state.cart)
+
+
+
+
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
@@ -126,16 +140,36 @@ const Login = () => {
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
-      console.log(current)
-      console.log(current.id)
-        const userId = current.id
-       const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
-      headers: {"content-type": "application/json"}
-      })
-      const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
-      setCartId(cartUid.data.cartCreated.id)
-      console.log(cartUid.data)
-      console.log(cartUid.data.cartCreated.id)
+      // console.log(current)
+       console.log(current.id)
+       
+       
+        console.log(idCart)
+        console.log(idCart[0].id)
+        const temporal = idCart[0].id
+        console.log(temporal)
+        const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
+
+      if(!idCart){
+        getCart(current.id)
+          
+      }else{
+        getProductById(idCart[0].id)      
+
+      }
+      if(cart.length != 0){
+        console.log("product list loaded")
+      }
+      console.log(idCart)
+      console.log(cart)
+      // }else{
+      //   // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+      //   //     headers: {"content-type": "application/json"}
+      //   //   })
+      // }
+
+      
+      
       console.log(cartId)
       const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
       console.log(response.data)

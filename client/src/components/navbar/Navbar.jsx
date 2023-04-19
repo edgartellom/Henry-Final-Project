@@ -18,6 +18,7 @@ import { getTotals } from "../../store/ShoppingCartRedux";
 
 import { useUserContext } from "../../components/contexts/userContexts";
 import useUserStore from "../../store/users";
+import useCartStore from "../../store/shoppingCartZustand";
 
 const Navbar = () => {
   const auth = getAuth();
@@ -38,7 +39,25 @@ const Navbar = () => {
 
   /////////////////////////////
   const cart2 = useSelector((state) => state.cart);
+  const createProduct = useCartStore((state) => state.createProduct)
+  const idCart = useUserStore((state) => state.idCart) 
+  const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
+  //idcart[0].id => line 47
+  const aux = cart.map((i) => {
+    const carritoId = idCart[0].id
+    return {...i, carritoId}
+  })
 
+  
+  const aux2 = aux.map((e) => {
+    const { cartQuantity, id, carritoId, ...rest } = e;
+    return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
+  })
+  
+
+  // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+  //   headers: {"content-type": "application/json"}
+  //})
 
   useEffect(() => {
     if (user2) {
@@ -82,6 +101,16 @@ if (!user) {
   const handleLogout = async (event) => {
     event.preventDefault();
     try {
+
+
+      console.log("logging out")
+      const verify = createProduct(aux2)
+      console.log(aux2)
+      console.log(verify.data)
+      console.log(idCart[0].id)
+
+
+
       await signOut(auth);
       alert("Sign-out successful");
       navigate("/");
