@@ -49,7 +49,7 @@ const Detail = () => {
         const userDb = await getUserById(user.uid);
         if (userDb) {
           setFavoritosUsuario(userDb.favorites);
-          checkOrder(user.uid);
+          checkOrder(user.uid, detailProduct.id);
         }
       })();
     }
@@ -66,14 +66,11 @@ const Detail = () => {
       userId,
     };
     console.log(review);
-    const response = await createReview(review);
-    console.log(response);
-    if (response.status === "success") {
+    try {
+      const response = await createReview(review);
       alert("Review created successfully");
-      setReviewText("");
-      setRating(1);
-    } else {
-      alert("Error creating review");
+    } catch (error) {
+      alert("Error: " + error.message);
     }
   };
 
@@ -83,6 +80,7 @@ const Detail = () => {
     if (favorito) {
       // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
       const userDb = await getUserById(user.uid);
+      console.log(userDb);
       if (userDb && userDb.favorites) {
         const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
         updateUser({
@@ -92,6 +90,8 @@ const Detail = () => {
         setFavorito(false);
         setFavoritosUsuario(newFavoritesList);
       }
+      console.log(newFavoritesList);
+      console.log(userDb.favorites);
       return;
     }
 

@@ -141,7 +141,13 @@ const Products = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", flexDirection:"column" }} >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
@@ -167,14 +173,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter}
               label="Age"
-              onChange={handleCategoryChange}>
+              onChange={handleCategoryChange}
+            >
               {res.length > 0 ? (
                 res.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {e.name}
                   </MenuItem>
                 ))
@@ -194,14 +202,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.brandFilter}
               label="Age"
-              onChange={handleBrandChange}>
+              onChange={handleBrandChange}
+            >
               {rNames &&
                 rNames.map((product) => (
                   <MenuItem
                     key={product}
                     value={product}
                     className="option"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {product}
                   </MenuItem>
                 ))}
@@ -219,14 +229,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter2}
               label="Age"
-              onChange={handleTypeChange}>
+              onChange={handleTypeChange}
+            >
               {res2.length > 0 ? (
                 res2.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {e.name}
                   </MenuItem>
                 ))
@@ -240,7 +252,8 @@ const Products = () => {
       <IconButton
         onClick={handleRefresh}
         size="small"
-        style={{ color: "#2196f3" }}>
+        style={{ color: "#2196f3" }}
+      >
         <RefreshIcon fontSize="small" />
         <Box mr={3}>Refresh</Box>
       </IconButton>

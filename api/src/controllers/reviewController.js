@@ -22,30 +22,27 @@ const getDbInfo = async (productId) => {
   }
 };
 
-const createReview = async (req, res) => {
-  const { productId, userId, reviewText, rating } = req.body;
+const createReview = async (review) => {
+  const { productId, userId, reviewText, rating } = review;
   try {
     let product = await Product.findByPk(productId);
     let user = await User.findByPk(userId);
     if (product && user) {
+      console.log(review);
       let reviewCreated = await Review.create({
         reviewText,
         rating,
         productId,
         userId,
       });
-      return res.status(200).json({
+      return {
         reviewCreated,
         message: "Review created successfully",
         status: "success",
-      });
-    } else {
-      return res
-        .status(400)
-        .json({ message: "Invalid Review", status: "error" });
+      };
     }
   } catch (error) {
-    return res.status(500).json({ message: error.message, status: "error" });
+    return { message: error.message, status: "error" };
   }
 };
 

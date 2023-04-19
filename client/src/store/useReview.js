@@ -3,16 +3,11 @@ import axios from "axios";
 
 const useReview = create((set, get) => ({
   review: null,
-  createReview: async (productId, userId, reviewText, rating) => {
+  createReview: async (review) => {
     try {
-      const response = await axios.post("/reviews", {
-        productId,
-        userId,
-        reviewText,
-        rating,
-      });
+      const response = await axios.post("/reviews", review);
       console.log(response);
-      if (response.status === "success") {
+      if (response.status === 200) {
         // La reseña se ha guardado exitosamente en la base de datos
         set((state) => ({ ...state, review: response.data }));
       } else {

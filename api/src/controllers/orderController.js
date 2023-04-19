@@ -45,7 +45,7 @@ const intentPayment = async (dataPayment) => {
 };
 
 const createOrder = async (order) => {
-  const { userId, cartId } = order;
+  const { userId, cartId, totalPrice } = order;
   try {
     let user = await User.findByPk(userId);
     let cart = await Cart.findByPk(cartId);
@@ -54,7 +54,8 @@ const createOrder = async (order) => {
         ...order,
         userId: user.id,
         cartId: cart.id,
-        state: "succeeded",
+        totalPrice: totalPrice,
+        state: "processing",
       });
       return {
         orderCreated,
