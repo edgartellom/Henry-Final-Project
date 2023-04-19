@@ -22,29 +22,56 @@ const getDbInfo = async (productId) => {
   }
 };
 
-const createReview = async (review) => {
-  const { productId, userId } = review;
+const createReview = async (req, res) => {
+  const { productId, userId, reviewText, rating } = req.body;
   try {
     let product = await Product.findByPk(productId);
     let user = await User.findByPk(userId);
     if (product && user) {
       let reviewCreated = await Review.create({
-        ...review,
-        productId: product.id,
-        userId: user.id,
+        reviewText,
+        rating,
+        productId,
+        userId,
       });
-      return {
+      return res.status(200).json({
         reviewCreated,
-        message: "Review created succesfully",
+        message: "Review created successfully",
         status: "success",
-      };
+      });
     } else {
-      return { message: "Invalid Review", status: "error" };
+      return res
+        .status(400)
+        .json({ message: "Invalid Review", status: "error" });
     }
   } catch (error) {
-    return { message: error.message, status: "error" };
+    return res.status(500).json({ message: error.message, status: "error" });
   }
 };
+
+// const createReview = async (review) => {
+//   const { productId, userId } = review;
+//   try {
+//     let product = await Product.findByPk(productId);
+//     let user = await User.findByPk(userId);
+//     if (product && user) {
+//       let reviewCreated = await Review.create({
+//         ...review,
+//         productId: product.id,
+//         userId: user.id,
+//       });
+//       return {
+//         reviewCreated,
+//         message: "Review created succesfully",
+//         status: "success",
+//       };
+//     } else {
+//       return { message: "Invalid Review", status: "error" };
+//     }
+//   } catch (error) {
+//     return { message: error.message, status: "error" };
+//   }
+// };
 
 const updateReview = async (review) => {
   const { id, rate, comment, state } = review;

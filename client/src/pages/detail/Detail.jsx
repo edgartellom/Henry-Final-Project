@@ -7,6 +7,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import "./Detail.css";
 import useUserStore from "../../store/users";
 import { useUserContext } from "../../components/contexts/userContexts";
+import useOrderStatus from "../../store/userOrderStatus";
+import useReview from "../../store/useReview";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -25,6 +27,11 @@ const Detail = () => {
   const getUserById = useUserStore((state) => state.getUserById);
   const [favorito, setFavorito] = useState(false);
   const [favoritosUsuario, setFavoritosUsuario] = useState([]);
+  const { hasBoughtProduct, checkOrder } = useOrderStatus();
+  ///REVIEWS/////
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState(1);
+  const createReview = useReview((state) => state.createReview);
 
   const { id } = useParams();
 
@@ -42,10 +49,33 @@ const Detail = () => {
         const userDb = await getUserById(user.uid);
         if (userDb) {
           setFavoritosUsuario(userDb.favorites);
+          checkOrder(user.uid);
         }
       })();
     }
   }, [user]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let userId = user.uid;
+    let productId = detailProduct.id;
+    const review = {
+      reviewText,
+      rating,
+      productId,
+      userId,
+    };
+    console.log(review);
+    const response = await createReview(review);
+    console.log(response);
+    if (response.status === "success") {
+      alert("Review created successfully");
+      setReviewText("");
+      setRating(1);
+    } else {
+      alert("Error creating review");
+    }
+  };
 
   const addFavoriteHandle = async (e) => {
     e.preventDefault();
@@ -99,35 +129,88 @@ const Detail = () => {
         ) : (
           <div className="row">
             <div className="x">
+              <div className="contenedor-img">
+                <img className="img-fluid" src={detailProduct.image} />
+              </div>
 
-          
-                <div className="contenedor-img">
-                  <img className="img-fluid" src={detailProduct.image} />
+              <div className="contenedor-detalles">
+                <h3 className="nameProduct">{detailProduct.feature}</h3>
+                <div className="cont-det-pro">
+                  <h4 className="detalles-product">
+                    Brand: {detailProduct.brand}
+                  </h4>
+                  <h4 className="detalles-product">
+                    Model: {detailProduct.model}
+                  </h4>
                 </div>
-            
-            <div className="contenedor-detalles">
-                 <h3 className="nameProduct">{detailProduct.feature}</h3>
-              <div className="cont-det-pro">
-                 <h4 className="detalles-product">Brand: {detailProduct.brand}</h4>
-                 <h4 className="detalles-product">Model: {detailProduct.model}</h4>
+
+                <details>
+                  <summary>Details</summary>
+                  <ul>
+                    <li className="detail-product">{detailProduct.detail}</li>
+                  </ul>
+                </details>
+                <div>
+                  <i className="bi bi-star"></i>
+                  <i className="bi bi-star"></i>
+                  <i className="bi bi-star"></i>
+                  <i className="bi bi-star"></i>
+                </div>
+                {hasBoughtProduct ? (
+                  <form>
+                    <div className="form-group">
+                      <label for="exampleFormControlSelect1">
+                        Qualification
+                      </label>
+                      <select
+                        className="form-control"
+                        id="exampleFormControlSelect1"
+                        name="rating"
+                        value={rating}
+                        onChange={(e) => setRating(parseInt(e.target.value))}
+                      >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+
+                    <div className="form-group">
+                      <label for="exampleFormControlSelect2"></label>
+                    </div>
+                    <div className="form-group">
+                      <label for="exampleFormControlTextarea1">
+                        What do you think about it?
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="2"
+                        name="review-text"
+                        value={reviewText}
+                        onChange={(e) => setReviewText(e.target.value)}
+                      ></textarea>
+                    </div>
+                    <button type="submit" onClick={handleSubmit}>
+                      Enviar
+                    </button>
+                  </form>
+                ) : (
+                  " "
+                )}
               </div>
+            </div>
+            <div id="parte-pago">
               <div>
-                <i className="bi bi-star"></i>
-                <i className="bi bi-star"></i>
-                <i className="bi bi-star"></i>
-                <i className="bi bi-star"></i>
+                <details>
+                  <summary>Reviws</summary>
+                  <ul>
+                    <li className="detail-product">Reviws</li>
+                  </ul>
+                </details>
               </div>
-              
-              <details>
-                <summary>Details</summary>
-                <ul>
-                  <li className="detail-product">{detailProduct.detail}</li>
-                </ul>
-              </details>
-            
-              </div>
-              </div>
-              <div id="parte-pago">
               <hgroup>
                 <h5>Categories</h5>
                 <li>{detailProduct.categories}</li>
@@ -137,12 +220,12 @@ const Detail = () => {
               </p>
               <div className="actions">
                 <div className="btn-inline">
-
                   <NavLink
                     to="/cart"
                     role="button"
                     className="primary"
-                    data-tooltip="Add to Cart">
+                    data-tooltip="Add to Cart"
+                  >
                     <i className="bi bi-cart-plus"></i>
                   </NavLink>
                   {user && (
@@ -156,15 +239,15 @@ const Detail = () => {
                             ? "red"
                             : "gray",
                       }}
-                      onClick={addFavoriteHandle}>
+                      onClick={addFavoriteHandle}
+                    >
                       <i className="bi bi-heart"></i>
                     </NavLink>
                   )}
                 </div>
               </div>
-              </div>
             </div>
-         
+          </div>
         )}
       </div>
 
