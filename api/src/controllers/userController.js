@@ -69,11 +69,11 @@ const getUserById = async (userId) => {
 };
 
 const createUser = async (user) => {
-  const { id, username, email, admin } = user;
+  const { id, username,name,phoneNumber, email, admin } = user;
   try {
     let userFound = await User.findOne({
       where: {
-        email: email,
+        id: id,
       },
     });
     if (userFound) return { message: "User already exists", status: "error" };
@@ -81,6 +81,8 @@ const createUser = async (user) => {
     let userCreated = await User.create({
       id: id,
       username: username,
+      name:name,
+      phoneNumber:phoneNumber,
       email: email,
       admin: admin,
     });
