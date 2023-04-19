@@ -144,11 +144,11 @@ const cart = useCartStore((state) => state.cart)
        console.log(current.id)
        
        
-        console.log(idCart)
-        console.log(idCart[0].id)
-        const temporal = idCart[0].id
-        console.log(temporal)
-        const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
+        // console.log(idCart)
+        // console.log(idCart[0].id)
+        // const temporal = idCart[0].id
+        // console.log(temporal)
+        // const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
 
       if(!idCart){
         getCart(current.id)
@@ -160,7 +160,7 @@ const cart = useCartStore((state) => state.cart)
       if(cart.length != 0){
         console.log("product list loaded")
       }
-      console.log(idCart)
+      //console.log(idCart)
       console.log(cart)
       // }else{
       //   // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
@@ -170,9 +170,9 @@ const cart = useCartStore((state) => state.cart)
 
       
       
-      console.log(cartId)
-      const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
-      console.log(response.data)
+      // console.log(cartId)
+      // const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
+      // console.log(response.data)
 
       navigate("/products");
     } catch (error) {

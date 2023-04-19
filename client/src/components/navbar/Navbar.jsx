@@ -103,7 +103,7 @@ if (!user) {
     try {
 
 
-      console.log("logging out")
+      //console.log("logging out")
       const verify = createProduct(aux2)
       console.log(aux2)
       console.log(verify.data)

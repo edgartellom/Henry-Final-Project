@@ -17,10 +17,22 @@ const Cart = () => {
   const [cart3, setCart3] = useState([])
   const getUserById = useUserStore((state) => state.getUserById);
   const current = useUserStore((state) => state.currentUser)
-
+  const clearData = useCartStore((state) => state.clearCart)
   const cartZustand = useCartStore((state) => state.cart)
 
-  const finalCart =[...cart.cartItems,...cartZustand]
+  const zustand = cartZustand.map((e) => {
+    const { quantity, ...rest } = e;
+    return { ...rest,  cartQuantity: quantity };
+  })
+
+  console.log(cartZustand)
+  console.log(zustand)
+  console.log(cart.cartItems)
+
+  const finalCart =[...cart.cartItems,...zustand]
+
+  const uniqueArray = [...new Set(cart.cartItems.concat(zustand))];
+  console.log(uniqueArray)
 
   const carritoID = '0034cadd-0efe-4511-be19-9b680649f35d'
 
@@ -160,13 +172,32 @@ console.log(userId)
     dispatch(removeFromCart(product));
   };
   const handleClearCart = () => {
+    clearData()
     dispatch(clearCart());
   };
+
+  
+  const handleCheckout = () => {
+    const data = {
+      quantity: cart.cartTotalAmount,
+      name: 'Compra Bestify-PC' // cambiar el nombre aquí
+    };
+
+    axios.post('/mercadopago/create-payment', data)
+      .then(response => {
+        // console.log(response.data.init_point)
+        window.location.replace(response.data.init_point);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {/* {cart.cartItems.length === 0 ? ( */}
-      {finalCart.length === 0 ? (
+      {uniqueArray.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -196,8 +227,8 @@ console.log(userId)
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {finalCart &&
-              finalCart.map((cartItem) => (
+            {uniqueArray &&
+              uniqueArray.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
                     <img src={cartItem.image[0]} alt={cartItem.name} />
@@ -233,7 +264,7 @@ console.log(userId)
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <button onClick={handleCheckout} >Check out</button>
               <div className="continue-shopping">
                 <Link to="/products">
                   <svg
