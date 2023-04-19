@@ -48,6 +48,7 @@ const {
   Category,
   Order,
   Order_detail,
+  OrderList,
   User,
   Product,
   Cart,
@@ -70,6 +71,12 @@ Review.belongsTo(Product, { foreignKey: "productId" });
 
 User.hasMany(Review);
 Review.belongsTo(User, { foreignKey: "userId" });
+
+/* ---------------------------------------------------------- */
+Order.belongsToMany(Product, { through: OrderList});
+Product.belongsToMany(Order, { through: OrderList});
+
+
 
 //Cart_Detail_relations
 Product.hasMany(Cart_detail);

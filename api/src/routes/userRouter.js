@@ -1,12 +1,13 @@
 const { Router } = require("express");
 const {
+  
   createUser,
   getAllUsers,
   updateUser,
   getUserById,
+
 } = require("../controllers/userController");
 const { User } = require("../db");
-
 const router = Router();
 
 //GET ALL USERS
@@ -56,4 +57,24 @@ router.put("/", async (req, res) => {
   }
 });
 
+
+
+
+/* router.post("/:userId/cart", async (req, res) => {
+  try {
+    let response = await userCart(req.body);
+    response.status !== "error"
+      ? res.send(response)
+      : res.status(404).send(response);
+  } catch (error) {
+    console.log ("Hola mundo")
+    res.status(400).send(error.message);
+  }
+}); */
+
+
+    /* ------------------------------------------------------------------------------- */
+    //S38:Crear Ruta para agregar Item al Carrito
+    /* ------------------------------------------------------------------------------- */
+    
 module.exports = router;

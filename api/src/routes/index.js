@@ -9,6 +9,7 @@ const cartRouter = require("./cartRouter");
 const cartDetailRouter = require("./cartDetailRouter");
 const userRouter = require("./userRouter");
 const categoryRouter = require("./categoryRouter");
+const userCartRouter = require("./userCartRouter")
 // const checkoutRouter = require("./checkoutRouter");
 const router = Router();
 
@@ -22,5 +23,7 @@ router.use("/categories", categoryRouter);
 router.use("/reviews", reviewRouter);
 router.use("/carts", cartRouter);
 router.use("/cartDetails", cartDetailRouter);
+router.use('/userId/cart', userCartRouter);
+
 // router.use("/checkout", checkoutRouter);
 module.exports = router;

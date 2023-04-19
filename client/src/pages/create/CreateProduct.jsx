@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import useStore from "../../store/category";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import UploadFile from "../../store/cloudinary" 
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function CreateProduct() {
@@ -65,9 +66,16 @@ function CreateProduct() {
     // //   history.push('/home')
     // }
     e.preventDefault();
-    await axios.post(`http://localhost:3001/products`, input, {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
+    // await axios.post(`http://localhost:3001/products`, input, {
+    //   headers: { "content-type": "application/x-www-form-urlencoded" },
+    // });
+
+
+    await axios.post('http://localhost:3001/products', input, {
+    headers: { 'content-type': 'application/json' }
     });
+
+
     alert("Product created successfully");
     setInput({
       name: "",
@@ -100,12 +108,20 @@ function CreateProduct() {
       [e.target.name]: e.target.value,
     });
 
+    
+
     setErrors(
       verify({
         ...input,
         [e.target.name]: e.target.value,
       })
     );
+
+    const preset_key = "Perifericos";
+    const cloud_name = "de2wihnob";
+    const[image, setImage] = useState();
+         
+
 
     // if(input.find(r => r.name.toLowerCase() === e.target.value.toLowerCase()))
     //   setErrors({
@@ -140,6 +156,8 @@ function CreateProduct() {
 
       <form className="formContainer" onSubmit={submitHandle}>
         <h1 style={{ textAlign: "center" }}>Create a Product</h1>
+       
+       
 
         <input
           className="inputValidate"
@@ -175,6 +193,11 @@ function CreateProduct() {
           placeholder="enter a model (optional)"
           onChange={changeHandle}
         />
+        
+
+
+
+
 
         {errors.model && <h6>{errors.model}</h6>}
 
@@ -187,9 +210,9 @@ function CreateProduct() {
           placeholder="enter the price for the product (optional)"
           onChange={changeHandle}
         />
-
+        <UploadFile/>
         {errors.price && <h6>{errors.price}</h6>}
-
+ 
         <input
           type="text"
           autoComplete="off"
@@ -199,6 +222,16 @@ function CreateProduct() {
           placeholder="enter a url (optional)"
           onChange={changeHandle}
         />
+
+            <select className="fw-bold" defaultValue="Categories" onChange={(e) => selectHandle(e)}>
+            <option className="fw-bold" disabled>Categories</option>
+            {categories.map((t, index) => (
+              <option key={index} value={t.name}>
+                {t.name}
+              </option>
+            ))}
+
+            </select>
 
         <br />
         <br />

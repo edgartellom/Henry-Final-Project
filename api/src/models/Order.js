@@ -14,7 +14,8 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       state: {
-        type: DataTypes.ENUM("succeeded, processing, failed"),
+        type: DataTypes.ENUM("succeeded, processing, failed, carrito"),
+        defaultValue: 'carrito',
         allowNull: false,
       },
     },
