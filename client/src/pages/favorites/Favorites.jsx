@@ -24,13 +24,16 @@ const Favorites = () => {
 
   const idProducts = products.map((el) => el.id);
   let usersFavorites = users.favorites;
+  const miArrayUnico = usersFavorites.filter((valor, indice) => {
+    return usersFavorites.indexOf(valor) === indice;
+  });
   console.log(usersFavorites);
 
   let arrayRepetidos = [];
 
   for (let i = 0; i < idProducts.length; i++) {
-    for (let j = 0; j < usersFavorites.length; j++) {
-      if (idProducts[i] === usersFavorites[j]) {
+    for (let j = 0; j < miArrayUnico.length; j++) {
+      if (idProducts[i] === miArrayUnico[j]) {
         arrayRepetidos.push(idProducts[i]);
       }
     }
@@ -48,7 +51,11 @@ const Favorites = () => {
         </Link>
       </di>
       <h2>Favorites</h2>
-      <List products={filteredData} />
+      {filteredData && filteredData.length ? (
+        <List products={filteredData} />
+      ) : (
+        <h3>YOU DON´T HAVE FAVORITE</h3>
+      )}
     </div>
   );
 };

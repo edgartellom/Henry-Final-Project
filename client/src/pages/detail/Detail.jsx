@@ -25,6 +25,8 @@ const Detail = () => {
   const updateUser = useUserStore((state) => state.updateUser);
   const { user } = useUserContext();
   const getUserById = useUserStore((state) => state.getUserById);
+  const users = useUserStore((state) => state.users);
+
   const [favorito, setFavorito] = useState(false);
   const [favoritosUsuario, setFavoritosUsuario] = useState([]);
   const { hasBoughtProduct, checkOrder } = useOrderStatus();
@@ -48,12 +50,14 @@ const Detail = () => {
       const obtenerUsuario = (async () => {
         const userDb = await getUserById(user.uid);
         if (userDb) {
-          setFavoritosUsuario(userDb.favorites);
+          //setFavoritosUsuario(userDb.favorites);
+          setFavoritosUsuario(users.favorites);
           checkOrder(user.uid, detailProduct.id);
         }
       })();
     }
   }, [user]);
+  //console.log(favoritosUsuario);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,38 +84,76 @@ const Detail = () => {
     if (favorito) {
       // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
       const userDb = await getUserById(user.uid);
-      console.log(userDb);
-      if (userDb && userDb.favorites) {
-        const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+      //console.log(users);
+      if (users && users.favorites) {
+        const newFavoritesList = users.favorites.filter((fav) => fav !== id);
         updateUser({
-          ...userDb,
+          ...users,
           favorites: newFavoritesList,
         });
         setFavorito(false);
         setFavoritosUsuario(newFavoritesList);
       }
-      console.log(newFavoritesList);
-      console.log(userDb.favorites);
+
+      //console.log(users.favorites);
       return;
     }
 
     // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
     setFavorito(true);
     const userDb = await getUserById(user.uid);
-    if (!userDb) {
+    if (!users) {
       console.log(`No se encontró ningún usuario con el id ${user.uid}`);
       return;
     }
-    if (userDb && userDb.favorites) {
+    if (users && users.favorites) {
       updateUser({
-        ...userDb,
-        favorites: [...userDb.favorites, id],
+        ...users,
+        favorites: [...users.favorites, id],
       });
-      setFavoritosUsuario([...userDb.favorites, id]);
+      setFavoritosUsuario([...users.favorites, id]);
     } else {
       console.log("Error al actualizar el usuario: objeto de usuario inválido");
     }
   };
+  // const addFavoriteHandle = async (e) => {
+  //   e.preventDefault();
+
+  //   if (favorito) {
+  //     // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
+  //     const userDb = await getUserById(user.uid);
+  //     console.log(userDb);
+  //     if (userDb && userDb.favorites) {
+  //       const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+  //       updateUser({
+  //         ...userDb,
+  //         favorites: newFavoritesList,
+  //       });
+  //       setFavorito(false);
+  //       setFavoritosUsuario(newFavoritesList);
+  //     }
+
+  //     console.log(userDb.favorites);
+  //     return;
+  //   }
+
+  //   // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
+  //   setFavorito(true);
+  //   const userDb = await getUserById(user.uid);
+  //   if (!userDb) {
+  //     console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+  //     return;
+  //   }
+  //   if (userDb && userDb.favorites) {
+  //     updateUser({
+  //       ...userDb,
+  //       favorites: [...userDb.favorites, id],
+  //     });
+  //     setFavoritosUsuario([...userDb.favorites, id]);
+  //   } else {
+  //     console.log("Error al actualizar el usuario: objeto de usuario inválido");
+  //   }
+  // };
 
   //console.log(detailProduct)
 

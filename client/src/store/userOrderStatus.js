@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 
 const useOrderStatus = create((set) => ({
-  hasBoughtProduct: false,
+  hasBoughtProduct: true,
   order: {},
   checkOrder: async (userId) => {
     try {
