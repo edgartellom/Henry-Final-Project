@@ -3,6 +3,7 @@ const { Review, Product, User } = require("../db");
 
 const getDbInfo = async (productId) => {
   try {
+    console.log(productId);
     const reviews = await Review.findAll({
       where: {
         productId,
@@ -10,28 +11,28 @@ const getDbInfo = async (productId) => {
       },
       include: [
         { model: Product, attributes: ["id"] },
-        { model: User, attributes: ["id"] },
+        //{ model: User, attributes: ["id"] },
       ],
     });
     if (reviews.length > 0) {
       return { data: reviews, status: "success" };
     }
-    return { message: "Reviews Not Found", status: "error" };
+    return { message: "Reviews Not Found", status: "errorrrrrr" };
   } catch (error) {
-    return { message: error.message, status: "error" };
+    return { message: error.message, status: "error2" };
   }
 };
 
 const createReview = async (review) => {
-  const { productId, userId, reviewText, rating } = review;
+  const { productId, userId, comment, rate } = review;
   try {
     let product = await Product.findByPk(productId);
     let user = await User.findByPk(userId);
+    console.log(review);
     if (product && user) {
-      console.log(review);
       let reviewCreated = await Review.create({
-        reviewText,
-        rating,
+        comment,
+        rate,
         productId,
         userId,
       });
@@ -42,6 +43,7 @@ const createReview = async (review) => {
       };
     }
   } catch (error) {
+    console.log("aca");
     return { message: error.message, status: "error" };
   }
 };
