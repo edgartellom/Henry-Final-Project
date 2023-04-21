@@ -18,7 +18,7 @@ import {
   EditUser,
   UpdateAddress,
   AdminDashboard,
-  } from "../pages";
+} from "../pages";
 
 const router = createBrowserRouter([
   {

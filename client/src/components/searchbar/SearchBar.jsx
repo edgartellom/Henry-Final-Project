@@ -10,6 +10,7 @@ const SearchBar = ()=>{
   const [searchTerm, setSearchTerm] = useState(null);
   const inputRef = React.createRef();
   const {searchProducts} = useStore();
+  const setPage = useStore((state)=>state.setPage);
 
   const onChange = (e)=>{
     let {value} = e.target;
@@ -21,7 +22,8 @@ const SearchBar = ()=>{
     }
 
     setInputValue(value)
-
+    setPage(1);
+    
     if(term){
       navigate('/products')
       setSearchTerm(term)

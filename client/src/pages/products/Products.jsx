@@ -1,6 +1,8 @@
 import { Footer, List, Navbar } from "../../components";
 import useStore from "../../store/products";
 import { useState, useEffect } from "react";
+import { useUserContext } from "../../components/contexts/userContexts";
+import useUserStore from "../../store/users";
 import { Pagination, Stack, Typography } from "@mui/material";
 import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
 import RestoreIcon from "@mui/icons-material/Restore";
@@ -23,7 +25,15 @@ const Products = () => {
   const categoryFilter2 = useStore((state) => state.categoryFilter2);
   const [res, setRes] = useState([]);
   const [res2, setRes2] = useState([]);
+  const page = useStore((state) => state.page);
+  const setPage = useStore((state) =>state.setPage);
+  const { user } = useUserContext();
+  const getUserById = useUserStore((state) => state.getUserById);
 
+  //////////favorites//////
+  const [favorito, setFavorito] = useState(false);
+  const [favoritosUsuario, setFavoritosUsuario] = useState([]);
+  /////
   const names = listProducts.map((pe) => pe.brand);
   const nNames = new Set(names);
   let rNames = [...nNames];
@@ -48,7 +58,7 @@ const Products = () => {
     }
   };
 
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
 
   const productsPerPage = 12;
   const indexOfLastProduct = page * productsPerPage; //12
@@ -67,6 +77,18 @@ const Products = () => {
     setRes(filtarCategories());
     //cargarFiltros();
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      const obtenerUsuario = (async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setFavoritosUsuario(userDb.favorites);
+          //checkOrder(user.uid, detailProduct.id);
+        }
+      })();
+    }
+  }, [user]);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -140,8 +162,53 @@ const Products = () => {
     setListProducts(state.products);
   };
 
+  const addFavoriteHandle = async (e) => {
+    e.preventDefault();
+
+    if (favorito) {
+      // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
+      const userDb = await getUserById(user.uid);
+      console.log(userDb);
+      if (userDb && userDb.favorites) {
+        const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+        updateUser({
+          ...userDb,
+          favorites: newFavoritesList,
+        });
+        setFavorito(false);
+        setFavoritosUsuario(newFavoritesList);
+      }
+      console.log(newFavoritesList);
+      console.log(userDb.favorites);
+      return;
+    }
+
+    // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
+    setFavorito(true);
+    const userDb = await getUserById(user.uid);
+    if (!userDb) {
+      console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+      return;
+    }
+    if (userDb && userDb.favorites) {
+      updateUser({
+        ...userDb,
+        favorites: [...userDb.favorites, id],
+      });
+      setFavoritosUsuario([...userDb.favorites, id]);
+    } else {
+      console.log("Error al actualizar el usuario: objeto de usuario inválido");
+    }
+  };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center", flexDirection:"column" }} >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
@@ -167,14 +234,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter}
               label="Age"
-              onChange={handleCategoryChange}>
+              onChange={handleCategoryChange}
+            >
               {res.length > 0 ? (
                 res.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {e.name}
                   </MenuItem>
                 ))
@@ -194,14 +263,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.brandFilter}
               label="Age"
-              onChange={handleBrandChange}>
+              onChange={handleBrandChange}
+            >
               {rNames &&
                 rNames.map((product) => (
                   <MenuItem
                     key={product}
                     value={product}
                     className="option"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {product}
                   </MenuItem>
                 ))}
@@ -219,14 +290,16 @@ const Products = () => {
               id="demo-select-small"
               value={state.categoryFilter2}
               label="Age"
-              onChange={handleTypeChange}>
+              onChange={handleTypeChange}
+            >
               {res2.length > 0 ? (
                 res2.map((e) => (
                   <MenuItem
                     key={e.name}
                     value={e.name}
                     className="option2"
-                    style={{ color: "#2196f3" }}>
+                    style={{ color: "#2196f3" }}
+                  >
                     {e.name}
                   </MenuItem>
                 ))
@@ -240,7 +313,8 @@ const Products = () => {
       <IconButton
         onClick={handleRefresh}
         size="small"
-        style={{ color: "#2196f3" }}>
+        style={{ color: "#2196f3" }}
+      >
         <RefreshIcon fontSize="small" />
         <Box mr={3}>Refresh</Box>
       </IconButton>
