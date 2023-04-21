@@ -124,8 +124,8 @@ if (!user) {
 
       var aux =[]
       var aux2 = []
-    if(idCart.cartCreated.id && cart.length>0){
-      console.log("true")
+    if((idCart.cartCreated.id != null || idCart.cartCreated.id != undefined) && cart.length>0){
+      
        aux = cart.map((i) => {
       const carritoId = idCart.cartCreated.id
       return {...i, carritoId}
@@ -135,16 +135,11 @@ if (!user) {
       const { cartQuantity, id, carritoId, ...rest } = e;
       return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
     })
-          //console.log(idCart.cartCreated.id)
-          // console.log(cart)
-          // console.log("logging out")
-          // console.log(aux,'aux')
-          // console.log(aux2,'aux2')
+      
       if(aux2.length>0){
             const verify = createProduct(aux2)
             console.log(aux2)
             console.log(verify.data)
-            console.log(createProduct)
           }
     }
       
