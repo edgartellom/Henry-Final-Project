@@ -41,15 +41,6 @@ const Navbar = () => {
   
   const createProduct = useCartStore((state) => state.createProduct)
   const idCart = useUserStore((state) => state.idCart) 
-
-  if(idCart.length>0){
-    console.log(idCart)
-    console.log(cart)
-    const idCarrito = idCart.cartCreated.id
-
-  }
-  
-  
   
   // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
   //   headers: {"content-type": "application/json"}
@@ -124,7 +115,7 @@ if (!user) {
 
       var aux =[]
       var aux2 = []
-    if((idCart.cartCreated.id != null || idCart.cartCreated.id != undefined) && cart.length>0){
+    if((idCart.cartCreated.id) && cart.length>0){
       
        aux = cart.map((i) => {
       const carritoId = idCart.cartCreated.id
