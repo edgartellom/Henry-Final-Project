@@ -9,6 +9,9 @@ const useStore = create((set, get) => ({
   categoryFilter2: "",
   brandFilter: "",
   detailProduct: [],
+  page:1,
+  setPage: (npage)=>
+    set((state)=>({...state, page: npage})),
   searchProducts: (words) =>
     set((state) => ({
       listProducts: state.products.filter((e) => {

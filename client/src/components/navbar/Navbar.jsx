@@ -14,10 +14,12 @@ import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
+import useUserStore from "../../store/users";
 
 const Navbar = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+  const users = useUserStore((state) => state.users);
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
@@ -31,7 +33,13 @@ const Navbar = () => {
 
   // },[cartTotalQuantity])
 
-  const perfil = user ? false : true;
+  const perfil = user ? false : true
+
+  if (!user) {
+    ("");
+  } else {
+    var iduser = user.uid;
+  }
 
   if (!user) {
     ("");
@@ -80,24 +88,30 @@ const Navbar = () => {
         <ul className="container-x">
           <li>
             <div role="list" dir="list">
-              {/* <summary aria-haspopup="list-box" role="list">
+              <details role="list" dir="rtl">
+              <summary aria-haspopup="list-box" role="list">
                 Items
-              </summary> */}
-              {/* <ul role="list-box"> */}
+              </summary>
+              <ul role="list-box">
               {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
                   <NavLink to="/products">Laptops</NavLink>
                 </li> */}
-              {/* <li> */}
-              <NavLink to="/products">Accesories</NavLink>
-              {/* </li>
-              <li> */}
-              {/* <NavLink to="/create">Create a product</NavLink> */}
-              {/* </li> */}
-              {/* </ul> */}
-            </div>
+                <li>
+                  <NavLink to="/products">Accesories</NavLink>
+                </li>
+                {
+                  users?.admin ? (
+                    <li>
+                      <NavLink to="/create">Create a product</NavLink>
+                    </li>
+                  ) : (<></>)
+                }
+                </ul>
+                </details>
+                </div>
           </li>
           <li>
             <details role="list" dir="rtl">
@@ -114,10 +128,14 @@ const Navbar = () => {
                       <NavLink to="/" onClick={handleLogout}>
                         Sign out
                       </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/admin">admin</NavLink>
-                    </li>
+                    </li>{
+                      users.admin ? (
+                        <li>
+                          <NavLink to="/admin">admin</NavLink>
+                        </li>
+                      ) : (<></>)
+                    }
+
                   </>
                 ) : (
                   <li>
