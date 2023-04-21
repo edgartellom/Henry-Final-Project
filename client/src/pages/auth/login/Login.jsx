@@ -94,7 +94,7 @@ const getProductById = useCartStore((state) => state.getProductById)
 const cart = useCartStore((state) => state.cart)
 
 
-
+console.log(idCart)
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -140,28 +140,50 @@ const cart = useCartStore((state) => state.cart)
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
-      // console.log(current)
-       console.log(current.id)
-       
-       
-        // console.log(idCart)
-        // console.log(idCart[0].id)
-        // const temporal = idCart[0].id
-        // console.log(temporal)
-        // const idExistente = '0034cadd-0efe-4511-be19-9b680649f35d'
 
-      if(!idCart){
-        getCart(current.id)
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+     
+       
+       console.log(current.uid)
+        const obj = {
+          userId:current.uid
+        }
+        console.log(idCart)
+      if(idCart.length ==0){
+       
+        console.log("creating a cart id")
+        createCart(obj)
       }else{
-        getProductById(idCart[0].id)      
+        getProductById(idCart.cartCreated.id)      
 
       }
       if(cart.length != 0){
         console.log("product list loaded")
       }
-      //console.log(idCart)
-      console.log(cart)
+      console.log(idCart)
+      console.log(idCart.cartCreated.id)
+      
       // }else{
       //   // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
       //   //     headers: {"content-type": "application/json"}
@@ -173,6 +195,33 @@ const cart = useCartStore((state) => state.cart)
       // console.log(cartId)
       // const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
       // console.log(response.data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       navigate("/products");
     } catch (error) {

@@ -9,7 +9,7 @@ const useUserStore = create(
         users: [],
         currentUser: {},
 
-        idCart:'',
+        idCart:[],
         
         updateId: (newId) => set((state) => ({ ...state, idCart: newId })),
         
