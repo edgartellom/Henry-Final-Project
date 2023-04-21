@@ -31,14 +31,13 @@ const Navbar = () => {
 
   // },[cartTotalQuantity])
 
-  const perfil=user?false:true
+  const perfil = user ? false : true;
 
-if (!user) {
-  ("");
-} else {
- var iduser = user.uid;
-}
-
+  if (!user) {
+    ("");
+  } else {
+    var iduser = user.uid;
+  }
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -80,25 +79,25 @@ if (!user) {
 
         <ul className="container-x">
           <li>
-            <details role="list" dir="list">
-              <summary aria-haspopup="list-box" role="list">
+            <div role="list" dir="list">
+              {/* <summary aria-haspopup="list-box" role="list">
                 Items
-              </summary>
-              <ul role="list-box">
-                {/* <li>
+              </summary> */}
+              {/* <ul role="list-box"> */}
+              {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
                   <NavLink to="/products">Laptops</NavLink>
                 </li> */}
-                <li>
-                  <NavLink to="/products">Accesories</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/create">Create a product</NavLink>
-                </li>
-              </ul>
-            </details>
+              {/* <li> */}
+              <NavLink to="/products">Accesories</NavLink>
+              {/* </li>
+              <li> */}
+              {/* <NavLink to="/create">Create a product</NavLink> */}
+              {/* </li> */}
+              {/* </ul> */}
+            </div>
           </li>
           <li>
             <details role="list" dir="rtl">

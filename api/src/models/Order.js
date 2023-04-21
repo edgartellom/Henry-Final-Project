@@ -17,6 +17,11 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("succeeded, processing, failed"),
         allowNull: false,
       },
+      dateOrder: {
+        type: "TIMESTAMP",
+        defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
+        allowNull: false,
+      },
     },
     {
       timestamps: false,
