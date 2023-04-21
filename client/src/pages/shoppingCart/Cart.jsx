@@ -8,13 +8,16 @@ import {
   removeFromCart,
 } from "../../store/shoppingCartRedux";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-
+import axios from "axios";
+import useUserStore from "../../store/users";
+import useOrderStatus from "../../store/userOrderStatus";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  const current = useUserStore((state) => state.currentUser);
+  const createOrder = useOrderStatus((state) => state.createOrder);
+  const order = useOrderStatus((state) => state.order);
 
   useEffect(() => {
     console.log(cart);
@@ -34,21 +37,36 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    console.log(current);
     const data = {
       quantity: cart.cartTotalAmount,
-      name: 'Compra Bestify-PC' // cambiar el nombre aquí
+      name: "Compra Bestify-PC", // cambiar el nombre aquí
+    };
+    const dataOrder = {
+      cartId: cart.cartItems[0].id,
+      cartTotalPrice: cart.cartTotalAmount,
+      userId: current.uid,
     };
 
-    axios.post('/mercadopago/create-payment', data)
-      .then(response => {
-        // console.log(response.data.init_point)
-        window.location.replace(response.data.init_point);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    try {
+      console.log(dataOrder);
+      await createOrder(dataOrder);
+      console.log(order);
+    } catch (error) {
+      alert("error: " + error.message);
+    }
+    if (order.id) {
+      axios
+        .post("/mercadopago/create-payment", data)
+        .then((response) => {
+          // console.log(response.data.init_point)
+          window.location.replace(response.data.init_point);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   return (
@@ -65,7 +83,8 @@ const Cart = () => {
                 height="20"
                 fill="currentColor"
                 className="bi bi-arrow-left"
-                viewBox="0 0 16 16">
+                viewBox="0 0 16 16"
+              >
                 <path
                   fillRule="evenodd"
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
@@ -121,7 +140,7 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button onClick={handleCheckout} >Check out</button>
+              <button onClick={handleCheckout}>Check out</button>
               <div className="continue-shopping">
                 <Link to="/products">
                   <svg
@@ -130,7 +149,8 @@ const Cart = () => {
                     height="20"
                     fill="currentColor"
                     className="bi bi-arrow-left"
-                    viewBox="0 0 16 16">
+                    viewBox="0 0 16 16"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"

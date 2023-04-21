@@ -41,6 +41,11 @@ const Navbar = () => {
     var iduser = user.uid;
   }
 
+  if (!user) {
+    ("");
+  } else {
+    var iduser = user.uid;
+  }
 
   const ChangeTheme = (e) => {
     e.preventDefault();
@@ -82,12 +87,12 @@ const Navbar = () => {
 
         <ul className="container-x">
           <li>
-            <details role="list" dir="list">
-              <summary aria-haspopup="list-box" role="list">
+            <div role="list" dir="list">
+              {/* <summary aria-haspopup="list-box" role="list">
                 Items
-              </summary>
-              <ul role="list-box">
-                {/* <li>
+              </summary> */}
+              {/* <ul role="list-box"> */}
+              {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
                 <li>
@@ -103,8 +108,7 @@ const Navbar = () => {
                     </li>
                   ) : (<></>)
                 }
-              </ul>
-            </details>
+                </div>
           </li>
           <li>
             <details role="list" dir="rtl">
