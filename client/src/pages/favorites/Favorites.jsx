@@ -3,6 +3,7 @@ import useUserStore from "../../store/users";
 import useStore from "../../store/products";
 import { List } from "../../components";
 import { Link } from "react-router-dom";
+import "./Favorites.css";
 
 const Favorites = () => {
   const users = useUserStore((state) => state.users);
@@ -44,17 +45,17 @@ const Favorites = () => {
   );
 
   return (
-    <div className="center">
-      <di>
+    <div className="cart-container">
+      <div className="papu">
         <Link to="/products" className="homeButton">
           Go back
         </Link>
-      </di>
-      <h2>Favorites</h2>
+      </div>
+      <h2 className="favorites">Favorites</h2>
       {filteredData && filteredData.length ? (
-        <List products={filteredData} />
+        <List className="cartas" products={filteredData} />
       ) : (
-        <h3>YOU DON´T HAVE FAVORITE</h3>
+        <h3 className="dot-img">YOU DON´T HAVE FAVORITE</h3>
       )}
     </div>
   );

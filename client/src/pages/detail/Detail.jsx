@@ -33,9 +33,17 @@ const Detail = () => {
   ///REVIEWS/////
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState(1);
+  const getReviews = useReview((state) => state.getReviewById);
+  const reviewsProduct = useReview((state) => state.reviewsList);
   const createReview = useReview((state) => state.createReview);
 
   const { id } = useParams();
+  let productId = detailProduct.id;
+  useEffect(() => {
+    if (productId) {
+      getReviews(productId);
+    }
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -64,8 +72,8 @@ const Detail = () => {
     let userId = user.uid;
     let productId = detailProduct.id;
     const review = {
-      reviewText,
-      rating,
+      comment: reviewText,
+      rate: rating,
       productId,
       userId,
     };
@@ -247,9 +255,14 @@ const Detail = () => {
             <div id="parte-pago">
               <div>
                 <details>
-                  <summary>Reviws</summary>
+                  <summary>Reviews</summary>
                   <ul>
-                    <li className="detail-product">Reviws</li>
+                    {reviewsProduct &&
+                      reviewsProduct.map((review) => (
+                        <li className="detail-product" key={review.id}>
+                          <p>{review.comment}</p>
+                        </li>
+                      ))}
                   </ul>
                 </details>
               </div>

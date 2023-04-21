@@ -2,8 +2,10 @@ import { create } from "zustand";
 import axios from "axios";
 
 const useReview = create((set, get) => ({
+  reviewsList: [],
   review: null,
   createReview: async (review) => {
+    console.log(review);
     try {
       const response = await axios.post("/reviews", review);
       console.log(response);
@@ -16,6 +18,17 @@ const useReview = create((set, get) => ({
       }
     } catch (error) {
       console.error(error);
+    }
+  },
+  getReviewById: async (id) => {
+    try {
+      console.log(id);
+      const response = await axios.get(`/reviews/${id}`);
+      set({ reviewsList: response.data });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return null;
     }
   },
 }));
