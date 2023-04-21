@@ -14,10 +14,12 @@ import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
+import useUserStore from "../../store/users";
 
 const Navbar = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+  const users = useUserStore((state) => state.users);
   const [menu, setMenu] = useState(false);
   const theme = useCommonStore((state) => state.theme, shallow);
   const { changeTheme } = useCommonStore();
@@ -31,13 +33,13 @@ const Navbar = () => {
 
   // },[cartTotalQuantity])
 
-  const perfil=user?false:true
+  const perfil = user ? false : true
 
-if (!user) {
-  ("");
-} else {
- var iduser = user.uid;
-}
+  if (!user) {
+    ("");
+  } else {
+    var iduser = user.uid;
+  }
 
 
   const ChangeTheme = (e) => {
@@ -94,9 +96,13 @@ if (!user) {
                 <li>
                   <NavLink to="/products">Accesories</NavLink>
                 </li>
-                <li>
-                  <NavLink to="/create">Create a product</NavLink>
-                </li>
+                {
+                  users?.admin ? (
+                    <li>
+                      <NavLink to="/create">Create a product</NavLink>
+                    </li>
+                  ) : (<></>)
+                }
               </ul>
             </details>
           </li>
@@ -115,10 +121,14 @@ if (!user) {
                       <NavLink to="/" onClick={handleLogout}>
                         Sign out
                       </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/admin">admin</NavLink>
-                    </li>
+                    </li>{
+                      users.admin ? (
+                        <li>
+                          <NavLink to="/admin">admin</NavLink>
+                        </li>
+                      ) : (<></>)
+                    }
+
                   </>
                 ) : (
                   <li>

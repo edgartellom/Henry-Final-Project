@@ -23,6 +23,8 @@ const Products = () => {
   const categoryFilter2 = useStore((state) => state.categoryFilter2);
   const [res, setRes] = useState([]);
   const [res2, setRes2] = useState([]);
+  const page = useStore((state) => state.page);
+  const setPage = useStore((state) =>state.setPage);
 
   const names = listProducts.map((pe) => pe.brand);
   const nNames = new Set(names);
@@ -48,7 +50,7 @@ const Products = () => {
     }
   };
 
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
 
   const productsPerPage = 12;
   const indexOfLastProduct = page * productsPerPage; //12
