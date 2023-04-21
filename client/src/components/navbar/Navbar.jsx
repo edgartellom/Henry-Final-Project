@@ -88,10 +88,11 @@ const Navbar = () => {
         <ul className="container-x">
           <li>
             <div role="list" dir="list">
-              {/* <summary aria-haspopup="list-box" role="list">
+              <details role="list" dir="rtl">
+              <summary aria-haspopup="list-box" role="list">
                 Items
-              </summary> */}
-              {/* <ul role="list-box"> */}
+              </summary>
+              <ul role="list-box">
               {/* <li>
                   <NavLink to="/products">Desktops</NavLink>
                 </li>
@@ -108,6 +109,8 @@ const Navbar = () => {
                     </li>
                   ) : (<></>)
                 }
+                </ul>
+                </details>
                 </div>
           </li>
           <li>
