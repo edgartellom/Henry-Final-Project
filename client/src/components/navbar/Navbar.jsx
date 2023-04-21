@@ -14,6 +14,11 @@ import "firebase/app";
 import "firebase/auth";
 
 import SearchBar from "../searchbar/SearchBar";
+import { getTotals } from "../../store/ShoppingCartRedux";
+
+import { useUserContext } from "../../components/contexts/userContexts";
+import useUserStore from "../../store/users";
+import useCartStore from "../../store/shoppingCartZustand";
 
 const Navbar = () => {
   const auth = getAuth();
@@ -24,12 +29,41 @@ const Navbar = () => {
 
   //const currentUser = useUserStore((state) => state.currentUser);
 
+  const dispatch = useDispatch()
   const { cartTotalQuantity } = useSelector((state) => state.cart);
+  const cart = useSelector((state)=> state.cart.cartItems)
   const navigate = useNavigate();
+  const [userId, setUserId] = useState('')
+  const getUserById = useUserStore((state) => state.getUserById);
+  const { user2 } = useUserContext();
 
-  // useEffect(()=> {
+  /////////////////////////////
+  
+  const createProduct = useCartStore((state) => state.createProduct)
+  const idCart = useUserStore((state) => state.idCart) 
+  
+  // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+  //   headers: {"content-type": "application/json"}
+  //})
 
-  // },[cartTotalQuantity])
+  useEffect(() => {
+    if (user2) {
+      const obtenerUsuario = (async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setUserId(userDb.id)
+          console.log(userId)
+        }
+      })();
+     
+    }
+  }, [user2]);
+
+
+/////////////////////////////////////
+  useEffect(()=> {
+    dispatch(getTotals());
+  },[cart, cartTotalQuantity])
 
   const perfil=user?false:true
 
@@ -53,6 +87,91 @@ if (!user) {
   const handleLogout = async (event) => {
     event.preventDefault();
     try {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+      
+
+      var aux =[]
+      var aux2 = []
+    if((idCart.cartCreated.id) && cart.length>0){
+      
+       aux = cart.map((i) => {
+      const carritoId = idCart.cartCreated.id
+      return {...i, carritoId}
+    })
+  
+     aux2 = aux.map((e) => {
+      const { cartQuantity, id, carritoId, ...rest } = e;
+      return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
+    })
+      
+      if(aux2.length>0){
+            const verify = createProduct(aux2)
+            console.log(aux2)
+            console.log(verify.data)
+          }
+    }
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       await signOut(auth);
       alert("Sign-out successful");
       navigate("/");
@@ -132,7 +251,8 @@ if (!user) {
             <NavLink to="/cart">
               <i className="bi bi-cart"></i>
               <strong>
-                <sup>{cartTotalQuantity}</sup>
+                <sup>{cartTotalQuantity}</sup> 
+                {/* <sup>{carts.length}</sup> */}
               </strong>
             </NavLink>
           </li>

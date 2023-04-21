@@ -19,6 +19,17 @@ module.exports = (sequelize) => {
         defaultValue: 1,
         allowNull: false,
       },
+
+      image:{
+        type: DataTypes.TEXT,
+        allowNull:true
+      },
+
+      name:{
+        type: DataTypes.STRING,
+        allowNull:true
+      },
+
       state: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

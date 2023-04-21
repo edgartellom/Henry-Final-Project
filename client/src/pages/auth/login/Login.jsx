@@ -36,6 +36,8 @@ import { app, auth, db } from "../../../firebase/firebaseConfig.js";
 import { setDoc, doc } from "firebase/firestore";
 import useUserStore from "../../../store/users";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import axios from 'axios'
+import useCartStore from "../../../store/shoppingCartZustand";
 
 function ColorSchemeToggle({ onClick, ...props }) {
   const { mode, setMode } = useColorScheme();
@@ -78,6 +80,21 @@ const Login = () => {
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const current = useUserStore((state) => state.currentUser)
+  const [cartId, setCartId] = useState('')
+
+  //////////////////////////////////////// USER Store
+  const idCart = useUserStore((state) => state.idCart)
+  const getCart = useUserStore((state) => state.getCart)
+  const updateId = useUserStore((state) => state.updateId)
+  const createCart = useUserStore((state) => state.createCart)
+/////////////////////////////////////////////////////////Cart Store
+
+const getProductById = useCartStore((state) => state.getProductById)
+const cart = useCartStore((state) => state.cart)
+
+
+console.log(idCart)
 
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -123,11 +140,95 @@ const Login = () => {
 
       setUser(userCredential.user);
       setError(""); // Limpia cualquier mensaje de error previo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+     
+       
+       console.log(current.uid)
+        const obj = {
+          userId:current.uid
+        }
+        console.log(idCart)
+      if(idCart.length ==0){
+       
+        console.log("creating a cart id")
+        createCart(obj)
+      }else{
+        getProductById(idCart.cartCreated.id)      
+
+      }
+      if(cart.length != 0){
+        console.log("product list loaded")
+      }
+      console.log(idCart)
+      console.log(idCart.cartCreated.id)
+      
+      // }else{
+      //   // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+      //   //     headers: {"content-type": "application/json"}
+      //   //   })
+      // }
+
+      
+      
+      // console.log(cartId)
+      // const response = await axios.get(`http://localhost:3001/cartDetails/${idExistente}`)
+      // console.log(response.data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       navigate("/products");
     } catch (error) {
       console.log(error.code, error.message);
       setError(error.message);
     }
+
   };
 
   const handlePasswordReset = async (event) => {

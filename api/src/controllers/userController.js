@@ -96,30 +96,30 @@ const createUser = async (user) => {
   }
 };
 
-const updateUser = async (user) => {
-  const { id, username, favorites, admin, phoneNumber, photoURL, state } = user;
-  try {
-    const userFromDb = await User.findByPk(id);
-    if (userFromDb) {
-      await userFromDb.update({
-        username,
-        favorites,
-        admin,
-        phoneNumber,
-        photoURL,
-        state,
-      });
-      return { message: "User updated succesfully", status: "success" };
-    }
-    return { message: "User Not Found", status: "error" };
-  } catch (error) {
-    return { message: error.message, status: "error" };
-  }
-};
+// const updateUser = async (user) => {
+//   const { id, username, favorites, admin, phoneNumber, photoURL, state } = user;
+//   try {
+//     const userFromDb = await User.findByPk(id);
+//     if (userFromDb) {
+//       await userFromDb.update({
+//         username,
+//         favorites,
+//         admin,
+//         phoneNumber,
+//         photoURL,
+//         state,
+//       });
+//       return { message: "User updated succesfully", status: "success" };
+//     }
+//     return { message: "User Not Found", status: "error" };
+//   } catch (error) {
+//     return { message: error.message, status: "error" };
+//   }
+// };
 
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
-  updateUser,
+  //updateUser,
 };
