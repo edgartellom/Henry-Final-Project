@@ -265,7 +265,7 @@ if (!user) {
             <NavLink to="/cart">
               <i className="bi bi-cart"></i>
               <strong>
-                {/* <sup>{cartTotalQuantity}</sup> */} 
+                <sup>{cartTotalQuantity}</sup> 
                 {/* <sup>{carts.length}</sup> */}
               </strong>
             </NavLink>

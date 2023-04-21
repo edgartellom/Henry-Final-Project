@@ -177,7 +177,7 @@ console.log(uniqueArray2)
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {/* {cart.cartItems.length === 0 ? ( */}
-      {uniqueArray2.length === 0 ? (
+      {finalCart.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -207,8 +207,8 @@ console.log(uniqueArray2)
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {uniqueArray2 &&
-              uniqueArray2.map((cartItem) => (
+            {finalCart &&
+              finalCart.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
                     {/* <img src={cartItem.image} alt={cartItem.name} /> */}
