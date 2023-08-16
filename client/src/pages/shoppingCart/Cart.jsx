@@ -1,28 +1,156 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToCart,
-  clearCart,
-  decreaseCart,
-  getTotals,
-  removeFromCart,
-} from "../../store/shoppingCartRedux";
+import { addItem, addToCart, clearCart, decreaseCart, getTotals,removeFromCart} from "../../store/ShoppingCartRedux";  
 import { Link } from "react-router-dom";
-import axios from "axios";
+
+import axios from 'axios'
+import { fetchById } from "../../store/ShoppingCartRedux";
+
+import { useUserContext } from "../../components/contexts/userContexts";
 import useUserStore from "../../store/users";
+import useCartStore from "../../store/shoppingCartZustand";
+
 import useOrderStatus from "../../store/userOrderStatus";
 
+
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  
   const dispatch = useDispatch();
-  const current = useUserStore((state) => state.currentUser);
+
+  const cart = useSelector((state) => state.cart);
+  const cartList = useSelector((state) => state.cart.dataList)
+  const [cart3, setCart3] = useState([])
+  const getUserById = useUserStore((state) => state.getUserById);
+  const current = useUserStore((state) => state.currentUser)
+  const clearData = useCartStore((state) => state.clearCart)
+  const cartZustand = useCartStore((state) => state.cart)
+  
+
+  const zustand = cartZustand.map((e) => {
+    const { quantity, ...rest } = e;
+    return { ...rest,  cartQuantity: quantity };
+  })
+
+  const finalCart =[...cart.cartItems,...zustand]
+
+
+
+
+
+  const uniqueObjectsById = {};
+
+// Merge the two arrays and iterate through the result
+cart.cartItems.concat(zustand).forEach(obj => {
+  // If the object's id does not already exist in the uniqueObjectsById object,
+  // add it to the object using its id as the key
+  if (!uniqueObjectsById[obj.productId]) {
+    uniqueObjectsById[obj.productId] = obj;
+  }
+});
+
+const uniqueArray2 = Object.values(uniqueObjectsById);
+console.log(uniqueArray2)
+
+
+  
+
+  const carritoID = '0034cadd-0efe-4511-be19-9b680649f35d'
+
+ 
+
+  const [userId, setUserId] = useState('')
+  const [cartId, setCartId] = useState('')
+  const { user } = useUserContext();
+  
+  useEffect(() => {
+    if (user) {
+      const obtenerUsuario = (async () => {
+        const userDb = await getUserById(user.uid);
+        if (userDb) {
+          setUserId(userDb.id)
+        }
+      })();
+      console.log(userId)
+      console.log(current)
+      console.log(finalCart)
+    }
+  }, [user]);
+
+
+  useEffect(() => {
+    getCartId()
+  })
+
+  const getCartId = async() => {
+    console.log(userId)
+
+  //este post es para crear id a los carritos con el id del usuario
+
+  // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+  //   headers: {"content-type": "application/json"}
+  //})
+
+  const aux = cart.cartItems.map((i) => {
+    const carritoId = carritoID
+    return {...i, carritoId}
+  })
+
+  console.log(aux)
+  const aux2 = aux.map((e) => {
+    const { cartQuantity, id, carritoId, ...rest } = e;
+    return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
+  })
+
+  console.log(userId)
+
+  console.log(aux2)
+  // codigo sirve pero mal ubicado
+  // var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
+  //        headers: {"content-type": "application/json"}
+  //   })
+  //   console.log(res.data) 
+  }
+    
+   
+     
+  //console.log(userDb)
+  
+//  const aux = cart.cartItems.map((i) => {
+//     const carritoId = cartId
+//     return {...i, carritoId}
+//   })
+
+//   const aux2 = aux.map((e) => {
+//     const { cartQuantity, id, ...rest } = e;
+//     return { ...rest, quantity: cartQuantity, productId:id };
+//   })
+  
+
+
+  //"content-type": "application/x-www-form-urlencoded" // application/json
+
+
+  useEffect(()=> {
+  
+  },[])
+  console.log(cartList)
+
+  
+ 
+
+  
   const createOrder = useOrderStatus((state) => state.createOrder);
   const order = useOrderStatus((state) => state.order);
 
+
   useEffect(() => {
-    console.log(cart);
+   
     dispatch(getTotals());
+   
+    
   }, [cart, dispatch]);
+
+  
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -34,6 +162,7 @@ const Cart = () => {
     dispatch(removeFromCart(product));
   };
   const handleClearCart = () => {
+    clearData()
     dispatch(clearCart());
   };
 
@@ -72,7 +201,8 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
-      {cart.cartItems.length === 0 ? (
+      {/* {cart.cartItems.length === 0 ? ( */}
+      {finalCart.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -103,11 +233,11 @@ const Cart = () => {
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems &&
-              cart.cartItems.map((cartItem) => (
+            {finalCart &&
+              finalCart.map((cartItem) => (
                 <div className="cart-item" key={cartItem.id}>
                   <div className="cart-product">
-                    <img src={cartItem.image[0]} alt={cartItem.name} />
+                    {/* <img src={cartItem.image} alt={cartItem.name} /> */}
                     <div>
                       <h4>{cartItem.name}</h4>
                       <p>{cartItem.desc}</p>
@@ -116,7 +246,7 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${cartItem.price}</div>
+                  <div className="cart-product-price">${parseFloat(cartItem.price)}</div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
@@ -125,7 +255,7 @@ const Cart = () => {
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
                   <div className="cart-product-total-price">
-                    ${cartItem.price * cartItem.cartQuantity}
+                    ${parseFloat(cartItem.price )* cartItem.cartQuantity}
                   </div>
                 </div>
               ))}
@@ -168,3 +298,9 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+// Solo funciona asi
+  // var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
+  //        headers: {"content-type": "application/json"}
+  //        })

@@ -1,4 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const fetchById = createAsyncThunk('cart/fetchById', async (id) => {
+  // const response = await axios.get(`http://localhost:3001/cartDetails/${id}`);
+  const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  //https://jsonplaceholder.typicode.com/todos/1
+  return response.data;
+});
 
 const initialState = {
   //cartItems: [],
@@ -7,6 +14,7 @@ const initialState = {
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
+  dataList:[]
 };
 
 const cartSlice = createSlice({
@@ -83,10 +91,38 @@ const cartSlice = createSlice({
       state.cartItems = [];
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
+    //adicional
+    addItem: (state, action) => {
+      state.cartItems.push(action.payload);
+    }
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        const index = state.dataList.findIndex((item) => item.id === action.payload.id);
+        if (index === -1) {
+          // Add new item to the list if it doesn't already exist
+          state.dataList = [...state.dataList, action.payload];
+        } else {
+          // Replace existing item in the list
+          state.dataList[index] = action.payload;
+        }
+      })
+      .addCase(fetchById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
+    }
 });
 
-export const { addToCart, decreaseCart, removeFromCart, getTotals, clearCart } =
+export const { addToCart, decreaseCart, removeFromCart, getTotals, clearCart, addItem } =
   cartSlice.actions;
 
 export default cartSlice.reducer;

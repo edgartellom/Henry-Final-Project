@@ -9,10 +9,14 @@ import RestoreIcon from "@mui/icons-material/Restore";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
 import "./products.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../../store/ShoppingCartRedux";
+import axios from 'axios'
+import { getTotals } from "../../store/ShoppingCartRedux";
 
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
-
+  const dispatch = useDispatch()
   const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
   const setCategoryFilter2 = useStore((state) => state.setCategoryFilter2);
@@ -30,10 +34,19 @@ const Products = () => {
   const { user } = useUserContext();
   const getUserById = useUserStore((state) => state.getUserById);
 
+
+  const [ data, setData] = useState([])
+  const userId = 'kevin'
+  const cartId = '9c4aceae-2788-4c09-8a02-32729c8490c3'
+  const {cartTotalQuantity} = useSelector((state) => state.cart)
+  
+
+
   //////////favorites//////
   const [favorito, setFavorito] = useState(false);
   const [favoritosUsuario, setFavoritosUsuario] = useState([]);
   /////
+
   const names = listProducts.map((pe) => pe.brand);
   const nNames = new Set(names);
   let rNames = [...nNames];
@@ -76,7 +89,34 @@ const Products = () => {
     fetchProducts();
     setRes(filtarCategories());
     //cargarFiltros();
+    
+    
   }, []);
+
+
+  // console.log(listProducts)
+  //   console.log(products)
+
+    useEffect(()=> {
+      dispatch(getTotals());
+    },[ cartTotalQuantity])
+
+  useEffect(()=>{
+    // getCart()
+    // dispatch(addItem(data))
+    //console.log(data)
+    
+  },[])
+
+  const getCart = async () => {
+    if(userId){
+      const cartData = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
+     console.log(cartData.data)
+      setData(cartData.data)
+      dispatch(addItem(cartData.data))
+      //console.log(data)
+    }
+  }
 
   useEffect(() => {
     if (user) {
@@ -89,6 +129,7 @@ const Products = () => {
       })();
     }
   }, [user]);
+
 
   const handleChange = (event, value) => {
     setPage(value);
