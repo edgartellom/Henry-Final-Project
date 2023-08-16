@@ -21,6 +21,7 @@ const getDbInfo = async (userId) => {
 
 const createCart = async (cart) => {
   const { userId } = cart;
+  console.log(userId)
   try {
     let user = await User.findByPk(userId);
     if (user) {
