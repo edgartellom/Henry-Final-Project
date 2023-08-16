@@ -121,41 +121,41 @@ const Card = ({ id, feature, price, image, stock, name }) => {
     }
   }, [user]);
 
-  const addFavoriteHandle = async (e) => {
-    e.preventDefault();
+  // const addFavoriteHandle = async (e) => {
+  //   e.preventDefault();
 
-    if (favorito) {
-      // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
-      const userDb = await getUserById(user.uid);
-      if (userDb && userDb.favorites) {
-        const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
-        updateUser({
-          ...userDb,
-          favorites: newFavoritesList,
-        });
-        setFavorito(false);
-        setFavoritosUsuario(newFavoritesList);
-      }
-      return;
-    }
+  //   if (favorito) {
+  //     // Si el producto ya está marcado como favorito, eliminarlo de la lista de favoritos
+  //     const userDb = await getUserById(user.uid);
+  //     if (userDb && userDb.favorites) {
+  //       const newFavoritesList = userDb.favorites.filter((fav) => fav !== id);
+  //       updateUser({
+  //         ...userDb,
+  //         favorites: newFavoritesList,
+  //       });
+  //       setFavorito(false);
+  //       setFavoritosUsuario(newFavoritesList);
+  //     }
+  //     return;
+  //   }
 
-    // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
-    setFavorito(true);
-    const userDb = await getUserById(user.uid);
-    if (!userDb) {
-      console.log(`No se encontró ningún usuario con el id ${user.uid}`);
-      return;
-    }
-    if (userDb && userDb.favorites) {
-      updateUser({
-        ...userDb,
-        favorites: [...userDb.favorites, id],
-      });
-      setFavoritosUsuario([...userDb.favorites, id]);
-    } else {
-      console.log("Error al actualizar el usuario: objeto de usuario inválido");
-    }
-  };
+  //   // Si el producto no está marcado como favorito, agregarlo a la lista de favoritos
+  //   setFavorito(true);
+  //   const userDb = await getUserById(user.uid);
+  //   if (!userDb) {
+  //     console.log(`No se encontró ningún usuario con el id ${user.uid}`);
+  //     return;
+  //   }
+  //   if (userDb && userDb.favorites) {
+  //     updateUser({
+  //       ...userDb,
+  //       favorites: [...userDb.favorites, id],
+  //     });
+  //     setFavoritosUsuario([...userDb.favorites, id]);
+  //   } else {
+  //     console.log("Error al actualizar el usuario: objeto de usuario inválido");
+  //   }
+  // };
 
   return (
     <>
@@ -183,7 +183,8 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               to="/cart"
               role="button"
               className="primary"
-              data-tooltip="Go to your cart">
+              data-tooltip="Go to your cart"
+            >
               <i className="bi bi-cart-check"></i>
             </NavLink>
 
@@ -192,10 +193,11 @@ const Card = ({ id, feature, price, image, stock, name }) => {
               role="button"
               className="contrast"
               data-tooltip="Add to cart"
-              onClick={addHandle}>
+              onClick={addHandle}
+            >
               <i className="bi bi-cart-plus"></i>
             </a>
-            {user && (
+            {/* {user && (
               <NavLink
                 role="button"
                 className="secondary"
@@ -209,7 +211,7 @@ const Card = ({ id, feature, price, image, stock, name }) => {
                 onClick={addFavoriteHandle}>
                 <i className="bi bi-heart"></i>
               </NavLink>
-            )}
+            )} */}
           </div>
         </div>
       </div>

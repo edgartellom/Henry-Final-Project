@@ -8,6 +8,15 @@ const {
 const router = Router();
 
 router.get("/", async (req, res) => {
+if (req.query._sort ){
+  const page = parseInt(req.query._start) || 1;
+  const limit = parseInt(req.query._end) || 5;
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+  console.log(startIndex, endIndex)
+}
+
+
   try {
     const { brand } = req.query;
     const allProducts = (await getAllProducts()).data;
@@ -15,10 +24,35 @@ router.get("/", async (req, res) => {
       let productBrand = await allProducts.filter((el) =>
         el.brand.toLowerCase().includes(brand.toLowerCase())
       );
-      productBrand.length
-        ? res.status(200).send(productBrand)
-        : res.status(404).send("BRAND NOT FOUND");
+
+      if (page && limit) {
+        const results = {};
+
+        if (endIndex < productBrand.length) {
+          results.next = {
+            page: page + 1,
+            limit: limit,
+          };
+        }
+
+        if (startIndex > 0) {
+          results.previous = {
+            page: page - 1,
+            limit: limit,
+          };
+        }
+        results.results = productBrand.slice(startIndex, endIndex);
+        res.status(200).send(results);
+      } else {
+        productBrand.length
+          ?
+
+          res.status(200).send(productBrand)
+          : res.status(404).send("BRAND NOT FOUND");
+      }
+
     } else {
+
       res.status(200).send(allProducts);
     }
   } catch (error) {

@@ -1,0 +1,20 @@
+.cart-container .homeButton {
+  display: flex;
+  position: fixed;
+  text-decoration: none;
+  color: white;
+  border-radius: 25px;
+  border: #ffff solid 1px;
+  padding: 5px;
+}
+.center .homeButton:hover {
+  background-color: rgb(3, 70, 70);
+}
+.dot-img {
+  margin-top: 20vh;
+  padding-top: 6vh;
+  height: 20vh;
+  text-align: center;
+  background-color: rgb(3, 70, 70);
+  border-radius: 25px;
+}

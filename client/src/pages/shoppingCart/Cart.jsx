@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, addToCart, clearCart, decreaseCart, getTotals,removeFromCart} from "../../store/ShoppingCartRedux";  
 import { Link } from "react-router-dom";
+
 import axios from 'axios'
 import { fetchById } from "../../store/ShoppingCartRedux";
 
@@ -9,9 +10,13 @@ import { useUserContext } from "../../components/contexts/userContexts";
 import useUserStore from "../../store/users";
 import useCartStore from "../../store/shoppingCartZustand";
 
+import useOrderStatus from "../../store/userOrderStatus";
+
+
 const Cart = () => {
   
   const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
   const cartList = useSelector((state) => state.cart.dataList)
   const [cart3, setCart3] = useState([])
@@ -133,6 +138,11 @@ console.log(uniqueArray2)
   
  
 
+  
+  const createOrder = useOrderStatus((state) => state.createOrder);
+  const order = useOrderStatus((state) => state.order);
+
+
   useEffect(() => {
    
     dispatch(getTotals());
@@ -156,21 +166,36 @@ console.log(uniqueArray2)
     dispatch(clearCart());
   };
 
-  
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    console.log(current);
     const data = {
       quantity: cart.cartTotalAmount,
-      name: 'Compra Bestify-PC' // cambiar el nombre aquí
+      name: "Compra Bestify-PC", // cambiar el nombre aquí
+    };
+    const dataOrder = {
+      cartId: cart.cartItems[0].id,
+      cartTotalPrice: cart.cartTotalAmount,
+      userId: current.uid,
     };
 
-    axios.post('/mercadopago/create-payment', data)
-      .then(response => {
-        // console.log(response.data.init_point)
-        window.location.replace(response.data.init_point);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    try {
+      console.log(dataOrder);
+      await createOrder(dataOrder);
+      console.log(order);
+    } catch (error) {
+      alert("error: " + error.message);
+    }
+    if (order.id) {
+      axios
+        .post("/mercadopago/create-payment", data)
+        .then((response) => {
+          // console.log(response.data.init_point)
+          window.location.replace(response.data.init_point);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   return (
@@ -188,7 +213,8 @@ console.log(uniqueArray2)
                 height="20"
                 fill="currentColor"
                 className="bi bi-arrow-left"
-                viewBox="0 0 16 16">
+                viewBox="0 0 16 16"
+              >
                 <path
                   fillRule="evenodd"
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
@@ -244,7 +270,7 @@ console.log(uniqueArray2)
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button onClick={handleCheckout} >Check out</button>
+              <button onClick={handleCheckout}>Check out</button>
               <div className="continue-shopping">
                 <Link to="/products">
                   <svg
@@ -253,7 +279,8 @@ console.log(uniqueArray2)
                     height="20"
                     fill="currentColor"
                     className="bi bi-arrow-left"
-                    viewBox="0 0 16 16">
+                    viewBox="0 0 16 16"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
