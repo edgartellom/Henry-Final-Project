@@ -10,13 +10,12 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
 import "./products.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../store/ShoppingCartRedux";
-import axios from 'axios'
-import { getTotals } from "../../store/ShoppingCartRedux";
+import { addItem, getTotals } from "../../store/shoppingCartRedux";
+import axios from "axios";
 
 const Products = () => {
   const fetchProducts = useStore((state) => state.fetchProducts);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const state = useStore();
   const setCategoryFilter = useStore((state) => state.setCategoryFilter);
   const setCategoryFilter2 = useStore((state) => state.setCategoryFilter2);
@@ -30,17 +29,14 @@ const Products = () => {
   const [res, setRes] = useState([]);
   const [res2, setRes2] = useState([]);
   const page = useStore((state) => state.page);
-  const setPage = useStore((state) =>state.setPage);
+  const setPage = useStore((state) => state.setPage);
   const { user } = useUserContext();
   const getUserById = useUserStore((state) => state.getUserById);
 
-
-  const [ data, setData] = useState([])
-  const userId = 'kevin'
-  const cartId = '9c4aceae-2788-4c09-8a02-32729c8490c3'
-  const {cartTotalQuantity} = useSelector((state) => state.cart)
-  
-
+  const [data, setData] = useState([]);
+  const userId = "kevin";
+  const cartId = "9c4aceae-2788-4c09-8a02-32729c8490c3";
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
 
   //////////favorites//////
   const [favorito, setFavorito] = useState(false);
@@ -89,34 +85,30 @@ const Products = () => {
     fetchProducts();
     setRes(filtarCategories());
     //cargarFiltros();
-    
-    
   }, []);
-
 
   // console.log(listProducts)
   //   console.log(products)
 
-    useEffect(()=> {
-      dispatch(getTotals());
-    },[ cartTotalQuantity])
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cartTotalQuantity]);
 
-  useEffect(()=>{
+  useEffect(() => {
     // getCart()
     // dispatch(addItem(data))
     //console.log(data)
-    
-  },[])
+  }, []);
 
   const getCart = async () => {
-    if(userId){
-      const cartData = await axios.get(`http://localhost:3001/cartDetails/${cartId}`)
-     console.log(cartData.data)
-      setData(cartData.data)
-      dispatch(addItem(cartData.data))
+    if (userId) {
+      const cartData = await axios.get(`/cartDetails/${cartId}`);
+      console.log(cartData.data);
+      setData(cartData.data);
+      dispatch(addItem(cartData.data));
       //console.log(data)
     }
-  }
+  };
 
   useEffect(() => {
     if (user) {
@@ -129,7 +121,6 @@ const Products = () => {
       })();
     }
   }, [user]);
-
 
   const handleChange = (event, value) => {
     setPage(value);

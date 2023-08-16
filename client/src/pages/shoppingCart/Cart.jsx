@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, addToCart, clearCart, decreaseCart, getTotals,removeFromCart} from "../../store/ShoppingCartRedux";  
+import {
+  addItem,
+  addToCart,
+  clearCart,
+  decreaseCart,
+  getTotals,
+  removeFromCart,
+} from "../../store/shoppingCartRedux";
 import { Link } from "react-router-dom";
 
-import axios from 'axios'
-import { fetchById } from "../../store/ShoppingCartRedux";
+import axios from "axios";
+import { fetchById } from "../../store/shoppingCartRedux";
 
 import { useUserContext } from "../../components/contexts/userContexts";
 import useUserStore from "../../store/users";
@@ -12,145 +19,120 @@ import useCartStore from "../../store/shoppingCartZustand";
 
 import useOrderStatus from "../../store/userOrderStatus";
 
-
 const Cart = () => {
-  
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  const cartList = useSelector((state) => state.cart.dataList)
-  const [cart3, setCart3] = useState([])
+  const cartList = useSelector((state) => state.cart.dataList);
+  const [cart3, setCart3] = useState([]);
   const getUserById = useUserStore((state) => state.getUserById);
-  const current = useUserStore((state) => state.currentUser)
-  const clearData = useCartStore((state) => state.clearCart)
-  const cartZustand = useCartStore((state) => state.cart)
-  
+  const current = useUserStore((state) => state.currentUser);
+  const clearData = useCartStore((state) => state.clearCart);
+  const cartZustand = useCartStore((state) => state.cart);
 
   const zustand = cartZustand.map((e) => {
     const { quantity, ...rest } = e;
-    return { ...rest,  cartQuantity: quantity };
-  })
+    return { ...rest, cartQuantity: quantity };
+  });
 
-  const finalCart =[...cart.cartItems,...zustand]
-
-
-
-
+  const finalCart = [...cart.cartItems, ...zustand];
 
   const uniqueObjectsById = {};
 
-// Merge the two arrays and iterate through the result
-cart.cartItems.concat(zustand).forEach(obj => {
-  // If the object's id does not already exist in the uniqueObjectsById object,
-  // add it to the object using its id as the key
-  if (!uniqueObjectsById[obj.productId]) {
-    uniqueObjectsById[obj.productId] = obj;
-  }
-});
+  // Merge the two arrays and iterate through the result
+  cart.cartItems.concat(zustand).forEach((obj) => {
+    // If the object's id does not already exist in the uniqueObjectsById object,
+    // add it to the object using its id as the key
+    if (!uniqueObjectsById[obj.productId]) {
+      uniqueObjectsById[obj.productId] = obj;
+    }
+  });
 
-const uniqueArray2 = Object.values(uniqueObjectsById);
-console.log(uniqueArray2)
+  const uniqueArray2 = Object.values(uniqueObjectsById);
+  console.log(uniqueArray2);
 
+  const carritoID = "0034cadd-0efe-4511-be19-9b680649f35d";
 
-  
-
-  const carritoID = '0034cadd-0efe-4511-be19-9b680649f35d'
-
- 
-
-  const [userId, setUserId] = useState('')
-  const [cartId, setCartId] = useState('')
+  const [userId, setUserId] = useState("");
+  const [cartId, setCartId] = useState("");
   const { user } = useUserContext();
-  
+
   useEffect(() => {
     if (user) {
       const obtenerUsuario = (async () => {
         const userDb = await getUserById(user.uid);
         if (userDb) {
-          setUserId(userDb.id)
+          setUserId(userDb.id);
         }
       })();
-      console.log(userId)
-      console.log(current)
-      console.log(finalCart)
+      console.log(userId);
+      console.log(current);
+      console.log(finalCart);
     }
   }, [user]);
 
-
   useEffect(() => {
-    getCartId()
-  })
+    getCartId();
+  });
 
-  const getCartId = async() => {
-    console.log(userId)
+  const getCartId = async () => {
+    console.log(userId);
 
-  //este post es para crear id a los carritos con el id del usuario
+    //este post es para crear id a los carritos con el id del usuario
 
-  // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
-  //   headers: {"content-type": "application/json"}
-  //})
+    // const cartUid = await axios.post(`http://localhost:3001/carts`, {userId}, {
+    //   headers: {"content-type": "application/json"}
+    //})
 
-  const aux = cart.cartItems.map((i) => {
-    const carritoId = carritoID
-    return {...i, carritoId}
-  })
+    const aux = cart.cartItems.map((i) => {
+      const carritoId = carritoID;
+      return { ...i, carritoId };
+    });
 
-  console.log(aux)
-  const aux2 = aux.map((e) => {
-    const { cartQuantity, id, carritoId, ...rest } = e;
-    return { ...rest, quantity: cartQuantity, productId:id, cartId:carritoId };
-  })
+    console.log(aux);
+    const aux2 = aux.map((e) => {
+      const { cartQuantity, id, carritoId, ...rest } = e;
+      return {
+        ...rest,
+        quantity: cartQuantity,
+        productId: id,
+        cartId: carritoId,
+      };
+    });
 
-  console.log(userId)
+    console.log(userId);
 
-  console.log(aux2)
-  // codigo sirve pero mal ubicado
-  // var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
-  //        headers: {"content-type": "application/json"}
-  //   })
-  //   console.log(res.data) 
-  }
-    
-   
-     
+    console.log(aux2);
+    // codigo sirve pero mal ubicado
+    // var res =  await axios.post(`http://localhost:3001/cartDetails`, aux2, {
+    //        headers: {"content-type": "application/json"}
+    //   })
+    //   console.log(res.data)
+  };
+
   //console.log(userDb)
-  
-//  const aux = cart.cartItems.map((i) => {
-//     const carritoId = cartId
-//     return {...i, carritoId}
-//   })
 
-//   const aux2 = aux.map((e) => {
-//     const { cartQuantity, id, ...rest } = e;
-//     return { ...rest, quantity: cartQuantity, productId:id };
-//   })
-  
+  //  const aux = cart.cartItems.map((i) => {
+  //     const carritoId = cartId
+  //     return {...i, carritoId}
+  //   })
 
+  //   const aux2 = aux.map((e) => {
+  //     const { cartQuantity, id, ...rest } = e;
+  //     return { ...rest, quantity: cartQuantity, productId:id };
+  //   })
 
   //"content-type": "application/x-www-form-urlencoded" // application/json
 
+  useEffect(() => {}, []);
+  console.log(cartList);
 
-  useEffect(()=> {
-  
-  },[])
-  console.log(cartList)
-
-  
- 
-
-  
   const createOrder = useOrderStatus((state) => state.createOrder);
   const order = useOrderStatus((state) => state.order);
 
-
   useEffect(() => {
-   
     dispatch(getTotals());
-   
-    
   }, [cart, dispatch]);
-
-  
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -162,7 +144,7 @@ console.log(uniqueArray2)
     dispatch(removeFromCart(product));
   };
   const handleClearCart = () => {
-    clearData()
+    clearData();
     dispatch(clearCart());
   };
 
@@ -246,7 +228,9 @@ console.log(uniqueArray2)
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${parseFloat(cartItem.price)}</div>
+                  <div className="cart-product-price">
+                    ${parseFloat(cartItem.price)}
+                  </div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
@@ -255,7 +239,7 @@ console.log(uniqueArray2)
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
                   <div className="cart-product-total-price">
-                    ${parseFloat(cartItem.price )* cartItem.cartQuantity}
+                    ${parseFloat(cartItem.price) * cartItem.cartQuantity}
                   </div>
                 </div>
               ))}
@@ -299,8 +283,7 @@ console.log(uniqueArray2)
 
 export default Cart;
 
-
 // Solo funciona asi
-  // var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
-  //        headers: {"content-type": "application/json"}
-  //        })
+// var res =  await axios.post(`http://localhost:3001/cartDetails`, myObject, {
+//        headers: {"content-type": "application/json"}
+//        })

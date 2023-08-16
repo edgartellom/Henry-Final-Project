@@ -21,13 +21,11 @@
 
 // const { user } = useUserContext();
 
-
 // const addHandle = (e) => {
 //   e.preventDefault()
 //   console.log(select)
 //   dispatch(addToCart({id, price, image, name}))
 // }
-
 
 //   return (
 //     <>
@@ -58,7 +56,7 @@
 //               data-tooltip='Go to your cart'
 //             >
 //               <i class="bi bi-cart-check"></i>
-              
+
 //             </NavLink>
 //             {/* <NavLink
 //               to="/detail"
@@ -69,7 +67,7 @@
 //             </NavLink> */}
 //             <a href="/" role="button" className="contrast" data-tooltip="Add to cart"  onClick={addHandle}><i className='bi bi-cart-plus'></i></a>
 //           </div>
-          
+
 //         </div>
 //       </div>
 //     </>
@@ -81,7 +79,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
- import { addToCart } from "../../store/ShoppingCartRedux";
+import { addToCart } from "../../store/shoppingCartRedux";
 import useUserStore from "../../store/users";
 import { useUserContext } from "../../components/contexts/userContexts";
 import "./card.css";
